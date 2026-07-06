@@ -20,7 +20,7 @@
     {
       "speakerId": "steven-cheng",
       "name": "鄭棋文 Steven",
-      "photoUrl": null,
+      "photoUrl": "/speakers/steven-cheng.jpg",
       "jobTitle": null,
       "bio": null,
       "topic": "你畫的跟我想的不一樣!工程師與設計師的愛恨糾葛"
@@ -28,7 +28,7 @@
     {
       "speakerId": "fong-liou",
       "name": "劉鳳軒 Fong",
-      "photoUrl": null,
+      "photoUrl": "/speakers/fong-liou.webp",
       "jobTitle": null,
       "bio": null,
       "topic": "Legacy Code 好大,我不怕!"

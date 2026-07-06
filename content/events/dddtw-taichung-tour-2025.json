@@ -21,7 +21,7 @@
     {
       "speakerId": "tung",
       "name": "Tung",
-      "photoUrl": null,
+      "photoUrl": "/speakers/tung.webp",
       "jobTitle": null,
       "bio": "DDDTW 核心志工",
       "topic": "文件即程式碼 – 從觀念到實踐"
@@ -29,7 +29,7 @@
     {
       "speakerId": "kim-kao",
       "name": "Kim Kao",
-      "photoUrl": null,
+      "photoUrl": "/speakers/kim-kao.webp",
       "jobTitle": "AWS",
       "bio": null,
       "topic": "以 AIDLC 驅動應用系統現代化體驗升級"
@@ -37,7 +37,7 @@
     {
       "speakerId": "james-wang",
       "name": "James Wang(王家駿)",
-      "photoUrl": null,
+      "photoUrl": "/speakers/james-wang.jpg",
       "jobTitle": null,
       "bio": null,
       "topic": "Vibe Coding × DDD:以迭代建模避免失控"

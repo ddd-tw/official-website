@@ -21,7 +21,7 @@
     {
       "speakerId": "fong-liou",
       "name": "Fong Liou",
-      "photoUrl": null,
+      "photoUrl": "/speakers/fong-liou.webp",
       "jobTitle": null,
       "bio": "DDDTW 社群志工與講師,著有 IT 鐵人賽得獎系列文章「Think in GraphQL」、「Think in Domain-Driven Design」",
       "topic": "全日演講與工作坊(Event Storming 到 DDD 戰術實作)"
@@ -29,7 +29,7 @@
     {
       "speakerId": "river-lin",
       "name": "River Lin",
-      "photoUrl": null,
+      "photoUrl": "/speakers/river-lin.webp",
       "jobTitle": null,
       "bio": "DDDTW 社群志工與講師",
       "topic": "全日演講與工作坊(Event Storming 到 DDD 戰術實作)"
@@ -37,7 +37,7 @@
     {
       "speakerId": "eason-kuo",
       "name": "Eason Kuo",
-      "photoUrl": null,
+      "photoUrl": "/speakers/eason-kuo.jpg",
       "jobTitle": null,
       "bio": "DDDTW 社群志工與講師,曾共同創立金融科技新創公司",
       "topic": "全日演講與工作坊(Event Storming 到 DDD 戰術實作)"

@@ -21,7 +21,7 @@
     {
       "speakerId": "river-lin",
       "name": "River",
-      "photoUrl": null,
+      "photoUrl": "/speakers/river-lin.webp",
       "jobTitle": "XRSPACE",
       "bio": null,
       "topic": "Coding Dojo 引導"
@@ -29,7 +29,7 @@
     {
       "speakerId": "ean-li",
       "name": "Ean Lee",
-      "photoUrl": null,
+      "photoUrl": "/speakers/ean-li.webp",
       "jobTitle": null,
       "bio": null,
       "topic": "Coding Dojo 引導"
@@ -37,7 +37,7 @@
     {
       "speakerId": "fong-liou",
       "name": "Fong Liou",
-      "photoUrl": null,
+      "photoUrl": "/speakers/fong-liou.webp",
       "jobTitle": "Appier",
       "bio": null,
       "topic": "Coding Dojo 引導"

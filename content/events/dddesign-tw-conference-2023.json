@@ -3,7 +3,7 @@
   "title": "DDDesign TW Conference 2023 - 啟發",
   "bannerUrl": "/banners/dddesign-tw-conference-2023.png",
   "summary": "第三屆年會,主題「啟發」,紀念 Eric Evans 出版 DDD 一書 20 週年;24 場議程、3 場工作坊,約 308 人參與。",
-  "fullDescriptionMd": "# DDDesign TW Conference 2023 - 啟發\n\n2023 年 9 月 16–17 日舉行:9/16 為台大社科院實體場,9/17 為 YouTube 線上直播場。\n\n議程分入門、進階與工作坊三軌,內容涵蓋架構設計與演進、遺留系統重構、軟體測試、需求釐清與組織管理;工作坊包含 Mob Programming、Example Mapping 與 Event Storming。門票於會前三週完售,總體滿意度 4.23/5。\n\nKeynote 由《Learning Domain-Driven Design》作者 Vlad Khononov 帶來 *Balancing Coupling in Software Design*。\n\n## 資料來源\n\n- [KKTIX — DDDTW Conf 2023](https://dddtaiwan.kktix.cc/events/dddtwconf2023)\n- [Kim Kao — Conference 2023 Summary(Medium)](https://kimkao.medium.com/dddesign-taiwan-conference-2023-summary-7dfa01c20949)\n- [官方議程(2023)](https://conference.ddd-tw.com/2023/agendaDayOne)",
+  "fullDescriptionMd": "# DDDesign TW Conference 2023 - 啟發\n\n2023 年 9 月 16–17 日舉行:9/16 為台大社科院實體場,9/17 為 YouTube 線上直播場。\n\n議程分入門、進階與工作坊三軌,內容涵蓋架構設計與演進、遺留系統重構、軟體測試、需求釐清與組織管理;工作坊包含 Mob Programming、Example Mapping 與 Event Storming。門票於會前三週完售,總體滿意度 4.23/5。\n\nKeynote 由《Learning Domain-Driven Design》作者 Vlad Khononov 帶來 *Balancing Coupling in Software Design*。\n\n## 議程\n\n### Day 1 - 9/16(六)實體場|台大社科院(Room 303 / 202 / 302)\n\n| 時間 | 教室 | 講者 | 講題 |\n| --- | --- | --- | --- |\n| 09:30 - 10:15 | 303 | Vlad Khononov | Balancing Coupling in Software Design(Keynote) |\n| 09:30 - 10:15 | 202 | 蒼時弦也 | 導入 Domain-Driven Design 的最佳時機 |\n| 09:30 - 10:15 | 302 | Nina | EventStorming 實戰經驗分享 |\n| 10:30 - 11:15 | 303 | 黃健旻 | Practical experience of applying DDD and CA in Spring Boot 3 + Java 17 |\n| 10:30 - 11:15 | 202 | 魏宣德、邱凡遠 | Don't Forget UCD & Balanced Teams: Reap the Full Benefits with Modern Development Practices |\n| 10:30 - 11:15 | 302 | Soking | 偷偷將 Event Storming 簡化運用於需求探索的資訊架構設計工作坊(1/2) |\n| 11:30 - 12:15 | 303 | Stephen Tung | The Superpowers of Event Sourcing |\n| 11:30 - 12:15 | 202 | 程章尧 | DDD Applied - Introducing TDD while breaking down legacy monolith |\n| 11:30 - 12:15 | 302 | Soking | 偷偷將 Event Storming 簡化運用於需求探索的資訊架構設計工作坊(2/2) |\n| 13:15 - 14:00 | 303 | 雷N | 探索系統的可觀測性 |\n| 13:15 - 14:00 | 202 | Chris Simon | When Customers Don't Share a Language(線上) |\n| 13:15 - 14:00 | 302 | Lex Liu | 動動手手練練 Event Sourcing |\n| 14:15 - 15:00 | 303 | 倪國凱 | 這些年我們所追的微服務 |\n| 14:15 - 15:00 | 202 | 王威 | 用 Constructor theory 实现架构演进和治理 |\n| 14:15 - 15:00 | 302 | David Ko | 如何利用 Example Mapping 來釐清需求(工作坊 1/2) |\n| 15:15 - 16:00 | 303 | Miles | 在風雨交加的航道上探索 DDD:從困惑到啟發 |\n| 15:15 - 16:00 | 202 | 高松 | 複雜遺留系統的現代化改造方法與實踐(線上) |\n| 15:15 - 16:00 | 302 | David Ko | 如何利用 Example Mapping 來釐清需求(工作坊 2/2) |\n| 16:15 - 17:45 | 303 | 劉宥辰 | 從混亂到組織:DDD 與 Clean Architecture 的持續精進挑戰之道 |\n| 16:15 - 17:45 | 202 | 陳建村 | 用模式語言解壓縮 CQRS:以 ezKanban 系統為例 |\n| 16:15 - 17:45 | 302 | Kuma Syu | 「Code with Me」- 我們寫了一支 API(工作坊) |\n\n### Day 2 - 9/17(日)線上直播場\n\n| 時間 | 講者 | 講題 |\n| --- | --- | --- |\n| 09:30 - 10:15 | Kim Kao | The value flywheel effect:指導解決方案域的決策指南 |\n| 10:30 - 11:15 | 水球潘 | 在自己的新創導入 DDD 來迭代開發一個有夠複雜的線上遊戲教育創新產品 |\n| 11:30 - 12:15 | Fong | 你真的懂 SOLID 原則嗎?You Don't Know SOLID |\n| 13:15 - 14:00 | Ean | 單兵作戰:以領域驅動設計(DDD)改善既有進銷存管理系統的策略與實踐 |\n| 14:15 - 15:00 | James Wang | DDD 中的橋樑:透過有效建模與設計,從戰略走向戰術 |\n| 15:15 - 16:15 | Arthur | DDD 戰術 - 柔型要術 |\n| 16:30 - 17:30 | Michael | Domain Storytelling — One-size-fits-all 串連產品服務的需求、設計、開發與測試 |\n\n## 資料來源\n\n- [KKTIX — DDDTW Conf 2023](https://dddtaiwan.kktix.cc/events/dddtwconf2023)\n- [Kim Kao — Conference 2023 Summary(Medium)](https://kimkao.medium.com/dddesign-taiwan-conference-2023-summary-7dfa01c20949)\n- [官方議程(2023)](https://conference.ddd-tw.com/2023/agendaDayOne)\n- [GitHub — ddd-tw-conference/2023(議程與講者資料)](https://github.com/ddd-tw-conference/2023)",
   "startsAt": "2023-09-16T01:00:00.000Z",
   "endsAt": "2023-09-17T09:00:00.000Z",
   "venue": {
@@ -20,42 +20,218 @@
     {
       "speakerId": "vlad-khononov",
       "name": "Vlad Khononov",
-      "photoUrl": null,
+      "photoUrl": "/speakers/vlad-khononov.jpg",
       "jobTitle": "《Learning Domain-Driven Design》作者",
       "bio": null,
       "topic": "Balancing Coupling in Software Design(Keynote)"
     },
     {
-      "speakerId": "soking",
-      "name": "Soking",
-      "photoUrl": null,
+      "speakerId": "aotokitsuruya",
+      "name": "蒼時弦也(邱政憲)",
+      "photoUrl": "/speakers/aotokitsuruya.jpg",
       "jobTitle": null,
       "bio": null,
-      "topic": null
+      "topic": "導入 Domain-Driven Design 的最佳時機"
     },
     {
-      "speakerId": "liu-you-chen",
-      "name": "劉宥辰",
-      "photoUrl": null,
+      "speakerId": "nina-weng",
+      "name": "Nina Weng",
+      "photoUrl": "/speakers/nina-weng.jpg",
+      "jobTitle": "史詩科技",
+      "bio": null,
+      "topic": "EventStorming 實戰經驗分享"
+    },
+    {
+      "speakerId": "huang-jian-min",
+      "name": "黃健旻(Vincent)",
+      "photoUrl": "/speakers/huang-jian-min.jpg",
+      "jobTitle": "純函式公司共同創辦人",
+      "bio": null,
+      "topic": "Practical experience of applying DDD and CA in Spring Boot 3 + Java 17"
+    },
+    {
+      "speakerId": "matthew-wei",
+      "name": "魏宣德(Matthew Wei)",
+      "photoUrl": "/speakers/matthew-wei.jpg",
+      "jobTitle": "VMware Tanzu Labs 資深產品經理",
+      "bio": null,
+      "topic": "Don't Forget UCD & Balanced Teams: Reap the Full Benefits with Modern Development Practices(與邱凡遠合講)"
+    },
+    {
+      "speakerId": "wesley-chiu",
+      "name": "邱凡遠(Wesley Chiu)",
+      "photoUrl": "/speakers/wesley-chiu.jpg",
+      "jobTitle": "VMware Tanzu Labs 產品經理",
+      "bio": null,
+      "topic": "Don't Forget UCD & Balanced Teams: Reap the Full Benefits with Modern Development Practices(與魏宣德合講)"
+    },
+    {
+      "speakerId": "soking",
+      "name": "Soking(王彥博)",
+      "photoUrl": "/speakers/soking.jpg",
       "jobTitle": null,
       "bio": null,
-      "topic": null
+      "topic": "偷偷將 Event Storming 簡化運用於需求探索的資訊架構設計工作坊(工作坊)"
+    },
+    {
+      "speakerId": "stephen-tung",
+      "name": "Stephen Tung",
+      "photoUrl": "/speakers/stephen-tung.jpg",
+      "jobTitle": null,
+      "bio": null,
+      "topic": "The Superpowers of Event Sourcing"
+    },
+    {
+      "speakerId": "james-cheng",
+      "name": "程章尧(James Cheng)",
+      "photoUrl": "/speakers/james-cheng.jpg",
+      "jobTitle": "VMware Tanzu Labs 軟件顧問",
+      "bio": null,
+      "topic": "DDD Applied - Introducing TDD while breaking down legacy monolith"
+    },
+    {
+      "speakerId": "nathan-lu",
+      "name": "雷N(呂健誠)",
+      "photoUrl": "/speakers/nathan-lu.jpg",
+      "jobTitle": "後端工程師",
+      "bio": null,
+      "topic": "探索系統的可觀測性"
+    },
+    {
+      "speakerId": "chris-simon",
+      "name": "Chris Simon",
+      "photoUrl": "/speakers/chris-simon.jpg",
+      "jobTitle": "獨立顧問、Contextive 創辦人",
+      "bio": null,
+      "topic": "When Customers Don't Share a Language(線上)"
+    },
+    {
+      "speakerId": "lex-liu",
+      "name": "Lex Liu",
+      "photoUrl": "/speakers/lex-liu.jpg",
+      "jobTitle": null,
+      "bio": null,
+      "topic": "動動手手練練 Event Sourcing"
     },
     {
       "speakerId": "ni-guo-kai",
       "name": "倪國凱",
-      "photoUrl": null,
+      "photoUrl": "/speakers/ni-guo-kai.jpg",
       "jobTitle": null,
       "bio": null,
-      "topic": null
+      "topic": "這些年我們所追的微服務"
+    },
+    {
+      "speakerId": "wang-wei",
+      "name": "王威(David Wang)",
+      "photoUrl": "/speakers/wang-wei.jpg",
+      "jobTitle": "ThoughtWorks 中國區首席企業架構師",
+      "bio": null,
+      "topic": "用 Constructor theory 实现架构演进和治理"
+    },
+    {
+      "speakerId": "david-ko",
+      "name": "David Ko(柯仁傑)",
+      "photoUrl": "/speakers/david-ko.jpg",
+      "jobTitle": "Odd-e Agile Coach",
+      "bio": null,
+      "topic": "如何利用 Example Mapping 來釐清需求(工作坊)"
+    },
+    {
+      "speakerId": "miles-chou",
+      "name": "Miles Chou",
+      "photoUrl": "/speakers/miles-chou.jpg",
+      "jobTitle": null,
+      "bio": null,
+      "topic": "在風雨交加的航道上探索 DDD:從困惑到啟發"
+    },
+    {
+      "speakerId": "steven-gao",
+      "name": "高松(Steven Gao)",
+      "photoUrl": "/speakers/steven-gao.jpg",
+      "jobTitle": "VMware Tanzu Labs 應用現代化轉型高級產品經理",
+      "bio": null,
+      "topic": "複雜遺留系統的現代化改造方法與實踐(線上)"
+    },
+    {
+      "speakerId": "liu-you-chen",
+      "name": "劉宥辰(Steny Liu)",
+      "photoUrl": "/speakers/liu-you-chen.jpg",
+      "jobTitle": "史詩科技",
+      "bio": null,
+      "topic": "從混亂到組織:DDD 與 Clean Architecture 的持續精進挑戰之道"
+    },
+    {
+      "speakerId": "teddy-chen",
+      "name": "陳建村(Teddy Chen)",
+      "photoUrl": "/speakers/teddy-chen.jpg",
+      "jobTitle": "泰迪軟體創辦人",
+      "bio": null,
+      "topic": "用模式語言解壓縮 CQRS:以 ezKanban 系統為例"
+    },
+    {
+      "speakerId": "kuma",
+      "name": "Kuma Syu",
+      "photoUrl": "/speakers/kuma.jpg",
+      "jobTitle": null,
+      "bio": null,
+      "topic": "「Code with Me」- 我們寫了一支 API(工作坊)"
+    },
+    {
+      "speakerId": "kim-kao",
+      "name": "Kim Kao",
+      "photoUrl": "/speakers/kim-kao.webp",
+      "jobTitle": "AWS 資深解決方案架構師",
+      "bio": null,
+      "topic": "The value flywheel effect:指導解決方案域的決策指南"
     },
     {
       "speakerId": "waterball-pan",
       "name": "水球潘",
-      "photoUrl": null,
+      "photoUrl": "/speakers/waterball-pan.jpg",
+      "jobTitle": "水球軟體學院創辦人",
+      "bio": null,
+      "topic": "在自己的新創導入 DDD 來迭代開發一個有夠複雜的線上遊戲教育創新產品"
+    },
+    {
+      "speakerId": "fong-liou",
+      "name": "劉鳳軒(Fong)",
+      "photoUrl": "/speakers/fong-liou.webp",
+      "jobTitle": "後端工程師, Appier",
+      "bio": null,
+      "topic": "你真的懂 SOLID 原則嗎?You Don't Know SOLID"
+    },
+    {
+      "speakerId": "ean-li",
+      "name": "李民偉(Ean)",
+      "photoUrl": "/speakers/ean-li.webp",
       "jobTitle": null,
       "bio": null,
-      "topic": null
+      "topic": "單兵作戰:以領域驅動設計(DDD)改善既有進銷存管理系統的策略與實踐"
+    },
+    {
+      "speakerId": "james-wang",
+      "name": "James Wang",
+      "photoUrl": "/speakers/james-wang.jpg",
+      "jobTitle": null,
+      "bio": null,
+      "topic": "DDD 中的橋樑:透過有效建模與設計,從戰略走向戰術"
+    },
+    {
+      "speakerId": "arthur-chang",
+      "name": "張國昭(Arthur)",
+      "photoUrl": "/speakers/arthur-chang.webp",
+      "jobTitle": "DDD Taiwan 社群共同發起人",
+      "bio": null,
+      "topic": "DDD 戰術 - 柔型要術"
+    },
+    {
+      "speakerId": "michael-chen",
+      "name": "陳勉修(Michael)",
+      "photoUrl": "/speakers/michael-chen.webp",
+      "jobTitle": "樂屋網 產品處副總經理",
+      "bio": null,
+      "topic": "Domain Storytelling — One-size-fits-all 串連產品服務的需求、設計、開發與測試"
     }
   ],
   "ticketTypes": []

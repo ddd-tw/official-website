@@ -21,7 +21,7 @@
     {
       "speakerId": "kim-kao",
       "name": "Kim Kao",
-      "photoUrl": null,
+      "photoUrl": "/speakers/kim-kao.webp",
       "jobTitle": "AWS 資深解決方案架構師",
       "bio": null,
       "topic": "Implementing Distributed Design patterns on AWS"

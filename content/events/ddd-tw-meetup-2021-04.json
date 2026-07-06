@@ -20,7 +20,7 @@
     {
       "speakerId": "arthur-chang",
       "name": "張國昭(Arthur)",
-      "photoUrl": null,
+      "photoUrl": "/speakers/arthur-chang.webp",
       "jobTitle": "MAYO 技術經理",
       "bio": null,
       "topic": "DDD15週年書文精選"
@@ -28,7 +28,7 @@
     {
       "speakerId": "michael-chen",
       "name": "陳勉修 Michael Chen",
-      "photoUrl": null,
+      "photoUrl": "/speakers/michael-chen.webp",
       "jobTitle": "樂屋國際資訊產品處副總經理",
       "bio": "台灣敏捷協會與 DDD Taiwan Community Organizer 理事",
       "topic": "Domain-Driven Design: The First 15 Years 繁體中文版 - Essence and Insight"
@@ -36,7 +36,7 @@
     {
       "speakerId": "kim-kao",
       "name": "Kim Kao(高翊凱)",
-      "photoUrl": null,
+      "photoUrl": "/speakers/kim-kao.webp",
       "jobTitle": "AWS Taiwan 解決方案架構師",
       "bio": null,
       "topic": "總覽 DDD 15 週年"

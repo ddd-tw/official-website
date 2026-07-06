@@ -12,12 +12,17 @@
     "meetingUrl": null
   },
   "status": "ended",
-  "tags": ["meetup", "online", "domain-storytelling", "history"],
+  "tags": [
+    "meetup",
+    "online",
+    "domain-storytelling",
+    "history"
+  ],
   "speakers": [
     {
       "speakerId": "james-wang",
       "name": "James Wang",
-      "photoUrl": null,
+      "photoUrl": "/speakers/james-wang.jpg",
       "jobTitle": null,
       "bio": "DDDTW 社群志工",
       "topic": "初探 Domain Storytelling(合講)"
@@ -25,7 +30,7 @@
     {
       "speakerId": "blues-ho",
       "name": "何松穎 Blues",
-      "photoUrl": null,
+      "photoUrl": "/speakers/blues-ho.jpg",
       "jobTitle": null,
       "bio": "DDDTW 社群志工",
       "topic": "初探 Domain Storytelling(合講)"
@@ -33,7 +38,7 @@
     {
       "speakerId": "sandy-wu",
       "name": "吳佳芷 Sandy",
-      "photoUrl": null,
+      "photoUrl": "/speakers/sandy-wu.jpg",
       "jobTitle": null,
       "bio": "DDDTW 志工,任職於金融業資訊部門並擔任開發部門小組長",
       "topic": "初探 Domain Storytelling(合講)"

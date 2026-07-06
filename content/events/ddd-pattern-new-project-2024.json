@@ -20,7 +20,7 @@
     {
       "speakerId": "fong-liou",
       "name": "Fong Liou",
-      "photoUrl": null,
+      "photoUrl": "/speakers/fong-liou.webp",
       "jobTitle": "資深後端工程師, Appier",
       "bio": null,
       "topic": "在新專案套入 DDD Pattern 的經驗談"

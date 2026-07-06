@@ -21,7 +21,7 @@
     {
       "speakerId": "arthur-chang",
       "name": "張國昭(小張, Arthur)",
-      "photoUrl": null,
+      "photoUrl": "/speakers/arthur-chang.webp",
       "jobTitle": "Co-Founder, DDDTW",
       "bio": null,
       "topic": null
@@ -29,7 +29,7 @@
     {
       "speakerId": "river-lin",
       "name": "林鴻皓 River",
-      "photoUrl": null,
+      "photoUrl": "/speakers/river-lin.webp",
       "jobTitle": "Dept. Lead, XRSPACE",
       "bio": null,
       "topic": null
@@ -37,7 +37,7 @@
     {
       "speakerId": "fong-liou",
       "name": "Fong",
-      "photoUrl": null,
+      "photoUrl": "/speakers/fong-liou.webp",
       "jobTitle": "Senior Engineer, Appier",
       "bio": null,
       "topic": null

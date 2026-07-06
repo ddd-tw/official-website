@@ -12,12 +12,16 @@
     "meetingUrl": null
   },
   "status": "ended",
-  "tags": ["meetup", "online", "history"],
+  "tags": [
+    "meetup",
+    "online",
+    "history"
+  ],
   "speakers": [
     {
       "speakerId": "zhang-yi",
       "name": "張逸",
-      "photoUrl": null,
+      "photoUrl": "/speakers/zhang-yi.jpg",
       "jobTitle": null,
       "bio": "領域驅動設計佈道師、微服務系統架構師、大數據平台架構師",
       "topic": "DDD 的價值與不足"
@@ -25,7 +29,7 @@
     {
       "speakerId": "kim-kao",
       "name": "高翊凱 Kim Kao",
-      "photoUrl": null,
+      "photoUrl": "/speakers/kim-kao.webp",
       "jobTitle": "AWS 資深解決方案架構師",
       "bio": "DDD Taiwan Community 發起人之一",
       "topic": "與談主持"
@@ -33,7 +37,7 @@
     {
       "speakerId": "arthur-chang",
       "name": "張國昭(Arthur)",
-      "photoUrl": null,
+      "photoUrl": "/speakers/arthur-chang.webp",
       "jobTitle": "MAYO 技術經理",
       "bio": "DDDTW 發起、組織者",
       "topic": "與談主持"

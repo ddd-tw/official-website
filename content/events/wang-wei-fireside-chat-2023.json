@@ -21,7 +21,7 @@
     {
       "speakerId": "wang-wei",
       "name": "王威",
-      "photoUrl": null,
+      "photoUrl": "/speakers/wang-wei.jpg",
       "jobTitle": "ThoughtWorks 數位化轉型首席諮詢師/首席企業架構師",
       "bio": null,
       "topic": "領域驅動設計的相關發展經驗談"
@@ -29,7 +29,7 @@
     {
       "speakerId": "kim-kao",
       "name": "Kim Kao",
-      "photoUrl": null,
+      "photoUrl": "/speakers/kim-kao.webp",
       "jobTitle": "AWS 資深解決方案架構師",
       "bio": "DDD Taiwan Community 共同發起人",
       "topic": "對談主持"

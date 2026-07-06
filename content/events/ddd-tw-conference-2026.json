@@ -12,12 +12,17 @@
     "meetingUrl": null
   },
   "status": "published",
-  "tags": ["ddd", "conference", "event-storming", "taipei"],
+  "tags": [
+    "ddd",
+    "conference",
+    "event-storming",
+    "taipei"
+  ],
   "speakers": [
     {
       "speakerId": "michael-chen",
       "name": "Michael Chen",
-      "photoUrl": "https://dddtaiwan.org/images/speakers/michael-chen.jpg",
+      "photoUrl": "/speakers/michael-chen.webp",
       "jobTitle": "Principal Architect @ FinTech Startup",
       "bio": "十五年軟體架構經驗,近年專注於以 DDD 重塑金融核心系統,DDD Taiwan 社群核心成員。",
       "topic": "讓模型落地:從事件風暴到可部署的限界上下文"

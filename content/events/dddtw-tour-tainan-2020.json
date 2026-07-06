@@ -21,7 +21,7 @@
     {
       "speakerId": "fong-liou",
       "name": "Fong Liou",
-      "photoUrl": null,
+      "photoUrl": "/speakers/fong-liou.webp",
       "jobTitle": null,
       "bio": "DDDTW 社群志工與講師",
       "topic": "DDD 戰略設計:把溝通結果化成程式設計"
@@ -29,7 +29,7 @@
     {
       "speakerId": "james-wang",
       "name": "James Wang(大姆士)",
-      "photoUrl": null,
+      "photoUrl": "/speakers/james-wang.jpg",
       "jobTitle": null,
       "bio": "DDDTW、Agile 社群志工與講師",
       "topic": "符合 DDD 思維的架構設計"
@@ -37,7 +37,7 @@
     {
       "speakerId": "arthur-chang",
       "name": "Arthur 張",
-      "photoUrl": null,
+      "photoUrl": "/speakers/arthur-chang.webp",
       "jobTitle": null,
       "bio": "DDDTW 社群創辦人之一,曾獲選 DDD China 年會、國際 Virtual DDD 年會講者",
       "topic": "Aggregate Canvas + Example Mapping Workshop、DDD 程式碼設計實戰練習"
@@ -45,7 +45,7 @@
     {
       "speakerId": "river-lin",
       "name": "River Lin",
-      "photoUrl": null,
+      "photoUrl": "/speakers/river-lin.webp",
       "jobTitle": null,
       "bio": "DDDTW 社群志工與講師",
       "topic": "Aggregate Canvas + Example Mapping Workshop(與 Arthur 合講)"

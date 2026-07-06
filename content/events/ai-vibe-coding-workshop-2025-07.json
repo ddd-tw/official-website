@@ -21,7 +21,7 @@
     {
       "speakerId": "arthur-chang",
       "name": "Arthur(張國昭)",
-      "photoUrl": null,
+      "photoUrl": "/speakers/arthur-chang.webp",
       "jobTitle": null,
       "bio": "DDDTW Community 共同創辦人",
       "topic": "AI 開發現況與團隊落地挑戰"
@@ -29,7 +29,7 @@
     {
       "speakerId": "ean-li",
       "name": "Ean",
-      "photoUrl": null,
+      "photoUrl": "/speakers/ean-li.webp",
       "jobTitle": null,
       "bio": "DDDTW 核心志工",
       "topic": "與 AI 共舞:協同開發 × 測試 × 文件 × Vibe Coding"

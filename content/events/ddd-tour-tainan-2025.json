@@ -21,7 +21,7 @@
     {
       "speakerId": "fong-liou",
       "name": "Fong Liou",
-      "photoUrl": null,
+      "photoUrl": "/speakers/fong-liou.webp",
       "jobTitle": null,
       "bio": null,
       "topic": "你真的需要 Clean Architecture 嗎?其實掌握核心原則就夠了"
@@ -29,7 +29,7 @@
     {
       "speakerId": "tung",
       "name": "Tung",
-      "photoUrl": null,
+      "photoUrl": "/speakers/tung.webp",
       "jobTitle": null,
       "bio": "DDDTW 核心志工",
       "topic": "n8n 入門實作工作坊"

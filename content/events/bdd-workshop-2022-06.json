@@ -22,7 +22,7 @@
     {
       "speakerId": "fong-liou",
       "name": "Fong Liou",
-      "photoUrl": null,
+      "photoUrl": "/speakers/fong-liou.webp",
       "jobTitle": "Senior Engineer, Appier",
       "bio": null,
       "topic": "用 BDD 把共識變成剛好的測試!"

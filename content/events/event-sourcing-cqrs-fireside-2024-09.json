@@ -21,7 +21,7 @@
     {
       "speakerId": "stephen-tung",
       "name": "Stephen",
-      "photoUrl": null,
+      "photoUrl": "/speakers/stephen-tung.jpg",
       "jobTitle": "Developer Advocate, Event Store",
       "bio": null,
       "topic": "輕鬆聊 Event Sourcing/CQRS/DDD"
@@ -29,7 +29,7 @@
     {
       "speakerId": "kim-kao",
       "name": "Kim",
-      "photoUrl": null,
+      "photoUrl": "/speakers/kim-kao.webp",
       "jobTitle": "AWS",
       "bio": null,
       "topic": "輕鬆聊 Event Sourcing/CQRS/DDD"

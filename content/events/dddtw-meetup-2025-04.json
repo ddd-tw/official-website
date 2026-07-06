@@ -21,7 +21,7 @@
     {
       "speakerId": "fong-liou",
       "name": "Fong Liou",
-      "photoUrl": null,
+      "photoUrl": "/speakers/fong-liou.webp",
       "jobTitle": "Appier",
       "bio": null,
       "topic": "你真的需要整潔架構嗎?"
@@ -29,7 +29,7 @@
     {
       "speakerId": "tung",
       "name": "東東(Tung)",
-      "photoUrl": null,
+      "photoUrl": "/speakers/tung.webp",
       "jobTitle": "後端工程師",
       "bio": "DDDTW 核心志工",
       "topic": "動手打造自己的 MCP Server"

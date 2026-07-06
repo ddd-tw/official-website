@@ -3,7 +3,7 @@
   "title": "Domain Driven Design Taiwan Conference 2020",
   "bannerUrl": "/banners/dddtw-conference-2020.jpg",
   "summary": "DDD Taiwan 首屆年會,兩天實體活動超過 200 人參與,匯集台灣、歐洲與中國講者。",
-  "fullDescriptionMd": "# Domain Driven Design Taiwan Conference 2020\n\n台灣第一屆領域驅動設計年會,2020 年 11 月 27–28 日於台北捷運北投會館舉行。\n\n第一天為三軌議程(技術實作、產品設計、開發流程),第二天為多場實作工作坊(含產品系統思考建模、DDD 從戰略到戰術深度歷險等)。議題涵蓋 DDD 於金融業的落地、CQRS 與 SAGA、Event Storming、Clean Architecture 等,強調 DDD 不只是技術實作與程式結構,更是連結業務與開發的方法。\n\n## 資料來源\n\n- [KKTIX — DDDTW Conf 2020](https://dddtaiwan.kktix.cc/events/dddtw-conf-2020)\n- [官方網站(2020)](https://conference.ddd-tw.com/2020/zh-TW/)\n- [Teddy Chen 會後心得](https://teddy-chen-tw.blogspot.com/2020/11/ddd-tw-2020-conference.html)",
+  "fullDescriptionMd": "# Domain Driven Design Taiwan Conference 2020\n\n台灣第一屆領域驅動設計年會,2020 年 11 月 27–28 日於台北捷運北投會館舉行。\n\n第一天為三軌議程(技術實作、產品設計、開發流程),第二天為多場實作工作坊(含產品系統思考建模、DDD 從戰略到戰術深度歷險等)。議題涵蓋 DDD 於金融業的落地、CQRS 與 SAGA、Event Storming、Clean Architecture 等,強調 DDD 不只是技術實作與程式結構,更是連結業務與開發的方法。\n\n## 議程\n\n### Day 1 - 11/27(五)議程日(A 產品軌 / B 技術軌 / C 流程軌)\n\n| 時間 | 軌別 | 講者 | 講題 |\n| --- | --- | --- | --- |\n| 09:00 - 09:50 | A | Paul Shih(施政源) | 利用外包資源強化內部開發流程,善用微服務特性進行工作切割 |\n| 09:00 - 09:50 | B | Shihpeng(林世鵬) | 返璞歸真:街口的「唯服務」之路 |\n| 09:00 - 09:50 | C | Hermes Chang(張昀煒) | Be The Change,一年 6.6 萬公里,開啟南台灣公司的敏捷旅程 |\n| 10:00 - 10:50 | A | Kevin(黃冠融) | 將管理的需求規格落地 |\n| 10:00 - 10:50 | B | Clark(周忠慶) | DDD X Architecture |\n| 10:00 - 10:50 | C | Sam Huang(黃世銘) | 團隊工作流程的迭代與改善 |\n| 11:00 - 12:00 | A | Nor(陳啟彰) | 從使用者研究的幕後花絮談起 |\n| 11:00 - 12:00 | B | 張逸 | 領域驅動設計參考過程模型 |\n| 11:00 - 12:00 | C | 孫翊軒(Michael Suen) | 邊界劃分的藝術-實踐事件驅動的微服務 |\n| 13:00 - 13:50 | A | 王威 | 領域驅動的平台架構設計 |\n| 13:00 - 13:50 | B | Rex Wang(王鈞平) | CQRS 與 SAGA 解決微服務什麼問題? |\n| 13:00 - 13:50 | C | Gelis(吳俊毅) | 實踐 Clean Architecture(實作高可用性的軟件架構) |\n| 14:00 - 14:50 | A | Sylvia(楊孟真) | 跟著 RD 一起跳坑 DDD 之 Event Storming 帶給 PM 的好處 |\n| 14:00 - 14:50 | B | Kenny Baas-Schwegler、João Rosa | 探索漩渦-從事件風暴到 DDD 協作 |\n| 14:00 - 14:50 | C | Kacper Gunia | 領域驅動設計模型設計流程 |\n| 15:00 - 15:20 | A | Mia(李孟萱) | 非技術背景的 PM 該如何做好需求訪談? |\n| 15:00 - 15:20 | B | Otto(顏勝豪) | 金融業導入領域驅動設計之應用實例 |\n| 15:00 - 15:20 | C | Richard(蘇立群) | DDD 15 年文章導讀與相關案例介紹 |\n| 15:40 - 17:00 | A | Steven(鄭棋文) | 如何逐步導入敏捷精神,創造願意接受失敗的開發團隊 |\n| 15:40 - 17:00 | B | Teddy Chen(陳建村) | DDD + Clean Architecture:從需求到實作 |\n| 15:40 - 17:00 | C | 林德政 | 趨勢科技星際奇航 2020 - 加速 DevOps 文化轉型的遊戲化專案 |\n| 17:10 - 18:00 | B | 郭德祥、曾棨達 | 金融業 DDD 落地探索之路 |\n\n### Day 2 - 11/28(六)工作坊日\n\n| 時間 | 軌別 | 講者 | 講題 |\n| --- | --- | --- | --- |\n| 09:00 - 12:00 | A | 陳勉修、張國昭、李民偉 | 產品開發:基於 DDD 的系統思考(上) |\n| 09:00 - 12:00 | B | 林鴻皓、郭奕成、劉鳯軒、高翊凱 | DDD 深度歷險:從戰略到戰術(上) |\n| 09:00 - 12:00 | C | Hermes Chang(張昀煒) | Scrum 問題解決遊戲(Problem Solving Game)工作坊 |\n| 13:00 - 16:00 | A | 陳勉修、張國昭、李民偉 | 產品開發:基於 DDD 的系統思考(下) |\n| 13:00 - 16:00 | B | 林鴻皓、郭奕成、劉鳯軒、高翊凱 | DDD 深度歷險:從戰略到戰術(下) |\n| 13:00 - 16:00 | C | Juggernaut | Problem Solving Sprint - 解決方案團隊共創工作坊 |\n\n## 資料來源\n\n- [KKTIX — DDDTW Conf 2020](https://dddtaiwan.kktix.cc/events/dddtw-conf-2020)\n- [官方網站(2020)](https://conference.ddd-tw.com/2020/zh-TW/)\n- [Teddy Chen 會後心得](https://teddy-chen-tw.blogspot.com/2020/11/ddd-tw-2020-conference.html)\n- [GitHub — ddd-tw-conference/2020(議程與講者資料)](https://github.com/ddd-tw-conference/2020)",
   "startsAt": "2020-11-27T01:00:00.000Z",
   "endsAt": "2020-11-28T09:00:00.000Z",
   "venue": {
@@ -18,60 +18,260 @@
   ],
   "speakers": [
     {
+      "speakerId": "paul-shih",
+      "name": "Paul Shih(施政源)",
+      "photoUrl": "/speakers/paul-shih.jpg",
+      "jobTitle": "Fable 寓意科技 CEO",
+      "bio": null,
+      "topic": "利用外包資源強化內部開發流程,善用微服務特性進行工作切割"
+    },
+    {
+      "speakerId": "kevin-huang",
+      "name": "Kevin(黃冠融)",
+      "photoUrl": "/speakers/kevin-huang.jpg",
+      "jobTitle": "Octalysis Prime / Software Engineer",
+      "bio": null,
+      "topic": "將管理的需求規格落地"
+    },
+    {
+      "speakerId": "nor",
+      "name": "Nor(陳啟彰)",
+      "photoUrl": "/speakers/nor.jpg",
+      "jobTitle": "領潮創意設計企業社 社長",
+      "bio": null,
+      "topic": "從使用者研究的幕後花絮談起"
+    },
+    {
+      "speakerId": "wang-wei",
+      "name": "王威",
+      "photoUrl": "/speakers/wang-wei.jpg",
+      "jobTitle": "ThoughtWorks 中國區首席企業架構師",
+      "bio": null,
+      "topic": "領域驅動的平台架構設計"
+    },
+    {
+      "speakerId": "sylvia-yang",
+      "name": "Sylvia(楊孟真)",
+      "photoUrl": "/speakers/sylvia-yang.jpg",
+      "jobTitle": "泰爾科技 產品經理",
+      "bio": null,
+      "topic": "跟著 RD 一起跳坑 DDD 之 Event Storming 帶給 PM 的好處"
+    },
+    {
+      "speakerId": "mia-lee",
+      "name": "Mia(李孟萱)",
+      "photoUrl": "/speakers/mia-lee.jpg",
+      "jobTitle": "Fable 寓意科技 執行長特助",
+      "bio": null,
+      "topic": "非技術背景的 PM 該如何做好需求訪談?"
+    },
+    {
+      "speakerId": "steven-cheng",
+      "name": "Steven(鄭棋文)",
+      "photoUrl": "/speakers/steven-cheng.jpg",
+      "jobTitle": "專案經理",
+      "bio": null,
+      "topic": "如何逐步導入敏捷精神,創造願意接受失敗的開發團隊"
+    },
+    {
+      "speakerId": "lin-shih-peng",
+      "name": "Shihpeng(林世鵬)",
+      "photoUrl": "/speakers/lin-shih-peng.jpg",
+      "jobTitle": "街口電子支付技術團隊負責人",
+      "bio": null,
+      "topic": "返璞歸真:街口的「唯服務」之路"
+    },
+    {
+      "speakerId": "clark-chou",
+      "name": "Clark(周忠慶)",
+      "photoUrl": "/speakers/clark-chou.jpg",
+      "jobTitle": "K.NET 志工講師、部落格「昏睡領域」版主",
+      "bio": null,
+      "topic": "DDD X Architecture"
+    },
+    {
       "speakerId": "zhang-yi",
       "name": "張逸",
-      "photoUrl": null,
-      "jobTitle": null,
+      "photoUrl": "/speakers/zhang-yi.jpg",
+      "jobTitle": "《解構領域驅動設計》作者、領域驅動設計佈道師",
       "bio": null,
       "topic": "領域驅動設計參考過程模型"
     },
     {
+      "speakerId": "rex-wang",
+      "name": "Rex Wang(王鈞平)",
+      "photoUrl": "/speakers/rex-wang.jpg",
+      "jobTitle": "Red Hat Senior Solution Architect",
+      "bio": null,
+      "topic": "CQRS 與 SAGA 解決微服務什麼問題?"
+    },
+    {
       "speakerId": "kenny-baas-schwegler",
       "name": "Kenny Baas-Schwegler",
-      "photoUrl": null,
-      "jobTitle": null,
+      "photoUrl": "/speakers/kenny-baas-schwegler.jpg",
+      "jobTitle": "社會技術組織設計師、軟體架構師",
       "bio": null,
-      "topic": "從 Event Storming 到 DDD 的協作(英文場,與 João Rosa 合講)"
+      "topic": "探索漩渦-從事件風暴到 DDD 協作(與 João Rosa 合講)"
     },
     {
       "speakerId": "joao-rosa",
       "name": "João Rosa",
-      "photoUrl": null,
-      "jobTitle": null,
+      "photoUrl": "/speakers/joao-rosa.jpg",
+      "jobTitle": "Xebia 策略軟體交付顧問",
       "bio": null,
-      "topic": "從 Event Storming 到 DDD 的協作(英文場,與 Kenny Baas-Schwegler 合講)"
+      "topic": "探索漩渦-從事件風暴到 DDD 協作(與 Kenny Baas-Schwegler 合講)"
     },
     {
-      "speakerId": "kacper-gunia",
-      "name": "Kacper Gunia",
-      "photoUrl": null,
-      "jobTitle": null,
+      "speakerId": "otto-yen",
+      "name": "Otto(顏勝豪)",
+      "photoUrl": "/speakers/otto-yen.jpg",
+      "jobTitle": "國泰金控數數發中心 雲端技術架構師",
       "bio": null,
-      "topic": "DDD 模型設計流程(英文場)"
+      "topic": "金融業導入領域驅動設計之應用實例"
     },
     {
       "speakerId": "teddy-chen",
       "name": "Teddy Chen(陳建村)",
-      "photoUrl": null,
-      "jobTitle": null,
+      "photoUrl": "/speakers/teddy-chen.jpg",
+      "jobTitle": "泰迪軟體創辦人、部落格「搞笑談軟工」版主",
       "bio": null,
-      "topic": "DDD 與 Clean Architecture"
+      "topic": "DDD + Clean Architecture:從需求到實作"
+    },
+    {
+      "speakerId": "guo-de-xiang",
+      "name": "郭德祥",
+      "photoUrl": "/speakers/guo-de-xiang.jpg",
+      "jobTitle": "國泰世華中台發展部應用規劃科",
+      "bio": null,
+      "topic": "金融業 DDD 落地探索之路(與曾棨達合講)"
+    },
+    {
+      "speakerId": "zeng-qi-da",
+      "name": "曾棨達",
+      "photoUrl": "/speakers/zeng-qi-da.jpg",
+      "jobTitle": "國泰世華中台發展部中台開發科",
+      "bio": null,
+      "topic": "金融業 DDD 落地探索之路(與郭德祥合講)"
+    },
+    {
+      "speakerId": "hermes-chang",
+      "name": "Hermes Chang(張昀煒)",
+      "photoUrl": "/speakers/hermes-chang.jpg",
+      "jobTitle": "台灣敏捷協會 總舵主",
+      "bio": null,
+      "topic": "Be The Change,一年 6.6 萬公里,開啟南台灣公司的敏捷旅程;Scrum 問題解決遊戲工作坊"
+    },
+    {
+      "speakerId": "sam-huang",
+      "name": "Sam Huang(黃世銘)",
+      "photoUrl": "/speakers/sam-huang.jpg",
+      "jobTitle": "鈦坦科技 ScrumMaster",
+      "bio": null,
+      "topic": "團隊工作流程的迭代與改善"
     },
     {
       "speakerId": "michael-suen",
-      "name": "Michael Suen",
-      "photoUrl": null,
-      "jobTitle": null,
+      "name": "孫翊軒(Michael Suen)",
+      "photoUrl": "/speakers/michael-suen.jpg",
+      "jobTitle": "Red Hat 解決方案架構師",
       "bio": null,
-      "topic": "事件驅動微服務的邊界設計"
+      "topic": "邊界劃分的藝術-實踐事件驅動的微服務"
     },
     {
-      "speakerId": "sylvia-yang",
-      "name": "Sylvia Yang",
-      "photoUrl": null,
+      "speakerId": "gelis-wu",
+      "name": "Gelis(吳俊毅)",
+      "photoUrl": "/speakers/gelis-wu.jpg",
+      "jobTitle": "集英信誠 資深 .NET 技術顧問",
+      "bio": null,
+      "topic": "實踐 Clean Architecture(實作高可用性的軟件架構)"
+    },
+    {
+      "speakerId": "kacper-gunia",
+      "name": "Kacper Gunia",
+      "photoUrl": "/speakers/kacper-gunia.jpg",
+      "jobTitle": "講師、顧問、DDD London 組織者",
+      "bio": null,
+      "topic": "領域驅動設計模型設計流程"
+    },
+    {
+      "speakerId": "richard-su",
+      "name": "Richard(蘇立群)",
+      "photoUrl": "/speakers/richard-su.jpg",
+      "jobTitle": "芝加哥大學 學生",
+      "bio": null,
+      "topic": "DDD 15 年文章導讀與相關案例介紹"
+    },
+    {
+      "speakerId": "lin-de-zheng",
+      "name": "林德政",
+      "photoUrl": "/speakers/lin-de-zheng.jpg",
+      "jobTitle": "趨勢科技 使用者經驗設計部 資深專案經理",
+      "bio": null,
+      "topic": "趨勢科技星際奇航 2020 - 加速 DevOps 文化轉型的遊戲化專案"
+    },
+    {
+      "speakerId": "michael-chen",
+      "name": "陳勉修(Michael)",
+      "photoUrl": "/speakers/michael-chen.webp",
+      "jobTitle": "樂屋網 副總經理",
+      "bio": null,
+      "topic": "工作坊:產品開發:基於 DDD 的系統思考(與張國昭、李民偉合帶)"
+    },
+    {
+      "speakerId": "arthur-chang",
+      "name": "張國昭(Arthur)",
+      "photoUrl": "/speakers/arthur-chang.webp",
       "jobTitle": null,
       "bio": null,
-      "topic": "Event Storming 對產品經理的幫助"
+      "topic": "工作坊:產品開發:基於 DDD 的系統思考(與陳勉修、李民偉合帶)"
+    },
+    {
+      "speakerId": "ean-li",
+      "name": "李民偉(Ean)",
+      "photoUrl": "/speakers/ean-li.webp",
+      "jobTitle": null,
+      "bio": null,
+      "topic": "工作坊:產品開發:基於 DDD 的系統思考(與陳勉修、張國昭合帶)"
+    },
+    {
+      "speakerId": "river-lin",
+      "name": "林鴻皓(River)",
+      "photoUrl": "/speakers/river-lin.webp",
+      "jobTitle": null,
+      "bio": null,
+      "topic": "工作坊:DDD 深度歷險:從戰略到戰術(與郭奕成、劉鳯軒、高翊凱合帶)"
+    },
+    {
+      "speakerId": "eason-kuo",
+      "name": "郭奕成(Eason)",
+      "photoUrl": "/speakers/eason-kuo.jpg",
+      "jobTitle": "後端工程師",
+      "bio": null,
+      "topic": "工作坊:DDD 深度歷險:從戰略到戰術(與林鴻皓、劉鳯軒、高翊凱合帶)"
+    },
+    {
+      "speakerId": "fong-liou",
+      "name": "劉鳯軒(Fong)",
+      "photoUrl": "/speakers/fong-liou.webp",
+      "jobTitle": "後端工程師",
+      "bio": null,
+      "topic": "工作坊:DDD 深度歷險:從戰略到戰術(與林鴻皓、郭奕成、高翊凱合帶)"
+    },
+    {
+      "speakerId": "kim-kao",
+      "name": "高翊凱(Kim Kao)",
+      "photoUrl": "/speakers/kim-kao.webp",
+      "jobTitle": "AWS 資深解決方案架構師",
+      "bio": null,
+      "topic": "工作坊:DDD 深度歷險:從戰略到戰術(與林鴻皓、郭奕成、劉鳯軒合帶)"
+    },
+    {
+      "speakerId": "juggernaut",
+      "name": "Juggernaut",
+      "photoUrl": "/speakers/juggernaut.jpg",
+      "jobTitle": "M17 Sr. Project Manager",
+      "bio": null,
+      "topic": "工作坊:Problem Solving Sprint - 解決方案團隊共創工作坊"
     }
   ],
   "ticketTypes": []

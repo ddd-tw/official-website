@@ -22,7 +22,7 @@
     {
       "speakerId": "blues-ho",
       "name": "何松穎 Blues",
-      "photoUrl": null,
+      "photoUrl": "/speakers/blues-ho.jpg",
       "jobTitle": null,
       "bio": "DDDTW 社群志工",
       "topic": "Event Storming(Big Picture)線上工作坊"
@@ -30,7 +30,7 @@
     {
       "speakerId": "morty",
       "name": "Morty",
-      "photoUrl": null,
+      "photoUrl": "/speakers/morty.jpg",
       "jobTitle": null,
       "bio": "DDDTW 社群志工",
       "topic": "Event Storming(Big Picture)線上工作坊"
@@ -38,7 +38,7 @@
     {
       "speakerId": "max-chen",
       "name": "陳建均 Max",
-      "photoUrl": null,
+      "photoUrl": "/speakers/max-chen.jpg",
       "jobTitle": null,
       "bio": "DDDTW 社群志工",
       "topic": "Event Storming(Big Picture)線上工作坊"
@@ -46,7 +46,7 @@
     {
       "speakerId": "waterball-pan",
       "name": "水球潘",
-      "photoUrl": null,
+      "photoUrl": "/speakers/waterball-pan.jpg",
       "jobTitle": null,
       "bio": "專研軟體設計、物件導向以及程式教育",
       "topic": "Event Storming(Big Picture)線上工作坊"

@@ -29,7 +29,7 @@
     {
       "speakerId": "kim-kao",
       "name": "Kim Kao",
-      "photoUrl": null,
+      "photoUrl": "/speakers/kim-kao.webp",
       "jobTitle": "AWS 解決方案架構師",
       "bio": "台灣 DDD 社群發起者之一",
       "topic": "Bounded Contexts, Microservices, and Everything In Between(re-deliver session from DDDDD)"
@@ -37,7 +37,7 @@
     {
       "speakerId": "arthur-chang",
       "name": "Arthur Chang",
-      "photoUrl": null,
+      "photoUrl": "/speakers/arthur-chang.webp",
       "jobTitle": null,
       "bio": "台灣 DDD 社群發起者之一,Aggregate Canvas 創始者",
       "topic": "滄海遺珠 — 在實際開發中,那些你可能遺失的美好"

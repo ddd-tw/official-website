@@ -21,7 +21,7 @@
     {
       "speakerId": "river-lin",
       "name": "River",
-      "photoUrl": null,
+      "photoUrl": "/speakers/river-lin.webp",
       "jobTitle": null,
       "bio": "DDDTW 志工、Legacy Code 讀書會發起人之一",
       "topic": "DDD & BDD 工作坊講師(Event Storming、Example Mapping、Feature Mapping)"
@@ -29,7 +29,7 @@
     {
       "speakerId": "fong-liou",
       "name": "Fong",
-      "photoUrl": null,
+      "photoUrl": "/speakers/fong-liou.webp",
       "jobTitle": null,
       "bio": "後端工程師、DDDTW 志工、講師,著有 IT 鐵人賽系列文章「Think in GraphQL」、「Think in Domain-Driven Design」",
       "topic": "DDD & BDD 工作坊講師(Event Storming、Example Mapping、Feature Mapping)"

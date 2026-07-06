@@ -3,7 +3,7 @@
   "title": "2024 DDDTour 高雄站 - 領域驅動設計在專案實作中的應用與價值共鳴",
   "bannerUrl": "/banners/ddd-tour-kaohsiung-2024.jpg",
   "summary": "DDDTW 與 GDG Kaohsiung、開發者 Buffet 合辦的高雄巡迴場,全日探討 DDD 在實務專案中的應用。",
-  "fullDescriptionMd": "# 2024 DDDTour 高雄站\n\n2024 年 7 月 6 日 09:00–17:00 於高雄國泰商業大樓舉行。\n\n內容從 DDD 概觀、戰術設計物件協作、DDD 與 Clean Architecture 打造可測試系統、Domain Storytelling 從戰略到戰術,到既有專案導入 DDD 的經驗分享,最後以職涯發展與學習經驗座談收尾。\n\n## 資料來源\n\n- [Accupass — 2024 DDDTour 高雄站](https://www.accupass.com/event/2405191413443338941360)",
+  "fullDescriptionMd": "# 2024 DDDTour 高雄站\n\n2024 年 7 月 6 日 09:00–17:00 於高雄國泰商業大樓舉行。\n\n內容從 DDD 概觀、戰術設計物件協作、DDD 與 Clean Architecture 打造可測試系統、Domain Storytelling 從戰略到戰術,到既有專案導入 DDD 的經驗分享,最後以職涯發展與學習經驗座談收尾。\n\n## 議程\n\n依 Accupass 活動頁議程規劃(7/6 週六 09:00 - 17:00):\n\n| 時間 | 講者 | 議程 |\n| --- | --- | --- |\n| 09:30 - 10:00 | KIM | 領域驅動設計概論導引 |\n| 10:00 - 11:00 | 神Q超人 | 領域驅動設計戰術內部物件的協作方式 |\n| 11:10 - 12:10 | Larry | 初探 DDD 與 Clean Architecture - 打造可測試的軟體系統 |\n| 13:10 - 14:10 | Michael | 領域故事化探索:從戰略到戰術精煉物件與領域模型管理 |\n| 14:20 - 15:20 | Sandy | 探索學習 DDD 後如何在現存專案上的應用與經驗分享 |\n| 15:40 - 16:50 | ALL | (公園長椅)職涯分享交流-每個階段的學習與經驗 |\n| 16:50 - 17:00 | - | Retro & QA |\n\n## 資料來源\n\n- [Accupass — 2024 DDDTour 高雄站](https://www.accupass.com/event/2405191413443338941360)",
   "startsAt": "2024-07-06T01:00:00.000Z",
   "endsAt": "2024-07-06T09:00:00.000Z",
   "venue": {
@@ -21,7 +21,7 @@
     {
       "speakerId": "kim-kao",
       "name": "Kim Kao",
-      "photoUrl": null,
+      "photoUrl": "/speakers/kim-kao.webp",
       "jobTitle": null,
       "bio": null,
       "topic": "Domain-Driven Design 概觀"
@@ -29,7 +29,7 @@
     {
       "speakerId": "shen-q-superman",
       "name": "神Q超人",
-      "photoUrl": null,
+      "photoUrl": "/speakers/shen-q-superman.jpg",
       "jobTitle": null,
       "bio": null,
       "topic": "DDD 戰術設計物件協作"

@@ -3,7 +3,7 @@
   "title": "2021 領域驅動設計年會 - 足跡(DDD Taiwan Conference 2021)",
   "bannerUrl": "/banners/dddtw-conference-2021.png",
   "summary": "第二屆年會,因疫情改為線上(GatherTown)舉行,主題「足跡」,收集各地 DDD 實踐者的故事。",
-  "fullDescriptionMd": "# 2021 領域驅動設計年會 - 足跡\n\n2021 年 10 月 15–16 日以 GatherTown 平台線上舉行。\n\n第一天為工作坊日(Domain Storytelling 工作坊、6 小時 Event Storming 工作坊),第二天為議程日,分為 DDD Foundation(基石)、Heuristics(啟發)、Footprints(足跡)三大主軸,強調「協作創造價值」,分享 DDD 與敏捷、團隊協作結合的實務經驗。\n\n## 資料來源\n\n- [KKTIX — DDDesign TW Conference 2021](https://dddtaiwan.kktix.cc/events/dddesigntwconference2021)\n- [官方網站(2021)](https://conference.ddd-tw.com/2021/)\n- [年會紀錄影片(YouTube)](https://www.youtube.com/watch?v=EIrwaIrfV5g)",
+  "fullDescriptionMd": "# 2021 領域驅動設計年會 - 足跡\n\n2021 年 10 月 15–16 日以 GatherTown 平台線上舉行。\n\n第一天為工作坊日(Domain Storytelling 工作坊、6 小時 Event Storming 工作坊),第二天為議程日,分為 DDD Foundation(基石)、Heuristics(啟發)、Footprints(足跡)三大主軸,強調「協作創造價值」,分享 DDD 與敏捷、團隊協作結合的實務經驗。\n\n## 議程\n\n### Day 1 - 10/15(五)工作坊日(兩軌並行)\n\n| 時間 | 工作坊 | 講者 |\n| --- | --- | --- |\n| 09:00 - 12:00 | 千錘百鍊-Event Storming(上) | Morty、李民偉(Ean)、鄭棋文、陳建均(Max) |\n| 09:00 - 12:00 | 在業務與技術相遇的十字路口探索系統設計 - Domain Storytelling(上) | 吳佳芷(Sandy)、劉鳯軒(Fong)、林鴻皓(River)、何松穎(Blues) |\n| 13:30 - 16:30 | 千錘百鍊-Event Storming(下) | Morty、李民偉(Ean)、鄭棋文、陳建均(Max) |\n| 13:30 - 16:30 | 在業務與技術相遇的十字路口探索系統設計 - Domain Storytelling(下) | 吳佳芷(Sandy)、劉鳯軒(Fong)、林鴻皓(River)、何松穎(Blues) |\n\n### Day 2 - 10/16(六)議程日(三軌:Foundation 基石 / Heuristics 啟發 / Footprints 足跡)\n\n| 時間 | 軌別 | 講者 | 講題 |\n| --- | --- | --- | --- |\n| 09:00 - 09:50 | 全場 | Julie Lerman | 一窺堂奧 - 領域驅動設計:是基於臨場務實還是有原則可參考?(Keynote) |\n| 10:10 - 11:00 | Foundation | Adam Dymitruk | 通過事件建模作為管理軟件開發生命週期的方式 |\n| 10:10 - 11:00 | Heuristics | 王威 | 領域驅動設計中的複雜性思維 |\n| 10:10 - 11:00 | Footprints | 高翊凱(Kim Kao) | 持續演進的架構 - 擁抱多元利害關係人視角 |\n| 11:20 - 12:10 | Foundation | 柯仁傑(David Ko) | 啟動敏捷轉型的工具箱 |\n| 11:20 - 12:10 | Heuristics | 張逸 | 領域驅動設計團隊實踐指南 |\n| 11:20 - 12:10 | Footprints | 李孟萱(Mia) | 從 0 開始,遊戲開發奧義:Agile x DDD |\n| 13:00 - 13:50 | Foundation | 劉鳯軒(Fong) | TDD, DDD, & BDD Well Explained |\n| 13:00 - 13:50 | Heuristics | 王鈞平(Rex Wang) | 應用現代化的步驟與實作 |\n| 13:00 - 13:50 | Footprints | 亢江妹 | 概念模型:What, Why and How |\n| 14:10 - 15:00 | Foundation | 簡維德 | 那一年,我們一起踩過的坑 |\n| 14:10 - 15:00 | Heuristics | 陸浩翔 | 以資料庫正規化分析需求開發模式走向 DDD 與微服務 |\n| 14:10 - 15:00 | Footprints | 張安邦 | 保險×DDD×中台×微服務-國泰產險 BeSafe 平台經驗分享 |\n| 15:20 - 16:10 | Foundation | Dr. Carola Lilienthal | 關乎於領域,親愛的!我在領域驅動設計 15 年當中的經驗 |\n| 15:20 - 16:10 | Heuristics | Dr. Stefan Hofer | 開發 Domain Storytelling:DDD 如何影響建模實作 |\n| 15:20 - 16:10 | Footprints | 張昀煒(Hermes) | 浴火重生!敏捷團隊重生模型(Agile Team Rising Model),從絕敗走向卓越 |\n| 16:30 - 17:20 | Foundation | Luca Mezzalira | 通過六邊形架構進化的 AWS Lambda |\n| 16:30 - 17:20 | Heuristics | Evelyn Van Kelle、Kenny Baas-Schwegler | 我們真的需要 Autonomy 嗎? |\n| 16:30 - 17:20 | Footprints | 陳建村(Teddy Chen) | 當 DCI 遇到 DDD |\n\n## 資料來源\n\n- [KKTIX — DDDesign TW Conference 2021](https://dddtaiwan.kktix.cc/events/dddesigntwconference2021)\n- [官方網站(2021)](https://conference.ddd-tw.com/2021/)\n- [年會紀錄影片(YouTube)](https://www.youtube.com/watch?v=EIrwaIrfV5g)\n- [GitHub — ddd-tw-conference/2021(議程與講者資料)](https://github.com/ddd-tw-conference/2021)",
   "startsAt": "2021-10-15T01:00:00.000Z",
   "endsAt": "2021-10-16T09:00:00.000Z",
   "venue": {
@@ -19,20 +19,220 @@
   ],
   "speakers": [
     {
+      "speakerId": "julie-lerman",
+      "name": "Julie Lerman",
+      "photoUrl": "/speakers/julie-lerman.jpg",
+      "jobTitle": null,
+      "bio": null,
+      "topic": "一窺堂奧 - 領域驅動設計:是基於臨場務實還是有原則可參考?(Keynote)"
+    },
+    {
+      "speakerId": "adam-dymitruk",
+      "name": "Adam Dymitruk",
+      "photoUrl": "/speakers/adam-dymitruk.jpg",
+      "jobTitle": null,
+      "bio": null,
+      "topic": "通過事件建模作為管理軟件開發生命週期的方式"
+    },
+    {
+      "speakerId": "wang-wei",
+      "name": "王威(David Wang)",
+      "photoUrl": "/speakers/wang-wei.jpg",
+      "jobTitle": null,
+      "bio": null,
+      "topic": "領域驅動設計中的複雜性思維"
+    },
+    {
+      "speakerId": "kim-kao",
+      "name": "高翊凱(Kim Kao)",
+      "photoUrl": "/speakers/kim-kao.webp",
+      "jobTitle": "AWS 資深解決方案架構師",
+      "bio": null,
+      "topic": "持續演進的架構 - 擁抱多元利害關係人視角"
+    },
+    {
+      "speakerId": "david-ko",
+      "name": "柯仁傑(David Ko)",
+      "photoUrl": "/speakers/david-ko.jpg",
+      "jobTitle": "Odd-e Agile Coach",
+      "bio": null,
+      "topic": "啟動敏捷轉型的工具箱"
+    },
+    {
       "speakerId": "zhang-yi",
       "name": "張逸",
-      "photoUrl": null,
-      "jobTitle": null,
+      "photoUrl": "/speakers/zhang-yi.jpg",
+      "jobTitle": "《解構領域驅動設計》作者、場量科技聯合創始人",
       "bio": null,
       "topic": "領域驅動設計團隊實踐指南"
     },
     {
-      "speakerId": "sandy-wu",
-      "name": "Sandy Wu",
-      "photoUrl": null,
+      "speakerId": "mia-lee",
+      "name": "李孟萱(Mia)",
+      "photoUrl": "/speakers/mia-lee.jpg",
       "jobTitle": null,
       "bio": null,
-      "topic": null
+      "topic": "從 0 開始,遊戲開發奧義:Agile x DDD"
+    },
+    {
+      "speakerId": "fong-liou",
+      "name": "劉鳯軒(Fong)",
+      "photoUrl": "/speakers/fong-liou.webp",
+      "jobTitle": null,
+      "bio": null,
+      "topic": "TDD, DDD, & BDD Well Explained;Domain Storytelling 工作坊"
+    },
+    {
+      "speakerId": "rex-wang",
+      "name": "王鈞平(Rex Wang)",
+      "photoUrl": "/speakers/rex-wang.jpg",
+      "jobTitle": "VMware 資深技術顧問",
+      "bio": null,
+      "topic": "應用現代化的步驟與實作"
+    },
+    {
+      "speakerId": "kang-jiang-mei",
+      "name": "亢江妹",
+      "photoUrl": "/speakers/kang-jiang-mei.jpg",
+      "jobTitle": "Lead Consultant",
+      "bio": null,
+      "topic": "概念模型:What, Why and How"
+    },
+    {
+      "speakerId": "wade-chien",
+      "name": "簡維德",
+      "photoUrl": "/speakers/wade-chien.jpg",
+      "jobTitle": "企業架構師",
+      "bio": null,
+      "topic": "那一年,我們一起踩過的坑"
+    },
+    {
+      "speakerId": "lu-hao-xiang",
+      "name": "陸浩翔",
+      "photoUrl": "/speakers/lu-hao-xiang.jpg",
+      "jobTitle": null,
+      "bio": null,
+      "topic": "以資料庫正規化分析需求開發模式走向 DDD 與微服務"
+    },
+    {
+      "speakerId": "chang-an-bang",
+      "name": "張安邦",
+      "photoUrl": "/speakers/chang-an-bang.jpg",
+      "jobTitle": null,
+      "bio": null,
+      "topic": "保險×DDD×中台×微服務-國泰產險 BeSafe 平台經驗分享"
+    },
+    {
+      "speakerId": "carola-lilienthal",
+      "name": "Dr. Carola Lilienthal",
+      "photoUrl": "/speakers/carola-lilienthal.jpg",
+      "jobTitle": "軟體架構師、作家",
+      "bio": null,
+      "topic": "關乎於領域,親愛的!我在領域驅動設計 15 年當中的經驗"
+    },
+    {
+      "speakerId": "stefan-hofer",
+      "name": "Dr. Stefan Hofer",
+      "photoUrl": "/speakers/stefan-hofer.jpg",
+      "jobTitle": "企業架構師",
+      "bio": null,
+      "topic": "開發 Domain Storytelling:DDD 如何影響建模實作"
+    },
+    {
+      "speakerId": "hermes-chang",
+      "name": "張昀煒(Hermes)",
+      "photoUrl": "/speakers/hermes-chang.jpg",
+      "jobTitle": null,
+      "bio": null,
+      "topic": "浴火重生!敏捷團隊重生模型(Agile Team Rising Model),從絕敗走向卓越"
+    },
+    {
+      "speakerId": "luca-mezzalira",
+      "name": "Luca Mezzalira",
+      "photoUrl": "/speakers/luca-mezzalira.jpg",
+      "jobTitle": null,
+      "bio": null,
+      "topic": "通過六邊形架構進化的 AWS Lambda"
+    },
+    {
+      "speakerId": "evelyn-van-kelle",
+      "name": "Evelyn Van Kelle",
+      "photoUrl": "/speakers/evelyn-van-kelle.jpg",
+      "jobTitle": null,
+      "bio": null,
+      "topic": "我們真的需要 Autonomy 嗎?(與 Kenny Baas-Schwegler 合講)"
+    },
+    {
+      "speakerId": "kenny-baas-schwegler",
+      "name": "Kenny Baas-Schwegler",
+      "photoUrl": "/speakers/kenny-baas-schwegler.jpg",
+      "jobTitle": null,
+      "bio": null,
+      "topic": "我們真的需要 Autonomy 嗎?(與 Evelyn Van Kelle 合講)"
+    },
+    {
+      "speakerId": "teddy-chen",
+      "name": "陳建村(Teddy Chen)",
+      "photoUrl": "/speakers/teddy-chen.jpg",
+      "jobTitle": "泰迪軟體創辦人、部落格「搞笑談軟工」版主",
+      "bio": null,
+      "topic": "當 DCI 遇到 DDD"
+    },
+    {
+      "speakerId": "morty",
+      "name": "Morty",
+      "photoUrl": "/speakers/morty.jpg",
+      "jobTitle": "DDDTW 志工",
+      "bio": null,
+      "topic": "千錘百鍊-Event Storming 工作坊(合帶)"
+    },
+    {
+      "speakerId": "ean-li",
+      "name": "李民偉(Ean)",
+      "photoUrl": "/speakers/ean-li.webp",
+      "jobTitle": "DDDTW 志工",
+      "bio": null,
+      "topic": "千錘百鍊-Event Storming 工作坊(合帶)"
+    },
+    {
+      "speakerId": "steven-cheng",
+      "name": "鄭棋文(Steven)",
+      "photoUrl": "/speakers/steven-cheng.jpg",
+      "jobTitle": "DDDTW 社群志工、車聯網軟體工程師",
+      "bio": null,
+      "topic": "千錘百鍊-Event Storming 工作坊(合帶)"
+    },
+    {
+      "speakerId": "max-chen",
+      "name": "陳建均(Max)",
+      "photoUrl": "/speakers/max-chen.jpg",
+      "jobTitle": "DDDTW 志工",
+      "bio": null,
+      "topic": "千錘百鍊-Event Storming 工作坊(合帶)"
+    },
+    {
+      "speakerId": "sandy-wu",
+      "name": "吳佳芷(Sandy Wu)",
+      "photoUrl": "/speakers/sandy-wu.jpg",
+      "jobTitle": "DDDTW 志工",
+      "bio": null,
+      "topic": "在業務與技術相遇的十字路口探索系統設計 - Domain Storytelling 工作坊(合帶)"
+    },
+    {
+      "speakerId": "river-lin",
+      "name": "林鴻皓(River)",
+      "photoUrl": "/speakers/river-lin.webp",
+      "jobTitle": "DDD 小志工",
+      "bio": null,
+      "topic": "在業務與技術相遇的十字路口探索系統設計 - Domain Storytelling 工作坊(合帶)"
+    },
+    {
+      "speakerId": "blues-ho",
+      "name": "何松穎(Blues)",
+      "photoUrl": "/speakers/blues-ho.jpg",
+      "jobTitle": "DDD 小志工",
+      "bio": null,
+      "topic": "在業務與技術相遇的十字路口探索系統設計 - Domain Storytelling 工作坊(合帶)"
     }
   ],
   "ticketTypes": []

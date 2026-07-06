@@ -21,7 +21,7 @@
     {
       "speakerId": "tung",
       "name": "Tung",
-      "photoUrl": null,
+      "photoUrl": "/speakers/tung.webp",
       "jobTitle": null,
       "bio": "DDDTW 核心志工",
       "topic": "n8n 入門實作工作坊"

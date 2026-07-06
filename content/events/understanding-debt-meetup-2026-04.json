@@ -21,7 +21,7 @@
     {
       "speakerId": "kim-kao",
       "name": "Kim Kao",
-      "photoUrl": null,
+      "photoUrl": "/speakers/kim-kao.webp",
       "jobTitle": null,
       "bio": null,
       "topic": "當 1+1 不再永遠等於 2:LLM 在領域模型中的能力與邊界"
@@ -29,7 +29,7 @@
     {
       "speakerId": "james-wang",
       "name": "James Wang",
-      "photoUrl": null,
+      "photoUrl": "/speakers/james-wang.jpg",
       "jobTitle": null,
       "bio": null,
       "topic": "AI 寫得快,你懂得慢:認知債、理解債與 DDD 工程紀律"
@@ -37,7 +37,7 @@
     {
       "speakerId": "blues-ho",
       "name": "何松穎(Blues/Holyblue)",
-      "photoUrl": null,
+      "photoUrl": "/speakers/blues-ho.jpg",
       "jobTitle": null,
       "bio": null,
       "topic": "在 AI 輔助開發中導入 OpenSpec 的實務經驗(以 Claude Code 為例)"

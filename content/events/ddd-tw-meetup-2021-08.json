@@ -21,7 +21,7 @@
     {
       "speakerId": "blues-ho",
       "name": "何松穎 Blues",
-      "photoUrl": null,
+      "photoUrl": "/speakers/blues-ho.jpg",
       "jobTitle": null,
       "bio": "DDDTW 社群志工",
       "topic": "年會海外講者介紹"
@@ -29,7 +29,7 @@
     {
       "speakerId": "river-lin",
       "name": "River",
-      "photoUrl": null,
+      "photoUrl": "/speakers/river-lin.webp",
       "jobTitle": null,
       "bio": "DDDTW 社群核心志工與講師",
       "topic": "年會海外講者介紹"
@@ -37,7 +37,7 @@
     {
       "speakerId": "max-chen",
       "name": "陳建均 Max",
-      "photoUrl": null,
+      "photoUrl": "/speakers/max-chen.jpg",
       "jobTitle": null,
       "bio": "DDDTW 社群志工",
       "topic": "年會海外講者介紹"
