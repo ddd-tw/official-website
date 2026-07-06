@@ -1,0 +1,20 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    container_name: dddtw-postgres
+    environment:
+      POSTGRES_USER: dddtw
+      POSTGRES_PASSWORD: dddtw
+      POSTGRES_DB: dddtw
+    ports:
+      - "5433:5432"
+    volumes:
+      - dddtw-pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U dddtw"]
+      interval: 3s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  dddtw-pgdata:

@@ -1,0 +1,44 @@
+meta {
+  name: 報名一般票(現場繳費)
+  type: http
+  seq: 8
+}
+
+post {
+  url: {{baseUrl}}/api/events/{{eventId}}/registrations
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "ticketTypeId": "{{generalTtId}}",
+    "attendee": {
+      "name": "Bruno 一般",
+      "email": "{{genEmail}}",
+      "phone": "0912345678",
+      "diet": "素"
+    }
+  }
+}
+
+script:pre-request {
+  bru.setVar("genEmail", `e2e-gen-${Date.now()}@example.com`);
+}
+
+assert {
+  res.status: eq 201
+}
+
+script:post-response {
+  bru.setVar("genRegistrationId", res.getBody().registrationId);
+}
+
+tests {
+  test("一般票直接 confirmed、待現場繳費、票券已核發(保留名額決議)", function () {
+    const reg = res.getBody();
+    expect(reg.status).to.equal("confirmed");
+    expect(reg.payment).to.equal("unpaid");
+    expect(reg.ticket.status).to.equal("issued");
+  });
+}

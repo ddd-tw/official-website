@@ -1,0 +1,19 @@
+{
+  "name": "dddtw-official-website",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:api": "bun run --cwd apps/api dev",
+    "dev:web": "bun run --cwd apps/web dev",
+    "db:up": "docker compose up -d postgres",
+    "db:migrate": "bun run --cwd apps/api db:migrate",
+    "db:seed": "bun run --cwd apps/api db:seed",
+    "test": "bun test",
+    "e2e": "cd e2e/bruno && bunx @usebruno/cli run . --env local",
+    "typecheck": "bun run --cwd apps/api typecheck && bun run --cwd apps/web typecheck"
+  }
+}

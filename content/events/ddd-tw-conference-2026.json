@@ -1,0 +1,74 @@
+{
+  "eventId": "ddd-tw-conference-2026",
+  "title": "DDD Taiwan Conference 2026",
+  "bannerUrl": "https://dddtaiwan.org/images/conf-2026-banner.png",
+  "summary": "台灣最大的 Domain-Driven Design 年度盛會 — 一整天的實戰演講、事件風暴工作坊與社群交流,帶你把 DDD 真正落地。",
+  "fullDescriptionMd": "# DDD Taiwan Conference 2026\n\n一年一度的 DDD Taiwan 年會回來了!今年我們以 **「讓模型落地」** 為主軸,邀請多位第一線實踐者,分享從事件風暴、限界上下文切分到 Legacy 系統演進的實戰經驗。\n\n## 你將收穫\n\n- 事件風暴(Event Storming)實戰工作坊\n- 限界上下文與微服務邊界的取捨\n- Legacy 系統的絞殺者模式演進策略\n- 與台灣 DDD 社群夥伴面對面交流\n\n## 議程\n\n| 時間 | 內容 |\n| --- | --- |\n| 09:00 | 報到入場 |\n| 09:30 | Keynote:讓模型落地 |\n| 11:00 | 事件風暴工作坊 |\n| 13:30 | 分軌演講 |\n| 17:00 | Closing & 抽獎 |\n\n> 名額有限,志工票需審核通過後核發票券;一般票採現場繳費。",
+  "startsAt": "2026-09-12T01:00:00.000Z",
+  "endsAt": "2026-09-12T09:00:00.000Z",
+  "venue": {
+    "kind": "onsite",
+    "address": "台北市大安區復興南路一段 390 號 2 樓(集思交通部國際會議中心)",
+    "meetingUrl": null
+  },
+  "status": "published",
+  "tags": ["ddd", "conference", "event-storming", "taipei"],
+  "speakers": [
+    {
+      "speakerId": "michael-chen",
+      "name": "Michael Chen",
+      "photoUrl": "https://dddtaiwan.org/images/speakers/michael-chen.jpg",
+      "jobTitle": "Principal Architect @ FinTech Startup",
+      "bio": "十五年軟體架構經驗,近年專注於以 DDD 重塑金融核心系統,DDD Taiwan 社群核心成員。",
+      "topic": "讓模型落地:從事件風暴到可部署的限界上下文"
+    },
+    {
+      "speakerId": "sandy-lin",
+      "name": "Sandy Lin",
+      "photoUrl": "https://dddtaiwan.org/images/speakers/sandy-lin.jpg",
+      "jobTitle": "Staff Engineer @ E-commerce Platform",
+      "bio": "電商平台資深工程師,擅長以 CQRS 與事件溯源處理高流量交易系統。",
+      "topic": "CQRS 在高流量訂單系統的實戰取捨"
+    },
+    {
+      "speakerId": "kenta-wu",
+      "name": "Kenta Wu",
+      "photoUrl": "https://dddtaiwan.org/images/speakers/kenta-wu.jpg",
+      "jobTitle": "Engineering Manager @ SaaS Company",
+      "bio": "帶領團隊以絞殺者模式逐步替換十年 Legacy 單體,熱衷分享演進式架構經驗。",
+      "topic": "絞殺者無花果:Legacy 系統的 DDD 演進之路"
+    }
+  ],
+  "ticketTypes": [
+    {
+      "ticketTypeId": "conf-2026-general",
+      "name": "一般票",
+      "description": "含全日議程、午餐與大會紀念品。現場繳費。",
+      "price": 800,
+      "quota": 200,
+      "salesOpensAt": "2026-06-01T00:00:00.000Z",
+      "salesClosesAt": "2026-09-05T15:59:59.000Z",
+      "requiresApproval": false
+    },
+    {
+      "ticketTypeId": "conf-2026-volunteer",
+      "name": "志工票",
+      "description": "免費;需填寫申請理由,審核通過後核發票券。",
+      "price": 0,
+      "quota": 20,
+      "salesOpensAt": "2026-06-01T00:00:00.000Z",
+      "salesClosesAt": "2026-08-15T15:59:59.000Z",
+      "requiresApproval": true
+    },
+    {
+      "ticketTypeId": "conf-2026-early-bird",
+      "name": "早鳥票",
+      "description": "限量早鳥優惠,售完為止。",
+      "price": 600,
+      "quota": 0,
+      "salesOpensAt": "2026-05-01T00:00:00.000Z",
+      "salesClosesAt": "2026-09-05T15:59:59.000Z",
+      "requiresApproval": false
+    }
+  ]
+}

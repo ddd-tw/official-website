@@ -1,0 +1,23 @@
+# Zeabur service name: api
+FROM oven/bun:1-alpine
+
+WORKDIR /app
+
+# Install with the whole workspace manifest set (lockfile integrity)
+COPY package.json bun.lock ./
+COPY apps/api/package.json apps/api/
+COPY apps/web/package.json apps/web/
+COPY packages/contracts/package.json packages/contracts/
+RUN bun install --frozen-lockfile --production
+
+# Preserve repo layout: src resolves content/ and db/ via import.meta.url
+COPY packages/contracts packages/contracts
+COPY apps/api apps/api
+COPY content content
+COPY db db
+
+ENV NODE_ENV=production
+WORKDIR /app/apps/api
+
+# Migrate + sync ticket types from content (idempotent), then serve
+CMD ["sh", "-c", "bun run src/scripts/migrate.ts && bun run src/scripts/seed.ts && exec bun run src/main.ts"]

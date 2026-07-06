@@ -1,0 +1,34 @@
+meta {
+  name: 04 後台核准志工票
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{baseUrl}}/api/admin/registrations/{{volRegistrationId}}/approve
+  body: none
+  auth: none
+}
+
+headers {
+  x-admin-token: {{adminToken}}
+}
+
+assert {
+  res.status: eq 200
+}
+
+script:post-response {
+  const reg = res.getBody();
+  bru.setVar("qrToken", reg.ticket ? reg.ticket.qrToken : "");
+}
+
+tests {
+  test("核准後 confirmed 並核發簽章票券", function () {
+    const reg = res.getBody();
+    expect(reg.status).to.equal("confirmed");
+    expect(reg.ticket).to.not.equal(null);
+    expect(reg.ticket.status).to.equal("issued");
+    expect(reg.ticket.qrToken).to.include(".");
+  });
+}
