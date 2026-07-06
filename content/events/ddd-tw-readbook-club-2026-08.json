@@ -1,0 +1,38 @@
+{
+  "eventId": "ddd-tw-readbook-club-2026-08",
+  "title": "DDD TW 讀書會:Learning Domain-Driven Design 第八章",
+  "bannerUrl": null,
+  "summary": "線上讀書會 — 一起精讀 Vlad Khononov《Learning Domain-Driven Design》,本月主題:Architectural Patterns。",
+  "fullDescriptionMd": "# DDD TW 線上讀書會\n\n本月我們共讀 **Learning Domain-Driven Design** 第八章 *Architectural Patterns*,由導讀人整理重點後進行小組討論。\n\n- 分層架構 vs. Ports & Adapters vs. CQRS\n- 什麼時候該用哪一種?\n- 案例討論:報名系統的架構選型\n\n免費參加,線上進行(Google Meet 連結將於報名確認信提供)。",
+  "startsAt": "2026-08-20T12:30:00.000Z",
+  "endsAt": "2026-08-20T14:30:00.000Z",
+  "venue": {
+    "kind": "online",
+    "address": null,
+    "meetingUrl": null
+  },
+  "status": "published",
+  "tags": ["ddd", "book-club", "online"],
+  "speakers": [
+    {
+      "speakerId": "ariel-huang",
+      "name": "Ariel Huang",
+      "photoUrl": null,
+      "jobTitle": "Backend Engineer",
+      "bio": "DDD Taiwan 讀書會導讀志工,喜歡把厚書讀薄。",
+      "topic": "Architectural Patterns 導讀"
+    }
+  ],
+  "ticketTypes": [
+    {
+      "ticketTypeId": "bookclub-2026-08-online",
+      "name": "線上參加",
+      "description": "免費線上參加,額滿為止。",
+      "price": 0,
+      "quota": 50,
+      "salesOpensAt": "2026-07-01T00:00:00.000Z",
+      "salesClosesAt": "2026-08-20T12:00:00.000Z",
+      "requiresApproval": false
+    }
+  ]
+}

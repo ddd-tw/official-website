@@ -1,0 +1,35 @@
+meta {
+  name: 售罄票種擋單(SQL 不變量)
+  type: http
+  seq: 10
+}
+
+post {
+  url: {{baseUrl}}/api/events/{{eventId}}/registrations
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "ticketTypeId": "{{soldOutTtId}}",
+    "attendee": {
+      "name": "Bruno 撲空",
+      "email": "{{lateEmail}}"
+    }
+  }
+}
+
+script:pre-request {
+  bru.setVar("lateEmail", `e2e-late-${Date.now()}@example.com`);
+}
+
+assert {
+  res.status: eq 409
+}
+
+tests {
+  test("reserved <= quota 不變量:回 409 SOLD_OUT", function () {
+    expect(res.getBody().error.code).to.equal("SOLD_OUT");
+  });
+}

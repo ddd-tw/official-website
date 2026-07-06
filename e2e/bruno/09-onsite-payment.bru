@@ -1,0 +1,25 @@
+meta {
+  name: 現場繳費登記
+  type: http
+  seq: 9
+}
+
+post {
+  url: {{baseUrl}}/api/admin/registrations/{{genRegistrationId}}/onsite-payment
+  body: none
+  auth: none
+}
+
+headers {
+  x-admin-token: {{adminToken}}
+}
+
+assert {
+  res.status: eq 200
+}
+
+tests {
+  test("繳費後 payment = paid_onsite", function () {
+    expect(res.getBody().payment).to.equal("paid_onsite");
+  });
+}

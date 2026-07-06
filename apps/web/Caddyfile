@@ -1,0 +1,14 @@
+:{$PORT:8080} {
+	encode gzip
+
+	handle /api/* {
+		# Zeabur private networking: the backend service is named "api"
+		reverse_proxy {$API_ORIGIN:api.zeabur.internal:3000}
+	}
+
+	handle {
+		root * /srv
+		try_files {path} /index.html
+		file_server
+	}
+}

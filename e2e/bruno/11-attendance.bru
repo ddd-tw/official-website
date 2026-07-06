@@ -1,0 +1,28 @@
+meta {
+  name: 報到統計
+  type: http
+  seq: 11
+}
+
+get {
+  url: {{baseUrl}}/api/checkin/events/{{eventId}}/attendance
+  body: none
+  auth: none
+}
+
+headers {
+  x-admin-token: {{adminToken}}
+}
+
+assert {
+  res.status: eq 200
+}
+
+tests {
+  test("已入場人數 >= 1(步驟 5 的志工)", function () {
+    const stats = res.getBody();
+    expect(stats.checkedIn).to.be.greaterThan(0);
+    expect(stats.confirmedTotal).to.be.greaterThan(0);
+    expect(stats.byTicketType.length).to.be.greaterThan(0);
+  });
+}

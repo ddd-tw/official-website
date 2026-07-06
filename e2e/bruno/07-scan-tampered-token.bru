@@ -1,0 +1,32 @@
+meta {
+  name: 竄改票券驗不過
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{baseUrl}}/api/checkin/scan
+  body: json
+  auth: none
+}
+
+headers {
+  x-admin-token: {{adminToken}}
+}
+
+body:json {
+  {
+    "qrToken": "{{qrToken}}tampered",
+    "gate": "e2e-gate"
+  }
+}
+
+assert {
+  res.status: eq 200
+}
+
+tests {
+  test("簽章驗證失敗 → invalid", function () {
+    expect(res.getBody().result).to.equal("invalid");
+  });
+}

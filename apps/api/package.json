@@ -1,0 +1,22 @@
+{
+  "name": "@dddtw/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "bun run --watch src/main.ts",
+    "start": "bun run src/main.ts",
+    "db:migrate": "bun run src/scripts/migrate.ts",
+    "db:seed": "bun run src/scripts/seed.ts",
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "bun test"
+  },
+  "dependencies": {
+    "@dddtw/contracts": "workspace:*",
+    "hono": "^4"
+  },
+  "devDependencies": {
+    "@types/bun": "^1",
+    "typescript": "^5"
+  }
+}
