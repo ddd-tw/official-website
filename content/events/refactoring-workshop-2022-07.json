@@ -1,0 +1,18 @@
+{
+  "eventId": "refactoring-workshop-2022-07",
+  "title": "【DDDTW 7月 Workshop】透過 Refactoring 來面對需求異動的挑戰!",
+  "bannerUrl": null,
+  "summary": "線上重構工作坊,以 Refactoring Kata 練習為遺留義大利麵程式碼加上測試保護並重構出分層架構。",
+  "fullDescriptionMd": "# 【DDDTW 7月 Workshop】透過 Refactoring 來面對需求異動的挑戰!\n\n2022 年 7 月 23 日 13:00–17:00 以線上方式舉行,為社群 TDD/BDD/Refactor 三部曲的第三部。\n\n以 Refactoring Kata 對遺留的義大利麵程式碼進行實作練習:先建立測試保護,再運用重構技巧與分層架構讓程式碼足以面對需求異動。Kata 以 C# 進行。\n\n## 資料來源\n\n- [Accupass — 【DDDTW 7月 Workshop】透過 Refactoring 來面對需求異動的挑戰!](https://www.accupass.com/event/2207131242191295727340)",
+  "startsAt": "2022-07-23T05:00:00.000Z",
+  "endsAt": "2022-07-23T09:00:00.000Z",
+  "venue": {
+    "kind": "online",
+    "address": null,
+    "meetingUrl": null
+  },
+  "status": "ended",
+  "tags": ["workshop", "refactoring", "online", "history"],
+  "speakers": [],
+  "ticketTypes": []
+}

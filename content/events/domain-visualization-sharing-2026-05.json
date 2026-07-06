@@ -1,0 +1,27 @@
+{
+  "eventId": "domain-visualization-sharing-2026-05",
+  "title": "這些不是設計,是「我們」的共識",
+  "bannerUrl": null,
+  "summary": "線上短講:Generative UI 時代的 Domain Visualization,將 UX 流程對映到系統行為與領域事件,建立跨角色共識。",
+  "fullDescriptionMd": "# 這些不是設計,是「我們」的共識\n\n2026 年 5 月 16 日 19:00–19:40 以線上方式舉行。\n\n由資深 UX 設計師 Ariel Fang 分享 Generative UI 時代的 Domain Visualization:如何將 UX 流程對映到系統行為與領域事件,建立跨角色的共同理解。\n\n## 資料來源\n\n- [Accupass — 這些不是設計,是「我們」的共識](https://www.accupass.com/event/2605040728061654670738)",
+  "startsAt": "2026-05-16T11:00:00.000Z",
+  "endsAt": "2026-05-16T11:40:00.000Z",
+  "venue": {
+    "kind": "online",
+    "address": null,
+    "meetingUrl": null
+  },
+  "status": "ended",
+  "tags": ["meetup", "online", "ux", "history"],
+  "speakers": [
+    {
+      "speakerId": "ariel-fang",
+      "name": "Ariel Fang",
+      "photoUrl": null,
+      "jobTitle": "資深 UX 設計師",
+      "bio": null,
+      "topic": "Generative UI 時代的 Domain Visualization"
+    }
+  ],
+  "ticketTypes": []
+}

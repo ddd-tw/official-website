@@ -1,0 +1,35 @@
+{
+  "eventId": "cloud-native-deploy-sharing-2024",
+  "title": "橫跨開發與維運的雲原生應用部署平台:有效解決部署過程的溝通問題",
+  "bannerUrl": null,
+  "summary": "技術分享會,介紹可滿足整個軟體開發週期部署需求、並能配合現有 CI/CD 工具的開發運維協作工具。",
+  "fullDescriptionMd": "# 橫跨開發與維運的雲原生應用部署平台\n\n2024 年 1 月 11 日 19:00–21:00 於天瓏書局舉行。\n\n議程主題為「奔騰網路開發運維協作工具介紹」:軟體在開發、測試或正式發布往往需要使用不同的工具部署,造成工具轉換與溝通上的時間成本。本次活動介紹一個可以滿足整個軟體開發週期部署需求、亦能配合團隊現有 CI/CD 工具的開發運維協作工具,適合有部署需求的開發團隊人員參加。\n\n## 資料來源\n\n- [KKTIX — 橫跨開發與維運的雲原生應用部署平台](https://dddtaiwan.kktix.cc/events/cloud-native-deploy)",
+  "startsAt": "2024-01-11T11:00:00.000Z",
+  "endsAt": "2024-01-11T13:00:00.000Z",
+  "venue": {
+    "kind": "onsite",
+    "address": "台北市中正區重慶南路一段105號 天瓏書局",
+    "meetingUrl": null
+  },
+  "status": "ended",
+  "tags": ["meetup", "devops", "history"],
+  "speakers": [
+    {
+      "speakerId": "kuo-hsin-yi",
+      "name": "郭信義",
+      "photoUrl": null,
+      "jobTitle": "奔騰網路科技技術長",
+      "bio": null,
+      "topic": "奔騰網路開發運維協作工具介紹"
+    },
+    {
+      "speakerId": "shen-chia-yu",
+      "name": "沈嘉祐",
+      "photoUrl": null,
+      "jobTitle": "奔騰網路科技產品經理",
+      "bio": null,
+      "topic": "奔騰網路開發運維協作工具介紹"
+    }
+  ],
+  "ticketTypes": []
+}

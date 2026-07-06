@@ -1,0 +1,43 @@
+{
+  "eventId": "ddd-tw-meetup-2021-05",
+  "title": "【DDD TW 5月 Meetup 聚會】初探 Domain Storytelling",
+  "bannerUrl": null,
+  "summary": "線上聚會,介紹 Domain Storytelling 方法的圖示語言、與 DDD 的搭配及劃分邊界技巧,並安排線上分組工作坊。",
+  "fullDescriptionMd": "# 【DDD TW 5月 Meetup 聚會】初探 Domain Storytelling\n\n2021 年 5 月 29 日 14:00–16:00 以 Zoom 線上方式舉行。\n\nDomain Storytelling 是由 Stefan Hofer 與 Henning Schwentner 提出、用於幫助團隊學習領域知識的方法。本次聚會介紹第一個領域故事、圖示語言、與 DDD 的搭配及劃分服務邊界的技巧,並安排線上分組工作坊與成果展示。適合工程師、PM、主管與 BA 等非技術人員。\n\n## 資料來源\n\n- [KKTIX — 【DDD TW 5月 Meetup 聚會】初探 Domain Storytelling](https://dddtaiwan.kktix.cc/events/2021-05-meetup)",
+  "startsAt": "2021-05-29T06:00:00.000Z",
+  "endsAt": "2021-05-29T08:00:00.000Z",
+  "venue": {
+    "kind": "online",
+    "address": null,
+    "meetingUrl": null
+  },
+  "status": "ended",
+  "tags": ["meetup", "online", "domain-storytelling", "history"],
+  "speakers": [
+    {
+      "speakerId": "james-wang",
+      "name": "James Wang",
+      "photoUrl": null,
+      "jobTitle": null,
+      "bio": "DDDTW 社群志工",
+      "topic": "初探 Domain Storytelling(合講)"
+    },
+    {
+      "speakerId": "blues-ho",
+      "name": "何松穎 Blues",
+      "photoUrl": null,
+      "jobTitle": null,
+      "bio": "DDDTW 社群志工",
+      "topic": "初探 Domain Storytelling(合講)"
+    },
+    {
+      "speakerId": "sandy-wu",
+      "name": "吳佳芷 Sandy",
+      "photoUrl": null,
+      "jobTitle": null,
+      "bio": "DDDTW 志工,任職於金融業資訊部門並擔任開發部門小組長",
+      "topic": "初探 Domain Storytelling(合講)"
+    }
+  ],
+  "ticketTypes": []
+}

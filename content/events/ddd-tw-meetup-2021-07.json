@@ -1,0 +1,51 @@
+{
+  "eventId": "ddd-tw-meetup-2021-07",
+  "title": "【DDD TW 7月 Meetup 聚會】Event Storming 的奧義之-王者再臨!",
+  "bannerUrl": null,
+  "summary": "以 Gather Town 進行的線上沙龍,透過 Event Storming(Big Picture 模式)工作坊幫助跨部門溝通、看見業務全貌。",
+  "fullDescriptionMd": "# 【DDD TW 7月 Meetup 聚會】Event Storming 的奧義之-王者再臨!\n\n2021 年 7 月 24 日 14:00–17:00 於線上平台 Gather Town 舉行,採沙龍形式強調多動手、多討論。\n\n內容包含 DDD 入門簡介、精華版 Event Storming(Big Picture 模式)與 Gather Town 線上協作,幫助參與者在追需求時切中問題核心、擊破部門間的專業穀倉。由社群志工何松穎(Blues)、Morty、陳建均(Max)與水球潘共同帶領。\n\n## 資料來源\n\n- [KKTIX — 【DDD TW 7月 Meetup 聚會】Event Storming 的奧義](https://dddtaiwan.kktix.cc/events/2021-07-meetup)",
+  "startsAt": "2021-07-24T06:00:00.000Z",
+  "endsAt": "2021-07-24T09:00:00.000Z",
+  "venue": {
+    "kind": "online",
+    "address": null,
+    "meetingUrl": null
+  },
+  "status": "ended",
+  "tags": ["meetup", "online", "event-storming", "history"],
+  "speakers": [
+    {
+      "speakerId": "blues-ho",
+      "name": "何松穎 Blues",
+      "photoUrl": null,
+      "jobTitle": null,
+      "bio": "DDDTW 社群志工",
+      "topic": "Event Storming(Big Picture)線上工作坊"
+    },
+    {
+      "speakerId": "morty",
+      "name": "Morty",
+      "photoUrl": null,
+      "jobTitle": null,
+      "bio": "DDDTW 社群志工",
+      "topic": "Event Storming(Big Picture)線上工作坊"
+    },
+    {
+      "speakerId": "max-chen",
+      "name": "陳建均 Max",
+      "photoUrl": null,
+      "jobTitle": null,
+      "bio": "DDDTW 社群志工",
+      "topic": "Event Storming(Big Picture)線上工作坊"
+    },
+    {
+      "speakerId": "waterball-pan",
+      "name": "水球潘",
+      "photoUrl": null,
+      "jobTitle": null,
+      "bio": "專研軟體設計、物件導向以及程式教育",
+      "topic": "Event Storming(Big Picture)線上工作坊"
+    }
+  ],
+  "ticketTypes": []
+}

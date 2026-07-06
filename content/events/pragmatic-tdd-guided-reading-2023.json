@@ -1,0 +1,27 @@
+{
+  "eventId": "pragmatic-tdd-guided-reading-2023",
+  "title": "202311 Pragmatic TDD 導讀會:快速掌握以領域驅動設計寫出高品質程式碼的核心觀念",
+  "bannerUrl": null,
+  "summary": "《Pragmatic TDD》繁中版譯者莊志弘親自導讀,90 分鐘掌握 TDD 與 DDD 如何聯手提升程式碼品質。",
+  "fullDescriptionMd": "# 202311 Pragmatic TDD 導讀會\n\n2023 年 11 月 6 日 19:30–21:00 於天瓏書局舉行。\n\n由《Pragmatic TDD:以 DDD 寫出鬆散耦合、文件化和高品質的程式碼》一書譯者莊志弘親自帶領的 1.5 小時導讀會,涵蓋單元測試、實用框架、設計模式與領域驅動設計的整合,幫助參與者在短時間內把握 TDD 和 DDD 的核心精神與兩者相輔相成的效果。\n\n## 資料來源\n\n- [KKTIX — 202311 Pragmatic TDD 導讀會](https://dddtaiwan.kktix.cc/events/202311pragmatictdd)",
+  "startsAt": "2023-11-06T11:30:00.000Z",
+  "endsAt": "2023-11-06T13:00:00.000Z",
+  "venue": {
+    "kind": "onsite",
+    "address": "台北市中正區重慶南路一段105號 天瓏書局",
+    "meetingUrl": null
+  },
+  "status": "ended",
+  "tags": ["study-group", "tdd", "history"],
+  "speakers": [
+    {
+      "speakerId": "chuang-chih-hung",
+      "name": "莊志弘",
+      "photoUrl": null,
+      "jobTitle": "主廚的軟體廚房有限公司創辦人",
+      "bio": "「軟體主廚的程式料理廚房」部落格經營者,連續七次當選微軟最有價值專家(MVP),《Pragmatic TDD》繁體中文版譯者",
+      "topic": "Pragmatic TDD:以領域驅動設計寫出鬆散耦合、文件化和高品質的程式碼"
+    }
+  ],
+  "ticketTypes": []
+}

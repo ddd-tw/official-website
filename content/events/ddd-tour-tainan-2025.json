@@ -1,0 +1,35 @@
+{
+  "eventId": "ddd-tour-tainan-2025",
+  "title": "9月 DDD Tour(台南站)",
+  "bannerUrl": null,
+  "summary": "全日台南巡迴場:上午探討你真的需要整潔架構嗎?下午為 n8n 入門實作工作坊。",
+  "fullDescriptionMd": "# 9月 DDD Tour(台南站)\n\n2025 年 9 月 6 日 08:30–17:20 於台南好想工作室(友愛市場二樓)舉行,門票完售。\n\n- 上午:你真的需要 Clean Architecture 嗎?其實掌握核心原則就夠了(Hexagonal/Onion/Clean Architecture)— Fong Liou\n- 下午:n8n 入門實作工作坊(Line、Google Sheets、Google Calendar 整合)— Tung\n\n## 資料來源\n\n- [Accupass — 9月DDD Tour(台南站)](https://www.accupass.com/event/2506291300029327668050)",
+  "startsAt": "2025-09-06T00:30:00.000Z",
+  "endsAt": "2025-09-06T09:20:00.000Z",
+  "venue": {
+    "kind": "onsite",
+    "address": "台南市中西區友愛街117號2樓 好想工作室(友愛市場二樓)",
+    "meetingUrl": null
+  },
+  "status": "ended",
+  "tags": ["workshop", "tainan", "history"],
+  "speakers": [
+    {
+      "speakerId": "fong-liou",
+      "name": "Fong Liou",
+      "photoUrl": null,
+      "jobTitle": null,
+      "bio": null,
+      "topic": "你真的需要 Clean Architecture 嗎?其實掌握核心原則就夠了"
+    },
+    {
+      "speakerId": "tung",
+      "name": "Tung",
+      "photoUrl": null,
+      "jobTitle": null,
+      "bio": "DDDTW 核心志工",
+      "topic": "n8n 入門實作工作坊"
+    }
+  ],
+  "ticketTypes": []
+}

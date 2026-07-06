@@ -1,0 +1,91 @@
+{
+  "eventId": "dddtw-tour-tainan-2022",
+  "title": "DDDTW Tour - 府城站(2022)",
+  "bannerUrl": null,
+  "summary": "全日台南巡迴場,議程涵蓋 User Story Mapping、軟體架構設計、GOOS + Supple Design、Container 與 Wardley Mapping,並提供 YouTube 線上直播。",
+  "fullDescriptionMd": "# DDDTW Tour - 府城站(2022)\n\n2022 年 12 月 17 日 09:00–17:00 於台南好想工作室舉行,並同步以 YouTube 提供線上票直播。\n\n## 議程\n\n- User Story Mapping\n- 從領域知識到設計軟體架構\n- GOOS + Supple Design\n- Container and Cloud Native\n- Wardley Mapping\n\n活動來賓包含張國昭(小張)、高翊凱 Kim Kao(AWS)、Sandy、Bruce、James Wang、Sian(Mayo)、林鴻皓 River、李民偉 Ean Lee、Morty。\n\n## 資料來源\n\n- [Accupass — DDDTW Tour - 府城站](https://www.accupass.com/event/2212020150565678351390)",
+  "startsAt": "2022-12-17T01:00:00.000Z",
+  "endsAt": "2022-12-17T09:00:00.000Z",
+  "venue": {
+    "kind": "onsite",
+    "address": "台南市東區北門路二段16號 L2A 好想工作室",
+    "meetingUrl": null
+  },
+  "status": "ended",
+  "tags": ["workshop", "tainan", "history"],
+  "speakers": [
+    {
+      "speakerId": "arthur-chang",
+      "name": "張國昭(小張)",
+      "photoUrl": null,
+      "jobTitle": "Co-Founder, DDDTW",
+      "bio": null,
+      "topic": null
+    },
+    {
+      "speakerId": "kim-kao",
+      "name": "高翊凱 Kim Kao",
+      "photoUrl": null,
+      "jobTitle": "AWS 解決方案架構師",
+      "bio": null,
+      "topic": null
+    },
+    {
+      "speakerId": "sandy-wu",
+      "name": "Sandy",
+      "photoUrl": null,
+      "jobTitle": null,
+      "bio": null,
+      "topic": null
+    },
+    {
+      "speakerId": "bruce",
+      "name": "Bruce",
+      "photoUrl": null,
+      "jobTitle": "Scrum Master",
+      "bio": null,
+      "topic": null
+    },
+    {
+      "speakerId": "james-wang",
+      "name": "James Wang",
+      "photoUrl": null,
+      "jobTitle": null,
+      "bio": null,
+      "topic": null
+    },
+    {
+      "speakerId": "sian",
+      "name": "Sian",
+      "photoUrl": null,
+      "jobTitle": "Mayo",
+      "bio": null,
+      "topic": null
+    },
+    {
+      "speakerId": "river-lin",
+      "name": "林鴻皓 River",
+      "photoUrl": null,
+      "jobTitle": null,
+      "bio": null,
+      "topic": null
+    },
+    {
+      "speakerId": "ean-li",
+      "name": "李民偉 Ean Lee",
+      "photoUrl": null,
+      "jobTitle": null,
+      "bio": null,
+      "topic": null
+    },
+    {
+      "speakerId": "morty",
+      "name": "Morty",
+      "photoUrl": null,
+      "jobTitle": null,
+      "bio": null,
+      "topic": null
+    }
+  ],
+  "ticketTypes": []
+}

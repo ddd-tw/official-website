@@ -1,0 +1,35 @@
+{
+  "eventId": "ai-vibe-coding-workshop-2025-07",
+  "title": "AI x Vibe Coding x 協同開發實戰工作坊",
+  "bannerUrl": null,
+  "summary": "實戰工作坊,讓 AI 成為可控的團隊成員:協同開發、測試、文件與 Vibe Coding,以 C#/.NET 範例實作。",
+  "fullDescriptionMd": "# AI x Vibe Coding x 協同開發實戰工作坊\n\n2025 年 7 月 19 日 13:30–17:30 於 The Happ 合歡分館(台北車站,台北市中正區忠孝西路一段50號B3樓-B302房)舉行。\n\n主題為如何讓 AI 成為可控的團隊成員:\n\n- Talk 1:AI 開發現況與團隊落地挑戰 — Arthur(張國昭)\n- Talk 2:與 AI 共舞:協同開發 × 測試 × 文件 × Vibe Coding — Ean(DDDTW 核心志工)\n\n以 C#/.NET 範例搭配 Copilot、Cursor、Roo Code 等工具實作。\n\n## 資料來源\n\n- [Accupass — AI x Vibe Coding x 協同開發實戰工作坊](https://www.accupass.com/event/2507101041127942338100)",
+  "startsAt": "2025-07-19T05:30:00.000Z",
+  "endsAt": "2025-07-19T09:30:00.000Z",
+  "venue": {
+    "kind": "onsite",
+    "address": "台北市中正區忠孝西路一段50號B3樓-B302房 The Happ 合歡分館",
+    "meetingUrl": null
+  },
+  "status": "ended",
+  "tags": ["workshop", "ai", "history"],
+  "speakers": [
+    {
+      "speakerId": "arthur-chang",
+      "name": "Arthur(張國昭)",
+      "photoUrl": null,
+      "jobTitle": null,
+      "bio": "DDDTW Community 共同創辦人",
+      "topic": "AI 開發現況與團隊落地挑戰"
+    },
+    {
+      "speakerId": "ean-li",
+      "name": "Ean",
+      "photoUrl": null,
+      "jobTitle": null,
+      "bio": "DDDTW 核心志工",
+      "topic": "與 AI 共舞:協同開發 × 測試 × 文件 × Vibe Coding"
+    }
+  ],
+  "ticketTypes": []
+}

@@ -1,0 +1,27 @@
+{
+  "eventId": "bdd-workshop-2022-06",
+  "title": "【DDDTW 6月 Workshop】用 BDD 把共識變成剛好的測試!",
+  "bannerUrl": null,
+  "summary": "線上工作坊,從需求出發以 Example Mapping 與規格實例化寫出「剛好」的 BDD 測試。",
+  "fullDescriptionMd": "# 【DDDTW 6月 Workshop】用 BDD 把共識變成剛好的測試!\n\n2022 年 6 月 11 日 13:30–17:30 以線上方式(Gather Town + Zoom)舉行,屬中階工作坊。\n\n內容聚焦如何從需求寫出「剛好」的測試:透過 Example Mapping 與 Specification by Example 凝聚共識,再以 BDD 風格撰寫測試,並可銜接 TDD 開發流程。\n\n## 資料來源\n\n- [Accupass — 【DDDTW 6月 Workshop】用 BDD 把共識變成剛好的測試!](https://www.accupass.com/event/2205180639171002907467)",
+  "startsAt": "2022-06-11T05:30:00.000Z",
+  "endsAt": "2022-06-11T09:30:00.000Z",
+  "venue": {
+    "kind": "online",
+    "address": null,
+    "meetingUrl": null
+  },
+  "status": "ended",
+  "tags": ["workshop", "bdd", "online", "history"],
+  "speakers": [
+    {
+      "speakerId": "fong-liou",
+      "name": "Fong Liou",
+      "photoUrl": null,
+      "jobTitle": "Senior Engineer, Appier",
+      "bio": null,
+      "topic": "用 BDD 把共識變成剛好的測試!"
+    }
+  ],
+  "ticketTypes": []
+}

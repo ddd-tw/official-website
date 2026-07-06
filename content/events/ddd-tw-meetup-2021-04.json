@@ -1,0 +1,43 @@
+{
+  "eventId": "ddd-tw-meetup-2021-04",
+  "title": "【DDD TW 4月 Meetup 聚會】DDD 15週年新書發表會",
+  "bannerUrl": null,
+  "summary": "社群志工協力完成《Domain-Driven Design: The First 15 Years》中譯版的新書發表聚會,三位講者導覽歐洲社群專家的 DDD 觀點。",
+  "fullDescriptionMd": "# 【DDD TW 4月 Meetup 聚會】DDD 15週年新書發表會\n\n2021 年 4 月 13 日 19:00–22:00 於 AWS 辦公室(微風南山辦公大樓)舉行。\n\n社群志工在過去一年協力完成《Domain-Driven Design: The First 15 Years》的中譯版,本次聚會以聽故事的方式帶大家了解歐洲社群專家對 DDD 的觀點:\n\n- Session 1:DDD15週年書文精選 — 張國昭\n- Session 2:Domain-Driven Design: The First 15 Years 繁體中文版 - Essence and Insight — 陳勉修 Michael Chen\n- Session 3:總覽 DDD 15 週年 — Kim Kao\n\n## 資料來源\n\n- [KKTIX — 【DDD TW 4月 Meetup 聚會】DDD15週年新書發表會](https://dddtaiwan.kktix.cc/events/2021-04-meetup)",
+  "startsAt": "2021-04-13T11:00:00.000Z",
+  "endsAt": "2021-04-13T14:00:00.000Z",
+  "venue": {
+    "kind": "onsite",
+    "address": "台北市信義區松仁路100號12樓 AWS 辦公室",
+    "meetingUrl": null
+  },
+  "status": "ended",
+  "tags": ["meetup", "history"],
+  "speakers": [
+    {
+      "speakerId": "arthur-chang",
+      "name": "張國昭(Arthur)",
+      "photoUrl": null,
+      "jobTitle": "MAYO 技術經理",
+      "bio": null,
+      "topic": "DDD15週年書文精選"
+    },
+    {
+      "speakerId": "michael-chen",
+      "name": "陳勉修 Michael Chen",
+      "photoUrl": null,
+      "jobTitle": "樂屋國際資訊產品處副總經理",
+      "bio": "台灣敏捷協會與 DDD Taiwan Community Organizer 理事",
+      "topic": "Domain-Driven Design: The First 15 Years 繁體中文版 - Essence and Insight"
+    },
+    {
+      "speakerId": "kim-kao",
+      "name": "Kim Kao(高翊凱)",
+      "photoUrl": null,
+      "jobTitle": "AWS Taiwan 解決方案架構師",
+      "bio": null,
+      "topic": "總覽 DDD 15 週年"
+    }
+  ],
+  "ticketTypes": []
+}

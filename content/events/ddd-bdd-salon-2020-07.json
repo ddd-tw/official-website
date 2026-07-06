@@ -1,0 +1,35 @@
+{
+  "eventId": "ddd-bdd-salon-2020-07",
+  "title": "【DDD TW 7月沙龍】用 DDD & BDD 開外掛:把共識變測試",
+  "bannerUrl": null,
+  "summary": "台灣首場結合 DDD 與 BDD 的多工作坊沙龍,以 Event Storming、Example Mapping、Feature Mapping 將共識化為可執行的測試文件。",
+  "fullDescriptionMd": "# 【DDD TW 7月沙龍】用 DDD & BDD 開外掛:把共識變測試\n\n2020 年 7 月 26 日 13:00–18:00 於集思交通部國際會議中心舉行,採沙龍形式,強調多動手、多討論。\n\n內容依序使用三項武器:Event Storming(Process Modelling 模式)理解業務全貌、Example Mapping 補足規格細節、Feature Mapping 產出符合自然語言的 Gherkin(Given-When-Then)規格實例化文件,最後示範以 Cucumber 框架將測試自動化,達成「文件即測試、測試即文件」(Living Documents)。適合 PM、BA、工程師與 QA,無需先備知識。\n\n## 資料來源\n\n- [KKTIX — 【DDD TW 7月沙龍】用 DDD & BDD 開外掛](https://dddtaiwan.kktix.cc/events/202007-salon)",
+  "startsAt": "2020-07-26T05:00:00.000Z",
+  "endsAt": "2020-07-26T10:00:00.000Z",
+  "venue": {
+    "kind": "onsite",
+    "address": "台北市中正區杭州南路一段24號 集思交通部國際會議中心",
+    "meetingUrl": null
+  },
+  "status": "ended",
+  "tags": ["workshop", "bdd", "history"],
+  "speakers": [
+    {
+      "speakerId": "river-lin",
+      "name": "River",
+      "photoUrl": null,
+      "jobTitle": null,
+      "bio": "DDDTW 志工、Legacy Code 讀書會發起人之一",
+      "topic": "DDD & BDD 工作坊講師(Event Storming、Example Mapping、Feature Mapping)"
+    },
+    {
+      "speakerId": "fong-liou",
+      "name": "Fong",
+      "photoUrl": null,
+      "jobTitle": null,
+      "bio": "後端工程師、DDDTW 志工、講師,著有 IT 鐵人賽系列文章「Think in GraphQL」、「Think in Domain-Driven Design」",
+      "topic": "DDD & BDD 工作坊講師(Event Storming、Example Mapping、Feature Mapping)"
+    }
+  ],
+  "ticketTypes": []
+}

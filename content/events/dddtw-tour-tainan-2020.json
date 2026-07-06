@@ -1,0 +1,51 @@
+{
+  "eventId": "dddtw-tour-tainan-2020",
+  "title": "DDDTW Tour - 台南府城站",
+  "bannerUrl": null,
+  "summary": "與台南好想工作室合作的全日 DDD 演講與工作坊,從戰略設計、架構設計到 Aggregate Canvas 與程式實戰。",
+  "fullDescriptionMd": "# DDDTW Tour - 台南府城站\n\n2020 年 9 月 12 日 09:30–17:00 於台南好想工作室舉行,是 DDDTW 首度移師台南的全日演講與工作坊。\n\n## 議程\n\n- DDD 戰略設計:把溝通結果化成程式設計 — Fong Liou\n- 符合 DDD 思維的架構設計 — James Wang(大姆士)\n- Aggregate Canvas + Example Mapping Workshop — Arthur 張、River Lin\n- DDD 程式碼設計實戰練習(改編 Tennis Refactoring Kata)— Arthur 張\n\n## 資料來源\n\n- [KKTIX — DDDTW Tour - 台南府城站](https://dddtaiwan.kktix.cc/events/dddtw-tour-tainan)",
+  "startsAt": "2020-09-12T01:30:00.000Z",
+  "endsAt": "2020-09-12T09:00:00.000Z",
+  "venue": {
+    "kind": "onsite",
+    "address": "台南市東區北門路二段16號 L2A 好想工作室",
+    "meetingUrl": null
+  },
+  "status": "ended",
+  "tags": ["workshop", "tainan", "history"],
+  "speakers": [
+    {
+      "speakerId": "fong-liou",
+      "name": "Fong Liou",
+      "photoUrl": null,
+      "jobTitle": null,
+      "bio": "DDDTW 社群志工與講師",
+      "topic": "DDD 戰略設計:把溝通結果化成程式設計"
+    },
+    {
+      "speakerId": "james-wang",
+      "name": "James Wang(大姆士)",
+      "photoUrl": null,
+      "jobTitle": null,
+      "bio": "DDDTW、Agile 社群志工與講師",
+      "topic": "符合 DDD 思維的架構設計"
+    },
+    {
+      "speakerId": "arthur-chang",
+      "name": "Arthur 張",
+      "photoUrl": null,
+      "jobTitle": null,
+      "bio": "DDDTW 社群創辦人之一,曾獲選 DDD China 年會、國際 Virtual DDD 年會講者",
+      "topic": "Aggregate Canvas + Example Mapping Workshop、DDD 程式碼設計實戰練習"
+    },
+    {
+      "speakerId": "river-lin",
+      "name": "River Lin",
+      "photoUrl": null,
+      "jobTitle": null,
+      "bio": "DDDTW 社群志工與講師",
+      "topic": "Aggregate Canvas + Example Mapping Workshop(與 Arthur 合講)"
+    }
+  ],
+  "ticketTypes": []
+}
