@@ -1,0 +1,131 @@
+{
+  "eventId": "dddesign-tw-conference-2024",
+  "title": "領域驅動設計台灣 2024 年會 - DDDesign Taiwan Conference 2024",
+  "bannerUrl": null,
+  "summary": "第四屆年會,定位為 System Design & Socio-technical Conference,聚焦遺留工作負載與系統現代化。",
+  "fullDescriptionMd": "# DDDesign Taiwan Conference 2024\n\n2024 年 9 月 13 日 09:00–17:00 於台大醫院國際會議中心舉行。\n\n年會圍繞 legacy workloads 與現代應用的演變,探討系統遷移與現代化策略、風險管理、成本效益與技術債管理,並強調社會技術(socio-technical)因素對軟體開發決策的影響,促進企業決策者與第一線執行團隊的協作。邀請 13 位以上講者進行 4 場次分享。\n\n## 資料來源\n\n- [Accupass — DDDesign Taiwan Conference 2024](https://www.accupass.com/event/2406080625301381404160)\n- [官方網站(2024)](https://conference.ddd-tw.com/2024/)\n- [官方網站講者資料(speakers-data)](https://conference.ddd-tw.com/2024/assets/speakers-data-f0iJhQ97.js)\n- [官方網站議程資料(agenda-data)](https://conference.ddd-tw.com/2024/assets/agenda-data-CP8O144x.js)\n- [GitHub — ddd-tw-conference/2024](https://github.com/ddd-tw-conference/2024)",
+  "startsAt": "2024-09-13T01:00:00.000Z",
+  "endsAt": "2024-09-13T09:00:00.000Z",
+  "venue": {
+    "kind": "onsite",
+    "address": "台北市中正區徐州路2號 台大醫院國際會議中心",
+    "meetingUrl": null
+  },
+  "status": "ended",
+  "tags": ["conference", "history"],
+  "speakers": [
+    {
+      "speakerId": "ruddy-lee",
+      "name": "Ruddy Lee(李智樺)",
+      "photoUrl": null,
+      "jobTitle": null,
+      "bio": null,
+      "topic": "Keynote:開發者體驗 DevX"
+    },
+    {
+      "speakerId": "chen-ming-cheng",
+      "name": "陳明正",
+      "photoUrl": null,
+      "jobTitle": null,
+      "bio": null,
+      "topic": "開發者的歹路"
+    },
+    {
+      "speakerId": "carola-lilienthal",
+      "name": "Carola Lilienthal",
+      "photoUrl": null,
+      "jobTitle": null,
+      "bio": null,
+      "topic": "Domain-Driven Transformation – how to improve the structure of legacy systems"
+    },
+    {
+      "speakerId": "james-wang",
+      "name": "James Wang",
+      "photoUrl": null,
+      "jobTitle": null,
+      "bio": null,
+      "topic": "知識精煉:運用社會技術來解決遺留系統中的管理挑戰"
+    },
+    {
+      "speakerId": "kuma",
+      "name": "Kuma",
+      "photoUrl": null,
+      "jobTitle": null,
+      "bio": null,
+      "topic": "面對 Legacy Code,你有哪些選擇?"
+    },
+    {
+      "speakerId": "george-shih",
+      "name": "石其生(George)",
+      "photoUrl": null,
+      "jobTitle": null,
+      "bio": null,
+      "topic": "那年走過的彎路"
+    },
+    {
+      "speakerId": "augustin",
+      "name": "Augustin",
+      "photoUrl": null,
+      "jobTitle": null,
+      "bio": null,
+      "topic": "原來開局就一身債!從軟體邊界探索技術債的形成與團隊拓樸的設計"
+    },
+    {
+      "speakerId": "shen-q-superman",
+      "name": "神Q超人",
+      "photoUrl": null,
+      "jobTitle": null,
+      "bio": null,
+      "topic": "領域驅動設計戰術內部物件的協作方式"
+    },
+    {
+      "speakerId": "michael-chen",
+      "name": "陳勉修(Michael)",
+      "photoUrl": null,
+      "jobTitle": null,
+      "bio": null,
+      "topic": "初探領域故事化(Domain Storytelling)—領域驅動的產品價值需求與分析"
+    },
+    {
+      "speakerId": "kim-kao",
+      "name": "Kim Kao",
+      "photoUrl": null,
+      "jobTitle": null,
+      "bio": null,
+      "topic": "Fostering Socio-Technical Harmony in DDD(與 Stephen Tung 合講)"
+    },
+    {
+      "speakerId": "stephen-tung",
+      "name": "Stephen Tung",
+      "photoUrl": null,
+      "jobTitle": null,
+      "bio": null,
+      "topic": "Fostering Socio-Technical Harmony in DDD(與 Kim Kao 合講)"
+    },
+    {
+      "speakerId": "alberto-acerbis",
+      "name": "Alberto Acerbis",
+      "photoUrl": null,
+      "jobTitle": null,
+      "bio": null,
+      "topic": "From EventStorming to Event Store passing through BDD"
+    },
+    {
+      "speakerId": "fong-liou",
+      "name": "Fong",
+      "photoUrl": null,
+      "jobTitle": null,
+      "bio": null,
+      "topic": "在新專案套入 DDD 的經驗談"
+    },
+    {
+      "speakerId": "nor",
+      "name": "Nor",
+      "photoUrl": null,
+      "jobTitle": null,
+      "bio": null,
+      "topic": "使用者研究該如何解讀質性與量化的定位"
+    }
+  ],
+  "ticketTypes": []
+}

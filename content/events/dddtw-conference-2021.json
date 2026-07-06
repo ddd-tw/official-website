@@ -1,0 +1,35 @@
+{
+  "eventId": "dddtw-conference-2021",
+  "title": "2021 領域驅動設計年會 - 足跡(DDD Taiwan Conference 2021)",
+  "bannerUrl": null,
+  "summary": "第二屆年會,因疫情改為線上(GatherTown)舉行,主題「足跡」,收集各地 DDD 實踐者的故事。",
+  "fullDescriptionMd": "# 2021 領域驅動設計年會 - 足跡\n\n2021 年 10 月 15–16 日以 GatherTown 平台線上舉行。\n\n第一天為工作坊日(Domain Storytelling 工作坊、6 小時 Event Storming 工作坊),第二天為議程日,分為 DDD Foundation(基石)、Heuristics(啟發)、Footprints(足跡)三大主軸,強調「協作創造價值」,分享 DDD 與敏捷、團隊協作結合的實務經驗。\n\n## 資料來源\n\n- [KKTIX — DDDesign TW Conference 2021](https://dddtaiwan.kktix.cc/events/dddesigntwconference2021)\n- [官方網站(2021)](https://conference.ddd-tw.com/2021/)\n- [年會紀錄影片(YouTube)](https://www.youtube.com/watch?v=EIrwaIrfV5g)",
+  "startsAt": "2021-10-15T01:00:00.000Z",
+  "endsAt": "2021-10-16T09:00:00.000Z",
+  "venue": {
+    "kind": "online",
+    "address": null,
+    "meetingUrl": null
+  },
+  "status": "ended",
+  "tags": ["conference", "online", "history"],
+  "speakers": [
+    {
+      "speakerId": "zhang-yi",
+      "name": "張逸",
+      "photoUrl": null,
+      "jobTitle": null,
+      "bio": null,
+      "topic": "領域驅動設計團隊實踐指南"
+    },
+    {
+      "speakerId": "sandy-wu",
+      "name": "Sandy Wu",
+      "photoUrl": null,
+      "jobTitle": null,
+      "bio": null,
+      "topic": null
+    }
+  ],
+  "ticketTypes": []
+}

@@ -1,0 +1,35 @@
+{
+  "eventId": "dddtw-workshops-2024-08",
+  "title": "DDDTW 八月工作坊二連發:重構工作坊 & 應用架構設計工作坊",
+  "bannerUrl": null,
+  "summary": "一晚兩場:初探重構遺留系統(Legacy System),以及 DDD 與企業架構設計(TOGAF)的整合。",
+  "fullDescriptionMd": "# DDDTW 八月工作坊二連發\n\n2024 年 8 月 23 日 19:00–21:30 於言文字 Emoji Cafe & Bar(台北市中正區開封街)舉行,一晚兩場工作坊:\n\n- Part 1:初探重構遺留系統(Legacy System)— Bruce(中租迪和數發部副理、DDDTW 核心志工)\n- Part 2:DDD 與企業架構設計的整合(TOGAF)— 張國昭(小張)\n\n## 資料來源\n\n- [Accupass — DDDTW 八月工作坊二連發](https://www.accupass.com/event/2407121409343814079200)",
+  "startsAt": "2024-08-23T11:00:00.000Z",
+  "endsAt": "2024-08-23T13:30:00.000Z",
+  "venue": {
+    "kind": "onsite",
+    "address": "台北市中正區開封街一段6號 言文字 Emoji Cafe & Bar",
+    "meetingUrl": null
+  },
+  "status": "ended",
+  "tags": ["workshop", "history"],
+  "speakers": [
+    {
+      "speakerId": "bruce",
+      "name": "Bruce",
+      "photoUrl": null,
+      "jobTitle": "中租迪和數發部副理",
+      "bio": "DDDTW 核心志工",
+      "topic": "初探重構遺留系統(Legacy System)"
+    },
+    {
+      "speakerId": "arthur-chang",
+      "name": "張國昭(小張)",
+      "photoUrl": null,
+      "jobTitle": null,
+      "bio": "DDDTW Community 共同創辦人",
+      "topic": "DDD 與企業架構設計的整合(TOGAF)"
+    }
+  ],
+  "ticketTypes": []
+}

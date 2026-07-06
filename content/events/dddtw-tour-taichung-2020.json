@@ -1,0 +1,43 @@
+{
+  "eventId": "dddtw-tour-taichung-2020",
+  "title": "DDDTW Tour - 台中站",
+  "bannerUrl": null,
+  "summary": "全日 DDD 演講與工作坊,以全新旅遊需求情境從 Event Storming 一路走到戰術實作。",
+  "fullDescriptionMd": "# DDDTW Tour - 台中站\n\n2020 年 10 月 31 日 09:30–18:00 於台中微程式夢森林 Dreamforest 舉行。\n\n使用全新的旅遊需求情境,從需求的分析、聚焦到落地為程式碼,一天內展現 DDD 開發的全貌。\n\n## 議程\n\n- 事件風暴的簡介\n- 基於旅遊情境的事件風暴實作\n- 領域事件的收斂與聚合\n- Example Mapping Workshop\n- DDD 戰術實作\n- Retro & QA\n\n## 資料來源\n\n- [KKTIX — DDDTW Tour - 台中站](https://dddtaiwan.kktix.cc/events/2020-ddd-workshop-taichung-station)",
+  "startsAt": "2020-10-31T01:30:00.000Z",
+  "endsAt": "2020-10-31T10:00:00.000Z",
+  "venue": {
+    "kind": "onsite",
+    "address": "台中市西屯區市政路402號7樓 微程式夢森林 Dreamforest",
+    "meetingUrl": null
+  },
+  "status": "ended",
+  "tags": ["workshop", "taichung", "history"],
+  "speakers": [
+    {
+      "speakerId": "fong-liou",
+      "name": "Fong Liou",
+      "photoUrl": null,
+      "jobTitle": null,
+      "bio": "DDDTW 社群志工與講師,著有 IT 鐵人賽得獎系列文章「Think in GraphQL」、「Think in Domain-Driven Design」",
+      "topic": "全日演講與工作坊(Event Storming 到 DDD 戰術實作)"
+    },
+    {
+      "speakerId": "river-lin",
+      "name": "River Lin",
+      "photoUrl": null,
+      "jobTitle": null,
+      "bio": "DDDTW 社群志工與講師",
+      "topic": "全日演講與工作坊(Event Storming 到 DDD 戰術實作)"
+    },
+    {
+      "speakerId": "eason-kuo",
+      "name": "Eason Kuo",
+      "photoUrl": null,
+      "jobTitle": null,
+      "bio": "DDDTW 社群志工與講師,曾共同創立金融科技新創公司",
+      "topic": "全日演講與工作坊(Event Storming 到 DDD 戰術實作)"
+    }
+  ],
+  "ticketTypes": []
+}

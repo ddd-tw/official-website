@@ -1,0 +1,27 @@
+{
+  "eventId": "ddd-tour-hsinchu-2024",
+  "title": "2024 DDDTour 新竹站 - 企業架構:資訊應用架構設計工作坊",
+  "bannerUrl": null,
+  "summary": "與 Agile Hsinchu 合辦的企業架構工作坊,以 TOGAF 應用架構設計方法在 Miro 上實作。",
+  "fullDescriptionMd": "# 2024 DDDTour 新竹站 - 企業架構:資訊應用架構設計工作坊\n\n2024 年 6 月 29 日 13:00–17:00 於新竹瑞嘉軟體科技 Onelab(帝國經貿大樓)舉行,與 Agile Hsinchu 合辦。\n\n由張國昭(Arthur/小張,DDDTW Community 共同創辦人)帶領的企業架構工作坊:TOGAF 應用架構設計、架構原則、溝通計畫與架構審查會議,以 Miro 線上白板進行實作。\n\n## 資料來源\n\n- [Accupass — 2024 DDDTour 新竹站](https://www.accupass.com/event/2405191257411345218602)",
+  "startsAt": "2024-06-29T05:00:00.000Z",
+  "endsAt": "2024-06-29T09:00:00.000Z",
+  "venue": {
+    "kind": "onsite",
+    "address": "新竹市東區光復路二段295號11樓之3 帝國經貿大樓 瑞嘉軟體科技 Onelab",
+    "meetingUrl": null
+  },
+  "status": "ended",
+  "tags": ["workshop", "hsinchu", "history"],
+  "speakers": [
+    {
+      "speakerId": "arthur-chang",
+      "name": "張國昭(Arthur/小張)",
+      "photoUrl": null,
+      "jobTitle": null,
+      "bio": "DDDTW Community 共同創辦人",
+      "topic": "企業架構:資訊應用架構設計工作坊(TOGAF)"
+    }
+  ],
+  "ticketTypes": []
+}

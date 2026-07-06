@@ -1,0 +1,27 @@
+{
+  "eventId": "semantic-versioning-sharing-2024",
+  "title": "DDDTW - 實踐語意化版本進行軟體發布",
+  "bannerUrl": null,
+  "summary": "鄭棋文(Steven Cheng)分享在軟體發布流程中實踐語意化版本(SemVer)與 commitlint 的經驗。",
+  "fullDescriptionMd": "# DDDTW - 實踐語意化版本進行軟體發布\n\n2024 年 6 月 26 日 19:30–21:30 於台北市大安區信義路四段 279 號 6 樓舉行。\n\n由 Steven Cheng 鄭棋文(HP Inc. Cloud Engineer)分享在軟體發布流程中實踐語意化版本(Semantic Versioning):版本號的語意約定、commitlint 等工具的落地,以及對團隊協作與發布品質的幫助。\n\n(註:Accupass 頁面售票區間顯示 6/18 起,實際演講日期依活動內文為 6/26。)\n\n## 資料來源\n\n- [Accupass — DDDTW - 實踐語意化版本進行軟體發布](https://www.accupass.com/event/2405250722177325508500)",
+  "startsAt": "2024-06-26T11:30:00.000Z",
+  "endsAt": "2024-06-26T13:30:00.000Z",
+  "venue": {
+    "kind": "onsite",
+    "address": "台北市大安區信義路四段279號6樓",
+    "meetingUrl": null
+  },
+  "status": "ended",
+  "tags": ["meetup", "history"],
+  "speakers": [
+    {
+      "speakerId": "steven-cheng",
+      "name": "Steven Cheng 鄭棋文",
+      "photoUrl": null,
+      "jobTitle": "Cloud Engineer, HP Inc.",
+      "bio": null,
+      "topic": "實踐語意化版本進行軟體發布"
+    }
+  ],
+  "ticketTypes": []
+}

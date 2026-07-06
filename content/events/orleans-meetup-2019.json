@@ -1,0 +1,27 @@
+{
+  "eventId": "orleans-meetup-2019",
+  "title": "【DDD Taiwan 12月聚會】DDD 在 .NET Core 上的另類實現 - Orleans",
+  "bannerUrl": null,
+  "summary": "以《Hands-On Domain-Driven Design with .NET Core》書中範例示範如何使用微軟開源分散式運算框架 Orleans 實現 DDD。",
+  "fullDescriptionMd": "# 【DDD Taiwan 12月聚會】DDD 在 .NET Core 上的另類實現 - Orleans\n\n2019 年 12 月 27 日 19:00–21:30 於 Dcard 辦公室舉行。\n\nOrleans 是微軟的開源分散式運算框架,其中 Grain Identity、Observer、Event Sourcing Grain、Distributed ACID Transaction 等功能非常適合用於 DDD 開發。本次分享以《Hands-On Domain-Driven Design with .NET Core》書中的「廣告張貼系統」範例示範,說明如何使用 Orleans 搭建可容易 Scale out 的高效能後端系統。\n\n## 資料來源\n\n- [KKTIX — 【DDD Taiwan 12月聚會】DDD 在 .NET Core 上的另類實現 - Orleans](https://dddtaiwan.kktix.cc/events/orleans)",
+  "startsAt": "2019-12-27T11:00:00.000Z",
+  "endsAt": "2019-12-27T13:30:00.000Z",
+  "venue": {
+    "kind": "onsite",
+    "address": "台北市大安區光復南路102號14樓 Dcard 辦公室",
+    "meetingUrl": null
+  },
+  "status": "ended",
+  "tags": ["meetup", "history"],
+  "speakers": [
+    {
+      "speakerId": "bao-cheng-yu",
+      "name": "鮑承佑",
+      "photoUrl": null,
+      "jobTitle": null,
+      "bio": null,
+      "topic": "DDD 在 .NET Core 上的另類實現 - Orleans"
+    }
+  ],
+  "ticketTypes": []
+}

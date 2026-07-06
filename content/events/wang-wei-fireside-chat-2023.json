@@ -1,0 +1,35 @@
+{
+  "eventId": "wang-wei-fireside-chat-2023",
+  "title": "與王威夜話 - 領域驅動設計的相關發展經驗談",
+  "bannerUrl": null,
+  "summary": "線上夜話,由 Kim Kao 與 ThoughtWorks 數位化轉型首席諮詢師王威對談 DDD 在程式碼之外的發展。",
+  "fullDescriptionMd": "# 與王威夜話 - 領域驅動設計的相關發展經驗談\n\n2023 年 1 月 13 日 21:00–22:30 以線上方式舉行,是農曆年前的輕鬆線上對談。\n\n由社群共同發起人 Kim Kao(AWS 資深解決方案架構師)與 ThoughtWorks 數位化轉型首席諮詢師/首席企業架構師王威對談,聊聊領域驅動設計除了程式碼之外還能走向何方。\n\n## 資料來源\n\n- [Accupass — 與王威夜話](https://www.accupass.com/event/2301030415536023959380)",
+  "startsAt": "2023-01-13T13:00:00.000Z",
+  "endsAt": "2023-01-13T14:30:00.000Z",
+  "venue": {
+    "kind": "online",
+    "address": null,
+    "meetingUrl": null
+  },
+  "status": "ended",
+  "tags": ["meetup", "online", "history"],
+  "speakers": [
+    {
+      "speakerId": "wang-wei",
+      "name": "王威",
+      "photoUrl": null,
+      "jobTitle": "ThoughtWorks 數位化轉型首席諮詢師/首席企業架構師",
+      "bio": null,
+      "topic": "領域驅動設計的相關發展經驗談"
+    },
+    {
+      "speakerId": "kim-kao",
+      "name": "Kim Kao",
+      "photoUrl": null,
+      "jobTitle": "AWS 資深解決方案架構師",
+      "bio": "DDD Taiwan Community 共同發起人",
+      "topic": "對談主持"
+    }
+  ],
+  "ticketTypes": []
+}

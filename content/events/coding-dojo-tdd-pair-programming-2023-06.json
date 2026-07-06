@@ -1,0 +1,43 @@
+{
+  "eventId": "coding-dojo-tdd-pair-programming-2023-06",
+  "title": "DDDTW 6月 Coding DOJO - TDD & Pair Programming",
+  "bannerUrl": null,
+  "summary": "新手友善的 Coding Dojo,以配對輪替方式練習 TDD 與 Pair Programming,並穿插回顧。",
+  "fullDescriptionMd": "# DDDTW 6月 Coding DOJO - TDD & Pair Programming\n\n2023 年 6 月 3 日 13:30–16:30 於艾斯博教育(台北市信義區東興路)舉行,場地由偉康科技贊助。\n\n延續 2022 年 Coding Dojo 形式的新手友善場:參與者以配對輪替方式練習 TDD 與 Pair Programming,並穿插回顧討論。由 River(XRSPACE)、Ean Lee 與 Fong Liou(Appier)擔任引導。\n\n## 資料來源\n\n- [Accupass — DDDTW 6 月 Coding DOJO](https://www.accupass.com/event/2305120133196545108670)",
+  "startsAt": "2023-06-03T05:30:00.000Z",
+  "endsAt": "2023-06-03T08:30:00.000Z",
+  "venue": {
+    "kind": "onsite",
+    "address": "台北市信義區東興路53號3樓 艾斯博教育",
+    "meetingUrl": null
+  },
+  "status": "ended",
+  "tags": ["workshop", "tdd", "history"],
+  "speakers": [
+    {
+      "speakerId": "river-lin",
+      "name": "River",
+      "photoUrl": null,
+      "jobTitle": "XRSPACE",
+      "bio": null,
+      "topic": "Coding Dojo 引導"
+    },
+    {
+      "speakerId": "ean-li",
+      "name": "Ean Lee",
+      "photoUrl": null,
+      "jobTitle": null,
+      "bio": null,
+      "topic": "Coding Dojo 引導"
+    },
+    {
+      "speakerId": "fong-liou",
+      "name": "Fong Liou",
+      "photoUrl": null,
+      "jobTitle": "Appier",
+      "bio": null,
+      "topic": "Coding Dojo 引導"
+    }
+  ],
+  "ticketTypes": []
+}

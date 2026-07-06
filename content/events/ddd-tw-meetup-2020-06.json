@@ -1,0 +1,43 @@
+{
+  "eventId": "ddd-tw-meetup-2020-06",
+  "title": "【DDD Taiwan 6月聚會】DDD 即將起飛,成為國際間開發主流之一,一起來打群架吧!",
+  "bannerUrl": null,
+  "summary": "線上聚會,由社群創始成員分享參與國際 Virtual DDD 線上馬拉松大會(DDDDD)的心得與國際社群動向。",
+  "fullDescriptionMd": "# 【DDD Taiwan 6月聚會】DDD 即將起飛,一起來打群架吧!\n\n2020 年 6 月 27 日 13:30–17:30 以 Zoom 線上直播方式舉行。\n\n台灣 DDD 社群成員參加了世界級 Virtual DDD Community 舉辦近 24 小時的馬拉松線上大會(DDDDD)後,由社群創始成員分享心得與國際社群動態:\n\n- Session 1:DDD for small organization(re-deliver from DDDDD, James Hickey)— Eric Huang\n- Session 2:Bounded Contexts, Microservices, and Everything In Between(re-deliver from DDDDD, Vlad Khononov)— Kim Kao\n- Session 3:滄海遺珠 — 在實際開發中,那些你可能遺失的美好 — Arthur Chang\n\n## 資料來源\n\n- [KKTIX — 【DDD Taiwan 6月聚會】](https://dddtaiwan.kktix.cc/events/aeec5df0)",
+  "startsAt": "2020-06-27T05:30:00.000Z",
+  "endsAt": "2020-06-27T09:30:00.000Z",
+  "venue": {
+    "kind": "online",
+    "address": null,
+    "meetingUrl": null
+  },
+  "status": "ended",
+  "tags": ["meetup", "online", "history"],
+  "speakers": [
+    {
+      "speakerId": "eric-huang",
+      "name": "Eric Huang",
+      "photoUrl": null,
+      "jobTitle": null,
+      "bio": "台灣 DDD 社群發起者之一",
+      "topic": "DDD for small organization(re-deliver session from DDDDD)"
+    },
+    {
+      "speakerId": "kim-kao",
+      "name": "Kim Kao",
+      "photoUrl": null,
+      "jobTitle": "AWS 解決方案架構師",
+      "bio": "台灣 DDD 社群發起者之一",
+      "topic": "Bounded Contexts, Microservices, and Everything In Between(re-deliver session from DDDDD)"
+    },
+    {
+      "speakerId": "arthur-chang",
+      "name": "Arthur Chang",
+      "photoUrl": null,
+      "jobTitle": null,
+      "bio": "台灣 DDD 社群發起者之一,Aggregate Canvas 創始者",
+      "topic": "滄海遺珠 — 在實際開發中,那些你可能遺失的美好"
+    }
+  ],
+  "ticketTypes": []
+}

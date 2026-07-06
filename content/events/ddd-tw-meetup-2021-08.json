@@ -1,0 +1,43 @@
+{
+  "eventId": "ddd-tw-meetup-2021-08",
+  "title": "【DDD TW 8月 Meetup 聚會】他/她們的足跡",
+  "bannerUrl": null,
+  "summary": "2021 年會前導聚會,由志工介紹三位年會海外講者 Kenny Baas-Schwegler、Carola Lilienthal 與 Adam Dymitruk 的核心理念與實踐故事。",
+  "fullDescriptionMd": "# 【DDD TW 8月 Meetup 聚會】他/她們的足跡\n\n2021 年 8 月 28 日 14:00–16:00 於線上平台 Gather Town 舉行。\n\n2021 領域驅動設計年會主題為「足跡」,本次 meetup 由 DDDTW 志工帶大家初步認識三位年會海外講者:\n\n- Kenny Baas-Schwegler(荷蘭):視覺化的共創建模,結合 Event Storming 與其他工具傳達需求與價值\n- Dr. Carola Lilienthal(德國):如何與 legacy system 共存並持續創造價值\n- Adam Dymitruk(加拿大):事件建模(Event Modeling)創始人\n\n議程分為志工介紹與分房自由討論兩部分,由何松穎(Blues)、River、陳建均(Max)主講。\n\n## 資料來源\n\n- [KKTIX — 【DDD TW 8月 Meetup 聚會】他/她們的足跡](https://dddtaiwan.kktix.cc/events/2021-08-meetup)",
+  "startsAt": "2021-08-28T06:00:00.000Z",
+  "endsAt": "2021-08-28T08:00:00.000Z",
+  "venue": {
+    "kind": "online",
+    "address": null,
+    "meetingUrl": null
+  },
+  "status": "ended",
+  "tags": ["meetup", "online", "history"],
+  "speakers": [
+    {
+      "speakerId": "blues-ho",
+      "name": "何松穎 Blues",
+      "photoUrl": null,
+      "jobTitle": null,
+      "bio": "DDDTW 社群志工",
+      "topic": "年會海外講者介紹"
+    },
+    {
+      "speakerId": "river-lin",
+      "name": "River",
+      "photoUrl": null,
+      "jobTitle": null,
+      "bio": "DDDTW 社群核心志工與講師",
+      "topic": "年會海外講者介紹"
+    },
+    {
+      "speakerId": "max-chen",
+      "name": "陳建均 Max",
+      "photoUrl": null,
+      "jobTitle": null,
+      "bio": "DDDTW 社群志工",
+      "topic": "年會海外講者介紹"
+    }
+  ],
+  "ticketTypes": []
+}

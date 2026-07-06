@@ -38,6 +38,10 @@ function EventCard({ event }: { event: EventSummaryDto }): ReactNode {
 
 export function HomePage(): ReactNode {
   const events = useApi(() => api.get<EventSummaryDto[]>(routes.listEvents()), []);
+  const upcoming = (events.data ?? []).filter((ev) => ev.status !== "ended");
+  const past = (events.data ?? [])
+    .filter((ev) => ev.status === "ended")
+    .sort((a, b) => b.startsAt.localeCompare(a.startsAt));
 
   return (
     <>
@@ -57,9 +61,9 @@ export function HomePage(): ReactNode {
           <Loading text="活動載入中…" />
         ) : events.error ? (
           <ErrorBox error={events.error} onRetry={events.reload} />
-        ) : events.data && events.data.length > 0 ? (
+        ) : upcoming.length > 0 ? (
           <div className="event-grid">
-            {events.data.map((ev) => (
+            {upcoming.map((ev) => (
               <EventCard key={ev.eventId} event={ev} />
             ))}
           </div>
@@ -67,6 +71,17 @@ export function HomePage(): ReactNode {
           <EmptyState text="目前沒有活動,敬請期待。" />
         )}
       </section>
+
+      {past.length > 0 ? (
+        <section>
+          <h2 className="section-title">歷年活動回顧</h2>
+          <div className="event-grid">
+            {past.map((ev) => (
+              <EventCard key={ev.eventId} event={ev} />
+            ))}
+          </div>
+        </section>
+      ) : null}
     </>
   );
 }

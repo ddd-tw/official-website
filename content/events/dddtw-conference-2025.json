@@ -1,0 +1,107 @@
+{
+  "eventId": "dddtw-conference-2025",
+  "title": "DDDTW 2025 - AI 時代軟體開發方法(第五屆領域驅動設計年會)",
+  "bannerUrl": null,
+  "summary": "第五屆年會,主題「AI 時代軟體開發方法」,探討 AI 對軟體開發方法與實務的影響。",
+  "fullDescriptionMd": "# DDDTW 2025 - AI 時代軟體開發方法\n\n2025 年 11 月 8 日舉行的第五屆年會,全日約 8 小時。\n\n主題聚焦 AI 時代的軟體開發方法,包含 AI 輔助開發、文件即程式碼(documentation as code)與事件應變自動化等方向,邀請 13 位以上講者進行 4 場次分享。\n\n## 資料來源\n\n- [官方網站(2025)](https://conference.ddd-tw.com/2025/)\n- [GitHub — ddd-tw/2025Summit](https://github.com/ddd-tw/2025Summit)\n- [GitHub — ddd-tw-conference/2025 講者資料](https://github.com/ddd-tw-conference/2025/blob/main/lib/data/speakers.ts)\n- [GitHub — ddd-tw-conference/2025 議程資料](https://github.com/ddd-tw-conference/2025/blob/main/lib/data/agenda.ts)\n- [Accupass — 領域驅動設計台灣 2025 年度成果發表會「新旅程」](https://www.accupass.com/event/2508301008076132622520)",
+  "startsAt": "2025-11-08T01:00:00.000Z",
+  "endsAt": "2025-11-08T09:00:00.000Z",
+  "venue": {
+    "kind": "onsite",
+    "address": "台北市中山區南京東路二段72號6樓 台北市商業會",
+    "meetingUrl": null
+  },
+  "status": "ended",
+  "tags": ["conference", "ai", "history"],
+  "speakers": [
+    {
+      "speakerId": "michael-chen",
+      "name": "陳勉修(Michael)",
+      "photoUrl": null,
+      "jobTitle": "樂屋國際 產品處副總經理",
+      "bio": null,
+      "topic": "語意為本,架構為體(Domain Storytelling 到架構邊界、AI 協作工作坊)"
+    },
+    {
+      "speakerId": "sunny-cheng",
+      "name": "Sunny Cheng",
+      "photoUrl": null,
+      "jobTitle": "薩泰爾娛樂共同創辦人",
+      "bio": null,
+      "topic": "一間喜劇公司怎麼用 DDD?"
+    },
+    {
+      "speakerId": "river-lin",
+      "name": "River",
+      "photoUrl": null,
+      "jobTitle": "Tech Lead",
+      "bio": null,
+      "topic": "文件即程式碼(DaC 工具鏈實作工作坊)"
+    },
+    {
+      "speakerId": "tung",
+      "name": "Tung",
+      "photoUrl": null,
+      "jobTitle": "後端工程師",
+      "bio": null,
+      "topic": "文件即程式碼(DaC)X 文件驅動開發"
+    },
+    {
+      "speakerId": "waterball-pan",
+      "name": "水球潘(Waterball)",
+      "photoUrl": null,
+      "jobTitle": "軟體設計模式精通之旅創辦人",
+      "bio": null,
+      "topic": "靠 BDD + DDD 做到 AI 100% 全自動化後端開發"
+    },
+    {
+      "speakerId": "fong-liou",
+      "name": "劉鳳軒(Fong)",
+      "photoUrl": null,
+      "jobTitle": "資深後端工程師, Appier",
+      "bio": null,
+      "topic": "從警示到行動:打造 AI 驅動的自動化 Incident Response 工具"
+    },
+    {
+      "speakerId": "ruddy-lee",
+      "name": "李智樺(Ruddy 老師)",
+      "photoUrl": null,
+      "jobTitle": "敏捷/DevOps 顧問",
+      "bio": null,
+      "topic": "開發者體驗與 AI 未來的運作方式:從 Henrik Kniberg 五階段預言看 DDD 的演進"
+    },
+    {
+      "speakerId": "arthur-chang",
+      "name": "張國昭(Arthur)",
+      "photoUrl": null,
+      "jobTitle": "資深經理, 金融公司",
+      "bio": null,
+      "topic": "AI 輔助軟體開發(軟體 3.0 時代)"
+    },
+    {
+      "speakerId": "ean-li",
+      "name": "李民偉(Ean)",
+      "photoUrl": null,
+      "jobTitle": "開發團隊領導, 長照公司",
+      "bio": null,
+      "topic": "AI 輔助軟體開發工作坊(上下文工程/架構思維/BDD)"
+    },
+    {
+      "speakerId": "stephen-tung",
+      "name": "Stephen Tung",
+      "photoUrl": null,
+      "jobTitle": "Developer Advocate, Kurrent",
+      "bio": null,
+      "topic": "事件溯源:情境化 AI 需要情境化資料模型"
+    },
+    {
+      "speakerId": "kim-kao",
+      "name": "Kim Kao",
+      "photoUrl": null,
+      "jobTitle": "AWS Solutions Architecture Manager",
+      "bio": null,
+      "topic": "專家面對面(專家諮詢時段)"
+    }
+  ],
+  "ticketTypes": []
+}

@@ -1,0 +1,43 @@
+{
+  "eventId": "ddd-tw-meetup-2021-09",
+  "title": "【DDD TW 9月 Meetup 聚會】DDD紫禁之巔 - 兩岸風雲大會談",
+  "bannerUrl": null,
+  "summary": "邀請中國領域驅動設計佈道師張逸線上對談「DDD 的價值與不足」,由高翊凱與張國昭主持。",
+  "fullDescriptionMd": "# 【DDD TW 9月 Meetup 聚會】DDD紫禁之巔 - 兩岸風雲大會談\n\n2021 年 9 月 25 日 10:00–11:30 以 Zoom 線上方式舉行,免費參加。\n\n年會前的特別對談,邀請人稱領域驅動設計佈道師的中國講者張逸,主題「DDD 的價值與不足」:DDD 提出近 20 年,業界對該方法依舊褒貶不一——DDD 真的有價值嗎?它自身是否存在不足,使其難以普及和落地?議程分為張逸短講與主持人對談問答兩部分。\n\n## 資料來源\n\n- [KKTIX — 【DDD TW 9月 Meetup 聚會】DDD紫禁之巔](https://dddtaiwan.kktix.cc/events/2021-09-meetup)",
+  "startsAt": "2021-09-25T02:00:00.000Z",
+  "endsAt": "2021-09-25T03:30:00.000Z",
+  "venue": {
+    "kind": "online",
+    "address": null,
+    "meetingUrl": null
+  },
+  "status": "ended",
+  "tags": ["meetup", "online", "history"],
+  "speakers": [
+    {
+      "speakerId": "zhang-yi",
+      "name": "張逸",
+      "photoUrl": null,
+      "jobTitle": null,
+      "bio": "領域驅動設計佈道師、微服務系統架構師、大數據平台架構師",
+      "topic": "DDD 的價值與不足"
+    },
+    {
+      "speakerId": "kim-kao",
+      "name": "高翊凱 Kim Kao",
+      "photoUrl": null,
+      "jobTitle": "AWS 資深解決方案架構師",
+      "bio": "DDD Taiwan Community 發起人之一",
+      "topic": "與談主持"
+    },
+    {
+      "speakerId": "arthur-chang",
+      "name": "張國昭(Arthur)",
+      "photoUrl": null,
+      "jobTitle": "MAYO 技術經理",
+      "bio": "DDDTW 發起、組織者",
+      "topic": "與談主持"
+    }
+  ],
+  "ticketTypes": []
+}
