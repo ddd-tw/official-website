@@ -1,0 +1,43 @@
+meta {
+  name: 03 報名志工票(需審核)
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/api/events/{{eventId}}/registrations
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "ticketTypeId": "{{volunteerTtId}}",
+    "attendee": {
+      "name": "Bruno 志工",
+      "email": "{{volEmail}}",
+      "note": "e2e 測試申請,想協助報到"
+    }
+  }
+}
+
+script:pre-request {
+  bru.setVar("volEmail", `e2e-vol-${Date.now()}@example.com`);
+}
+
+assert {
+  res.status: eq 201
+}
+
+script:post-response {
+  bru.setVar("volRegistrationId", res.getBody().registrationId);
+}
+
+tests {
+  test("志工票進入待審核、免付款、尚無票券", function () {
+    const reg = res.getBody();
+    expect(reg.status).to.equal("pending_review");
+    expect(reg.payment).to.equal("not_required");
+    expect(reg.ticket).to.equal(null);
+  });
+}

@@ -1,0 +1,38 @@
+meta {
+  name: 02 活動詳情(講者與票種)
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/api/events/{{eventId}}
+  body: none
+  auth: none
+}
+
+assert {
+  res.status: eq 200
+}
+
+script:post-response {
+  const detail = res.getBody();
+  const volunteer = detail.ticketTypes.find((t) => t.requiresApproval);
+  const general = detail.ticketTypes.find((t) => !t.requiresApproval && t.remaining > 0);
+  const soldOut = detail.ticketTypes.find((t) => t.remaining === 0);
+  bru.setVar("volunteerTtId", volunteer ? volunteer.ticketTypeId : "");
+  bru.setVar("generalTtId", general ? general.ticketTypeId : "");
+  bru.setVar("soldOutTtId", soldOut ? soldOut.ticketTypeId : "");
+}
+
+tests {
+  test("有講者", function () {
+    expect(res.getBody().speakers.length).to.be.at.least(1);
+  });
+
+  test("含志工票(需審核)、一般票、售罄票", function () {
+    const tts = res.getBody().ticketTypes;
+    expect(tts.some((t) => t.requiresApproval)).to.equal(true);
+    expect(tts.some((t) => !t.requiresApproval && t.remaining > 0)).to.equal(true);
+    expect(tts.some((t) => t.remaining === 0)).to.equal(true);
+  });
+}

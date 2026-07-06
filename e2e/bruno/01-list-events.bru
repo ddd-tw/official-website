@@ -1,0 +1,33 @@
+meta {
+  name: 01 活動列表
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/api/events
+  body: none
+  auth: none
+}
+
+assert {
+  res.status: eq 200
+}
+
+script:post-response {
+  const events = res.getBody();
+  const conf = events.find((e) => e.eventId === "ddd-tw-conference-2026");
+  bru.setVar("eventId", conf ? conf.eventId : "");
+}
+
+tests {
+  test("至少一個已發布活動", function () {
+    expect(res.getBody().length).to.be.at.least(1);
+  });
+
+  test("Conference 2026 存在且開賣中", function () {
+    const conf = res.getBody().find((e) => e.eventId === "ddd-tw-conference-2026");
+    expect(conf).to.not.equal(undefined);
+    expect(conf.availability).to.equal("on_sale");
+  });
+}
