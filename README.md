@@ -32,7 +32,7 @@ bun run typecheck
 bun run e2e          # Bruno e2e(需 API + DB 運行中)
 ```
 
-部署見 [docs/deploy-zeabur.md](docs/deploy-zeabur.md)(Zeabur:postgres + api + web 三服務)。
+部署見 [docs/deploy-render-neon.md](docs/deploy-render-neon.md)(Render + Neon,免費方案)。Zeabur 替代方案見 [docs/deploy-zeabur.md](docs/deploy-zeabur.md)。
 
 ## 環境變數(開發皆有預設值)
 
