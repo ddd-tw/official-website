@@ -1,7 +1,7 @@
 {
   "eventId": "understanding-debt-meetup-2026-04",
   "title": "AI 寫得更快,你真的懂嗎?—工程師的理解債與系統設計",
-  "bannerUrl": null,
+  "bannerUrl": "/banners/understanding-debt-meetup-2026-04.jpg",
   "summary": "探討 AI 加速開發下的認知債與理解債:LLM 在領域模型的能力邊界、DDD 工程紀律與 OpenSpec 實務。",
   "fullDescriptionMd": "# AI 寫得更快,你真的懂嗎?—工程師的理解債與系統設計\n\n2026 年 4 月 24 日 19:00–21:30 於台北市信義區松仁路 100 號 12F 舉行。\n\n聚焦 AI 加速開發下的「理解債/認知債」議題:\n\n- 當 1+1 不再永遠等於 2:LLM 在領域模型中的能力與邊界 — Kim Kao\n- AI 寫得快,你懂得慢:認知債、理解債與 DDD 工程紀律 — James Wang\n- 在 AI 輔助開發中導入 OpenSpec 的實務經驗(以 Claude Code 為例)— Blues/Holyblue(何松穎)\n\n## 資料來源\n\n- [Accupass — AI 寫得更快,你真的懂嗎?](https://www.accupass.com/event/2604151522131437099244)",
   "startsAt": "2026-04-24T11:00:00.000Z",
@@ -12,7 +12,11 @@
     "meetingUrl": null
   },
   "status": "ended",
-  "tags": ["meetup", "ai", "history"],
+  "tags": [
+    "meetup",
+    "ai",
+    "history"
+  ],
   "speakers": [
     {
       "speakerId": "kim-kao",

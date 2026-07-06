@@ -1,7 +1,7 @@
 {
   "eventId": "event-storming-for-the-team-2024",
   "title": "Event Storming 是個好東西:幫助團隊看見全貌,引發團隊變革新契機",
-  "bannerUrl": null,
+  "bannerUrl": "/banners/event-storming-for-the-team-2024.jpg",
   "summary": "與 DevOps Taiwan 協辦的分享會,以真實場景故事分享由 Event Storming 觸發的團隊變革旅程。",
   "fullDescriptionMd": "# Event Storming 是個好東西:幫助團隊看見全貌,引發團隊變革新契機\n\n2024 年 2 月 29 日 19:00–21:00 於 AWS 台北辦公室舉行,由 DevOps Taiwan Community 協辦。\n\n當團隊想導入 CI/CD、DevOps 時,如何幫助所有夥伴建立相同共識、看見相同的全貌與痛點?講者陳正瑋以幾個來自真實場景的小故事,分享由 Event Storming 觸發、輔助不同部門及團隊打破 silos 的團隊變革旅程。\n\n## 資料來源\n\n- [KKTIX — Event storming 是個好東西](https://dddtaiwan.kktix.cc/events/202402-es-for-the-team)",
   "startsAt": "2024-02-29T11:00:00.000Z",
@@ -12,7 +12,11 @@
     "meetingUrl": null
   },
   "status": "ended",
-  "tags": ["meetup", "event-storming", "history"],
+  "tags": [
+    "meetup",
+    "event-storming",
+    "history"
+  ],
   "speakers": [
     {
       "speakerId": "chen-cheng-wei",

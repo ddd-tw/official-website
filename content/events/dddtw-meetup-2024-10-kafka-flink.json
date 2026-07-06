@@ -1,7 +1,7 @@
 {
   "eventId": "dddtw-meetup-2024-10-kafka-flink",
   "title": "DDDTW 十月 Meetup - Building Real-time Next Generation AI Applications with Kafka and Flink",
-  "bannerUrl": null,
+  "bannerUrl": "/banners/dddtw-meetup-2024-10-kafka-flink.jpg",
   "summary": "Confluent 的 Jeffrey Lam 以雙語分享如何以 Kafka 與 Flink 打造即時的次世代 AI 應用。",
   "fullDescriptionMd": "# DDDTW 十月 Meetup - Building Real-time Next Generation AI Applications with Kafka and Flink\n\n2024 年 10 月 15 日 19:30–21:30 於台北市大安區信義路四段 279 號 6 樓(SW6 找場地)舉行。\n\n由 Jeffrey Lam(Staff Solutions Engineer, Confluent)以雙語進行分享,主題為如何使用 Kafka 與 Flink 建構即時的次世代 AI 應用。\n\n## 資料來源\n\n- [Accupass — DDDTW 十月 Meetup](https://www.accupass.com/event/2409240040219783212230)",
   "startsAt": "2024-10-15T11:30:00.000Z",
@@ -12,7 +12,10 @@
     "meetingUrl": null
   },
   "status": "ended",
-  "tags": ["meetup", "history"],
+  "tags": [
+    "meetup",
+    "history"
+  ],
   "speakers": [
     {
       "speakerId": "jeffrey-lam",

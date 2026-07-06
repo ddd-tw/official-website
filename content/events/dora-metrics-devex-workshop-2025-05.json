@@ -1,7 +1,7 @@
 {
   "eventId": "dora-metrics-devex-workshop-2025-05",
   "title": "告別無效指標,根據團隊狀況打造有效指標並提升開發體驗",
-  "bannerUrl": null,
+  "bannerUrl": "/banners/dora-metrics-devex-workshop-2025-05.jpg",
   "summary": "小班制工作坊,以 DORA 指標、Google GSM 方法與 Effort→Output→Outcome→Impact 模型打造有效的團隊指標。",
   "fullDescriptionMd": "# 告別無效指標,根據團隊狀況打造有效指標並提升開發體驗\n\n2025 年 5 月 18 日 13:15–16:30 於言文字 Emoji Cafe & Bar(台北市中正區開封街)舉行,限額 15 人的小班制工作坊。\n\n由 Fong Liou(Appier)帶領,主題涵蓋 DORA 指標與開發者體驗(DevEX),運用 Google 的 GSM(Goal-Signal-Metrics)方法與 Effort→Output→Outcome→Impact 模型,依團隊實際狀況打造有效指標。\n\n## 資料來源\n\n- [Accupass — 告別無效指標](https://www.accupass.com/event/2505011458011705866650)",
   "startsAt": "2025-05-18T05:15:00.000Z",
@@ -12,7 +12,11 @@
     "meetingUrl": null
   },
   "status": "ended",
-  "tags": ["workshop", "devex", "history"],
+  "tags": [
+    "workshop",
+    "devex",
+    "history"
+  ],
   "speakers": [
     {
       "speakerId": "fong-liou",

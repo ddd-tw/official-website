@@ -1,7 +1,7 @@
 {
   "eventId": "dddtw-meetup-2024-08",
   "title": "DDDTW 8 月小聚",
-  "bannerUrl": null,
+  "bannerUrl": "/banners/dddtw-meetup-2024-08.jpg",
   "summary": "以 Open Space Technology 進行的輕鬆社群小聚,議題由參與者共同提出與討論。",
   "fullDescriptionMd": "# DDDTW 8 月小聚\n\n2024 年 8 月 16 日 19:00–21:00 於言文字 Emoji Cafe & Bar(台北市中正區開封街)舉行。\n\n輕鬆的社群交流小聚,以 Open Space Technology 形式進行,沒有固定講者,議題由參與者共同提出並分組討論。\n\n## 資料來源\n\n- [Accupass — DDDTW 8 月小聚](https://www.accupass.com/event/2407310024548168902100)",
   "startsAt": "2024-08-16T11:00:00.000Z",
@@ -12,7 +12,10 @@
     "meetingUrl": null
   },
   "status": "ended",
-  "tags": ["meetup", "history"],
+  "tags": [
+    "meetup",
+    "history"
+  ],
   "speakers": [],
   "ticketTypes": []
 }

@@ -1,7 +1,7 @@
 {
   "eventId": "ddd-pattern-new-project-2024",
   "title": "在新專案套入 DDD Pattern 的經驗談",
-  "bannerUrl": null,
+  "bannerUrl": "/banners/ddd-pattern-new-project-2024.jpg",
   "summary": "Fong Liou 分享在全新專案導入 DDD Pattern 的經驗:早期價值、取捨、測試品質與通用語言的維護。",
   "fullDescriptionMd": "# 在新專案套入 DDD Pattern 的經驗談\n\n2024 年 5 月 21 日 19:30–21:30(19:00 入場)於台北市大安區信義路四段 279 號 6 樓舉行。\n\n由 Fong Liou(Appier 資深後端工程師)分享在全新專案套用 DDD Pattern 的實務經驗:如何在早期產生價值、過程中的取捨、以測試維持品質,以及如何持續維護通用語言(Ubiquitous Language)。\n\n## 資料來源\n\n- [Accupass — 在新專案套入 DDD Pattern 的經驗談](https://www.accupass.com/event/2404220605243002115670)",
   "startsAt": "2024-05-21T11:30:00.000Z",
@@ -12,7 +12,10 @@
     "meetingUrl": null
   },
   "status": "ended",
-  "tags": ["meetup", "history"],
+  "tags": [
+    "meetup",
+    "history"
+  ],
   "speakers": [
     {
       "speakerId": "fong-liou",

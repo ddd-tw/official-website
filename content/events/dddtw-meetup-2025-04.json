@@ -1,7 +1,7 @@
 {
   "eventId": "dddtw-meetup-2025-04",
   "title": "DDDTW Meetup #202504:整潔架構 與 MCP 實戰",
-  "bannerUrl": null,
+  "bannerUrl": "/banners/dddtw-meetup-2025-04.jpg",
   "summary": "線上聚會:你真的需要整潔架構嗎?與動手打造自己的 MCP Server,外加 GenAI 世代軟體開發閃電秀。",
   "fullDescriptionMd": "# DDDTW Meetup #202504:整潔架構 與 MCP 實戰\n\n2025 年 4 月 19 日 19:00–21:30 以 Zoom 線上方式舉行(完售,後續另販售 YouTube 回放票)。\n\n- 你真的需要整潔架構嗎?(Hexagonal/Onion/Clean Architecture 與 GenAI「Vibe Coding」)— Fong Liou(Appier)\n- 動手打造自己的 MCP Server — 東東(Tung,DDDTW 核心志工、後端工程師)\n- 閃電秀:GenAI 世代軟體開發 — 神秘嘉賓\n\n## 資料來源\n\n- [Accupass — DDDTW Meetup #202504](https://www.accupass.com/event/2504061416577695000200)\n- [Accupass — 回放票](https://www.accupass.com/event/2504190248201872099834)",
   "startsAt": "2025-04-19T11:00:00.000Z",
@@ -12,7 +12,11 @@
     "meetingUrl": null
   },
   "status": "ended",
-  "tags": ["meetup", "online", "history"],
+  "tags": [
+    "meetup",
+    "online",
+    "history"
+  ],
   "speakers": [
     {
       "speakerId": "fong-liou",

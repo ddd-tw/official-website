@@ -1,7 +1,7 @@
 {
   "eventId": "global-domain-driven-day-taiwan-2024",
   "title": "Global Domain-Driven Day in Taiwan",
-  "bannerUrl": null,
+  "bannerUrl": "/banners/global-domain-driven-day-taiwan-2024.jpg",
   "summary": "Virtual DDD 全球 16 小時 Open Space 的台灣場,以魚缸座談探討 DDD 觀點,並進行 2025 年社群規劃。",
   "fullDescriptionMd": "# Global Domain-Driven Day in Taiwan\n\n2024 年 11 月 21 日 18:30–22:00 於翹共同工作空間 Ciao Coworking Space(台北市信義區)舉行。\n\n作為 Virtual DDD 全球 16 小時 Global Domain-Driven Days Open Space 的台灣在地場次,內容包含探討 DDD 觀點的魚缸座談(fishbowl panel)、PacMan 自由分享,以及 2025 年社群規劃討論。\n\n## 資料來源\n\n- [Meetup — Global Domain-Driven Day in Taiwan](https://www.meetup.com/domain-driven-design-taiwan-meetup-group/events/303940421/)\n- [Virtual DDD — Global Domain-Driven Days 2024](https://virtualddd.com/open-space/global-domain-driven-days-2024/)",
   "startsAt": "2024-11-21T10:30:00.000Z",
@@ -12,7 +12,11 @@
     "meetingUrl": null
   },
   "status": "ended",
-  "tags": ["meetup", "open-space", "history"],
+  "tags": [
+    "meetup",
+    "open-space",
+    "history"
+  ],
   "speakers": [],
   "ticketTypes": []
 }

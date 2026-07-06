@@ -1,7 +1,7 @@
 {
   "eventId": "ai-bdd-sharing-2026-05",
   "title": "AI x BDD 人性化駕馭工程:Visualized Planner + BDD Evaluator → BDD 規格驅動開發",
-  "bannerUrl": null,
+  "bannerUrl": "/banners/ai-bdd-sharing-2026-05.jpg",
   "summary": "水球潘線上分享以 BDD 可執行規格駕馭 AI 產生程式碼的規格驅動開發方法。",
   "fullDescriptionMd": "# AI x BDD 人性化駕馭工程\n\n2026 年 5 月 27 日 20:00–21:00 以線上方式舉行。\n\n由水球潘(水球軟體學院、DDDTW 核心志工)分享以 BDD 進行規格驅動開發:以可執行規格(executable specifications)將業務語言綁定到測試,搭配 aixbdd skills 與視覺化規劃工具(Visualized Planner + BDD Evaluator),駕馭 AI 產生的程式碼。\n\n## 資料來源\n\n- [Accupass — AI x BDD 人性化駕馭工程](https://www.accupass.com/event/2605200856131230154060)",
   "startsAt": "2026-05-27T12:00:00.000Z",
@@ -12,7 +12,13 @@
     "meetingUrl": null
   },
   "status": "ended",
-  "tags": ["meetup", "online", "bdd", "ai", "history"],
+  "tags": [
+    "meetup",
+    "online",
+    "bdd",
+    "ai",
+    "history"
+  ],
   "speakers": [
     {
       "speakerId": "waterball-pan",

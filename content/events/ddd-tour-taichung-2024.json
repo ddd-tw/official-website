@@ -1,7 +1,7 @@
 {
   "eventId": "ddd-tour-taichung-2024",
   "title": "2024 DDDTour 台中站 - 領域驅動的產品價值需求與分析:初探領域故事化(Domain Storytelling)",
-  "bannerUrl": null,
+  "bannerUrl": "/banners/ddd-tour-taichung-2024.jpg",
   "summary": "與 Agile Taichung 合辦的 Domain Storytelling 工作坊,以 Miro 實作領域驅動的產品價值需求與分析。",
   "fullDescriptionMd": "# 2024 DDDTour 台中站 - 初探領域故事化(Domain Storytelling)\n\n2024 年 6 月 22 日 13:00–17:00 於台中瑞嘉軟體科技 Onelab 舉行,與 Agile Taichung 合辦。\n\n由陳勉修(Michael,樂屋國際資訊副總經理、DDD Taiwan 志工)帶領的 Domain Storytelling 工作坊,主題為領域驅動的產品價值需求與分析,以 Miro 線上白板進行實作。\n\n## 資料來源\n\n- [Accupass — 2024 DDDTour 台中站](https://www.accupass.com/event/2405191356038795367810)",
   "startsAt": "2024-06-22T05:00:00.000Z",
@@ -12,7 +12,12 @@
     "meetingUrl": null
   },
   "status": "ended",
-  "tags": ["workshop", "taichung", "domain-storytelling", "history"],
+  "tags": [
+    "workshop",
+    "taichung",
+    "domain-storytelling",
+    "history"
+  ],
   "speakers": [
     {
       "speakerId": "michael-chen",

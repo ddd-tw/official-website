@@ -1,7 +1,7 @@
 {
   "eventId": "ddd-tw-meetup-2020-08",
   "title": "【DDD TW 8月 Meetup 聚會】看 DDD 如何解決溝通不一致、結合重構技巧戰勝 Legacy Code",
-  "bannerUrl": null,
+  "bannerUrl": "/banners/ddd-tw-meetup-2020-08.jpg",
   "summary": "雙主題聚會:工程師與設計師的溝通協作,以及結合 DDD 與重構技巧面對 Legacy Code。",
   "fullDescriptionMd": "# 【DDD TW 8月 Meetup 聚會】\n\n2020 年 8 月 26 日 19:00–21:30 於 Dcard 辦公室舉行。\n\n- Session 1:你畫的跟我想的不一樣!工程師與設計師的愛恨糾葛 — 鄭棋文 Steven。探討設計師與 DDD 的關係、如何確保大家對名詞理解一致、增加良性溝通並建立默契。\n- Session 2:Legacy Code 好大,我不怕! — 劉鳳軒 Fong。整理 Refactor、《Working Effectively with Legacy Code》與 DDD 之間的關係與使用時機,總結重構的指導方針,並分享如何以通用語言、限界上下文與分層架構落實到現實開發。\n\n## 資料來源\n\n- [KKTIX — 【DDD TW 8月 Meetup 聚會】](https://dddtaiwan.kktix.cc/events/2020-8-meetup)",
   "startsAt": "2020-08-26T11:00:00.000Z",
@@ -12,7 +12,10 @@
     "meetingUrl": null
   },
   "status": "ended",
-  "tags": ["meetup", "history"],
+  "tags": [
+    "meetup",
+    "history"
+  ],
   "speakers": [
     {
       "speakerId": "steven-cheng",

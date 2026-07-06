@@ -1,7 +1,7 @@
 {
   "eventId": "dddtw-community-planning-2025-01",
   "title": "DDDTW 2025 社群活動中的成長與機會 - 新一年的社群營運內容,由你來參與設計",
-  "bannerUrl": null,
+  "bannerUrl": "/banners/dddtw-community-planning-2025-01.jpg",
   "summary": "由參與者共同設計 2025 年社群營運藍圖的開放式規劃工作坊,探索 DDD 與 DX/UX/行銷的跨域結合。",
   "fullDescriptionMd": "# DDDTW 2025 社群活動中的成長與機會\n\n2025 年 1 月 11 日 14:00–17:00 於台北市中山區長安西路5巷2號二樓古蹟展演區(一)舉行。\n\n以參與者驅動的開放式規劃(unconference)形式,共同設計 2025 年的社群營運內容與活動路線圖,探索 DDD 與 DX、UX、行銷等領域的跨域結合,無固定講者。\n\n## 資料來源\n\n- [Accupass — DDDTW 2025 社群活動中的成長與機會](https://www.accupass.com/event/2412301524152059096482)",
   "startsAt": "2025-01-11T06:00:00.000Z",
@@ -12,7 +12,10 @@
     "meetingUrl": null
   },
   "status": "ended",
-  "tags": ["meetup", "history"],
+  "tags": [
+    "meetup",
+    "history"
+  ],
   "speakers": [],
   "ticketTypes": []
 }

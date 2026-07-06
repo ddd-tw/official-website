@@ -1,7 +1,7 @@
 {
   "eventId": "ddd-tour-kaohsiung-2024",
   "title": "2024 DDDTour 高雄站 - 領域驅動設計在專案實作中的應用與價值共鳴",
-  "bannerUrl": null,
+  "bannerUrl": "/banners/ddd-tour-kaohsiung-2024.jpg",
   "summary": "DDDTW 與 GDG Kaohsiung、開發者 Buffet 合辦的高雄巡迴場,全日探討 DDD 在實務專案中的應用。",
   "fullDescriptionMd": "# 2024 DDDTour 高雄站\n\n2024 年 7 月 6 日 09:00–17:00 於高雄國泰商業大樓舉行。\n\n內容從 DDD 概觀、戰術設計物件協作、DDD 與 Clean Architecture 打造可測試系統、Domain Storytelling 從戰略到戰術,到既有專案導入 DDD 的經驗分享,最後以職涯發展與學習經驗座談收尾。\n\n## 資料來源\n\n- [Accupass — 2024 DDDTour 高雄站](https://www.accupass.com/event/2405191413443338941360)",
   "startsAt": "2024-07-06T01:00:00.000Z",
@@ -12,7 +12,11 @@
     "meetingUrl": null
   },
   "status": "ended",
-  "tags": ["workshop", "kaohsiung", "history"],
+  "tags": [
+    "workshop",
+    "kaohsiung",
+    "history"
+  ],
   "speakers": [
     {
       "speakerId": "kim-kao",

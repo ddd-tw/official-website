@@ -1,7 +1,7 @@
 {
   "eventId": "dddtw-taichung-tour-2022",
   "title": "DDDTW Taichung Tour - 莫非是雙截龍!? GOOS + BDD 大進擊",
-  "bannerUrl": null,
+  "bannerUrl": "/banners/dddtw-taichung-tour-2022.jpg",
   "summary": "台中巡迴場,上午 GOOS(Growing Object-Oriented Software, Guided by Tests)、下午 BDD 兩場工作坊。",
   "fullDescriptionMd": "# DDDTW Taichung Tour - 莫非是雙截龍!? GOOS + BDD 大進擊\n\n2022 年 10 月 22 日 09:00–17:30 於新加坡商鈦坦科技(Titansoft)台中辦公室舉行,分為兩場可分開報名的工作坊:\n\n- 上午(09:00–12:00):GOOS — Growing Object-Oriented Software, Guided by Tests\n- 下午(13:30–17:30):BDD — 從 Example Mapping 到 Gherkin 與 BDD 程式實作\n\n活動來賓包含張國昭(小張, Arthur)、林鴻皓(River)與 Fong。\n\n## 資料來源\n\n- [Accupass — DDDTW Taichung Tour - GOOS + BDD 大進擊](https://www.accupass.com/event/2209301809041913931717)",
   "startsAt": "2022-10-22T01:00:00.000Z",
@@ -12,7 +12,11 @@
     "meetingUrl": null
   },
   "status": "ended",
-  "tags": ["workshop", "taichung", "history"],
+  "tags": [
+    "workshop",
+    "taichung",
+    "history"
+  ],
   "speakers": [
     {
       "speakerId": "arthur-chang",

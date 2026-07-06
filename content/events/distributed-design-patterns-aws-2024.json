@@ -1,7 +1,7 @@
 {
   "eventId": "distributed-design-patterns-aws-2024",
   "title": "Implementing Distributed Design patterns on AWS",
-  "bannerUrl": null,
+  "bannerUrl": "/banners/distributed-design-patterns-aws-2024.jpg",
   "summary": "Kim Kao 分享如何以 DDD 界定現代化策略,並在 AWS 上實作分散式設計模式,會後接 Open Space 討論。",
   "fullDescriptionMd": "# Implementing Distributed Design patterns on AWS\n\n2024 年 4 月 10 日 19:00–21:30 於台北市大安區信義路四段 279 號 6 樓(SWC-Room)舉行,演講後接 Open Space 討論。\n\n由 Kim Kao(AWS 資深解決方案架構師)分享:面對遺留應用的現代化,如何運用 DDD 的 Bounded Context、Subdomain 與 Context Map 界定策略,並在 AWS 上實作分散式設計模式。\n\n## 資料來源\n\n- [Accupass — Implementing Distributed Design patterns on AWS](https://www.accupass.com/event/2403122150496071515030)",
   "startsAt": "2024-04-10T11:00:00.000Z",
@@ -12,7 +12,11 @@
     "meetingUrl": null
   },
   "status": "ended",
-  "tags": ["meetup", "aws", "history"],
+  "tags": [
+    "meetup",
+    "aws",
+    "history"
+  ],
   "speakers": [
     {
       "speakerId": "kim-kao",

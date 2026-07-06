@@ -1,7 +1,7 @@
 {
   "eventId": "dddtw-conference-2020",
   "title": "Domain Driven Design Taiwan Conference 2020",
-  "bannerUrl": null,
+  "bannerUrl": "/banners/dddtw-conference-2020.jpg",
   "summary": "DDD Taiwan 首屆年會,兩天實體活動超過 200 人參與,匯集台灣、歐洲與中國講者。",
   "fullDescriptionMd": "# Domain Driven Design Taiwan Conference 2020\n\n台灣第一屆領域驅動設計年會,2020 年 11 月 27–28 日於台北捷運北投會館舉行。\n\n第一天為三軌議程(技術實作、產品設計、開發流程),第二天為多場實作工作坊(含產品系統思考建模、DDD 從戰略到戰術深度歷險等)。議題涵蓋 DDD 於金融業的落地、CQRS 與 SAGA、Event Storming、Clean Architecture 等,強調 DDD 不只是技術實作與程式結構,更是連結業務與開發的方法。\n\n## 資料來源\n\n- [KKTIX — DDDTW Conf 2020](https://dddtaiwan.kktix.cc/events/dddtw-conf-2020)\n- [官方網站(2020)](https://conference.ddd-tw.com/2020/zh-TW/)\n- [Teddy Chen 會後心得](https://teddy-chen-tw.blogspot.com/2020/11/ddd-tw-2020-conference.html)",
   "startsAt": "2020-11-27T01:00:00.000Z",
@@ -12,7 +12,10 @@
     "meetingUrl": null
   },
   "status": "ended",
-  "tags": ["conference", "history"],
+  "tags": [
+    "conference",
+    "history"
+  ],
   "speakers": [
     {
       "speakerId": "zhang-yi",

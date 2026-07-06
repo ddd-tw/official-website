@@ -1,7 +1,7 @@
 {
   "eventId": "n8n-workshop-2025-05",
   "title": "不會寫程式也能自動化!n8n 入門實作工作坊",
-  "bannerUrl": null,
+  "bannerUrl": "/banners/n8n-workshop-2025-05.jpg",
   "summary": "零程式基礎的 n8n 自動化實作工作坊,整合 Line、Google Sheets、Google Calendar 與 AI Agent。",
   "fullDescriptionMd": "# 不會寫程式也能自動化!n8n 入門實作工作坊\n\n2025 年 5 月 24 日 13:30–17:30 於台北市大安區信義路四段 279 號 6 樓(Sw6 找場地)舉行,限額 30 人。\n\n由 Tung(DDDTW 核心志工)帶領的零程式基礎 n8n 自動化實作工作坊,實作 Line、Google Sheets、Google Calendar 與 AI Agent 的整合流程。\n\n## 資料來源\n\n- [Accupass — n8n 入門實作工作坊](https://www.accupass.com/event/2505120010231409721877)",
   "startsAt": "2025-05-24T05:30:00.000Z",
@@ -12,7 +12,11 @@
     "meetingUrl": null
   },
   "status": "ended",
-  "tags": ["workshop", "automation", "history"],
+  "tags": [
+    "workshop",
+    "automation",
+    "history"
+  ],
   "speakers": [
     {
       "speakerId": "tung",

@@ -1,7 +1,7 @@
 {
   "eventId": "dddesign-tw-conference-2024",
   "title": "領域驅動設計台灣 2024 年會 - DDDesign Taiwan Conference 2024",
-  "bannerUrl": null,
+  "bannerUrl": "/banners/dddesign-tw-conference-2024.jpg",
   "summary": "第四屆年會,定位為 System Design & Socio-technical Conference,聚焦遺留工作負載與系統現代化。",
   "fullDescriptionMd": "# DDDesign Taiwan Conference 2024\n\n2024 年 9 月 13 日 09:00–17:00 於台大醫院國際會議中心舉行。\n\n年會圍繞 legacy workloads 與現代應用的演變,探討系統遷移與現代化策略、風險管理、成本效益與技術債管理,並強調社會技術(socio-technical)因素對軟體開發決策的影響,促進企業決策者與第一線執行團隊的協作。邀請 13 位以上講者進行 4 場次分享。\n\n## 資料來源\n\n- [Accupass — DDDesign Taiwan Conference 2024](https://www.accupass.com/event/2406080625301381404160)\n- [官方網站(2024)](https://conference.ddd-tw.com/2024/)\n- [官方網站講者資料(speakers-data)](https://conference.ddd-tw.com/2024/assets/speakers-data-f0iJhQ97.js)\n- [官方網站議程資料(agenda-data)](https://conference.ddd-tw.com/2024/assets/agenda-data-CP8O144x.js)\n- [GitHub — ddd-tw-conference/2024](https://github.com/ddd-tw-conference/2024)",
   "startsAt": "2024-09-13T01:00:00.000Z",
@@ -12,7 +12,10 @@
     "meetingUrl": null
   },
   "status": "ended",
-  "tags": ["conference", "history"],
+  "tags": [
+    "conference",
+    "history"
+  ],
   "speakers": [
     {
       "speakerId": "ruddy-lee",

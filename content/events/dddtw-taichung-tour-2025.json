@@ -1,7 +1,7 @@
 {
   "eventId": "dddtw-taichung-tour-2025",
   "title": "DDDTW 台中 Tour(2025)",
-  "bannerUrl": null,
+  "bannerUrl": "/banners/dddtw-taichung-tour-2025.jpg",
   "summary": "小型台中巡迴講座:文件即程式碼、以 AIDLC 驅動應用系統現代化,以及 Vibe Coding × DDD 迭代建模。",
   "fullDescriptionMd": "# DDDTW 台中 Tour(2025)\n\n2025 年 10 月 18 日 13:00–17:00 於台中緯雲股份有限公司舉行,約 30–35 人的小型講座。\n\n## 議程\n\n- 文件即程式碼 – 從觀念到實踐 — Tung\n- 以 AIDLC 驅動應用系統現代化體驗升級 — Kim Kao(AWS)\n- Vibe Coding × DDD:以迭代建模避免失控 — James Wang(王家駿)\n\n## 資料來源\n\n- [Accupass — DDDTW台中Tour](https://www.accupass.com/event/2509091512466295950400)",
   "startsAt": "2025-10-18T05:00:00.000Z",
@@ -12,7 +12,11 @@
     "meetingUrl": null
   },
   "status": "ended",
-  "tags": ["meetup", "taichung", "history"],
+  "tags": [
+    "meetup",
+    "taichung",
+    "history"
+  ],
   "speakers": [
     {
       "speakerId": "tung",

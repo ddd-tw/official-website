@@ -1,7 +1,7 @@
 {
   "eventId": "event-sourcing-cqrs-fireside-2024-09",
   "title": "DDDTW 九月 Meetup - Stephen & Kim 與你輕鬆聊 Event Sourcing/CQRS/DDD",
-  "bannerUrl": null,
+  "bannerUrl": "/banners/event-sourcing-cqrs-fireside-2024-09.jpg",
   "summary": "Stephen(Event Store)與 Kim(AWS)以英語/粵語為主的爐邊對談,輕鬆聊 Event Sourcing、CQRS 與 DDD。",
   "fullDescriptionMd": "# DDDTW 九月 Meetup - Stephen & Kim 與你輕鬆聊 Event Sourcing/CQRS/DDD\n\n2024 年 9 月 11 日 19:30–21:30 於言文字 Emoji Cafe & Bar(台北市中正區開封街)舉行。\n\n由 Stephen(Event Store Developer Advocate,擁有十年以上 Event Sourcing/CQRS/DDD 經驗)與 Kim(AWS)進行爐邊對談,輕鬆聊 Event Sourcing、CQRS 與 DDD,對談以英語與粵語為主。\n\n## 資料來源\n\n- [Accupass — DDDTW 九月 Meetup](https://www.accupass.com/event/2408271535571220754951)",
   "startsAt": "2024-09-11T11:30:00.000Z",
@@ -12,7 +12,11 @@
     "meetingUrl": null
   },
   "status": "ended",
-  "tags": ["meetup", "event-sourcing", "history"],
+  "tags": [
+    "meetup",
+    "event-sourcing",
+    "history"
+  ],
   "speakers": [
     {
       "speakerId": "stephen-tung",

@@ -1,7 +1,7 @@
 {
   "eventId": "mopcon-dddtw-event-storming-workshop-2022",
   "title": "MOPCON x DDDTW Event Storming 工作坊「轟隆轟隆!進擊的DDD大賞來啦!」",
-  "bannerUrl": null,
+  "bannerUrl": "/banners/mopcon-dddtw-event-storming-workshop-2022.jpg",
   "summary": "與 MOPCON 合辦的高雄全日 Event Storming 工作坊,從 Big Picture 到 Process Modeling 與軟體設計。",
   "fullDescriptionMd": "# MOPCON x DDDTW Event Storming 工作坊\n\n2022 年 9 月 3 日 09:00–17:00 於高雄亞灣新創園(Startup Terrace Kaohsiung)3F 舉行,與 MOPCON 合辦。\n\n內容從 DDD 入門介紹、Event Storming Big Picture,到 Process Modeling 與軟體設計,並以 Open Space 收尾,實作以 Miro 線上白板進行。由 DDDTW 志工林鴻皓(River Lin)、劉鳳軒(Fong Liu)與 Andy Lin 擔任引導。\n\n## 資料來源\n\n- [KKTIX(MOPCON)— MOPCON x DDDTW Event Storming 工作坊](https://mopcon.kktix.cc/events/2022-ddd-mopcon)",
   "startsAt": "2022-09-03T01:00:00.000Z",
@@ -12,7 +12,12 @@
     "meetingUrl": null
   },
   "status": "ended",
-  "tags": ["workshop", "event-storming", "kaohsiung", "history"],
+  "tags": [
+    "workshop",
+    "event-storming",
+    "kaohsiung",
+    "history"
+  ],
   "speakers": [
     {
       "speakerId": "river-lin",

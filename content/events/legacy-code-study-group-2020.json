@@ -1,7 +1,7 @@
 {
   "eventId": "legacy-code-study-group-2020",
   "title": "2020 DDDTW Legacy Code 讀書會",
-  "bannerUrl": null,
+  "bannerUrl": "/banners/legacy-code-study-group-2020.jpg",
   "summary": "共 9 場的社群讀書會,共讀《Working Effectively with Legacy Code》,以導讀加分組程式實作的形式進行。",
   "fullDescriptionMd": "# 2020 DDDTW Legacy Code 讀書會\n\n2020 年 3 月 3 日至 7 月 8 日,約每兩週一次於天瓏書局 Coding Space 舉行(疫情期間後期並行 Zoom 線上直播),共 9 場,共讀《Working Effectively with Legacy Code:管理、修改、重構遺留程式碼的藝術》。\n\n每場約 2 小時:導讀者總結書本知識 30–50 分鐘、分組程式碼實作 40–60 分鐘、總結實作心得 30 分鐘,並提供 Java、JavaScript、PHP 等多語言的 Legacy Code 供現場重構練習。\n\n## 場次\n\n- 1st(03/03):Ch1–5 修改軟體的原因與風險、接縫模型\n- 2nd(03/18):Ch6–7 新生方法/類別、外覆方法/類別\n- 3rd(04/01):Ch8–9\n- 4th(04/15):Ch10–11\n- 5th(05/06):Ch12–14\n- 6th(05/20):Ch15–17\n- 7th(05/27):Ch18–20\n- 8th(06/10):Ch21–24\n- 9th Final(07/08):Ch25 解依賴技術\n\n## 資料來源\n\n- [KKTIX — Legacy Code 讀書會 1st](https://dddtaiwan.kktix.cc/events/dddtw-2020-studygroup)\n- [KKTIX — Legacy Code 讀書會 2nd](https://dddtaiwan.kktix.cc/events/dddtw-2020-studygroup-2nd)\n- [KKTIX — Legacy Code 讀書會 9th Final](https://dddtaiwan.kktix.cc/events/dddtw-2020-studygroup-9th-final)",
   "startsAt": "2020-03-03T11:00:00.000Z",
@@ -12,7 +12,10 @@
     "meetingUrl": null
   },
   "status": "ended",
-  "tags": ["study-group", "history"],
+  "tags": [
+    "study-group",
+    "history"
+  ],
   "speakers": [],
   "ticketTypes": []
 }

@@ -1,7 +1,7 @@
 {
   "eventId": "dddtw-conference-2025",
   "title": "DDDTW 2025 - AI 時代軟體開發方法(第五屆領域驅動設計年會)",
-  "bannerUrl": null,
+  "bannerUrl": "/banners/dddtw-conference-2025.jpg",
   "summary": "第五屆年會,主題「AI 時代軟體開發方法」,探討 AI 對軟體開發方法與實務的影響。",
   "fullDescriptionMd": "# DDDTW 2025 - AI 時代軟體開發方法\n\n2025 年 11 月 8 日舉行的第五屆年會,全日約 8 小時。\n\n主題聚焦 AI 時代的軟體開發方法,包含 AI 輔助開發、文件即程式碼(documentation as code)與事件應變自動化等方向,邀請 13 位以上講者進行 4 場次分享。\n\n## 資料來源\n\n- [官方網站(2025)](https://conference.ddd-tw.com/2025/)\n- [GitHub — ddd-tw/2025Summit](https://github.com/ddd-tw/2025Summit)\n- [GitHub — ddd-tw-conference/2025 講者資料](https://github.com/ddd-tw-conference/2025/blob/main/lib/data/speakers.ts)\n- [GitHub — ddd-tw-conference/2025 議程資料](https://github.com/ddd-tw-conference/2025/blob/main/lib/data/agenda.ts)\n- [Accupass — 領域驅動設計台灣 2025 年度成果發表會「新旅程」](https://www.accupass.com/event/2508301008076132622520)",
   "startsAt": "2025-11-08T01:00:00.000Z",
@@ -12,7 +12,11 @@
     "meetingUrl": null
   },
   "status": "ended",
-  "tags": ["conference", "ai", "history"],
+  "tags": [
+    "conference",
+    "ai",
+    "history"
+  ],
   "speakers": [
     {
       "speakerId": "michael-chen",

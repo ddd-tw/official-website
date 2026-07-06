@@ -1,7 +1,7 @@
 {
   "eventId": "coding-dojo-tdd-pair-programming-2022-04",
   "title": "DDDTW 4月 Coding DOJO - TDD & Pair Programming",
-  "bannerUrl": null,
+  "bannerUrl": "/banners/coding-dojo-tdd-pair-programming-2022-04.jpg",
   "summary": "新手村等級的 Coding Dojo,以 Driver/Co-Pilot 輪替方式練習 TDD 與 Pair Programming,含兩個 Sprint 與回顧。",
   "fullDescriptionMd": "# DDDTW 4月 Coding DOJO - TDD & Pair Programming\n\n2022 年 4 月 16 日 13:30–17:40 於 MAYO(台北市信義區東興路)舉行,為 2022 年第一場公開社群活動。\n\n以 Coding Dojo 形式練習 TDD 與 Pair Programming:參與者以 Driver/Co-Pilot 角色輪替進行兩個 Sprint 的實作,每個 Sprint 後進行回顧(Retro),屬新手友善(新手村)等級。\n\n## 資料來源\n\n- [Accupass — DDDTW 4月 Coding DOJO](https://www.accupass.com/event/2204070625222745861970)",
   "startsAt": "2022-04-16T05:30:00.000Z",
@@ -12,7 +12,11 @@
     "meetingUrl": null
   },
   "status": "ended",
-  "tags": ["workshop", "tdd", "history"],
+  "tags": [
+    "workshop",
+    "tdd",
+    "history"
+  ],
   "speakers": [],
   "ticketTypes": []
 }
