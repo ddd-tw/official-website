@@ -1,0 +1,18 @@
+{
+  "eventId": "ddd-tw-meetups-2019",
+  "title": "DDD Taiwan Community Meetup 系列(2019)",
+  "bannerUrl": null,
+  "summary": "社群草創期的實體 Meetup 系列,2019 年舉辦超過 20 場線下聚會與讀書會,社群規模首次突破千人。",
+  "fullDescriptionMd": "# DDD Taiwan Community Meetup 系列(2019)\n\n根據社群 GitHub(ddd-tw/ddd-events)記錄,2019 年 1 月 26 日於 StarRocket SpaceA 舉辦第一場 Meetup,其後於集思會議中心、天瓏書店、台大會議中心等地陸續舉辦。\n\n這些聚會與讀書會讓 DDD Taiwan 社群在 2019 年快速成長,並逐步形成核心志工團隊。\n\n## 資料來源\n\n- [GitHub — ddd-tw/ddd-events](https://github.com/ddd-tw/ddd-events)\n- [KKTIX — DDD Taiwan 主辦活動列表](https://dddtaiwan.kktix.cc/)",
+  "startsAt": "2019-01-26T06:00:00.000Z",
+  "endsAt": "2019-07-27T09:00:00.000Z",
+  "venue": {
+    "kind": "onsite",
+    "address": "台北市(StarRocket SpaceA、集思會議中心、天瓏書店等)",
+    "meetingUrl": null
+  },
+  "status": "ended",
+  "tags": ["meetup", "history"],
+  "speakers": [],
+  "ticketTypes": []
+}
