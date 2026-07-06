@@ -1,0 +1,18 @@
+{
+  "eventId": "tactical-design-workshop-2019",
+  "title": "DDD – Tactical Design Pattern Implementation 戰術設計模式實作工作坊",
+  "bannerUrl": null,
+  "summary": "全日戰術設計實作工作坊,從 Event Storming 產出走向 DDD 戰術模式的程式實作。",
+  "fullDescriptionMd": "# 戰術設計模式實作工作坊\n\n2019 年 11 月 10 日 09:00–18:00 於台北 IEAT 會議中心舉行的全日工作坊。\n\n內容涵蓋 Entity、Value Object、Aggregate、Domain Service、Repository、Factory,並以 Aggregate Canvas 進行 Bounded Context 建模;提供 C#、Java、Python、PHP、TypeScript 等多語言程式範例,最後進行分組實作。票價 NTD 3,500,由社群志工共同授課。\n\n## 資料來源\n\n- [KKTIX — DDD – Tactical Design Pattern implementation](https://dddtaiwan.kktix.cc/events/dpimp)",
+  "startsAt": "2019-11-10T01:00:00.000Z",
+  "endsAt": "2019-11-10T10:00:00.000Z",
+  "venue": {
+    "kind": "onsite",
+    "address": "台北市中山區松江路350號 IEAT 會議中心",
+    "meetingUrl": null
+  },
+  "status": "ended",
+  "tags": ["workshop", "tactical-design", "history"],
+  "speakers": [],
+  "ticketTypes": []
+}

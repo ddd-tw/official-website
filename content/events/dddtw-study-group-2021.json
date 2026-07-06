@@ -1,0 +1,18 @@
+{
+  "eventId": "dddtw-study-group-2021",
+  "title": "2021 DDDTW 讀書會(黑豹書)",
+  "bannerUrl": null,
+  "summary": "共 7 場的社群讀書會,共讀《複雜軟件設計之道:領域驅動設計全面解析與實戰》(俗稱黑豹書)。",
+  "fullDescriptionMd": "# 2021 DDDTW 讀書會(黑豹書)\n\n2021 年 3 月 11 日至 6 月 3 日,每兩週四晚間 19:00–21:00 於天瓏書店 Coding Space 舉行,共 7 場。\n\n內容涵蓋 DDD 導論、戰略設計、Aggregate 設計、Value Object、Repository、分層架構與 CQRS,以章節導讀加實作討論的形式進行,程式範例以 Java 為主。\n\n## 資料來源\n\n- [KKTIX — 2021 DDDTW 讀書會](https://dddtaiwan.kktix.cc/events/2021-study-group)",
+  "startsAt": "2021-03-11T11:00:00.000Z",
+  "endsAt": "2021-06-03T13:00:00.000Z",
+  "venue": {
+    "kind": "onsite",
+    "address": "台北市 天瓏書店 Coding Space",
+    "meetingUrl": null
+  },
+  "status": "ended",
+  "tags": ["study-group", "history"],
+  "speakers": [],
+  "ticketTypes": []
+}

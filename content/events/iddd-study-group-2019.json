@@ -1,0 +1,43 @@
+{
+  "eventId": "iddd-study-group-2019",
+  "title": "iDDD 讀書會(Implementing Domain-Driven Design 讀書會系列)",
+  "bannerUrl": null,
+  "summary": "社群成立初期的核心讀書會,共讀 Vaughn Vernon《Implementing Domain-Driven Design》,2019 年共約 9 場。",
+  "fullDescriptionMd": "# iDDD 讀書會系列\n\n2019 年 2 月 20 日展開第一場,約 17 人參加,由 Kim Kao 等社群志工帶領,每 2–3 週聚會一次逐章共讀《Implementing Domain-Driven Design》。\n\n內容涵蓋 Ubiquitous Language、Bounded Context、Domain Events、Aggregates 等主題;2019 年 8 月 1 日舉行第 9 場(最終章),由 Eric、Alu、Kim 主講 Domain Service、Application 與 A+ES(Aggregates and Event Sourcing)。\n\n這個讀書會系列奠定了 DDD Taiwan 核心志工團隊的基礎。\n\n## 資料來源\n\n- [Kim Kao — iDDD 讀書會 1st 紀錄(Medium)](https://kimkao.medium.com/ddd-taiwan-community-iddd-%E8%AE%80%E6%9B%B8%E6%9C%83-1st-15e9fb372ad7)\n- [KKTIX — iDDD StudyGroup 第 9 場(最終場)](https://dddtaiwan.kktix.cc/events/iddd-studygroup-9th-final)",
+  "startsAt": "2019-02-20T11:30:00.000Z",
+  "endsAt": "2019-08-01T13:30:00.000Z",
+  "venue": {
+    "kind": "onsite",
+    "address": "台北市(多個場地;最終場:台北市中正區延平南路12號3樓)",
+    "meetingUrl": null
+  },
+  "status": "ended",
+  "tags": ["study-group", "iddd", "history"],
+  "speakers": [
+    {
+      "speakerId": "kim-kao",
+      "name": "Kim Kao",
+      "photoUrl": null,
+      "jobTitle": null,
+      "bio": "DDD Taiwan 社群發起志工之一。",
+      "topic": "Unified Language 與 Bounded Context(第一場導讀)"
+    },
+    {
+      "speakerId": "eric-2019",
+      "name": "Eric",
+      "photoUrl": null,
+      "jobTitle": null,
+      "bio": null,
+      "topic": "Domain Service / Application(最終場)"
+    },
+    {
+      "speakerId": "alu-2019",
+      "name": "Alu",
+      "photoUrl": null,
+      "jobTitle": null,
+      "bio": null,
+      "topic": "Domain Service / Application(最終場)"
+    }
+  ],
+  "ticketTypes": []
+}

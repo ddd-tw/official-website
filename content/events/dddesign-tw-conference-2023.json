@@ -1,0 +1,59 @@
+{
+  "eventId": "dddesign-tw-conference-2023",
+  "title": "DDDesign TW Conference 2023 - 啟發",
+  "bannerUrl": null,
+  "summary": "第三屆年會,主題「啟發」,紀念 Eric Evans 出版 DDD 一書 20 週年;24 場議程、3 場工作坊,約 308 人參與。",
+  "fullDescriptionMd": "# DDDesign TW Conference 2023 - 啟發\n\n2023 年 9 月 16–17 日舉行:9/16 為台大社科院實體場,9/17 為 YouTube 線上直播場。\n\n議程分入門、進階與工作坊三軌,內容涵蓋架構設計與演進、遺留系統重構、軟體測試、需求釐清與組織管理;工作坊包含 Mob Programming、Example Mapping 與 Event Storming。門票於會前三週完售,總體滿意度 4.23/5。\n\nKeynote 由《Learning Domain-Driven Design》作者 Vlad Khononov 帶來 *Balancing Coupling in Software Design*。\n\n## 資料來源\n\n- [KKTIX — DDDTW Conf 2023](https://dddtaiwan.kktix.cc/events/dddtwconf2023)\n- [Kim Kao — Conference 2023 Summary(Medium)](https://kimkao.medium.com/dddesign-taiwan-conference-2023-summary-7dfa01c20949)\n- [官方議程(2023)](https://conference.ddd-tw.com/2023/agendaDayOne)",
+  "startsAt": "2023-09-16T01:00:00.000Z",
+  "endsAt": "2023-09-17T09:00:00.000Z",
+  "venue": {
+    "kind": "onsite",
+    "address": "台北市大安區羅斯福路四段1號 國立臺灣大學社會科學院(第二日為 YouTube 線上直播)",
+    "meetingUrl": null
+  },
+  "status": "ended",
+  "tags": ["conference", "history"],
+  "speakers": [
+    {
+      "speakerId": "vlad-khononov",
+      "name": "Vlad Khononov",
+      "photoUrl": null,
+      "jobTitle": "《Learning Domain-Driven Design》作者",
+      "bio": null,
+      "topic": "Balancing Coupling in Software Design(Keynote)"
+    },
+    {
+      "speakerId": "soking",
+      "name": "Soking",
+      "photoUrl": null,
+      "jobTitle": null,
+      "bio": null,
+      "topic": null
+    },
+    {
+      "speakerId": "liu-you-chen",
+      "name": "劉宥辰",
+      "photoUrl": null,
+      "jobTitle": null,
+      "bio": null,
+      "topic": null
+    },
+    {
+      "speakerId": "ni-guo-kai",
+      "name": "倪國凱",
+      "photoUrl": null,
+      "jobTitle": null,
+      "bio": null,
+      "topic": null
+    },
+    {
+      "speakerId": "waterball-pan",
+      "name": "水球潘",
+      "photoUrl": null,
+      "jobTitle": null,
+      "bio": null,
+      "topic": null
+    }
+  ],
+  "ticketTypes": []
+}
