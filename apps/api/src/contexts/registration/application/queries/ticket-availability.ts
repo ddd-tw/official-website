@@ -26,9 +26,11 @@ export class TicketAvailabilityQuery implements TicketAvailabilityPort {
 
   async eventAvailability(eventIds: string[]): Promise<Map<string, EventAvailability>> {
     const now = this.clock.now();
+    // One round-trip for all events (was N+1: one query per event).
+    const byEvent = await this.ticketTypes.byEventIds(eventIds);
     const result = new Map<string, EventAvailability>();
     for (const eventId of eventIds) {
-      result.set(eventId, computeEventAvailability(await this.ticketTypes.byEventId(eventId), now));
+      result.set(eventId, computeEventAvailability(byEvent.get(eventId) ?? [], now));
     }
     return result;
   }

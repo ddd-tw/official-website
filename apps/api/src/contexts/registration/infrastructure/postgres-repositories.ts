@@ -49,6 +49,20 @@ export class PostgresTicketTypeRepository implements TicketTypeRepository {
     return rows.map(toTicketType);
   }
 
+  async byEventIds(eventIds: string[]): Promise<Map<string, TicketType[]>> {
+    const result = new Map<string, TicketType[]>();
+    if (eventIds.length === 0) return result;
+    // Single round-trip for the whole events list, then group in memory.
+    const rows = await this.sql<TicketTypeRow[]>`
+      SELECT * FROM ticket_types WHERE event_id IN ${this.sql(eventIds)} ORDER BY price, ticket_type_id`;
+    for (const row of rows) {
+      const list = result.get(row.event_id) ?? [];
+      list.push(toTicketType(row));
+      result.set(row.event_id, list);
+    }
+    return result;
+  }
+
   /** Invariant reserved <= quota enforced atomically by the conditional UPDATE. */
   async tryReserve(ticketTypeId: string): Promise<boolean> {
     const rows = await this.sql<{ ticket_type_id: string }[]>`

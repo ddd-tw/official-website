@@ -5,6 +5,8 @@ import type { TicketType } from "../domain/ticket-type";
 export interface TicketTypeRepository {
   byId(ticketTypeId: string): Promise<TicketType | null>;
   byEventId(eventId: string): Promise<TicketType[]>;
+  /** Batch load for many events in one round-trip (avoids N+1 on the events list). */
+  byEventIds(eventIds: string[]): Promise<Map<string, TicketType[]>>;
   /**
    * Atomic seat reservation — must be implemented as a conditional UPDATE
    * (`SET reserved = reserved + 1 WHERE reserved < quota`). Returns false

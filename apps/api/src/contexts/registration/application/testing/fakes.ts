@@ -54,6 +54,17 @@ export class InMemoryTicketTypeRepository implements TicketTypeRepository {
   async byEventId(eventId: string): Promise<TicketType[]> {
     return this.items.filter((t) => t.eventId === eventId);
   }
+  async byEventIds(eventIds: string[]): Promise<Map<string, TicketType[]>> {
+    const set = new Set(eventIds);
+    const result = new Map<string, TicketType[]>();
+    for (const t of this.items) {
+      if (!set.has(t.eventId)) continue;
+      const list = result.get(t.eventId) ?? [];
+      list.push(t);
+      result.set(t.eventId, list);
+    }
+    return result;
+  }
   async tryReserve(ticketTypeId: string): Promise<boolean> {
     const t = this.items.find((x) => x.ticketTypeId === ticketTypeId);
     if (!t || t.reserved >= t.quota) return false; // mirrors the conditional UPDATE
