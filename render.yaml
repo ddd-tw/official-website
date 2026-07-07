@@ -10,7 +10,7 @@ services:
     runtime: docker
     dockerfilePath: ./Dockerfile.api
     plan: free
-    healthCheckPath: /api/events
+    healthCheckPath: /healthz
     envVars:
       - key: DATABASE_URL
         sync: false # 部署時貼上 Neon 的 pooled connection string(含 ?sslmode=require)

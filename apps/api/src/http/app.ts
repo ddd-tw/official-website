@@ -63,6 +63,11 @@ export function buildApp(deps: AppDependencies): Hono {
   );
   app.onError(handleError);
 
+  // --- Liveness ---------------------------------------------------------------
+  // DB-free health check for the platform (Render). Kept out of /api/* so it
+  // never blocks on the registration DB (e.g. Neon waking from scale-to-zero).
+  app.get("/healthz", (c) => c.json({ status: "ok" }));
+
   // --- Catalog 活動目錄 ------------------------------------------------------
   app.get("/api/events", async (c) => c.json(await deps.catalog.listPublishedEvents.execute()));
   app.get("/api/events/:eventId", async (c) =>

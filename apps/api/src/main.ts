@@ -94,5 +94,6 @@ const app = buildApp({
   },
 });
 
-const server = Bun.serve({ port: config.port, fetch: app.fetch });
-console.log(`[api] DDD TW API listening on http://localhost:${server.port} (${catalog.all().length} events loaded)`);
+// hostname 0.0.0.0 so the container is reachable externally (required by Render/most PaaS).
+const server = Bun.serve({ port: config.port, hostname: "0.0.0.0", fetch: app.fetch });
+console.log(`[api] DDD TW API listening on ${server.hostname}:${server.port} (${catalog.all().length} events loaded)`);
