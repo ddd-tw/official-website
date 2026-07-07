@@ -8,6 +8,7 @@ services:
   - type: web
     name: dddtw-api
     runtime: docker
+    region: singapore # 與 Neon(ap-southeast-1)共置,並貼近台灣使用者
     dockerfilePath: ./Dockerfile.api
     plan: free
     healthCheckPath: /healthz
