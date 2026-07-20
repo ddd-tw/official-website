@@ -1,0 +1,34 @@
+[
+  {
+    "id": "evans-ddd",
+    "title": "Domain-Driven Design: Tackling Complexity in the Heart of Software",
+    "author": "Eric Evans",
+    "year": 2003,
+    "summary": "DDD 的起點。Ubiquitous Language、Bounded Context 與戰略設計的原典。",
+    "coverColor": "#24417E"
+  },
+  {
+    "id": "vernon-iddd",
+    "title": "Implementing Domain-Driven Design",
+    "author": "Vaughn Vernon",
+    "year": 2013,
+    "summary": "把 DDD 落到程式碼與架構的實作指南，紅皮書。",
+    "coverColor": "#C34A33"
+  },
+  {
+    "id": "khononov-learning-ddd",
+    "title": "Learning Domain-Driven Design",
+    "author": "Vlad Khononov",
+    "year": 2021,
+    "summary": "以現代視角重整 DDD 的入門書，戰略與戰術並重。",
+    "coverColor": "#1B2233"
+  },
+  {
+    "id": "wlaschin-dmmf",
+    "title": "Domain Modeling Made Functional",
+    "author": "Scott Wlaschin",
+    "year": 2018,
+    "summary": "用函數式思維與型別系統做領域建模。",
+    "coverColor": "#2B52A0"
+  }
+]

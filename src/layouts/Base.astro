@@ -1,0 +1,145 @@
+---
+import '../styles/global.css';
+import { useTranslations, type Locale } from '../i18n/ui';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const locale = (Astro.currentLocale ?? 'zh') as Locale;
+const t = useTranslations(locale);
+
+const { title = 'DDD Taiwan', description = t('site.description') } = Astro.props;
+
+const prefix = locale === 'zh' ? '' : `/${locale}`;
+const navItems = [
+  { href: `${prefix}/`, label: t('nav.home') },
+  { href: `${prefix}/events/`, label: t('nav.events') },
+  { href: `${prefix}/knowledge/`, label: t('nav.knowledge') },
+  { href: `${prefix}/community/`, label: t('nav.community') },
+  { href: `${prefix}/governance/`, label: t('nav.governance') },
+];
+
+const currentPath = Astro.url.pathname.replace(/\/?$/, '/');
+const otherLocaleHref = locale === 'zh' ? '/en/' : '/';
+---
+
+<!doctype html>
+<html lang={locale === 'zh' ? 'zh-TW' : 'en'}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400..700&family=Noto+Sans+TC:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <script is:inline>
+      // 主題三態 auto/dark/light：auto = 當地時間 18:00–06:00 深色。
+      // 需在 first paint 前執行以避免閃爍，故 inline 於 head。
+      (() => {
+        const apply = () => {
+          const mode = localStorage.getItem('theme-mode') || 'auto';
+          const h = new Date().getHours();
+          const dark = mode === 'dark' || (mode === 'auto' && (h >= 18 || h < 6));
+          const root = document.documentElement;
+          root.classList.remove('theme-dark', 'theme-light');
+          root.classList.add(dark ? 'theme-dark' : 'theme-light');
+        };
+        apply();
+        window.__applyTheme = apply;
+        setInterval(apply, 5 * 60 * 1000);
+      })();
+    </script>
+  </head>
+  <body>
+    <nav class="nav" id="site-nav">
+      <div class="container nav__inner">
+        <a class="nav__brand" href={`${prefix}/`}>
+          <img src="/logo.svg" alt="" width="34" height="34" />
+          <span>DDD TAIWAN</span>
+        </a>
+        <div class="nav__links">
+          {
+            navItems.map((item) => (
+              <a
+                class="nav__link"
+                href={item.href}
+                aria-current={currentPath === item.href ? 'page' : undefined}
+              >
+                {item.label}
+              </a>
+            ))
+          }
+          <a class="nav__btn" href={otherLocaleHref}>{locale === 'zh' ? 'EN' : '中'}</a>
+          <button class="nav__btn" data-theme-toggle aria-label="切換主題">◐</button>
+        </div>
+        <button class="nav__hamburger" data-menu-toggle aria-label="選單" aria-expanded="false">
+          ☰
+        </button>
+      </div>
+      <div class="nav__mobile">
+        {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
+        <div class="nav__mobile-row">
+          <a class="nav__btn" href={otherLocaleHref}>{locale === 'zh' ? 'EN' : '中'}</a>
+          <button class="nav__btn" data-theme-toggle aria-label="切換主題">◐</button>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <a class="nav__brand" href={`${prefix}/`} style="font-size: 13px;">
+          <img src="/logo.svg" alt="" width="24" height="24" />
+          <span>DDD TAIWAN</span>
+        </a>
+        <div class="footer__links">
+          <a href={`${prefix}/governance/`}>{t('footer.privacy')}</a>
+          <a href={`${prefix}/governance/`}>{t('footer.coc')}</a>
+          <a href="https://github.com/ddd-tw">GitHub</a>
+          <a href="https://www.youtube.com/@dddtaiwan">YouTube</a>
+          <span>© 2026 DDD Taiwan</span>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const ICONS: Record<string, string> = { auto: '◐', dark: '☾', light: '☀' };
+      const NEXT: Record<string, string> = { auto: 'dark', dark: 'light', light: 'auto' };
+
+      const syncIcons = () => {
+        const mode = localStorage.getItem('theme-mode') || 'auto';
+        document
+          .querySelectorAll('[data-theme-toggle]')
+          .forEach((btn) => (btn.textContent = ICONS[mode] ?? '◐'));
+      };
+      syncIcons();
+
+      document.querySelectorAll('[data-theme-toggle]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const mode = localStorage.getItem('theme-mode') || 'auto';
+          localStorage.setItem('theme-mode', NEXT[mode] ?? 'auto');
+          (window as any).__applyTheme?.();
+          syncIcons();
+        });
+      });
+
+      const nav = document.getElementById('site-nav');
+      const menuBtn = document.querySelector('[data-menu-toggle]');
+      menuBtn?.addEventListener('click', () => {
+        const open = nav?.classList.toggle('nav--open') ?? false;
+        menuBtn.setAttribute('aria-expanded', String(open));
+        menuBtn.textContent = open ? '✕' : '☰';
+      });
+    </script>
+  </body>
+</html>

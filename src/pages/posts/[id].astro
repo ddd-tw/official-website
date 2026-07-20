@@ -1,0 +1,32 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts', ({ data }) => !data.draft);
+  return posts.map((post) => ({ params: { id: post.id }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const fmtDate = (d: Date) => d.toISOString().slice(0, 10);
+---
+
+<Base title={`${post.data.title} — DDD Taiwan`} description={post.data.description}>
+  <article class="container container--narrow page-head">
+    <p class="eyebrow">
+      <span class="mono">{fmtDate(post.data.pubDate)}</span> · {post.data.author}
+    </p>
+    <h1>{post.data.title}</h1>
+    {
+      post.data.source && (
+        <p style="font-size: 14px; color: var(--ink-faint);">
+          原文出處：<a href={post.data.source}>{post.data.source}</a>（已取得作者授權轉載）
+        </p>
+      )
+    }
+    <div class="section" style="font-size: 16px;">
+      <Content />
+    </div>
+  </article>
+</Base>

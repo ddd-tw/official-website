@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="824" height="280" viewBox="0 0 824 280">
+  <defs></defs>
+  <g transform="translate(13,40) scale(2)"><circle cx="36" cy="50" r="26" fill="none" stroke="#24417E" stroke-width="2.5"></circle><circle cx="64" cy="50" r="26" fill="none" stroke="#24417E" stroke-width="2.5"></circle><path d="M50 28.1 A26 26 0 0 1 50 71.9 A26 26 0 0 1 50 28.1 Z" fill="#24417E"></path><path fill-rule="evenodd" d="M41.5 39 H49 A11 11 0 0 1 49 61 H41.5 Z M44.9 42.4 H49 A7.6 7.6 0 0 1 49 57.6 H44.9 Z" fill="#F6F2E9"></path></g>
+  <text x="240" y="163" font-family="&#39;Space Grotesk&#39;, sans-serif" font-size="64" font-weight="600" letter-spacing="14" fill="#1B2233">DDD TAIWAN</text>
+</svg>
