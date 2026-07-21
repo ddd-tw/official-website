@@ -75,5 +75,56 @@
     "summary": "從團隊協作、原則、架構到趨勢，掌握 SRE 與平台工程全局的決策指南 — Kim Kao 撰寫推薦序。",
     "coverColor": "#24417E",
     "url": "https://www.tenlong.com.tw/products/9786263334908"
+  },
+  {
+    "id": "brandolini-eventstorming",
+    "title": "Introducing EventStorming",
+    "author": "Alberto Brandolini",
+    "year": 2013,
+    "summary": "Event Storming 發明人的第一手著作：用大規模協作工作坊探索複雜業務領域 — 社群年會工作坊的核心方法。",
+    "coverColor": "#C34A33",
+    "url": "https://leanpub.com/introducing_eventstorming"
+  },
+  {
+    "id": "adzic-impact-mapping",
+    "title": "Impact Mapping",
+    "author": "Gojko Adzic",
+    "year": 2012,
+    "summary": "以「目標 → 角色 → 影響 → 交付物」四層提問對齊產品決策，確保做的每件事都連回商業目標。",
+    "coverColor": "#1B2233"
+  },
+  {
+    "id": "wardley-maps",
+    "title": "Wardley Maps",
+    "author": "Simon Wardley",
+    "year": 2018,
+    "summary": "把價值鏈與元件演化畫在同一張地圖上，讓策略討論有地形可循 — 免費線上閱讀。",
+    "coverColor": "#2B52A0",
+    "url": "https://medium.com/wardleymaps"
+  },
+  {
+    "id": "rozanski-woods-ssa",
+    "title": "Software Systems Architecture（2nd Edition）",
+    "author": "Nick Rozanski、Eoin Woods",
+    "year": 2011,
+    "summary": "以 7 個 Viewpoints 與 8 個 Perspectives 面對多元利害關係人的架構方法論 — 持續演進架構實踐的重要基石。",
+    "coverColor": "#24417E"
+  },
+  {
+    "id": "snowden-cynefin",
+    "title": "Cynefin: Weaving Sense-Making into the Fabric of Our World",
+    "author": "Dave Snowden 等",
+    "year": 2020,
+    "summary": "Cynefin 框架：辨識問題處於清晰、繁雜、複雜或混沌情境，選擇對應的決策與探索方式。",
+    "coverColor": "#1B2233"
+  },
+  {
+    "id": "nagy-rose-discovery",
+    "title": "Discovery: Explore Behaviour Using Examples（BDD Books 1）",
+    "author": "Gáspár Nagy、Seb Rose",
+    "year": 2018,
+    "summary": "Example Mapping 的標準參考：用規則與實例把需求對話結構化，是 BDD 探索階段的實用手冊。",
+    "coverColor": "#C34A33",
+    "url": "https://leanpub.com/bddbooks-discovery"
   }
 ]
