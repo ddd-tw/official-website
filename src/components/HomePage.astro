@@ -188,7 +188,7 @@ const entries = isEn
                   ([key, label]) =>
                     c.data.links[key] && (
                       <a href={c.data.links[key]} class="font-display" style="font-weight: 500;">
-                        {label}
+                        {key === 'website' ? new URL(c.data.links[key]!).hostname : label}
                       </a>
                     )
                 )}
