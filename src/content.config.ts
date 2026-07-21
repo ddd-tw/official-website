@@ -47,11 +47,17 @@ const books = defineCollection({
   loader: file('./src/data/books.json'),
   schema: z.object({
     title: z.string(),
+    /** 英文頁書名（選填，未填時沿用 title）。 */
+    titleEn: z.string().optional(),
     author: z.string(),
+    /** 英文頁作者（選填，未填時沿用 author）。 */
+    authorEn: z.string().optional(),
     year: z.number(),
     /** 書單分類：策略與情境 / 協作建模 / DDD 核心 / 架構與韌性。組內排序即 JSON 陣列順序（入門 → 深入）。 */
     category: z.enum(['strategy', 'collaboration', 'ddd-core', 'architecture']),
     summary: z.string(),
+    /** 英文頁摘要（選填，未填時沿用 summary）。 */
+    summaryEn: z.string().optional(),
     /** 正式書封圖片路徑（public/covers/），未提供時以 coverColor 色塊代替 */
     cover: z.string().optional(),
     coverColor: z.string().default('#24417E'),

@@ -208,8 +208,8 @@ const bookLd = {
     position: i + 1,
     item: {
       '@type': 'Book',
-      name: b.data.title,
-      author: { '@type': 'Person', name: b.data.author },
+      name: isEn ? (b.data.titleEn ?? b.data.title) : b.data.title,
+      author: { '@type': 'Person', name: isEn ? (b.data.authorEn ?? b.data.author) : b.data.author },
       datePublished: String(b.data.year),
       ...(b.data.url ? { url: b.data.url } : {}),
     },
@@ -280,33 +280,33 @@ const breadcrumb = {
                 <a class="kb-tile kb-tile--cover" href={b.data.url}>
                   <span class="kb-tile__cover">
                     {b.data.cover ? (
-                      <img src={b.data.cover} alt={`《${b.data.title}》`} width="52" height="74" loading="lazy" />
+                      <img src={b.data.cover} alt={`《${isEn ? (b.data.titleEn ?? b.data.title) : b.data.title}》`} width="52" height="74" loading="lazy" />
                     ) : (
                       <span style={`background: ${b.data.coverColor};`} />
                     )}
                   </span>
                   <span class="kb-tile__body">
                     <span class="kb-tile__title">
-                      {b.data.title}
+                      {isEn ? (b.data.titleEn ?? b.data.title) : b.data.title}
                       <span class="kb-tile__arrow" aria-hidden="true">↗</span>
                     </span>
-                    <span class="kb-tile__sub">{b.data.author} · {b.data.year}</span>
-                    <span class="kb-tile__desc">{b.data.summary}</span>
+                    <span class="kb-tile__sub">{isEn ? (b.data.authorEn ?? b.data.author) : b.data.author} · {b.data.year}</span>
+                    <span class="kb-tile__desc">{isEn ? (b.data.summaryEn ?? b.data.summary) : b.data.summary}</span>
                   </span>
                 </a>
               ) : (
                 <div class="kb-tile kb-tile--cover">
                   <span class="kb-tile__cover">
                     {b.data.cover ? (
-                      <img src={b.data.cover} alt={`《${b.data.title}》`} width="52" height="74" loading="lazy" />
+                      <img src={b.data.cover} alt={`《${isEn ? (b.data.titleEn ?? b.data.title) : b.data.title}》`} width="52" height="74" loading="lazy" />
                     ) : (
                       <span style={`background: ${b.data.coverColor};`} />
                     )}
                   </span>
                   <span class="kb-tile__body">
-                    <span class="kb-tile__title">{b.data.title}</span>
-                    <span class="kb-tile__sub">{b.data.author} · {b.data.year}</span>
-                    <span class="kb-tile__desc">{b.data.summary}</span>
+                    <span class="kb-tile__title">{isEn ? (b.data.titleEn ?? b.data.title) : b.data.title}</span>
+                    <span class="kb-tile__sub">{isEn ? (b.data.authorEn ?? b.data.author) : b.data.author} · {b.data.year}</span>
+                    <span class="kb-tile__desc">{isEn ? (b.data.summaryEn ?? b.data.summary) : b.data.summary}</span>
                   </span>
                 </div>
               )
