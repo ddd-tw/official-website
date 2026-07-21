@@ -1,0 +1,18 @@
+[
+  {
+    "id": "kim-kao",
+    "name": "高翊凱 Kim Kao",
+    "nameEn": "Kim Kao",
+    "role": "共同創辦人",
+    "roleEn": "Co-founder",
+    "bio": "AWS 解決方案架構經理、DDD Taiwan 共同創辦人。專注於把商業策略轉譯成能真正落地的架構決策 — 在 Architect Elevator 上，每天穿梭於頂樓與引擎室之間。《領域故事化》技術審校、DDD 15 週年文集共同譯者。",
+    "bioEn": "Solutions Architecture Manager at AWS and co-founder of DDD Taiwan. Focused on translating business strategy into architecture decisions that actually ship — riding the Architect Elevator between the penthouse and the engine room every day. Technical reviewer of Domain Storytelling (zh-Hant) and co-translator of the DDD 15th-anniversary anthology.",
+    "photo": "/contributors/kim-kao.jpg",
+    "links": {
+      "github": "https://github.com/humank",
+      "linkedin": "https://www.linkedin.com/in/kimkao/",
+      "x": "https://x.com/YiKaiKao",
+      "website": "https://kimkao.dev"
+    }
+  }
+]

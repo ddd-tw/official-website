@@ -1,10 +1,19 @@
 ---
 import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
 import type { Locale } from '../i18n/ui';
 
 const locale = (Astro.currentLocale ?? 'zh') as Locale;
 const isEn = locale === 'en';
 const prefix = isEn ? '/en' : '';
+
+const contributors = await getCollection('contributors');
+const linkLabels: [key: 'github' | 'linkedin' | 'x' | 'website', label: string][] = [
+  ['github', 'GitHub'],
+  ['linkedin', 'LinkedIn'],
+  ['x', 'X'],
+  ['website', 'Web'],
+];
 
 const entries = isEn
   ? [
@@ -128,6 +137,65 @@ const entries = isEn
       >
         {isEn ? 'Conference site →' : '前往年會官網 →'}
       </a>
+    </div>
+  </section>
+
+  <section class="container section">
+    <p class="eyebrow eyebrow--accent" style="margin: 0 0 6px;">Contributors</p>
+    <h2 style="font-size: 26px; margin: 0 0 8px;">{isEn ? 'The people behind the community' : '社群推手'}</h2>
+    <p style="color: var(--ink-mid); font-size: 14.5px; max-width: 620px; margin: 0 0 24px;">
+      {
+        isEn ? (
+          <>
+            This community and website are built by volunteers. Want to contribute?{' '}
+            <a href={`${prefix}/community/`}>Start by joining the community</a>.
+          </>
+        ) : (
+          <>
+            這個社群與網站由志工共同打造。想一起貢獻？
+            <a href={`${prefix}/community/`}>從加入社群開始</a>。
+          </>
+        )
+      }
+    </p>
+    <div class="grid-3">
+      {
+        contributors.map((c) => (
+          <div class="card card--hover">
+            <div style="display: flex; align-items: center; gap: 14px;">
+              <img
+                src={c.data.photo}
+                alt={isEn ? (c.data.nameEn ?? c.data.name) : c.data.name}
+                width="64"
+                height="64"
+                loading="lazy"
+                style="border-radius: 50%; object-fit: cover; border: 1px solid var(--line);"
+              />
+              <div>
+                <h3 style="font-size: 17px; margin: 0;">
+                  {isEn ? (c.data.nameEn ?? c.data.name) : c.data.name}
+                </h3>
+                <p class="eyebrow eyebrow--accent" style="margin: 2px 0 0; letter-spacing: 0.12em;">
+                  {isEn ? c.data.roleEn : c.data.role}
+                </p>
+              </div>
+            </div>
+            <p style="font-size: 14px; color: var(--ink-mid); margin: 14px 0 12px;">
+              {isEn ? c.data.bioEn : c.data.bio}
+            </p>
+            <p style="font-size: 13px; margin: 0; display: flex; gap: 14px; flex-wrap: wrap;">
+              {linkLabels.map(
+                ([key, label]) =>
+                  c.data.links[key] && (
+                    <a href={c.data.links[key]} class="font-display" style="font-weight: 500;">
+                      {label}
+                    </a>
+                  )
+              )}
+            </p>
+          </div>
+        ))
+      }
     </div>
   </section>
 </Base>

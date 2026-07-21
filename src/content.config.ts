@@ -73,4 +73,29 @@ const videos = defineCollection({
   }),
 });
 
-export const collections = { posts, events, books, videos };
+/**
+ * 貢獻者（首頁 Contributors 區塊），資料檔維護於 src/data/contributors.json，
+ * 照片放 public/contributors/。
+ */
+const contributors = defineCollection({
+  loader: file('./src/data/contributors.json'),
+  schema: z.object({
+    name: z.string(),
+    nameEn: z.string().optional(),
+    role: z.string(),
+    roleEn: z.string(),
+    bio: z.string(),
+    bioEn: z.string(),
+    photo: z.string(),
+    links: z
+      .object({
+        github: z.string().url().optional(),
+        linkedin: z.string().url().optional(),
+        x: z.string().url().optional(),
+        website: z.string().url().optional(),
+      })
+      .default({}),
+  }),
+});
+
+export const collections = { posts, events, books, videos, contributors };
