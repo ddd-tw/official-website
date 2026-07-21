@@ -163,31 +163,33 @@ const pageJsonLd = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
           <img src="/logo.svg" alt="" width="34" height="34" />
           <span>DDD TAIWAN</span>
         </a>
-        <div class="nav__links">
-          {
-            navItems.map((item) => (
-              <a
-                class="nav__link"
-                href={item.href}
-                aria-current={currentPath === item.href ? 'page' : undefined}
-              >
-                {item.label}
-              </a>
-            ))
-          }
-          <a class="nav__btn" href={otherLocaleHref}>{locale === 'zh' ? 'EN' : '中'}</a>
-          <button class="nav__btn" data-theme-toggle aria-label={labels.theme}>◐</button>
+        <div class="nav__right">
+          <div class="nav__links">
+            {
+              navItems.map((item) => (
+                <a
+                  class="nav__link"
+                  href={item.href}
+                  aria-current={currentPath === item.href ? 'page' : undefined}
+                >
+                  {item.label}
+                </a>
+              ))
+            }
+          </div>
+          <div class="nav__actions">
+            <a class="nav__btn" href={otherLocaleHref} aria-label={locale === 'zh' ? '切換到英文' : 'Switch to Chinese'}>
+              {locale === 'zh' ? 'EN' : '中'}
+            </a>
+            <button class="nav__btn" data-theme-toggle aria-label={labels.theme}>◐</button>
+            <button class="nav__hamburger" data-menu-toggle aria-label={labels.menu} aria-expanded="false">
+              ☰
+            </button>
+          </div>
         </div>
-        <button class="nav__hamburger" data-menu-toggle aria-label={labels.menu} aria-expanded="false">
-          ☰
-        </button>
       </div>
       <div class="nav__mobile">
         {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
-        <div class="nav__mobile-row">
-          <a class="nav__btn" href={otherLocaleHref}>{locale === 'zh' ? 'EN' : '中'}</a>
-          <button class="nav__btn" data-theme-toggle aria-label={labels.theme}>◐</button>
-        </div>
       </div>
     </nav>
 
