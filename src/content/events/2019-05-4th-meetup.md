@@ -4,4 +4,5 @@ titleEn: "4th Meetup — Domain-Driven Design · A Microservices Journey at Link
 date: 2019-05-01
 type: meetup
 link: https://dddtaiwan.kktix.cc/events/dddtaiwan4thmeetup
+videoUrl: https://youtu.be/gX5oB4fgX6U
 ---
