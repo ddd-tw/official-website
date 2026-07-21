@@ -383,6 +383,43 @@ a.card:hover,
   margin-top: 56px;
 }
 
+.kb-tabs {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--line);
+}
+
+.kb-tabs button {
+  font-family: 'Space Grotesk', 'Noto Sans TC', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  padding: 10px 16px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  color: var(--nav-off);
+  cursor: pointer;
+  transition: color 180ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.kb-tabs button:hover {
+  color: var(--ink);
+}
+
+.kb-tabs button[aria-selected='true'] {
+  color: var(--ink);
+  border-bottom-color: var(--accent);
+}
+
+[data-kb-panel] {
+  margin-top: 36px;
+  scroll-margin-top: 80px;
+}
+
 .page-head {
   padding: 72px 0 8px;
 }

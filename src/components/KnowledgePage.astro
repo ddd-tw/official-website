@@ -113,8 +113,17 @@ const fmtDate = (d: Date) => d.toISOString().slice(0, 10);
     </h1>
   </div>
 
-  <section class="container section">
-    <h2>Books</h2>
+  <div class="container" style="margin-top: 36px;">
+    <div class="kb-tabs" role="tablist" aria-label={isEn ? 'Knowledge base sections' : '知識庫分區'}>
+      <button role="tab" data-tab="books" aria-selected="true">Books</button>
+      <button role="tab" data-tab="papers" aria-selected="false">Papers</button>
+      <button role="tab" data-tab="video" aria-selected="false">Video</button>
+      <button role="tab" data-tab="github" aria-selected="false">GitHub</button>
+    </div>
+  </div>
+
+  <section class="container section" id="panel-books" data-kb-panel>
+    <h2 style="position: absolute; left: -9999px;">Books</h2>
     <p style="color: var(--ink-mid); font-size: 14.5px; max-width: 680px;">
       {
         isEn
@@ -130,9 +139,22 @@ const fmtDate = (d: Date) => d.toISOString().slice(0, 10);
           <div class="grid-2">
             {cat.items.map((b) => (
               <div class="card card--hover" style="display: flex; gap: 18px;">
-                <div
-                  style={`flex: 0 0 44px; height: 62px; border-radius: 4px; background: ${b.data.coverColor};`}
-                />
+                {b.data.cover ? (
+                  <a href={b.data.url} style="flex: 0 0 52px;">
+                    <img
+                      src={b.data.cover}
+                      alt={`《${b.data.title}》書封`}
+                      width="52"
+                      height="74"
+                      loading="lazy"
+                      style="width: 52px; height: 74px; object-fit: cover; border-radius: 4px; border: 1px solid var(--line-soft); display: block;"
+                    />
+                  </a>
+                ) : (
+                  <div
+                    style={`flex: 0 0 52px; height: 74px; border-radius: 4px; background: ${b.data.coverColor};`}
+                  />
+                )}
                 <div>
                   <h3 style="font-size: 16px; margin: 0;">
                     {b.data.url ? <a href={b.data.url}>{b.data.title}</a> : b.data.title}
@@ -157,8 +179,8 @@ const fmtDate = (d: Date) => d.toISOString().slice(0, 10);
     </p>
   </section>
 
-  <section class="container section">
-    <h2>Papers</h2>
+  <section class="container section" id="panel-papers" data-kb-panel>
+    <h2 style="position: absolute; left: -9999px;">Papers</h2>
     <p style="color: var(--ink-mid); font-size: 14.5px; max-width: 680px;">
       {
         isEn
@@ -198,8 +220,8 @@ const fmtDate = (d: Date) => d.toISOString().slice(0, 10);
     </p>
   </section>
 
-  <section class="container section">
-    <h2>Video</h2>
+  <section class="container section" id="panel-video" data-kb-panel>
+    <h2 style="position: absolute; left: -9999px;">Video</h2>
     <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px;">
       <span class="chip">{isEn ? 'Meetup replays' : 'Meetup 回放'}</span>
       <span class="chip">{isEn ? 'Conference talks' : '年會演講'}</span>
@@ -222,8 +244,8 @@ const fmtDate = (d: Date) => d.toISOString().slice(0, 10);
     </a>
   </section>
 
-  <section class="container section">
-    <h2>GitHub</h2>
+  <section class="container section" id="panel-github" data-kb-panel>
+    <h2 style="position: absolute; left: -9999px;">GitHub</h2>
     <ul class="row-list">
       {
         repos.map((r) => (
@@ -247,4 +269,29 @@ const fmtDate = (d: Date) => d.toISOString().slice(0, 10);
     </p>
     <a class="btn btn--ghost" href="https://github.com/ddd-tw">github.com/ddd-tw</a>
   </section>
+
+  <script>
+    const PANELS = ['books', 'papers', 'video', 'github'];
+
+    const show = (key: string) => {
+      PANELS.forEach((k) => {
+        const panel = document.getElementById(`panel-${k}`);
+        if (panel) panel.style.display = k === key ? '' : 'none';
+        document
+          .querySelector(`[data-tab="${k}"]`)
+          ?.setAttribute('aria-selected', String(k === key));
+      });
+    };
+
+    const fromHash = location.hash.slice(1);
+    show(PANELS.includes(fromHash) ? fromHash : 'books');
+
+    document.querySelectorAll<HTMLButtonElement>('[data-tab]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const key = btn.dataset.tab!;
+        history.replaceState(null, '', `#${key}`);
+        show(key);
+      });
+    });
+  </script>
 </Base>

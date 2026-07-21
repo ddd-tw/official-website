@@ -52,8 +52,10 @@ const books = defineCollection({
     /** 書單分類：策略與情境 / 協作建模 / DDD 核心 / 架構與韌性。組內排序即 JSON 陣列順序（入門 → 深入）。 */
     category: z.enum(['strategy', 'collaboration', 'ddd-core', 'architecture']),
     summary: z.string(),
+    /** 正式書封圖片路徑（public/covers/），未提供時以 coverColor 色塊代替 */
+    cover: z.string().optional(),
     coverColor: z.string().default('#24417E'),
-    /** 可免費閱讀的線上版連結（如社群翻譯） */
+    /** 購買或免費閱讀的連結 */
     url: z.string().url().optional(),
   }),
 });
