@@ -101,9 +101,10 @@ const contributors = defineCollection({
     /** 一行個人風格描述（仿 Virtual DDD 的 tagline，如 "Business software artist"） */
     tagline: z.string().optional(),
     taglineEn: z.string().optional(),
-    bio: z.string(),
-    bioEn: z.string(),
-    photo: z.string(),
+    bio: z.string().optional(),
+    bioEn: z.string().optional(),
+    /** 大頭照（選填）；未提供時首頁改以姓名縮寫的圓形頭像呈現。 */
+    photo: z.string().optional(),
     links: z
       .object({
         github: z.string().url().optional(),

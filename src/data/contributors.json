@@ -16,5 +16,68 @@
       "x": "https://x.com/YiKaiKao",
       "website": "https://kimkao.dev"
     }
+  },
+  {
+    "id": "michael-chen",
+    "name": "陳勉修 Michael Chen",
+    "nameEn": "Michael Chen",
+    "role": "社群籌辦",
+    "roleEn": "Organizer"
+  },
+  {
+    "id": "arthur-chang",
+    "name": "張國昭 Arthur Chang",
+    "nameEn": "Arthur Chang",
+    "role": "社群籌辦",
+    "roleEn": "Organizer"
+  },
+  {
+    "id": "james-wang",
+    "name": "James Wang",
+    "nameEn": "James Wang",
+    "role": "社群籌辦",
+    "roleEn": "Organizer"
+  },
+  {
+    "id": "river-lin",
+    "name": "River Lin",
+    "nameEn": "River Lin",
+    "role": "社群籌辦",
+    "roleEn": "Organizer"
+  },
+  {
+    "id": "blues-ho",
+    "name": "Blues Ho",
+    "nameEn": "Blues Ho",
+    "role": "社群籌辦",
+    "roleEn": "Organizer"
+  },
+  {
+    "id": "fong-liu",
+    "name": "Fong Liu",
+    "nameEn": "Fong Liu",
+    "role": "社群籌辦",
+    "roleEn": "Organizer"
+  },
+  {
+    "id": "morty-wen",
+    "name": "Morty Wen",
+    "nameEn": "Morty Wen",
+    "role": "社群籌辦",
+    "roleEn": "Organizer"
+  },
+  {
+    "id": "ean-lee",
+    "name": "Ean Lee",
+    "nameEn": "Ean Lee",
+    "role": "社群籌辦",
+    "roleEn": "Organizer"
+  },
+  {
+    "id": "curly-hsu",
+    "name": "Curly Hsu",
+    "nameEn": "Curly Hsu",
+    "role": "社群籌辦",
+    "roleEn": "Organizer"
   }
 ]

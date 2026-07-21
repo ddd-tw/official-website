@@ -7,13 +7,16 @@ const locale = (Astro.currentLocale ?? 'zh') as Locale;
 const isEn = locale === 'en';
 const prefix = isEn ? '/en' : '';
 
-const contributors = await getCollection('contributors');
-const linkLabels: [key: 'github' | 'linkedin' | 'x' | 'website', label: string][] = [
-  ['github', 'GitHub'],
-  ['linkedin', 'LinkedIn'],
-  ['x', 'X'],
-  ['website', 'Web'],
-];
+const organizers = await getCollection('contributors');
+// 無大頭照者以姓名縮寫的圓形頭像呈現；顏色依序取自品牌色盤。
+const AVATAR_COLORS = ['#24417E', '#2B52A0', '#c34a33', '#3e6ac0'];
+const initials = (n: string) =>
+  n
+    .split(/\s+/)
+    .slice(0, 2)
+    .map((w) => w[0])
+    .join('')
+    .toUpperCase();
 
 const entries = isEn
   ? [
@@ -167,59 +170,44 @@ const homeLd = {
   </section>
 
   <section class="container section">
-    <p class="eyebrow eyebrow--accent" style="margin: 0 0 6px;">Contributors</p>
-    <h2 style="font-size: 26px; margin: 0 0 8px;">{isEn ? 'The people behind the community' : '社群推手'}</h2>
-    <p style="color: var(--ink-mid); font-size: 14.5px; max-width: 620px; margin: 0 0 24px;">
+    <p class="eyebrow eyebrow--accent" style="margin: 0 0 6px;">Organizers</p>
+    <h2 style="font-size: 26px; margin: 0 0 8px;">{isEn ? 'Our organizers' : '社群籌辦團隊'}</h2>
+    <p style="color: var(--ink-mid); font-size: 14.5px; max-width: 620px; margin: 0 0 8px;">
       {
         isEn ? (
           <>
-            This community and website are built by volunteers. Want to contribute?{' '}
-            <a href={`${prefix}/community/`}>Start by joining the community</a>.
+            DDD Taiwan is organized by a group of volunteers — more have joined with every passing
+            year. Want to help run it? <a href={`${prefix}/community/`}>Start by joining the community</a>.
           </>
         ) : (
           <>
-            這個社群與網站由志工共同打造。想一起貢獻？
+            DDD Taiwan 由一群志工共同籌辦 — 從第一場聚會到現在，愈來愈多人一起投入。想一起幫忙？
             <a href={`${prefix}/community/`}>從加入社群開始</a>。
           </>
         )
       }
     </p>
-    <div class="grid-3">
+    <div class="org-ring">
       {
-        contributors.map((c) => (
-          <div class="card card--hover" style="padding: 0; overflow: hidden;">
-            <img
-              src={c.data.photo}
-              alt={isEn ? (c.data.nameEn ?? c.data.name) : c.data.name}
-              loading="lazy"
-              style="display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-bottom: 1px solid var(--line-soft);"
-            />
-            <div style="padding: 20px 24px 22px;">
-              <h3 style="font-size: 20px; margin: 0;">
-                {isEn ? (c.data.nameEn ?? c.data.name) : c.data.name}
-              </h3>
-              <p class="eyebrow eyebrow--accent" style="margin: 6px 0 0; letter-spacing: 0.14em;">
-                {isEn ? c.data.roleEn : c.data.role}
-              </p>
-              {(isEn ? c.data.taglineEn : c.data.tagline) && (
-                <p style="font-size: 14.5px; color: var(--ink-mid); margin: 8px 0 0;">
-                  {isEn ? c.data.taglineEn : c.data.tagline}
-                </p>
+        organizers.map((c, i) => (
+          <div class="org">
+            <div class="org__avatar">
+              {c.data.photo ? (
+                <img
+                  src={c.data.photo}
+                  alt={isEn ? (c.data.nameEn ?? c.data.name) : c.data.name}
+                  loading="lazy"
+                  width="72"
+                  height="72"
+                />
+              ) : (
+                <span class="org__monogram" style={`background: ${AVATAR_COLORS[i % AVATAR_COLORS.length]};`}>
+                  {initials(c.data.nameEn ?? c.data.name)}
+                </span>
               )}
-              <p style="font-size: 13px; color: var(--ink-faint); margin: 10px 0 0;">
-                {isEn ? c.data.bioEn : c.data.bio}
-              </p>
-              <p style="font-size: 13px; margin: 16px 0 0; padding-top: 14px; border-top: 1px solid var(--line-soft); display: flex; gap: 16px; flex-wrap: wrap;">
-                {linkLabels.map(
-                  ([key, label]) =>
-                    c.data.links[key] && (
-                      <a href={c.data.links[key]} class="font-display" style="font-weight: 500;">
-                        {key === 'website' ? new URL(c.data.links[key]!).hostname : label}
-                      </a>
-                    )
-                )}
-              </p>
             </div>
+            <span class="org__name">{isEn ? (c.data.nameEn ?? c.data.name) : c.data.name}</span>
+            <span class="org__role">{isEn ? c.data.roleEn : c.data.role}</span>
           </div>
         ))
       }
