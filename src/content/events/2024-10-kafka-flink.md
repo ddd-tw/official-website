@@ -1,6 +1,6 @@
 ---
-title: Building Real-time Next Generation AI Applications with Kafka and Flink
-titleEn: "Building Real-time Next Generation AI Applications with Kafka and Flink"
+title: 用 Kafka 與 Flink 打造即時新世代 AI 應用（與 Confluent 合辦）
+titleEn: "Building Real-time Next Generation AI Applications with Kafka and Flink (with Confluent)"
 date: 2024-10-15
 type: meetup
 link: https://www.accupass.com/organizer/detail/2204070436062239115110
