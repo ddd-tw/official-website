@@ -87,9 +87,18 @@ const videosByCategory = videoCategories.map((c) => ({
   ...c,
   items: videos.filter((v) => v.data.category === c.key),
 }));
-const youtubeThumb = (url: string) => {
-  const m = url.match(/(?:v=|youtu\.be\/)([\w-]{11})/);
-  return m ? `https://i.ytimg.com/vi/${m[1]}/mqdefault.jpg` : undefined;
+// 頻道縮寫，作為每列右側的來源標籤（呼應參考頁的 kind tag）。
+const channelTag = (channel?: string) => {
+  switch (channel) {
+    case 'AWS Events':
+      return 'AWS';
+    case 'Virtual Domain-Driven Design':
+      return 'Virtual DDD';
+    case 'Domain-Driven Design Taiwan':
+      return 'DDD TW';
+    default:
+      return channel;
+  }
 };
 const allPosts = (await getCollection('posts', ({ data }) => !data.draft)).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
@@ -277,45 +286,28 @@ const fmtDate = (d: Date) => d.toISOString().slice(0, 10);
       videosByCategory
         .filter((cat) => cat.items.length > 0)
         .map((cat) => (
-          <div style="margin-top: 28px;">
-            <h3 style="margin: 0 0 4px;">{cat.title}</h3>
-            <p style="font-size: 13.5px; color: var(--ink-faint); margin: 0 0 14px;">{cat.desc}</p>
-            <div class="video-grid">
+          <div class="video-section">
+            <h3 class="video-section__title">{cat.title}</h3>
+            <p class="video-section__desc">{cat.desc}</p>
+            <ul class="talk-list">
               {cat.items.map((v) => (
-                <a
-                  class="card card--hover video-card"
-                  href={v.data.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <div class="video-card__thumb">
-                    <img
-                      src={youtubeThumb(v.data.url)}
-                      alt={isEn ? (v.data.titleEn ?? v.data.title) : v.data.title}
-                      width="320"
-                      height="180"
-                      loading="lazy"
-                    />
-                    <span class="video-card__play" aria-hidden="true">
-                      <svg viewBox="0 0 24 24" fill="none">
-                        <circle cx="12" cy="12" r="12" fill="rgba(20, 22, 30, 0.55)" />
-                        <path d="M9.5 7.5v9l7-4.5-7-4.5z" fill="#fbf8f1" />
-                      </svg>
+                <li>
+                  <a class="talk-row" href={v.data.url} target="_blank" rel="noopener noreferrer">
+                    <span class="talk-row__year mono">{v.data.year ?? ''}</span>
+                    <span class="talk-row__main">
+                      <span class="talk-row__title">
+                        {isEn ? (v.data.titleEn ?? v.data.title) : v.data.title}
+                        <span class="talk-row__arrow" aria-hidden="true">↗</span>
+                      </span>
+                      {(isEn ? v.data.highlightEn : v.data.highlight) && (
+                        <span class="talk-row__highlight">{isEn ? v.data.highlightEn : v.data.highlight}</span>
+                      )}
                     </span>
-                  </div>
-                  <div class="video-card__body">
-                    <h4 class="video-card__title">{isEn ? (v.data.titleEn ?? v.data.title) : v.data.title}</h4>
-                    {(isEn ? v.data.highlightEn : v.data.highlight) && (
-                      <p class="video-card__highlight">{isEn ? v.data.highlightEn : v.data.highlight}</p>
-                    )}
-                    <p class="video-card__meta">
-                      {v.data.channel}
-                      {v.data.year ? ` · ${v.data.year}` : ''}
-                    </p>
-                  </div>
-                </a>
+                    <span class="talk-row__tag">{channelTag(v.data.channel)}</span>
+                  </a>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
         ))
     }
