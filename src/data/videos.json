@@ -1,37 +1,200 @@
 [
   {
-    "id": "ddd15y-book-launch",
-    "title": "DDD 15 週年新書發表會 — Kim Kao 總覽 DDD 15 週年",
-    "titleEn": "DDD 15th Anniversary Book Launch — An Overview by Kim Kao",
-    "category": "meetup",
-    "url": "https://www.youtube.com/watch?v=OnGi8wdX9BM",
-    "channel": "Domain-Driven Design Taiwan"
+    "id": "ean-inventory-legacy",
+    "title": "Ean - 單兵作戰：以領域驅動設計 (DDD) 改善既有進銷存管理系統的策略與實踐",
+    "titleEn": "Ean — Solo Combat: Improving a Legacy Inventory System with DDD",
+    "category": "case-study",
+    "url": "https://youtu.be/Kx91mozbtVE",
+    "channel": "Domain-Driven Design Taiwan",
+    "year": 2024,
+    "highlight": "一人團隊在無法改動的舊資料庫限制下，改造真實進銷存系統。",
+    "highlightEn": "A one-person team modernizing a real inventory system under an unchangeable legacy database."
+  },
+  {
+    "id": "cathay-besafe-platform",
+    "title": "張安邦 Andrew - 保險×DDD×中台×微服務-國泰產險BeSafe平台經驗分享",
+    "titleEn": "Andrew Chang — Insurance × DDD × Platform × Microservices: Cathay Insurance's BeSafe Platform",
+    "category": "case-study",
+    "url": "https://youtu.be/wnkTCh1d_l0",
+    "channel": "Domain-Driven Design Taiwan",
+    "year": 2022,
+    "highlight": "國泰產險 BeSafe 平台的具名企業案例：保險 × 中台 × 微服務。",
+    "highlightEn": "A named enterprise case: Cathay Insurance's BeSafe platform — insurance × platform × microservices."
+  },
+  {
+    "id": "ian-tsai-linkedin",
+    "title": "DDD TW 4th Meetup - 我的 LinkedIn 三年開發遊歷, By Ian Tsai",
+    "titleEn": "Ian Tsai — Three Years of Development at LinkedIn",
+    "category": "case-study",
+    "url": "https://youtu.be/oVqQLoiW4Hk",
+    "channel": "Domain-Driven Design Taiwan",
+    "year": 2020,
+    "highlight": "LinkedIn 內部系統的第一手經驗，誠實點出「這其實是 Distributed Monolith」。",
+    "highlightEn": "First-hand experience inside LinkedIn's systems — honestly naming a Distributed Monolith when he saw one."
+  },
+  {
+    "id": "chris-simon-shared-language",
+    "title": "Chris Simon - When Customers Don't Share a Language",
+    "titleEn": "Chris Simon — When Customers Don't Share a Language",
+    "category": "case-study",
+    "url": "https://youtu.be/Bwcz_S2YSKM",
+    "channel": "Domain-Driven Design Taiwan",
+    "year": 2024,
+    "highlight": "2015 年澳洲金融/保險業真實案例，示範 Context Mapping 如何隨客戶關係演進。",
+    "highlightEn": "A real 2015 Australian fintech/insurance case showing how context maps evolve with customer relationships."
+  },
+  {
+    "id": "waterball-startup-ddd",
+    "title": "水球潘 - 新創到底適不適合走 DDD ？ 就讓我公司當白老鼠走一次 Scrum x DDD 試試看吧",
+    "titleEn": "Waterball Pan — Does DDD Even Fit a Startup? Using My Own Company as the Guinea Pig",
+    "category": "case-study",
+    "url": "https://youtu.be/wtubL3MIOq8",
+    "channel": "Domain-Driven Design Taiwan",
+    "year": 2024,
+    "highlight": "拿自己的新創公司當白老鼠，實測 DDD 到底適不適合早期團隊。",
+    "highlightEn": "Using his own startup as the guinea pig to test whether DDD actually fits an early-stage team."
+  },
+  {
+    "id": "teddy-clean-architecture-ezkanban",
+    "title": "[2020 DDDTW 年會] DDD + Clean Architecture 從需求到實作 - Teddy 陳建村",
+    "titleEn": "Teddy Chen — DDD + Clean Architecture, from Requirements to Implementation",
+    "category": "case-study",
+    "url": "https://youtu.be/5THBVeKtJr8",
+    "channel": "Domain-Driven Design Taiwan",
+    "year": 2021,
+    "highlight": "從需求訪談、Event Storming 到 Clean Architecture 落地程式碼的完整流程，以 ezKanban 為例。",
+    "highlightEn": "The full pipeline from requirements to code — Event Storming through Clean Architecture — using the real ezKanban system."
+  },
+  {
+    "id": "liu-youchen-clean-architecture",
+    "title": "劉宥辰 - 從混亂到組織：DDD 與 Clean Architecture 的持續精進挑戰之道",
+    "titleEn": "Liu You-Chen — From Chaos to Order: The Ongoing Challenge of DDD and Clean Architecture",
+    "category": "case-study",
+    "url": "https://youtu.be/AiQgpOXk2kk",
+    "channel": "Domain-Driven Design Taiwan",
+    "year": 2024,
+    "highlight": "在真實工作中遇到的 code smell，一步步走向 Clean Architecture 的重構過程。",
+    "highlightEn": "Real code smells encountered at work, and the step-by-step refactor toward Clean Architecture."
+  },
+  {
+    "id": "vlad-khononov-coupling",
+    "title": "Vlad Khononov - Balancing Coupling in Software Design",
+    "titleEn": "Vlad Khononov — Balancing Coupling in Software Design",
+    "category": "keynote",
+    "url": "https://youtu.be/0ZEpdPusZLk",
+    "channel": "Domain-Driven Design Taiwan",
+    "year": 2024,
+    "highlight": "《Balancing Coupling in Software Design》作者親自講解耦合模型。",
+    "highlightEn": "The coupling model explained by the author of the book on the subject."
+  },
+  {
+    "id": "julie-lerman-ddd",
+    "title": "[DDDesign Taiwan 2021 Conference] Julie Lerman - 一窺堂奧 - 領域驅動設計：是基於臨場務實還是有原則可參考?",
+    "titleEn": "Julie Lerman — Domain-Driven Design: Pragmatism or Principle?",
+    "category": "keynote",
+    "url": "https://youtu.be/Y7bEojF1lI0",
+    "channel": "Domain-Driven Design Taiwan",
+    "year": 2022,
+    "highlight": "國際知名 DDD 作者與 Pluralsight 講師，談 DDD 是務實還是原則。",
+    "highlightEn": "An internationally recognized DDD author and Pluralsight instructor on pragmatism vs. principle in DDD."
   },
   {
     "id": "continuous-architecture-2021",
     "title": "持續演進的架構 — 擁抱多元利害關係人視角（高翊凱 Kim Kao，2021 年會）",
     "titleEn": "Continuous Architecture — Embracing Multiple Stakeholder Viewpoints (Kim Kao, 2021 Conference)",
-    "category": "conference",
+    "category": "keynote",
     "url": "https://www.youtube.com/watch?v=ykFsnJ2qG2A",
     "channel": "Domain-Driven Design Taiwan",
-    "year": 2021
+    "year": 2021,
+    "highlight": "從單一利害關係人視角出發，談架構如何隨組織多元觀點持續演進。",
+    "highlightEn": "How architecture keeps evolving once you account for multiple stakeholder viewpoints."
   },
   {
     "id": "reinvent-2023-boa309",
     "title": "AWS re:Invent 2023 — Implementing Distributed Design Patterns on AWS（BOA309，Kim Kao 等）",
     "titleEn": "AWS re:Invent 2023 — Implementing Distributed Design Patterns on AWS (BOA309, feat. Kim Kao)",
-    "category": "recommended",
+    "category": "keynote",
     "url": "https://www.youtube.com/watch?v=pfAlmkzyaJQ",
     "channel": "AWS Events",
-    "year": 2023
+    "year": 2023,
+    "highlight": "AWS 官方研討會場次，實作分散式設計模式的雲端落地案例。",
+    "highlightEn": "An official AWS re:Invent session implementing distributed design patterns on the cloud."
+  },
+  {
+    "id": "wang-wei-interview",
+    "title": "DDDTW 2020 Conference 專人訪談 - 王威 (ThoughtWorks中國區諮詢團隊數位技術戰略諮詢師和首席企業架構師)",
+    "titleEn": "Interview — Wang Wei (ThoughtWorks China Chief Enterprise Architect)",
+    "category": "interview",
+    "url": "https://youtu.be/UWQgY54p158",
+    "channel": "Domain-Driven Design Taiwan",
+    "year": 2021,
+    "highlight": "ThoughtWorks 中國區首席企業架構師，把 Bounded Context 用「一人多角色」的比喻講得最清楚的一次。",
+    "highlightEn": "ThoughtWorks China's chief enterprise architect explains Bounded Context through a vivid personal-role analogy."
+  },
+  {
+    "id": "zhang-yi-interview",
+    "title": "DDDTW 2020 Conference 專人訪談 - 張逸 (民航 (成都) 信息技術有限公司 技術總監)",
+    "titleEn": "Interview — Zhang Yi (Technical Director, Civil Aviation Chengdu Information Technology)",
+    "category": "interview",
+    "url": "https://youtu.be/VSssPtopnag",
+    "channel": "Domain-Driven Design Taiwan",
+    "year": 2021,
+    "highlight": "十年 DDD 實踐者難得的反思：DDD 不是銀彈，也有它的極限。",
+    "highlightEn": "A rare reflective take from a 10-year DDD practitioner: DDD is not a silver bullet."
   },
   {
     "id": "virtual-ddd-kim-interview",
     "title": "They Knew the Answer Before They Understood the Problem — Virtual DDD 訪談 Kim Kao",
     "titleEn": "They Knew the Answer Before They Understood the Problem — Virtual DDD interview with Kim Kao",
-    "category": "recommended",
+    "category": "interview",
     "url": "https://youtu.be/td_vdQgeVwY",
     "channel": "Virtual Domain-Driven Design",
-    "year": 2026
+    "year": 2026,
+    "highlight": "Virtual DDD 社群訪談 Kim Kao，談「在理解問題前就先有答案」的常見陷阱。",
+    "highlightEn": "A Virtual DDD community interview on the trap of having answers before understanding the problem."
+  },
+  {
+    "id": "ddd-value-and-limits",
+    "title": "【DDDesign Taiwan 2021.09 Meetup】DDD 的价值与不足",
+    "titleEn": "The Value and Limits of DDD",
+    "category": "panel",
+    "url": "https://youtu.be/hJH-y-SIjXU",
+    "channel": "Domain-Driven Design Taiwan",
+    "year": 2022,
+    "highlight": "少見的批判視角場次：三位講者一起談 DDD 的價值，也不迴避它的不足。",
+    "highlightEn": "A rare critical session — three speakers discuss DDD's value without dodging its shortcomings."
+  },
+  {
+    "id": "fong-solid",
+    "title": "Fong - 你真的懂 SOLID 原則嗎？",
+    "titleEn": "Fong — Do You Really Understand the SOLID Principles?",
+    "category": "technique",
+    "url": "https://youtu.be/Dmv6tMnaCQA",
+    "channel": "Domain-Driven Design Taiwan",
+    "year": 2024,
+    "highlight": "把 SOLID 原則跟 DDD 戰術設計直接連起來講。",
+    "highlightEn": "Directly connects the SOLID principles to DDD's tactical design."
+  },
+  {
+    "id": "cheng-tdd-legacy-monolith",
+    "title": "程章尧 - DDD Applied: Introducing TDD while breaking down legacy monolith",
+    "titleEn": "Cheng Zhang-Yao — DDD Applied: Introducing TDD While Breaking Down a Legacy Monolith",
+    "category": "technique",
+    "url": "https://youtu.be/LpSY2VQbU6M",
+    "channel": "Domain-Driven Design Taiwan",
+    "year": 2024,
+    "highlight": "用 Strangler Fig、測試金字塔、契約測試，一步步為遺留單體導入 TDD。",
+    "highlightEn": "Introducing TDD into a legacy monolith step by step, using Strangler Fig, the test pyramid, and contract testing."
+  },
+  {
+    "id": "kim-kao-bounded-context-split",
+    "title": "微服務、限界上下文拆分指導原則 by Kim Kao - 2020 June Meetup Part 2",
+    "titleEn": "Guiding Principles for Splitting Microservices and Bounded Contexts (Kim Kao, 2020 June Meetup Part 2)",
+    "category": "technique",
+    "url": "https://youtu.be/mfSyqMCMVnQ",
+    "channel": "Domain-Driven Design Taiwan",
+    "year": 2021,
+    "highlight": "以真實的行銷活動系統為例，講三種限界上下文拆分策略。",
+    "highlightEn": "Three concrete strategies for splitting bounded contexts, illustrated with a real marketing-campaign system."
   }
 ]

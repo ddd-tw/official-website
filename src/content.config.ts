@@ -68,10 +68,14 @@ const videos = defineCollection({
   schema: z.object({
     title: z.string(),
     titleEn: z.string().optional(),
-    category: z.enum(['meetup', 'conference', 'recommended']),
+    /** 分類依內容類型，不依活動場次：實戰案例／主題演講／人物專訪／座談討論／技術方法 */
+    category: z.enum(['case-study', 'keynote', 'interview', 'panel', 'technique']),
     url: z.string().url(),
     channel: z.string().optional(),
     year: z.number().optional(),
+    /** 一行說明「為什麼推薦這支」，讓分類不只是標籤 */
+    highlight: z.string().optional(),
+    highlightEn: z.string().optional(),
   }),
 });
 

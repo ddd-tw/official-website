@@ -44,9 +44,49 @@ const booksByCategory = bookCategories.map((c) => ({
   items: books.filter((b) => b.data.category === c.key),
 }));
 const videos = await getCollection('videos');
-const videoCatLabel: Record<string, string> = isEn
-  ? { meetup: 'Replay', conference: 'Conf', recommended: 'Pick' }
-  : { meetup: '回放', conference: '年會', recommended: '推薦' };
+// 五種內容類型，依「案例 → 演講 → 訪談 → 座談 → 技法」排序；分類依內容本質而非活動場次，
+// 讓「為什麼推薦這支」一眼可見，而不是只有一個模糊的「推薦」標籤。
+const videoCategories = [
+  {
+    key: 'case-study',
+    title: isEn ? 'Case Studies — DDD in Real Systems' : '實戰案例 — 真實系統裡的 DDD',
+    desc: isEn
+      ? 'Not theory — each talk names the actual system and constraints the speaker worked within.'
+      : '不是紙上談兵，這些分享都指名了實際交手的系統與限制條件。',
+  },
+  {
+    key: 'keynote',
+    title: isEn ? 'Keynotes — Deep Technical Perspectives' : '主題演講 — 深度技術視角',
+    desc: isEn
+      ? 'Full talks from internationally recognized authors and major tech conferences.'
+      : '來自國際知名作者與大型技術會議的完整演講。',
+  },
+  {
+    key: 'interview',
+    title: isEn ? 'Interviews' : '人物專訪',
+    desc: isEn
+      ? 'Conversations with practitioners inside and outside the community.'
+      : '與社群內外的實踐者對話，聊他們怎麼想、怎麼做。',
+  },
+  {
+    key: 'panel',
+    title: isEn ? 'Panel Discussions' : '座談討論',
+    desc: isEn
+      ? "Multiple speakers in dialogue — including DDD's limitations, not just its strengths."
+      : '多位講者交叉對話，不只講優點，也談 DDD 的侷限。',
+  },
+  {
+    key: 'technique',
+    title: isEn ? 'Techniques — Concrete Methods' : '技術方法 — 拆解具體技法',
+    desc: isEn
+      ? 'Focused on a single technique or principle, from SOLID to microservice decomposition strategies.'
+      : '聚焦單一技法或原則，從 SOLID 到微服務拆分策略。',
+  },
+] as const;
+const videosByCategory = videoCategories.map((c) => ({
+  ...c,
+  items: videos.filter((v) => v.data.category === c.key),
+}));
 const allPosts = (await getCollection('posts', ({ data }) => !data.draft)).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
@@ -222,24 +262,38 @@ const fmtDate = (d: Date) => d.toISOString().slice(0, 10);
 
   <section class="container section" id="panel-video" data-kb-panel>
     <h2 style="position: absolute; left: -9999px;">Video</h2>
-    <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px;">
-      <span class="chip">{isEn ? 'Meetup replays' : 'Meetup 回放'}</span>
-      <span class="chip">{isEn ? 'Conference talks' : '年會演講'}</span>
-      <span class="chip">{isEn ? 'Recommended videos' : '推薦影片'}</span>
-    </div>
-    <ul class="row-list" style="margin-bottom: 16px;">
+    <p style="color: var(--ink-mid); font-size: 14.5px; max-width: 680px; margin-bottom: 8px;">
       {
-        videos.map((v) => (
-          <li>
-            <a href={v.data.url}>
-              <span class="row__date">{videoCatLabel[v.data.category]}</span>
-              <span>{isEn ? (v.data.titleEn ?? v.data.title) : v.data.title}</span>
-            </a>
-          </li>
-        ))
+        isEn
+          ? "Grouped by what the talk actually is, not which event it was recorded at — so it's clear why each one made the list."
+          : '依內容本質分組，不是依活動場次——讓每一支被選進來的理由一眼可見。'
       }
-    </ul>
-    <a class="btn btn--ghost" href="https://www.youtube.com/channel/UCydw7dbEksG3axEMjHy4BxQ">
+    </p>
+    {
+      videosByCategory
+        .filter((cat) => cat.items.length > 0)
+        .map((cat) => (
+          <div style="margin-top: 24px;">
+            <h3 style="margin: 0 0 4px;">{cat.title}</h3>
+            <p style="font-size: 13.5px; color: var(--ink-faint); margin: 0 0 12px;">{cat.desc}</p>
+            <ul class="row-list">
+              {cat.items.map((v) => (
+                <li>
+                  <a href={v.data.url}>
+                    <span>{isEn ? (v.data.titleEn ?? v.data.title) : v.data.title}</span>
+                    {(isEn ? v.data.highlightEn : v.data.highlight) && (
+                      <span style="display: block; font-size: 13px; color: var(--ink-faint); margin-top: 2px;">
+                        {isEn ? v.data.highlightEn : v.data.highlight}
+                      </span>
+                    )}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+    }
+    <a class="btn btn--ghost" style="margin-top: 20px;" href="https://www.youtube.com/channel/UCydw7dbEksG3axEMjHy4BxQ">
       {isEn ? 'Visit our YouTube channel' : '前往 YouTube 頻道'}
     </a>
   </section>
