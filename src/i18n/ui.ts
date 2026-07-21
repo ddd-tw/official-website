@@ -12,7 +12,7 @@ export const ui = {
     'footer.privacy': '隱私權政策',
     'footer.coc': '行為準則',
     'site.description':
-      'DDD Taiwan 致力於在台灣推廣領域驅動設計，透過 Meetup、讀書會與年會，一起探索從問題領域催生出解決方案。',
+      'DDD Taiwan 是社群驅動的學習平台 — 從領域驅動設計出發，深入系統與軟體設計，解決複雜商業問題，以去中心化的方式分享知識。',
   },
   en: {
     'nav.home': 'Home',
@@ -23,7 +23,7 @@ export const ui = {
     'footer.privacy': 'Privacy Policy',
     'footer.coc': 'Code of Conduct',
     'site.description':
-      'DDD Taiwan promotes Domain-Driven Design in Taiwan through meetups, book clubs, and an annual conference.',
+      'DDD Taiwan is a community-driven platform for going deeper into systems and software design — solving complex business problems and sharing knowledge in a decentralised way.',
   },
 } as const satisfies Record<Locale, Record<string, string>>;
 
