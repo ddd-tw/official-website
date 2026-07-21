@@ -86,6 +86,9 @@ const contributors = defineCollection({
     nameEn: z.string().optional(),
     role: z.string(),
     roleEn: z.string(),
+    /** 一行個人風格描述（仿 Virtual DDD 的 tagline，如 "Business software artist"） */
+    tagline: z.string().optional(),
+    taglineEn: z.string().optional(),
     bio: z.string(),
     bioEn: z.string(),
     photo: z.string(),

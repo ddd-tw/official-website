@@ -161,38 +161,39 @@ const entries = isEn
     <div class="grid-3">
       {
         contributors.map((c) => (
-          <div class="card card--hover">
-            <div style="display: flex; align-items: center; gap: 14px;">
-              <img
-                src={c.data.photo}
-                alt={isEn ? (c.data.nameEn ?? c.data.name) : c.data.name}
-                width="64"
-                height="64"
-                loading="lazy"
-                style="border-radius: 50%; object-fit: cover; border: 1px solid var(--line);"
-              />
-              <div>
-                <h3 style="font-size: 17px; margin: 0;">
-                  {isEn ? (c.data.nameEn ?? c.data.name) : c.data.name}
-                </h3>
-                <p class="eyebrow eyebrow--accent" style="margin: 2px 0 0; letter-spacing: 0.12em;">
-                  {isEn ? c.data.roleEn : c.data.role}
+          <div class="card card--hover" style="padding: 0; overflow: hidden;">
+            <img
+              src={c.data.photo}
+              alt={isEn ? (c.data.nameEn ?? c.data.name) : c.data.name}
+              loading="lazy"
+              style="display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-bottom: 1px solid var(--line-soft);"
+            />
+            <div style="padding: 20px 24px 22px;">
+              <h3 style="font-size: 20px; margin: 0;">
+                {isEn ? (c.data.nameEn ?? c.data.name) : c.data.name}
+              </h3>
+              <p class="eyebrow eyebrow--accent" style="margin: 6px 0 0; letter-spacing: 0.14em;">
+                {isEn ? c.data.roleEn : c.data.role}
+              </p>
+              {(isEn ? c.data.taglineEn : c.data.tagline) && (
+                <p style="font-size: 14.5px; color: var(--ink-mid); margin: 8px 0 0;">
+                  {isEn ? c.data.taglineEn : c.data.tagline}
                 </p>
-              </div>
-            </div>
-            <p style="font-size: 14px; color: var(--ink-mid); margin: 14px 0 12px;">
-              {isEn ? c.data.bioEn : c.data.bio}
-            </p>
-            <p style="font-size: 13px; margin: 0; display: flex; gap: 14px; flex-wrap: wrap;">
-              {linkLabels.map(
-                ([key, label]) =>
-                  c.data.links[key] && (
-                    <a href={c.data.links[key]} class="font-display" style="font-weight: 500;">
-                      {label}
-                    </a>
-                  )
               )}
-            </p>
+              <p style="font-size: 13px; color: var(--ink-faint); margin: 10px 0 0;">
+                {isEn ? c.data.bioEn : c.data.bio}
+              </p>
+              <p style="font-size: 13px; margin: 16px 0 0; padding-top: 14px; border-top: 1px solid var(--line-soft); display: flex; gap: 16px; flex-wrap: wrap;">
+                {linkLabels.map(
+                  ([key, label]) =>
+                    c.data.links[key] && (
+                      <a href={c.data.links[key]} class="font-display" style="font-weight: 500;">
+                        {label}
+                      </a>
+                    )
+                )}
+              </p>
+            </div>
           </div>
         ))
       }
