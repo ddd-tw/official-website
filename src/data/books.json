@@ -39,5 +39,30 @@
     "summary": "DDD 十五週年紀念文集，由社群志工翻譯為繁體中文，免費線上閱讀。",
     "coverColor": "#C34A33",
     "url": "https://github.com/ddd-tw/DDD-The-First-15-Years-Zh-Hant"
+  },
+  {
+    "id": "hofer-domain-storytelling",
+    "title": "Domain Storytelling",
+    "author": "Stefan Hofer、Henning Schwentner",
+    "year": 2021,
+    "summary": "以協作、視覺化的「說領域故事」方式捕捉領域知識，讓業務與開發對齊 — 社群共同創辦人 Kim Kao 擔任技術審校。",
+    "coverColor": "#24417E"
+  },
+  {
+    "id": "zhangyi-deconstructing-ddd",
+    "title": "解構領域驅動設計",
+    "author": "張逸",
+    "year": 2021,
+    "summary": "提出領域驅動設計統一過程（DDDUP），從全域分析、架構映射到領域建模的完整方法論 — Kim Kao 撰寫推薦序。",
+    "coverColor": "#1B2233",
+    "url": "https://www.tenlong.com.tw/products/9787115566232"
+  },
+  {
+    "id": "golding-multi-tenant-saas",
+    "title": "Building Multi-Tenant SaaS Architectures",
+    "author": "Tod Golding",
+    "year": 2024,
+    "summary": "多租戶 SaaS 架構的策略與實作 — 呼應社群對韌性系統設計的關注，Kim Kao 撰寫推薦序。",
+    "coverColor": "#2B52A0"
   }
 ]
