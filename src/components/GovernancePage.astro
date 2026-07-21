@@ -1,0 +1,104 @@
+---
+import Base from '../layouts/Base.astro';
+import type { Locale } from '../i18n/ui';
+
+const locale = (Astro.currentLocale ?? 'zh') as Locale;
+const isEn = locale === 'en';
+---
+
+<Base title={isEn ? 'Governance — DDD Taiwan' : '治理 — DDD Taiwan'}>
+  <div class="container container--narrow page-head">
+    <p class="eyebrow">Governance</p>
+    <h1>
+      {
+        isEn ? (
+          <>
+            Governance & <span class="hl">policy</span>
+          </>
+        ) : (
+          <>
+            治理與<span class="hl">政策</span>
+          </>
+        )
+      }
+    </h1>
+  </div>
+
+  <section class="container container--narrow section">
+    <div class="card">
+      <h2 style="margin-top: 0;" id="privacy">{isEn ? 'Privacy Policy' : '隱私權政策'}</h2>
+      <h3>{isEn ? 'Collection & Use' : '蒐集與使用'}</h3>
+      <p style="color: var(--ink-mid);">
+        {
+          isEn
+            ? 'We collect only the personal data needed for event registration and contact (such as name and email address), and use it solely for event notifications and community operations.'
+            : '我們僅在活動報名與聯繫時蒐集必要的個人資料（如姓名、Email），用於活動通知與社群營運。'
+        }
+      </p>
+      <h3>{isEn ? 'Protection & Compliance' : '保護與法遵'}</h3>
+      <p style="color: var(--ink-mid);">
+        {
+          isEn
+            ? "Personal data is handled in accordance with Taiwan's Personal Data Protection Act and in the spirit of the GDPR; event registration data is processed on our behalf by the KKTIX platform."
+            : '遵循個人資料保護法並參考 GDPR 精神處理個資；活動報名資料由 KKTIX 平台代為處理。'
+        }
+      </p>
+      <h3>{isEn ? 'Your Rights' : '你的權利'}</h3>
+      <p style="color: var(--ink-mid);">
+        {
+          isEn ? (
+            <>
+              You may email <a href="mailto:dddtw2018@gmail.com" class="mono">dddtw2018@gmail.com</a>
+              at any time to access, correct, or request deletion of your personal data.
+            </>
+          ) : (
+            <>
+              你可隨時來信 <a href="mailto:dddtw2018@gmail.com" class="mono">dddtw2018@gmail.com</a>
+              查詢、更正或請求刪除你的個人資料。
+            </>
+          )
+        }
+      </p>
+    </div>
+  </section>
+
+  <section class="container container--narrow section">
+    <div class="card">
+      <h2 style="margin-top: 0;" id="coc">{isEn ? 'Code of Conduct' : '行為準則'}</h2>
+      <h3>{isEn ? 'Expected Behavior' : '期望行為'}</h3>
+      <p style="color: var(--ink-mid);">
+        {
+          isEn
+            ? 'Treat one another with respect, keep discussions friendly, and debate ideas rather than people. Participants of all backgrounds and experience levels are welcome.'
+            : '尊重彼此、友善討論、對事不對人；歡迎不同背景與經驗層級的參與者。'
+        }
+      </p>
+      <h3>{isEn ? 'Unacceptable Behavior' : '不容忍行為'}</h3>
+      <p style="color: var(--ink-mid);">
+        {
+          isEn
+            ? 'Harassment, discrimination, or personal attacks of any kind. This applies to speakers as well — talks must not attack individuals or other communities.'
+            : '任何形式的騷擾、歧視與人身攻擊；講者不得於分享中攻擊他人或其他社群。'
+        }
+      </p>
+      <h3>{isEn ? 'Enforcement & Reporting' : '違規處理與申訴'}</h3>
+      <p style="color: var(--ink-mid);">
+        {
+          isEn ? (
+            <>
+              Depending on severity, violations may result in a warning or removal from the event.
+              To report an issue, reach out to any volunteer on site or email
+              <a href="mailto:dddtw2018@gmail.com" class="mono">dddtw2018@gmail.com</a> — all reports
+              are handled confidentially.
+            </>
+          ) : (
+            <>
+              違規將視情節警告或請離；申訴可洽現場志工或來信
+              <a href="mailto:dddtw2018@gmail.com" class="mono">dddtw2018@gmail.com</a>，一律保密處理。
+            </>
+          )
+        }
+      </p>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,126 @@
+---
+import Base from '../layouts/Base.astro';
+import type { Locale } from '../i18n/ui';
+
+const locale = (Astro.currentLocale ?? 'zh') as Locale;
+const isEn = locale === 'en';
+const prefix = isEn ? '/en' : '';
+
+const platforms = isEn
+  ? [
+      {
+        title: 'Facebook Group',
+        desc: 'The home base for day-to-day discussion and event announcements.',
+        url: 'https://www.facebook.com/groups/dddtaiwan/',
+        cta: 'Join the group',
+      },
+      {
+        title: 'Facebook Page',
+        desc: 'Official announcements.',
+        url: 'https://www.facebook.com/DDDCommunity.tw/',
+        cta: 'Follow the page',
+      },
+      {
+        title: 'Line Community',
+        desc: 'Real-time chat and Q&A. Join links are announced on event pages.',
+        url: `${prefix}/events/`,
+        cta: 'See the events page',
+      },
+      {
+        title: 'YouTube',
+        desc: 'Recordings of meetups and conference talks.',
+        url: 'https://www.youtube.com/@dddtaiwan',
+        cta: 'Subscribe',
+      },
+      {
+        title: 'KKTIX',
+        desc: 'Event registration platform.',
+        url: 'https://dddtaiwan.kktix.cc/',
+        cta: 'See events',
+      },
+      {
+        title: 'Email',
+        desc: 'General inquiries: dddtw2018@gmail.com',
+        url: 'mailto:dddtw2018@gmail.com',
+        cta: 'Email us',
+      },
+    ]
+  : [
+      {
+        title: 'Facebook 社團',
+        desc: '日常討論與活動公告的主要據點。',
+        url: 'https://www.facebook.com/groups/dddtaiwan/',
+        cta: '加入社團',
+      },
+      {
+        title: 'Facebook 粉專',
+        desc: '官方訊息發布。',
+        url: 'https://www.facebook.com/DDDCommunity.tw/',
+        cta: '追蹤粉專',
+      },
+      {
+        title: 'Line 社群',
+        desc: '即時交流與問答。入群連結於活動頁公告。',
+        url: `${prefix}/events/`,
+        cta: '查看活動頁',
+      },
+      {
+        title: 'YouTube',
+        desc: 'Meetup 與年會錄影回放。',
+        url: 'https://www.youtube.com/@dddtaiwan',
+        cta: '訂閱頻道',
+      },
+      {
+        title: 'KKTIX',
+        desc: '活動報名平台。',
+        url: 'https://dddtaiwan.kktix.cc/',
+        cta: '查看活動',
+      },
+      {
+        title: 'Email',
+        desc: '一般聯繫：dddtw2018@gmail.com',
+        url: 'mailto:dddtw2018@gmail.com',
+        cta: '來信聯繫',
+      },
+    ];
+---
+
+<Base title={isEn ? 'Community — DDD Taiwan' : '社群 — DDD Taiwan'}>
+  <div class="container page-head">
+    <p class="eyebrow">Community</p>
+    <h1>
+      {
+        isEn ? (
+          <>
+            Find your <span class="hl">people</span>
+          </>
+        ) : (
+          <>
+            社群與<span class="hl">人</span>
+          </>
+        )
+      }
+    </h1>
+    <p style="max-width: 680px; color: var(--ink-mid);">
+      {
+        isEn
+          ? 'Founded in 2018, DDD Taiwan is a volunteer-run, non-profit community that has co-hosted events with Agile Taipei, Agile Hsinchu, and other communities. Find your channel and join the conversation.'
+          : 'DDD Taiwan 成立於 2018 年，是非營利、志工經營的技術社群，曾與 Agile Taipei、Agile Hsinchu 等社群合辦活動。找到你的頻道，加入討論。'
+      }
+    </p>
+  </div>
+
+  <section class="container section">
+    <div class="grid-3">
+      {
+        platforms.map((p) => (
+          <a class="card" href={p.url}>
+            <h2 style="font-size: 18px; margin: 0 0 8px;">{p.title}</h2>
+            <p style="font-size: 14px; color: var(--ink-mid); margin: 0 0 14px;">{p.desc}</p>
+            <span style="font-size: 13px; color: var(--brand-strong);">{p.cta} →</span>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+</Base>

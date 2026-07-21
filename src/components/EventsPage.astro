@@ -1,0 +1,132 @@
+---
+import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+import type { Locale } from '../i18n/ui';
+
+const locale = (Astro.currentLocale ?? 'zh') as Locale;
+const isEn = locale === 'en';
+const prefix = isEn ? '/en' : '';
+
+const events = (await getCollection('events')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+const meetups = events.filter((e) => e.data.type !== 'conference');
+const conferences = events.filter((e) => e.data.type === 'conference');
+
+const eventTitle = (e: (typeof events)[number]) =>
+  isEn ? (e.data.titleEn ?? e.data.title) : e.data.title;
+
+const fmt = (d: Date) =>
+  `${d.getFullYear()}.${String(d.getMonth() + 1).padStart(2, '0')}`;
+---
+
+<Base title={isEn ? 'Events — DDD Taiwan' : '參與活動 — DDD Taiwan'}>
+  <div class="container page-head">
+    <p class="eyebrow">Events</p>
+    <h1>
+      {
+        isEn ? (
+          <>
+            Meet the community <span class="hl">in person</span>
+          </>
+        ) : (
+          <>
+            參與<span class="hl">活動</span>
+          </>
+        )
+      }
+    </h1>
+  </div>
+
+  <section class="container section">
+    <div class="card">
+      <div style="display: flex; align-items: center; gap: 14px; flex-wrap: wrap;">
+        <h2 style="margin: 0;">Meetup</h2>
+        <span class="chip">{isEn ? 'Next one in the works' : '下一場籌備中'}</span>
+      </div>
+      <p style="color: var(--ink-mid);">
+        {
+          isEn
+            ? 'Regular technical gatherings with registration details, venue, and agenda previews; recordings are added after each event.'
+            : '定期舉辦的技術聚會，提供報名資訊、場地與議程預告；活動結束後補充錄影回放連結。'
+        }
+      </p>
+      <div class="grid-3" style="margin: 20px 0;">
+        <div class="tile"><strong>{isEn ? 'Date' : '日期'}</strong><br />{isEn ? 'TBA' : '待公告'}</div>
+        <div class="tile"><strong>{isEn ? 'Venue' : '場地'}</strong><br />{isEn ? 'TBA' : '待公告'}</div>
+        <div class="tile"><strong>{isEn ? 'Agenda' : '議程預告'}</strong><br />{isEn ? 'TBA' : '待公告'}</div>
+      </div>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+        <a class="btn btn--ghost" href="https://dddtaiwan.kktix.cc/">KKTIX</a>
+        <a class="btn btn--ghost" href="https://www.meetup.com/domain-driven-design-taiwan-meetup-group/">Meetup.com</a>
+      </div>
+
+      <h3 style="margin-top: 36px;">{isEn ? 'Past sessions' : '歷屆場次'}</h3>
+      <ul class="row-list">
+        {
+          meetups.map((e) => (
+            <li>
+              <a href={e.data.link ?? 'https://dddtaiwan.kktix.cc/'}>
+                <span class="row__date">{fmt(e.data.date)}</span>
+                <span>{eventTitle(e)}</span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="container section">
+    <div class="card">
+      <h2 style="margin-top: 0;">Conference</h2>
+      <p style="color: var(--ink-mid);">
+        {
+          isEn ? (
+            <>
+              The annual conference features keynote talks and workshops on Event Storming, Domain
+              Storytelling, and more. Sponsorship inquiries:{' '}
+              <a href="mailto:conference@ddd-tw.com" class="mono">conference@ddd-tw.com</a>
+            </>
+          ) : (
+            <>
+              年度大會，含主題演講與 Event Storming、Domain Storytelling 等工作坊。贊助洽詢：
+              <a href="mailto:conference@ddd-tw.com" class="mono">conference@ddd-tw.com</a>
+            </>
+          )
+        }
+      </p>
+      <ul class="row-list">
+        {
+          conferences.map((e) => (
+            <li>
+              <a href={e.data.link}>
+                <span class="row__date">{fmt(e.data.date)}</span>
+                <span>{eventTitle(e)}</span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="container section">
+    <div class="card">
+      <h2 style="margin-top: 0;">Book Club</h2>
+      <p style="color: var(--ink-mid);">
+        {
+          isEn
+            ? 'A recurring book club — reading closely, discussing, and practicing together.'
+            : '定期讀書會 — 一起精讀、討論與實作。'
+        }
+      </p>
+      <div class="grid-3" style="margin: 20px 0;">
+        <div class="tile"><strong>{isEn ? 'Current book' : '目前書目'}</strong><br />{isEn ? 'TBA' : '待公告'}</div>
+        <div class="tile"><strong>{isEn ? 'Progress' : '進度'}</strong><br />—</div>
+        <div class="tile"><strong>{isEn ? 'Previous' : '上一本'}</strong><br />Pragmatic TDD</div>
+      </div>
+      <a class="btn btn--ghost" href={`${prefix}/community/`}>{isEn ? 'How to join' : '加入方式'}</a>
+    </div>
+  </section>
+</Base>

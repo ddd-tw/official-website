@@ -29,6 +29,8 @@ const events = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/events' }),
   schema: z.object({
     title: z.string(),
+    /** 英文版頁面顯示的活動標題（選填，未填時顯示 title） */
+    titleEn: z.string().optional(),
     date: z.coerce.date(),
     type: z.enum(['meetup', 'conference', 'bookclub']),
     link: z.string().url().optional(),

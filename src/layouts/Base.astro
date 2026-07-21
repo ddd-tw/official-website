@@ -22,7 +22,17 @@ const navItems = [
 ];
 
 const currentPath = Astro.url.pathname.replace(/\/?$/, '/');
-const otherLocaleHref = locale === 'zh' ? '/en/' : '/';
+
+// 語言切換：連到「目前頁面的另一語言版本」。
+// 只有這幾頁有雙語版本；其餘（如 /posts/xxx/）退回另一語言的首頁。
+const localizedPages = ['/', '/events/', '/knowledge/', '/community/', '/governance/'];
+let otherLocaleHref: string;
+if (locale === 'zh') {
+  otherLocaleHref = localizedPages.includes(currentPath) ? `/en${currentPath}` : '/en/';
+} else {
+  const zhPath = currentPath.replace(/^\/en(\/|$)/, '/');
+  otherLocaleHref = localizedPages.includes(zhPath) ? zhPath : '/';
+}
 ---
 
 <!doctype html>

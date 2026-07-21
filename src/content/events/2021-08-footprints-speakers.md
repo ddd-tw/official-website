@@ -1,5 +1,6 @@
 ---
 title: 他/她們的足跡 — 認識年會海外講者
+titleEn: "In Their Footsteps — Meet the Conference's International Speakers"
 date: 2021-08-01
 type: meetup
 link: https://dddtaiwan.kktix.cc/events/2021-08-meetup
