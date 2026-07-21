@@ -107,6 +107,30 @@ const platforms = isEn
         cta: '來信聯繫',
       },
     ];
+
+const timeline = isEn
+  ? [
+      { year: '2018', title: 'The community is founded', desc: 'The first meetups begin spreading Domain-Driven Design in Taiwan.' },
+      { year: '2019', title: 'Monthly meetups take shape', desc: 'Seven sessions across the year — from AWS and LinkedIn practice stories to student teams.' },
+      { year: '2020', title: 'First annual conference', desc: "Taiwan's first large-scale DDD conference (Nov 27–28), plus the Legacy Code study group." },
+      { year: '2021', title: 'Everything moves online', desc: 'Under the pandemic, the "Footprints" conference runs on GatherTown with international speakers.' },
+      { year: '2022', title: 'Quiet outside, busy inside', desc: 'The Omicron wave pauses public events — the community spends the year translating the DDD 15th-anniversary anthology into Traditional Chinese.' },
+      { year: '2023', title: 'The conference returns', desc: '"Inspiration" (Sep 16–17) brings back talks and hands-on workshops; the book club resumes.' },
+      { year: '2024', title: 'Widening the lens', desc: 'The 4th conference goes System Design & Socio-technical; partner sessions with Confluent and more.' },
+      { year: '2025', title: 'The most active year yet', desc: 'Nine events including the cross-city DDD Tour (Tainan, Taichung) and the 5th conference on AI-era practices.' },
+      { year: '2026', title: 'A new home on the web', desc: 'The new ddd-tw.com launches; monthly meetups are in planning.' },
+    ]
+  : [
+      { year: '2018', title: '社群成立', desc: '從第一場 Meetup 開始，在台灣推廣領域驅動設計。' },
+      { year: '2019', title: '每月聚會成形', desc: '全年七場 — 從 AWS、LinkedIn 的實務分享到學生團隊的實踐故事。' },
+      { year: '2020', title: '首屆年會', desc: '台灣第一場大型 DDD 年會（11/27–28），同年還有 Legacy Code 讀書會。' },
+      { year: '2021', title: '全面轉線上', desc: '疫情之下，年會「足跡」於 GatherTown 舉行，海外講者跨海參與。' },
+      { year: '2022', title: '對外蟄伏，對內耕耘', desc: 'Omicron 疫情讓公開活動暫停 — 社群把這一年投入《DDD: The First 15 Years》繁中翻譯。' },
+      { year: '2023', title: '年會重啟', desc: '第三屆「啟發」（9/16–17）帶回演講與實作工作坊，讀書會也回歸。' },
+      { year: '2024', title: '視野拓寬', desc: '第四屆年會走向 System Design & Socio-technical，並與 Confluent 等夥伴合辦聚會。' },
+      { year: '2025', title: '最活躍的一年', desc: '九場活動 — DDD Tour 跨城巡迴（台南、台中）與第五屆年會「AI 時代軟體開發方法」。' },
+      { year: '2026', title: '網路上的新家', desc: '新版 ddd-tw.com 上線，每月聚會規劃中。' },
+    ];
 ---
 
 <Base title={isEn ? 'Community — DDD Taiwan' : '社群 — DDD Taiwan'}>
@@ -145,6 +169,29 @@ const platforms = isEn
           </a>
         ))
       }
+    </div>
+  </section>
+
+  <section class="container section">
+    <p class="eyebrow eyebrow--accent" style="margin: 0 0 6px;">History</p>
+    <h2 style="font-size: 26px; margin: 0 0 20px;">{isEn ? 'Our journey' : '社群足跡'}</h2>
+    <div class="card">
+      <ul class="row-list">
+        {
+          timeline.map((t) => (
+            <li>
+              <div class="row" style="align-items: flex-start; padding: 14px 8px;">
+                <span class="row__date">{t.year}</span>
+                <span>
+                  <strong>{t.title}</strong>
+                  <br />
+                  <span style="font-size: 13.5px; color: var(--ink-mid);">{t.desc}</span>
+                </span>
+              </div>
+            </li>
+          ))
+        }
+      </ul>
     </div>
   </section>
 </Base>
