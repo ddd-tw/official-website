@@ -174,17 +174,9 @@ const homeLd = {
     <h2 style="font-size: 26px; margin: 0 0 8px;">{isEn ? 'Our organizers' : '社群籌辦團隊'}</h2>
     <p style="color: var(--ink-mid); font-size: 14.5px; max-width: 620px; margin: 0 0 8px;">
       {
-        isEn ? (
-          <>
-            DDD Taiwan is organized by a group of volunteers — more have joined with every passing
-            year. Want to help run it? <a href={`${prefix}/community/`}>Start by joining the community</a>.
-          </>
-        ) : (
-          <>
-            DDD Taiwan 由一群志工共同籌辦 — 從第一場聚會到現在，愈來愈多人一起投入。想一起幫忙？
-            <a href={`${prefix}/community/`}>從加入社群開始</a>。
-          </>
-        )
+        isEn
+          ? 'DDD Taiwan is organized by a group of volunteers — more have joined to help run it with every passing year.'
+          : 'DDD Taiwan 由一群志工共同籌辦 — 從第一場聚會到現在，愈來愈多人一起投入幫忙。'
       }
     </p>
     <div class="org-ring">

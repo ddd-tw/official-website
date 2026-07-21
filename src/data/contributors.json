@@ -18,16 +18,16 @@
     }
   },
   {
-    "id": "michael-chen",
-    "name": "陳勉修 Michael Chen",
-    "nameEn": "Michael Chen",
-    "role": "社群籌辦",
-    "roleEn": "Organizer"
-  },
-  {
     "id": "arthur-chang",
     "name": "張國昭 Arthur Chang",
     "nameEn": "Arthur Chang",
+    "role": "共同創辦人",
+    "roleEn": "Co-founder"
+  },
+  {
+    "id": "michael-chen",
+    "name": "陳勉修 Michael Chen",
+    "nameEn": "Michael Chen",
     "role": "社群籌辦",
     "roleEn": "Organizer"
   },
