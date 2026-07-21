@@ -56,4 +56,19 @@ const books = defineCollection({
   }),
 });
 
-export const collections = { posts, events, books };
+/**
+ * 精選影片（知識庫 Video），資料檔維護於 src/data/videos.json。
+ */
+const videos = defineCollection({
+  loader: file('./src/data/videos.json'),
+  schema: z.object({
+    title: z.string(),
+    titleEn: z.string().optional(),
+    category: z.enum(['meetup', 'conference', 'recommended']),
+    url: z.string().url(),
+    channel: z.string().optional(),
+    year: z.number().optional(),
+  }),
+});
+
+export const collections = { posts, events, books, videos };

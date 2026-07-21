@@ -7,6 +7,10 @@ const locale = (Astro.currentLocale ?? 'zh') as Locale;
 const isEn = locale === 'en';
 
 const books = await getCollection('books');
+const videos = await getCollection('videos');
+const videoCatLabel: Record<string, string> = isEn
+  ? { meetup: 'Replay', conference: 'Conf', recommended: 'Pick' }
+  : { meetup: '回放', conference: '年會', recommended: '推薦' };
 const allPosts = (await getCollection('posts', ({ data }) => !data.draft)).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
@@ -48,6 +52,16 @@ const repos = [
     name: 'ddd-tw/2025Summit',
     note: isEn ? 'Community project' : '社群專案',
     url: 'https://github.com/ddd-tw/2025Summit',
+  },
+  {
+    name: 'aws-samples/designing-cloud-native-microservices-on-aws',
+    note: isEn ? 'By community members · ⭐ 320+' : '社群成員作品 · ⭐ 320+',
+    url: 'https://github.com/aws-samples/designing-cloud-native-microservices-on-aws',
+  },
+  {
+    name: 'humank/ddd-practitioners-ref',
+    note: isEn ? 'By community members · ⭐ 320+' : '社群成員作品 · ⭐ 320+',
+    url: 'https://github.com/humank/ddd-practitioners-ref',
   },
   {
     name: 'ddd-crew/ddd-starter-modelling-process',
@@ -151,6 +165,18 @@ const fmtDate = (d: Date) => d.toISOString().slice(0, 10);
       <span class="chip">{isEn ? 'Conference talks' : '年會演講'}</span>
       <span class="chip">{isEn ? 'Recommended videos' : '推薦影片'}</span>
     </div>
+    <ul class="row-list" style="margin-bottom: 16px;">
+      {
+        videos.map((v) => (
+          <li>
+            <a href={v.data.url}>
+              <span class="row__date">{videoCatLabel[v.data.category]}</span>
+              <span>{isEn ? (v.data.titleEn ?? v.data.title) : v.data.title}</span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
     <a class="btn btn--ghost" href="https://www.youtube.com/channel/UCydw7dbEksG3axEMjHy4BxQ">
       {isEn ? 'Visit our YouTube channel' : '前往 YouTube 頻道'}
     </a>

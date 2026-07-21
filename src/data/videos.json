@@ -1,0 +1,28 @@
+[
+  {
+    "id": "ddd15y-book-launch",
+    "title": "DDD 15 週年新書發表會 — Kim Kao 總覽 DDD 15 週年",
+    "titleEn": "DDD 15th Anniversary Book Launch — An Overview by Kim Kao",
+    "category": "meetup",
+    "url": "https://www.youtube.com/watch?v=OnGi8wdX9BM",
+    "channel": "Domain-Driven Design Taiwan"
+  },
+  {
+    "id": "continuous-architecture-2021",
+    "title": "持續演進的架構 — 擁抱多元利害關係人視角（高翊凱 Kim Kao，2021 年會）",
+    "titleEn": "Continuous Architecture — Embracing Multiple Stakeholder Viewpoints (Kim Kao, 2021 Conference)",
+    "category": "conference",
+    "url": "https://www.youtube.com/watch?v=ykFsnJ2qG2A",
+    "channel": "Domain-Driven Design Taiwan",
+    "year": 2021
+  },
+  {
+    "id": "virtual-ddd-kim-interview",
+    "title": "They Knew the Answer Before They Understood the Problem — Virtual DDD 訪談 Kim Kao",
+    "titleEn": "They Knew the Answer Before They Understood the Problem — Virtual DDD interview with Kim Kao",
+    "category": "recommended",
+    "url": "https://youtu.be/td_vdQgeVwY",
+    "channel": "Virtual Domain-Driven Design",
+    "year": 2026
+  }
+]
