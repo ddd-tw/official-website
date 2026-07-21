@@ -62,9 +62,35 @@ const entries = isEn
         cta: '加入我們 →',
       },
     ];
+
+const site = Astro.site?.toString() ?? 'https://ddd-tw.com/';
+const homeUrl = new URL(`${prefix}/`, site).toString();
+const nav = [
+  { name: isEn ? 'Events' : '參與活動', path: '/events/' },
+  { name: isEn ? 'Knowledge' : '知識庫', path: '/knowledge/' },
+  { name: isEn ? 'Community' : '社群', path: '/community/' },
+  { name: isEn ? 'Governance' : '治理', path: '/governance/' },
+];
+// 首頁 = 網站入口與主要區塊的集合頁；SiteNavigationElement 讓引擎/agent 一眼看懂站點結構。
+const homeLd = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  '@id': homeUrl,
+  url: homeUrl,
+  name: 'DDD Taiwan — Domain-Driven Design Taiwan',
+  inLanguage: isEn ? 'en' : 'zh-TW',
+  isPartOf: { '@id': `${site}#website` },
+  about: { '@id': `${site}#organization` },
+  primaryImageOfPage: new URL('/og-image.png', site).toString(),
+  hasPart: nav.map((n) => ({
+    '@type': 'SiteNavigationElement',
+    name: n.name,
+    url: new URL(`${prefix}${n.path}`, site).toString(),
+  })),
+};
 ---
 
-<Base title="DDD Taiwan — Domain-Driven Design Taiwan">
+<Base title="DDD Taiwan — Domain-Driven Design Taiwan" jsonLd={homeLd}>
   <section class="container" style="text-align: center; padding-top: 92px; padding-bottom: 72px;">
     <img src="/logo.svg" alt="DDD Taiwan logo" width="104" height="104" />
     <p class="eyebrow" style="margin-top: 28px;">DOMAIN-DRIVEN DESIGN · TAIWAN</p>

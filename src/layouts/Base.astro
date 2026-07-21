@@ -49,13 +49,26 @@ const ogLocaleAlt = locale === 'zh' ? 'en_US' : 'zh_TW';
 
 // 全站實體：讓搜尋引擎與 AI 把「DDD Taiwan」認成一個明確的組織實體。
 const organization = {
-  '@type': 'Organization',
+  '@type': ['Organization', 'NGO'],
   '@id': `${siteUrl}#organization`,
   name: 'DDD Taiwan',
   alternateName: 'Domain-Driven Design Taiwan',
   url: siteUrl,
   logo: new URL('/og-image.png', Astro.site).toString(),
   description: t('site.description'),
+  foundingDate: '2018',
+  email: 'dddtw2018@gmail.com',
+  areaServed: 'Taiwan',
+  knowsLanguage: ['zh-Hant', 'en'],
+  knowsAbout: [
+    'Domain-Driven Design',
+    'Software Architecture',
+    'Event Storming',
+    'Domain Storytelling',
+    'Microservices',
+    'Systems Design',
+    'Socio-technical Systems',
+  ],
   sameAs: [
     'https://github.com/ddd-tw',
     'https://www.youtube.com/channel/UCydw7dbEksG3axEMjHy4BxQ',
