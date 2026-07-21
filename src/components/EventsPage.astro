@@ -10,15 +10,32 @@ const prefix = isEn ? '/en' : '';
 const events = (await getCollection('events')).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
 );
-const meetups = events.filter((e) => e.data.type === 'meetup');
-const conferences = events.filter((e) => e.data.type === 'conference');
-const bookclubs = events.filter((e) => e.data.type === 'bookclub');
 
 const eventTitle = (e: (typeof events)[number]) =>
   isEn ? (e.data.titleEn ?? e.data.title) : e.data.title;
 
-const fmt = (d: Date) =>
-  `${d.getFullYear()}.${String(d.getMonth() + 1).padStart(2, '0')}`;
+const typeLabel = (t: string) =>
+  t === 'conference'
+    ? isEn
+      ? 'Conference'
+      : '年會'
+    : t === 'bookclub'
+      ? isEn
+        ? 'Book Club'
+        : '讀書會'
+      : 'Meetup';
+
+const MONTHS_EN = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+const monthLabel = (d: Date) => (isEn ? MONTHS_EN[d.getMonth()] : `${d.getMonth() + 1}月`);
+
+// 三類活動合併成一條依年份分組的年表。
+const years = [...new Set(events.map((e) => e.data.date.getFullYear()))].sort((a, b) => b - a);
+const byYear = years.map((y) => ({
+  year: y,
+  items: events.filter((e) => e.data.date.getFullYear() === y),
+}));
+// 社群成立於 2018（與社群頁、Organization schema 一致），早於資料中最早的活動年。
+const firstYear = 2018;
 
 const site = Astro.site?.toString() ?? 'https://ddd-tw.com/';
 const isOnline = (loc?: string) => !!loc && /線上|online/i.test(loc);
@@ -81,115 +98,124 @@ const breadcrumb = {
         )
       }
     </h1>
+    <p style="max-width: 680px; color: var(--ink-mid);">
+      {
+        isEn
+          ? `Since ${firstYear}, the community has run regular meetups, an annual conference, and a book club — ${events.length}+ gatherings and counting. The next one is always in the works; follow us to hear first.`
+          : `自 ${firstYear} 年起，社群持續舉辦定期聚會、年度大會與讀書會 — 累積 ${events.length}+ 場，還在增加中。下一場永遠在籌備，追蹤我們搶先報名。`
+      }
+    </p>
   </div>
 
+  <!-- 參與方式：三類活動各是什麼、怎麼加入 -->
   <section class="container section">
-    <div class="card">
-      <div style="display: flex; align-items: center; gap: 14px; flex-wrap: wrap;">
-        <h2 style="margin: 0;">Meetup</h2>
-        <span class="chip">{isEn ? 'Next one in the works' : '下一場籌備中'}</span>
-      </div>
-      <p style="color: var(--ink-mid);">
-        {
-          isEn
-            ? 'Regular technical gatherings with registration details, venue, and agenda previews; recordings are added after each event.'
-            : '定期舉辦的技術聚會，提供報名資訊、場地與議程預告；活動結束後補充錄影回放連結。'
-        }
-      </p>
-      <div class="grid-3" style="margin: 20px 0;">
-        <div class="tile"><strong>{isEn ? 'Date' : '日期'}</strong><br />{isEn ? 'TBA' : '待公告'}</div>
-        <div class="tile"><strong>{isEn ? 'Venue' : '場地'}</strong><br />{isEn ? 'TBA' : '待公告'}</div>
-        <div class="tile"><strong>{isEn ? 'Agenda' : '議程預告'}</strong><br />{isEn ? 'TBA' : '待公告'}</div>
-      </div>
-      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-        <a class="btn btn--ghost" href="https://www.accupass.com/organizer/detail/2204070436062239115110">Accupass</a>
-        <a class="btn btn--ghost" href="https://dddtaiwan.kktix.cc/">KKTIX</a>
-        <a class="btn btn--ghost" href="https://www.meetup.com/domain-driven-design-taiwan-meetup-group/">Meetup.com</a>
+    <p class="kb-label kb-label--rule">{isEn ? 'How to take part' : '參與方式'}</p>
+    <div class="grid-3" style="margin-top: 18px;">
+      <div class="card">
+        <div class="ev-card__head">
+          <h2>Meetup</h2>
+          <span class="chip">{isEn ? 'Next one in the works' : '下一場籌備中'}</span>
+        </div>
+        <p style="font-size: 14px; color: var(--ink-mid); margin: 0;">
+          {
+            isEn
+              ? 'Regular technical gatherings. Registration and agenda go up on our event platforms.'
+              : '定期技術聚會。報名資訊與議程會在活動平台公告。'
+          }
+        </p>
+        <div class="ev-links">
+          <a href="https://www.accupass.com/organizer/detail/2204070436062239115110">Accupass ↗</a>
+          <a href="https://dddtaiwan.kktix.cc/">KKTIX ↗</a>
+          <a href="https://www.meetup.com/domain-driven-design-taiwan-meetup-group/">Meetup.com ↗</a>
+        </div>
       </div>
 
-      <h3 style="margin-top: 36px;">{isEn ? 'Past sessions' : '歷屆場次'}</h3>
-      <ul class="row-list">
-        {
-          meetups.map((e) => (
-            <li>
-              <a href={e.data.link ?? 'https://dddtaiwan.kktix.cc/'}>
-                <span class="row__date">{fmt(e.data.date)}</span>
-                <span>{eventTitle(e)}</span>
-              </a>
-            </li>
-          ))
-        }
-      </ul>
+      <div class="card">
+        <div class="ev-card__head">
+          <h2>{isEn ? 'Conference' : '年會'}</h2>
+        </div>
+        <p style="font-size: 14px; color: var(--ink-mid); margin: 0;">
+          {
+            isEn
+              ? 'The annual gathering — keynotes and workshops on Event Storming, Domain Storytelling, and more.'
+              : '一年一度的社群大會 — 主題演講與 Event Storming、Domain Storytelling 等工作坊。'
+          }
+        </p>
+        <div class="ev-links">
+          <a href="https://conference.ddd-tw.com/">{isEn ? 'Conference site ↗' : '年會官網 ↗'}</a>
+          <a href="mailto:conference@ddd-tw.com">{isEn ? 'Sponsor us' : '贊助洽詢'}</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="ev-card__head">
+          <h2>{isEn ? 'Book Club' : '讀書會'}</h2>
+        </div>
+        <p style="font-size: 14px; color: var(--ink-mid); margin: 0;">
+          {
+            isEn
+              ? 'A recurring book club — reading closely, discussing, and practicing together.'
+              : '定期讀書會 — 一起精讀、討論與實作。'
+          }
+        </p>
+        <div class="ev-links">
+          <a href={`${prefix}/community/`}>{isEn ? 'How to join →' : '加入方式 →'}</a>
+        </div>
+      </div>
     </div>
   </section>
 
+  <!-- 社群歷程：三類合併、依年份分組的年表 -->
   <section class="container section">
-    <div class="card">
-      <h2 style="margin-top: 0;">Conference</h2>
-      <p style="color: var(--ink-mid);">
-        {
-          isEn ? (
-            <>
-              The annual conference features keynote talks and workshops on Event Storming, Domain
-              Storytelling, and more. Sponsorship inquiries:{' '}
-              <a href="mailto:conference@ddd-tw.com" class="mono">conference@ddd-tw.com</a>
-            </>
-          ) : (
-            <>
-              年度大會，含主題演講與 Event Storming、Domain Storytelling 等工作坊。贊助洽詢：
-              <a href="mailto:conference@ddd-tw.com" class="mono">conference@ddd-tw.com</a>
-            </>
-          )
-        }
-      </p>
-      <ul class="row-list">
-        {
-          conferences.map((e) => (
-            <li>
-              <a href={e.data.link}>
-                <span class="row__date">{fmt(e.data.date)}</span>
-                <span>{eventTitle(e)}</span>
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-    </div>
-  </section>
-
-  <section class="container section">
-    <div class="card">
-      <h2 style="margin-top: 0;">Book Club</h2>
-      <p style="color: var(--ink-mid);">
-        {
-          isEn
-            ? 'A recurring book club — reading closely, discussing, and practicing together.'
-            : '定期讀書會 — 一起精讀、討論與實作。'
-        }
-      </p>
-      <div class="grid-3" style="margin: 20px 0;">
-        <div class="tile"><strong>{isEn ? 'Current book' : '目前書目'}</strong><br />{isEn ? 'TBA' : '待公告'}</div>
-        <div class="tile"><strong>{isEn ? 'Progress' : '進度'}</strong><br />—</div>
-        <div class="tile"><strong>{isEn ? 'Previous' : '上一本'}</strong><br />Pragmatic TDD</div>
-      </div>
+    <p class="kb-label kb-label--rule">{isEn ? 'Event history' : '社群歷程'}</p>
+    <p style="font-size: 13.5px; color: var(--ink-faint); margin: 0 0 8px;">
       {
-        bookclubs.length > 0 && (
+        isEn
+          ? 'Every meetup, conference, and book-club session, newest first.'
+          : '歷屆聚會、年會與讀書會，由新到舊。'
+      }
+    </p>
+    {
+      byYear.map((grp) => (
+        <div>
+          <div class="ev-year">
+            <span class="ev-year__n">{grp.year}</span>
+          </div>
+          <ul class="timeline">
+            {grp.items.map((e) => (
+              <li>
+                <a
+                  class="ev-row"
+                  href={e.data.videoUrl ?? e.data.link ?? 'https://dddtaiwan.kktix.cc/'}
+                >
+                  <span class={`ev-tag${e.data.type === 'conference' ? ' ev-tag--conf' : ''}`}>
+                    {typeLabel(e.data.type)}
+                  </span>
+                  <span class="ev-row__title">{eventTitle(e)}</span>
+                  <span class="ev-row__meta">
+                    {e.data.videoUrl && <span class="ev-row__replay">{isEn ? '▶ Replay' : '▶ 回放'}</span>}
+                    <span class="ev-row__month">{monthLabel(e.data.date)}</span>
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))
+    }
+    <p class="kb-note">
+      {
+        isEn ? (
           <>
-            <h3 style="margin-top: 28px;">{isEn ? 'Past sessions' : '歷屆場次'}</h3>
-            <ul class="row-list" style="margin-bottom: 20px;">
-              {bookclubs.map((e) => (
-                <li>
-                  <a href={e.data.link ?? 'https://dddtaiwan.kktix.cc/'}>
-                    <span class="row__date">{fmt(e.data.date)}</span>
-                    <span>{eventTitle(e)}</span>
-                  </a>
-                </li>
-              ))}
-            </ul>
+            Talk recordings from past events live in the{' '}
+            <a href={`${prefix}/knowledge/#video`}>Knowledge base</a>.
+          </>
+        ) : (
+          <>
+            歷屆活動的演講錄影都在<a href={`${prefix}/knowledge/#video`}>知識庫</a>。
           </>
         )
       }
-      <a class="btn btn--ghost" href={`${prefix}/community/`}>{isEn ? 'How to join' : '加入方式'}</a>
-    </div>
+    </p>
   </section>
 </Base>
