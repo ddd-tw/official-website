@@ -1,9 +1,9 @@
 ---
-import Base from '../../layouts/Base.astro';
+import Base from '../../../layouts/Base.astro';
 import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('posts', ({ data }) => !data.draft && data.lang === 'zh');
+  const posts = await getCollection('posts', ({ data }) => !data.draft && data.lang === 'en');
   return posts.map((post) => ({ params: { id: post.id }, props: { post } }));
 }
 
@@ -21,7 +21,8 @@ const fmtDate = (d: Date) => d.toISOString().slice(0, 10);
     {
       post.data.source && (
         <p style="font-size: 14px; color: var(--ink-faint);">
-          原文出處：<a href={post.data.source}>{post.data.source}</a>（已取得作者授權轉載）
+          Source: <a href={post.data.source}>{post.data.source}</a> (republished with the author's
+          permission)
         </p>
       )
     }

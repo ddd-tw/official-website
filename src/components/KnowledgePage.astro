@@ -61,11 +61,6 @@ const repos = [
     url: 'https://github.com/ddd-tw/ddd-tutorial',
   },
   {
-    name: 'ddd-tw/DDD-The-First-15-Years-Zh-Hant',
-    note: isEn ? 'Community translation' : '社群翻譯',
-    url: 'https://github.com/ddd-tw/DDD-The-First-15-Years-Zh-Hant',
-  },
-  {
     name: 'ddd-tw/ddd-events',
     note: isEn ? 'Meetup & study group archive' : '歷屆活動資源紀錄',
     url: 'https://github.com/ddd-tw/ddd-events',
@@ -175,7 +170,7 @@ const fmtDate = (d: Date) => d.toISOString().slice(0, 10);
       {
         posts.map((p) => (
           <li>
-            <a href={`/posts/${p.id}/`}>
+            <a href={`${p.data.lang === 'en' ? '/en' : ''}/posts/${p.id}/`}>
               <span class="row__date">{fmtDate(p.data.pubDate)}</span>
               <span>{p.data.title}</span>
             </a>

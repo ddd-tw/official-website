@@ -10,8 +10,9 @@ const prefix = isEn ? '/en' : '';
 const events = (await getCollection('events')).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
 );
-const meetups = events.filter((e) => e.data.type !== 'conference');
+const meetups = events.filter((e) => e.data.type === 'meetup');
 const conferences = events.filter((e) => e.data.type === 'conference');
+const bookclubs = events.filter((e) => e.data.type === 'bookclub');
 
 const eventTitle = (e: (typeof events)[number]) =>
   isEn ? (e.data.titleEn ?? e.data.title) : e.data.title;
@@ -126,6 +127,23 @@ const fmt = (d: Date) =>
         <div class="tile"><strong>{isEn ? 'Progress' : '進度'}</strong><br />—</div>
         <div class="tile"><strong>{isEn ? 'Previous' : '上一本'}</strong><br />Pragmatic TDD</div>
       </div>
+      {
+        bookclubs.length > 0 && (
+          <>
+            <h3 style="margin-top: 28px;">{isEn ? 'Past sessions' : '歷屆場次'}</h3>
+            <ul class="row-list" style="margin-bottom: 20px;">
+              {bookclubs.map((e) => (
+                <li>
+                  <a href={e.data.link ?? 'https://dddtaiwan.kktix.cc/'}>
+                    <span class="row__date">{fmt(e.data.date)}</span>
+                    <span>{eventTitle(e)}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </>
+        )
+      }
       <a class="btn btn--ghost" href={`${prefix}/community/`}>{isEn ? 'How to join' : '加入方式'}</a>
     </div>
   </section>

@@ -60,6 +60,14 @@ const automations = isEn
             : '遵循個人資料保護法並參考 GDPR 精神處理個資；活動報名資料由 KKTIX 平台代為處理。'
         }
       </p>
+      <h3>{isEn ? 'Third-Party Services' : '第三方服務'}</h3>
+      <p style="color: var(--ink-mid);">
+        {
+          isEn
+            ? 'This is a static website hosted on GitHub Pages, with fonts served by Google Fonts — both services process your IP address when you visit. The site itself sets no tracking cookies. Links to external platforms (Facebook, Line, YouTube, KKTIX, etc.) are governed by those platforms’ own privacy policies.'
+            : '本網站為靜態網站，由 GitHub Pages 代管、字體由 Google Fonts 提供，瀏覽時你的 IP 位址會經由這些服務處理；本站本身不設任何追蹤 cookie。連往外部平台（Facebook、Line、YouTube、KKTIX 等）後，適用各該平台自己的隱私權政策。'
+        }
+      </p>
       <h3>{isEn ? 'Your Rights' : '你的權利'}</h3>
       <p style="color: var(--ink-mid);">
         {
@@ -128,8 +136,8 @@ const automations = isEn
           </h2>
           <p style="color: var(--ink-mid);">
             {isEn
-              ? 'To reduce manual maintenance and avoid single-account bottlenecks, the following workflows are being automated:'
-              : '為降低人工維護成本並解決帳號集中管理的瓶頸，以下流程將以自動化執行：'}
+              ? 'To reduce manual maintenance and avoid single-account bottlenecks, we are gradually automating the following workflows (in planning):'
+              : '為降低人工維護成本並解決帳號集中管理的瓶頸，以下流程正逐步導入自動化（規劃中）：'}
           </p>
           <ul class="row-list">
             {automations.map((a) => (

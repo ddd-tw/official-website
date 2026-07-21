@@ -26,13 +26,20 @@ const currentPath = Astro.url.pathname.replace(/\/?$/, '/');
 // 語言切換：連到「目前頁面的另一語言版本」。
 // 只有這幾頁有雙語版本；其餘（如 /posts/xxx/）退回另一語言的首頁。
 const localizedPages = ['/', '/events/', '/knowledge/', '/community/', '/governance/'];
+const zhPath = locale === 'zh' ? currentPath : currentPath.replace(/^\/en(\/|$)/, '/');
+const isLocalizedPage = localizedPages.includes(zhPath);
 let otherLocaleHref: string;
 if (locale === 'zh') {
-  otherLocaleHref = localizedPages.includes(currentPath) ? `/en${currentPath}` : '/en/';
+  otherLocaleHref = isLocalizedPage ? `/en${currentPath}` : '/en/';
 } else {
-  const zhPath = currentPath.replace(/^\/en(\/|$)/, '/');
-  otherLocaleHref = localizedPages.includes(zhPath) ? zhPath : '/';
+  otherLocaleHref = isLocalizedPage ? zhPath : '/';
 }
+
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
+const labels =
+  locale === 'zh'
+    ? { theme: '切換主題', menu: '選單' }
+    : { theme: 'Toggle theme', menu: 'Menu' };
 ---
 
 <!doctype html>
@@ -42,6 +49,22 @@ if (locale === 'zh') {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={new URL('/og-image.png', Astro.site)} />
+    <meta name="twitter:card" content="summary_large_image" />
+    {
+      isLocalizedPage && (
+        <>
+          <link rel="alternate" hreflang="zh-TW" href={new URL(zhPath, Astro.site)} />
+          <link rel="alternate" hreflang="en" href={new URL(`/en${zhPath}`, Astro.site)} />
+          <link rel="alternate" hreflang="x-default" href={new URL(zhPath, Astro.site)} />
+        </>
+      )
+    }
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -87,9 +110,9 @@ if (locale === 'zh') {
             ))
           }
           <a class="nav__btn" href={otherLocaleHref}>{locale === 'zh' ? 'EN' : '中'}</a>
-          <button class="nav__btn" data-theme-toggle aria-label="切換主題">◐</button>
+          <button class="nav__btn" data-theme-toggle aria-label={labels.theme}>◐</button>
         </div>
-        <button class="nav__hamburger" data-menu-toggle aria-label="選單" aria-expanded="false">
+        <button class="nav__hamburger" data-menu-toggle aria-label={labels.menu} aria-expanded="false">
           ☰
         </button>
       </div>
@@ -97,7 +120,7 @@ if (locale === 'zh') {
         {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
         <div class="nav__mobile-row">
           <a class="nav__btn" href={otherLocaleHref}>{locale === 'zh' ? 'EN' : '中'}</a>
-          <button class="nav__btn" data-theme-toggle aria-label="切換主題">◐</button>
+          <button class="nav__btn" data-theme-toggle aria-label={labels.theme}>◐</button>
         </div>
       </div>
     </nav>
@@ -113,8 +136,8 @@ if (locale === 'zh') {
           <span>DDD TAIWAN</span>
         </a>
         <div class="footer__links">
-          <a href={`${prefix}/governance/`}>{t('footer.privacy')}</a>
-          <a href={`${prefix}/governance/`}>{t('footer.coc')}</a>
+          <a href={`${prefix}/governance/#privacy`}>{t('footer.privacy')}</a>
+          <a href={`${prefix}/governance/#coc`}>{t('footer.coc')}</a>
           <a href="https://github.com/ddd-tw">GitHub</a>
           <a href="https://www.youtube.com/channel/UCydw7dbEksG3axEMjHy4BxQ">YouTube</a>
           <span>© 2026 DDD Taiwan</span>
