@@ -54,20 +54,6 @@ const allPosts = (await getCollection('posts', ({ data }) => !data.draft)).sort(
 const localizedPosts = allPosts.filter((p) => p.data.lang === locale);
 const posts = localizedPosts.length > 0 ? localizedPosts : allPosts;
 
-const paperSteps = isEn
-  ? [
-      { n: '01', title: 'Agent gathers', desc: 'Relevant articles are collected automatically' },
-      { n: '02', title: 'Author consent', desc: 'Original authors are contacted for permission' },
-      { n: '03', title: 'Community review', desc: 'Community members review the content' },
-      { n: '04', title: 'Published', desc: 'Approved pieces go live on the site' },
-    ]
-  : [
-      { n: '01', title: 'Agent 蒐集', desc: '自動從網路抓取相關文章' },
-      { n: '02', title: '作者授權', desc: '聯繫原作者取得授權同意' },
-      { n: '03', title: '社群 Review', desc: '由社群成員審核內容' },
-      { n: '04', title: '正式發布', desc: '通過後發布至網站' },
-    ];
-
 const repos = [
   {
     name: 'ddd-tw/ddd-tutorial',
@@ -178,21 +164,13 @@ const fmtDate = (d: Date) => d.toISOString().slice(0, 10);
 
   <section class="container section">
     <h2>Papers</h2>
-    <div class="grid-2" style="grid-template-columns: repeat(4, 1fr);">
+    <p style="color: var(--ink-mid); font-size: 14.5px; max-width: 680px;">
       {
-        paperSteps.map((s) => (
-          <div class="card" style="padding: 20px;">
-            <span class="mono" style="color: var(--accent); font-size: 13px;">
-              {s.n}
-            </span>
-            <h3 style="font-size: 15px; margin: 8px 0 4px;">{s.title}</h3>
-            <p style="font-size: 13px; color: var(--ink-mid); margin: 0;">{s.desc}</p>
-          </div>
-        ))
+        isEn
+          ? 'Practical writing from community members, plus articles republished with the original authors’ permission.'
+          : '社群成員的實務文章，以及取得原作者授權轉載的好文。'
       }
-    </div>
-
-    <h3 style="margin-top: 28px;">{isEn ? 'Latest articles' : '最新文章'}</h3>
+    </p>
     <ul class="row-list">
       {
         posts.map((p) => (
@@ -205,6 +183,24 @@ const fmtDate = (d: Date) => d.toISOString().slice(0, 10);
         ))
       }
     </ul>
+    <p style="color: var(--ink-faint); font-size: 14px; margin-top: 16px;">
+      {
+        isEn ? (
+          <>
+            Want to contribute or recommend an article? Submissions go through community review
+            before publishing; republished pieces must include the original author's permission —
+            open a pull request on <a href="https://github.com/ddd-tw/official-website">GitHub</a>
+            or <a href="mailto:dddtw2018@gmail.com">email us</a>.
+          </>
+        ) : (
+          <>
+            想投稿或推薦好文？文章經社群 Review 後發布；轉載需附原作者授權紀錄 — 歡迎到
+            <a href="https://github.com/ddd-tw/official-website">GitHub</a> 開 Pull Request，或
+            <a href="mailto:dddtw2018@gmail.com">來信給我們</a>。
+          </>
+        )
+      }
+    </p>
   </section>
 
   <section class="container section">
