@@ -84,6 +84,7 @@
     "url": "https://youtu.be/0ZEpdPusZLk",
     "channel": "Domain-Driven Design Taiwan",
     "year": 2023,
+    "featured": true,
     "highlight": "《Balancing Coupling in Software Design》作者親自講解耦合模型。",
     "highlightEn": "The coupling model explained by the author of the book on the subject."
   },
@@ -117,6 +118,7 @@
     "url": "https://youtu.be/Y7MB7SSOZvE",
     "channel": "Domain-Driven Design Taiwan",
     "year": 2021,
+    "featured": true,
     "highlight": "Serverless 領域的國際知名作者，示範六邊形架構如何讓 AWS Lambda 持續演進。",
     "highlightEn": "An internationally recognized serverless author showing how hexagonal architecture keeps AWS Lambda evolving."
   },
@@ -139,6 +141,7 @@
     "url": "https://youtu.be/Y7bEojF1lI0",
     "channel": "Domain-Driven Design Taiwan",
     "year": 2021,
+    "featured": true,
     "highlight": "國際知名 DDD 作者與 Pluralsight 講師，談 DDD 是務實還是原則。",
     "highlightEn": "An internationally recognized DDD author and Pluralsight instructor on pragmatism vs. principle in DDD."
   },

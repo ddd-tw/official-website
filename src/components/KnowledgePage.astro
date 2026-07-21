@@ -83,9 +83,11 @@ const videoCategories = [
       : '聚焦單一技法或原則，從 SOLID 到微服務拆分策略。',
   },
 ] as const;
+const featuredVideos = videos.filter((v) => v.data.featured);
+// 精選已置頂為大縮圖卡，分類清單裡就不重複列出。
 const videosByCategory = videoCategories.map((c) => ({
   ...c,
-  items: videos.filter((v) => v.data.category === c.key),
+  items: videos.filter((v) => v.data.category === c.key && !v.data.featured),
 }));
 // 頻道縮寫，作為每列右側的來源標籤（呼應參考頁的 kind tag）。
 const channelTag = (channel?: string) => {
@@ -99,6 +101,10 @@ const channelTag = (channel?: string) => {
     default:
       return channel;
   }
+};
+const youtubeThumb = (url: string) => {
+  const m = url.match(/(?:v=|youtu\.be\/)([\w-]{11})/);
+  return m ? `https://i.ytimg.com/vi/${m[1]}/hqdefault.jpg` : undefined;
 };
 const allPosts = (await getCollection('posts', ({ data }) => !data.draft)).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
@@ -275,43 +281,63 @@ const fmtDate = (d: Date) => d.toISOString().slice(0, 10);
 
   <section class="container section" id="panel-video" data-kb-panel>
     <h2 style="position: absolute; left: -9999px;">Video</h2>
-    <p style="color: var(--ink-mid); font-size: 14.5px; max-width: 680px; margin-bottom: 8px;">
-      {
-        isEn
-          ? "Grouped by what the talk actually is, not which event it was recorded at — so it's clear why each one made the list."
-          : '依內容本質分組，不是依活動場次——讓每一支被選進來的理由一眼可見。'
-      }
-    </p>
+    {
+      featuredVideos.length > 0 && (
+        <>
+          <p class="kb-label">{isEn ? 'Featured' : '精選'}</p>
+          <div class="feat-grid">
+            {featuredVideos.map((v) => (
+              <a class="feat-card" href={v.data.url} target="_blank" rel="noopener noreferrer">
+                <span class="feat-card__thumb">
+                  <img
+                    src={youtubeThumb(v.data.url)}
+                    alt={isEn ? (v.data.titleEn ?? v.data.title) : v.data.title}
+                    width="480"
+                    height="270"
+                    loading="lazy"
+                  />
+                  <span class="feat-card__play" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg>
+                  </span>
+                </span>
+                <span class="feat-card__title">{isEn ? (v.data.titleEn ?? v.data.title) : v.data.title}</span>
+                {(isEn ? v.data.highlightEn : v.data.highlight) && (
+                  <span class="feat-card__event">{isEn ? v.data.highlightEn : v.data.highlight}</span>
+                )}
+              </a>
+            ))}
+          </div>
+        </>
+      )
+    }
     {
       videosByCategory
         .filter((cat) => cat.items.length > 0)
         .map((cat) => (
           <div class="video-section">
-            <h3 class="video-section__title">{cat.title}</h3>
+            <p class="kb-label kb-label--rule">{cat.title}</p>
             <p class="video-section__desc">{cat.desc}</p>
-            <ul class="talk-list">
+            <div class="talk-grid">
               {cat.items.map((v) => (
-                <li>
-                  <a class="talk-row" href={v.data.url} target="_blank" rel="noopener noreferrer">
-                    <span class="talk-row__year mono">{v.data.year ?? ''}</span>
-                    <span class="talk-row__main">
-                      <span class="talk-row__title">
-                        {isEn ? (v.data.titleEn ?? v.data.title) : v.data.title}
-                        <span class="talk-row__arrow" aria-hidden="true">↗</span>
-                      </span>
-                      {(isEn ? v.data.highlightEn : v.data.highlight) && (
-                        <span class="talk-row__highlight">{isEn ? v.data.highlightEn : v.data.highlight}</span>
-                      )}
-                    </span>
-                    <span class="talk-row__tag">{channelTag(v.data.channel)}</span>
-                  </a>
-                </li>
+                <a class="talk-tile" href={v.data.url} target="_blank" rel="noopener noreferrer">
+                  <span class="talk-tile__top">
+                    <span class="talk-tile__year mono">{v.data.year ?? ''}</span>
+                    <span class="talk-tile__tag">{channelTag(v.data.channel)}</span>
+                  </span>
+                  <span class="talk-tile__title">
+                    {isEn ? (v.data.titleEn ?? v.data.title) : v.data.title}
+                    <span class="talk-tile__arrow" aria-hidden="true">↗</span>
+                  </span>
+                  {(isEn ? v.data.highlightEn : v.data.highlight) && (
+                    <span class="talk-tile__highlight">{isEn ? v.data.highlightEn : v.data.highlight}</span>
+                  )}
+                </a>
               ))}
-            </ul>
+            </div>
           </div>
         ))
     }
-    <a class="btn btn--ghost" style="margin-top: 20px;" href="https://www.youtube.com/channel/UCydw7dbEksG3axEMjHy4BxQ">
+    <a class="btn btn--ghost" style="margin-top: 28px;" href="https://www.youtube.com/channel/UCydw7dbEksG3axEMjHy4BxQ">
       {isEn ? 'Visit our YouTube channel' : '前往 YouTube 頻道'}
     </a>
   </section>

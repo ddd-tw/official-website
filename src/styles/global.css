@@ -371,99 +371,201 @@ a.card:hover,
   color: var(--ink-faint);
 }
 
-.video-section {
-  margin-top: 40px;
+/* Knowledge 小標籤（呼應參考頁的 section label） */
+.kb-label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--ink-faint);
+  margin: 0 0 16px;
 }
 
-.video-section__title {
-  margin: 0 0 4px;
+.kb-label--rule {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 4px;
+  text-transform: none;
+  letter-spacing: 0.04em;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.kb-label--rule::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
+/* 精選：置頂大縮圖卡 */
+.feat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-bottom: 44px;
+}
+
+.feat-card {
+  display: block;
+  color: var(--ink);
+}
+
+.feat-card__thumb {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 9;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--tile);
+}
+
+.feat-card__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 220ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.feat-card:hover .feat-card__thumb img {
+  transform: scale(1.04);
+}
+
+.feat-card__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--brand-solid);
+  color: #fbf8f1;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+  transition: transform 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.feat-card__play svg {
+  width: 22px;
+  height: 22px;
+  margin-left: 2px;
+}
+
+.feat-card:hover .feat-card__play {
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+.feat-card__title {
+  display: block;
+  font-family: 'Space Grotesk', 'Noto Sans TC', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.4;
+  margin: 14px 0 4px;
+}
+
+.feat-card:hover .feat-card__title {
+  color: var(--brand-strong);
+}
+
+.feat-card__event {
+  display: block;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ink-faint);
+}
+
+/* 分類：雙欄緊湊卡片 */
+.video-section {
+  margin-top: 34px;
 }
 
 .video-section__desc {
   font-size: 13.5px;
   color: var(--ink-faint);
-  margin: 0 0 6px;
+  margin: 0 0 16px;
 }
 
-.talk-list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.talk-list li {
-  border-top: 1px solid var(--line-soft);
-}
-
-.talk-list li:last-child {
-  border-bottom: 1px solid var(--line-soft);
-}
-
-.talk-row {
+.talk-grid {
   display: grid;
-  grid-template-columns: 52px 1fr auto;
-  align-items: baseline;
-  gap: 20px;
-  padding: 16px 8px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.talk-tile {
+  display: block;
+  padding: 16px 18px;
+  border: 1px solid var(--line-soft);
+  border-radius: 8px;
   color: var(--ink);
+  transition: border-color 180ms cubic-bezier(0.4, 0, 0.2, 1),
+    transform 180ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 180ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.talk-row:hover {
-  background: var(--row-hover);
+.talk-tile:hover {
+  border-color: var(--brand-strong);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px var(--card-glow);
 }
 
-.talk-row__year {
-  font-size: 13px;
+.talk-tile__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.talk-tile__year {
+  font-size: 12.5px;
   color: var(--ink-faint);
 }
 
-.talk-row__main {
-  min-width: 0;
+.talk-tile__tag {
+  white-space: nowrap;
+  padding: 2px 9px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.02em;
+  color: var(--ink-faint);
 }
 
-.talk-row__title {
+.talk-tile__title {
+  display: block;
   font-family: 'Space Grotesk', 'Noto Sans TC', sans-serif;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.4;
-  color: var(--ink);
 }
 
-.talk-row__arrow {
+.talk-tile__arrow {
   display: inline-block;
-  margin-left: 6px;
-  font-size: 13px;
+  margin-left: 5px;
+  font-size: 12px;
   color: var(--ink-faint);
   opacity: 0;
   transition: opacity 180ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.talk-row:hover .talk-row__title {
-  color: var(--brand-strong);
-}
-
-.talk-row:hover .talk-row__arrow {
+.talk-tile:hover .talk-tile__arrow {
   opacity: 1;
 }
 
-.talk-row__highlight {
+.talk-tile__highlight {
   display: block;
-  margin-top: 4px;
-  font-size: 13.5px;
-  line-height: 1.55;
+  margin-top: 5px;
+  font-size: 13px;
+  line-height: 1.5;
   color: var(--ink-mid);
-}
-
-.talk-row__tag {
-  align-self: center;
-  white-space: nowrap;
-  padding: 3px 10px;
-  border-radius: 999px;
-  border: 1px solid var(--line);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  letter-spacing: 0.02em;
-  color: var(--ink-faint);
 }
 
 .tile {
@@ -572,15 +674,9 @@ main {
     grid-template-columns: 1fr;
   }
 
-  .talk-row {
+  .feat-grid,
+  .talk-grid {
     grid-template-columns: 1fr;
-    gap: 4px;
-    padding: 14px 6px;
-  }
-
-  .talk-row__tag {
-    justify-self: start;
-    margin-top: 8px;
   }
 
   .card {

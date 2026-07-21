@@ -76,6 +76,8 @@ const videos = defineCollection({
     /** 一行說明「為什麼推薦這支」，讓分類不只是標籤 */
     highlight: z.string().optional(),
     highlightEn: z.string().optional(),
+    /** 置頂精選（顯示大縮圖卡），通常留給國際／指標性講者 */
+    featured: z.boolean().default(false),
   }),
 });
 
