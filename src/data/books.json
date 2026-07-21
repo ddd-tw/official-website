@@ -30,5 +30,14 @@
     "year": 2018,
     "summary": "用函數式思維與型別系統做領域建模。",
     "coverColor": "#2B52A0"
+  },
+  {
+    "id": "ddd-first-15-years",
+    "title": "Domain-Driven Design: The First 15 Years（社群中譯版）",
+    "author": "DDD Europe 選輯 · DDD Taiwan 社群翻譯",
+    "year": 2020,
+    "summary": "DDD 十五週年紀念文集，由社群志工翻譯為繁體中文，免費線上閱讀。",
+    "coverColor": "#C34A33",
+    "url": "https://github.com/ddd-tw/DDD-The-First-15-Years-Zh-Hant"
   }
 ]

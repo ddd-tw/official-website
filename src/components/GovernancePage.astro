@@ -4,6 +4,23 @@ import type { Locale } from '../i18n/ui';
 
 const locale = (Astro.currentLocale ?? 'zh') as Locale;
 const isEn = locale === 'en';
+
+// 依 handoff 規格：網站自動化區塊可用此 flag 隱藏。
+const SHOW_AUTOMATION = true;
+
+const automations = isEn
+  ? [
+      { n: '01', title: 'Meetup calendar sync', desc: 'Meetup events are automatically added to a public calendar via API.' },
+      { n: '02', title: 'Distributed event publishing', desc: 'Events can be published by multiple maintainers, removing the single-account bottleneck.' },
+      { n: '03', title: 'Recording notification emails', desc: 'When a recorded event is published, attendees automatically receive the video link.' },
+      { n: '04', title: 'Auto-upload to YouTube', desc: 'Meetup recordings are automatically published to the DDD Taiwan YouTube channel.' },
+    ]
+  : [
+      { n: '01', title: 'Meetup 同步公開行事曆', desc: '透過 API 自動將 Meetup 活動連結新增至公開行事曆。' },
+      { n: '02', title: '分散式活動上架', desc: '多位維護者皆可上架活動，解除單一帳號操作的瓶頸。' },
+      { n: '03', title: '錄影通知信自動寄送', desc: '承諾錄影的活動，於錄影發布後自動寄送影片連結給參與者。' },
+      { n: '04', title: '錄影自動上傳 YouTube', desc: 'Meetup 錄影完成後自動發布至 DDD Taiwan YouTube 頻道。' },
+    ];
 ---
 
 <Base title={isEn ? 'Governance — DDD Taiwan' : '治理 — DDD Taiwan'}>
@@ -101,4 +118,35 @@ const isEn = locale === 'en';
       </p>
     </div>
   </section>
+
+  {
+    SHOW_AUTOMATION && (
+      <section class="container container--narrow section">
+        <div class="card">
+          <h2 style="margin-top: 0;" id="automation">
+            {isEn ? 'Site Automation' : '網站自動化'}
+          </h2>
+          <p style="color: var(--ink-mid);">
+            {isEn
+              ? 'To reduce manual maintenance and avoid single-account bottlenecks, the following workflows are being automated:'
+              : '為降低人工維護成本並解決帳號集中管理的瓶頸，以下流程將以自動化執行：'}
+          </p>
+          <ul class="row-list">
+            {automations.map((a) => (
+              <li>
+                <div class="row">
+                  <span class="row__date">{a.n}</span>
+                  <span>
+                    <strong>{a.title}</strong>
+                    <br />
+                    <span style="font-size: 13px; color: var(--ink-mid);">{a.desc}</span>
+                  </span>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+    )
+  }
 </Base>

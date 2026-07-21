@@ -51,6 +51,8 @@ const books = defineCollection({
     year: z.number(),
     summary: z.string(),
     coverColor: z.string().default('#24417E'),
+    /** 可免費閱讀的線上版連結（如社群翻譯） */
+    url: z.string().url().optional(),
   }),
 });
 

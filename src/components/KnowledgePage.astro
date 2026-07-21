@@ -30,6 +30,21 @@ const paperSteps = isEn
 
 const repos = [
   {
+    name: 'ddd-tw/ddd-tutorial',
+    note: isEn ? 'Community project' : '社群專案',
+    url: 'https://github.com/ddd-tw/ddd-tutorial',
+  },
+  {
+    name: 'ddd-tw/DDD-The-First-15-Years-Zh-Hant',
+    note: isEn ? 'Community translation' : '社群翻譯',
+    url: 'https://github.com/ddd-tw/DDD-The-First-15-Years-Zh-Hant',
+  },
+  {
+    name: 'ddd-tw/ddd-events',
+    note: isEn ? 'Meetup & study group archive' : '歷屆活動資源紀錄',
+    url: 'https://github.com/ddd-tw/ddd-events',
+  },
+  {
     name: 'ddd-tw/2025Summit',
     note: isEn ? 'Community project' : '社群專案',
     url: 'https://github.com/ddd-tw/2025Summit',
@@ -77,7 +92,9 @@ const fmtDate = (d: Date) => d.toISOString().slice(0, 10);
               style={`flex: 0 0 44px; height: 62px; border-radius: 4px; background: ${b.data.coverColor};`}
             />
             <div>
-              <h3 style="font-size: 16px; margin: 0;">{b.data.title}</h3>
+              <h3 style="font-size: 16px; margin: 0;">
+                {b.data.url ? <a href={b.data.url}>{b.data.title}</a> : b.data.title}
+              </h3>
               <p style="font-size: 13px; color: var(--ink-faint); margin: 4px 0;">
                 {b.data.author} · {b.data.year}
               </p>
@@ -134,7 +151,7 @@ const fmtDate = (d: Date) => d.toISOString().slice(0, 10);
       <span class="chip">{isEn ? 'Conference talks' : '年會演講'}</span>
       <span class="chip">{isEn ? 'Recommended videos' : '推薦影片'}</span>
     </div>
-    <a class="btn btn--ghost" href="https://www.youtube.com/@dddtaiwan">
+    <a class="btn btn--ghost" href="https://www.youtube.com/channel/UCydw7dbEksG3axEMjHy4BxQ">
       {isEn ? 'Visit our YouTube channel' : '前往 YouTube 頻道'}
     </a>
   </section>
