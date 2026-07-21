@@ -635,6 +635,45 @@ a.card:hover,
   color: var(--ink-mid);
 }
 
+/* ---- Governance / policy page ---- */
+.gov-toc {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin: 18px 0 6px;
+  font-size: 13.5px;
+}
+
+.gov-toc a {
+  color: var(--brand-strong);
+}
+
+.gov-toc__sep {
+  color: var(--ink-faint);
+}
+
+.gov-updated {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--ink-faint);
+  margin: 0;
+}
+
+.gov-h {
+  scroll-margin-top: 84px;
+}
+
+.gov-h + h3 {
+  margin-top: 4px;
+}
+
+.gov-p {
+  color: var(--ink-mid);
+  line-height: 1.8;
+  max-width: 660px;
+}
+
 /* ---- Organizers ring (home) ---- */
 .org-ring {
   display: flex;

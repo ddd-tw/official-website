@@ -4,22 +4,18 @@ import type { Locale } from '../i18n/ui';
 
 const locale = (Astro.currentLocale ?? 'zh') as Locale;
 const isEn = locale === 'en';
+const prefix = isEn ? '/en' : '';
 
-// 依 handoff 規格：網站自動化區塊可用此 flag 隱藏。
-const SHOW_AUTOMATION = true;
-
-const automations = isEn
+const toc = isEn
   ? [
-      { n: '01', title: 'Meetup calendar sync', desc: 'Meetup events are automatically added to a public calendar via API.' },
-      { n: '02', title: 'Distributed event publishing', desc: 'Events can be published by multiple maintainers, removing the single-account bottleneck.' },
-      { n: '03', title: 'Recording notification emails', desc: 'When a recorded event is published, attendees automatically receive the video link.' },
-      { n: '04', title: 'Auto-upload to YouTube', desc: 'Meetup recordings are automatically published to the DDD Taiwan YouTube channel.' },
+      { id: 'how-we-run', label: 'How we operate' },
+      { id: 'privacy', label: 'Privacy' },
+      { id: 'coc', label: 'Code of Conduct' },
     ]
   : [
-      { n: '01', title: 'Meetup 同步公開行事曆', desc: '透過 API 自動將 Meetup 活動連結新增至公開行事曆。' },
-      { n: '02', title: '分散式活動上架', desc: '多位維護者皆可上架活動，解除單一帳號操作的瓶頸。' },
-      { n: '03', title: '錄影通知信自動寄送', desc: '承諾錄影的活動，於錄影發布後自動寄送影片連結給參與者。' },
-      { n: '04', title: '錄影自動上傳 YouTube', desc: 'Meetup 錄影完成後自動發布至 DDD Taiwan YouTube 頻道。' },
+      { id: 'how-we-run', label: '運作方式' },
+      { id: 'privacy', label: '隱私權政策' },
+      { id: 'coc', label: '行為準則' },
     ];
 ---
 
@@ -39,122 +35,182 @@ const automations = isEn
         )
       }
     </h1>
+    <p style="max-width: 620px; color: var(--ink-mid);">
+      {
+        isEn
+          ? 'How DDD Taiwan is run, and our policies on privacy and community conduct.'
+          : 'DDD Taiwan 如何運作，以及我們對隱私與社群互動的準則。'
+      }
+    </p>
+    <p class="gov-toc">
+      {
+        toc.map((t, i) => (
+          <>
+            {i > 0 && <span class="gov-toc__sep">·</span>}
+            <a href={`#${t.id}`}>{t.label}</a>
+          </>
+        ))
+      }
+    </p>
+    <p class="gov-updated">{isEn ? 'Last updated: July 2026' : '最後更新：2026 年 7 月'}</p>
   </div>
 
+  <!-- 運作方式 -->
   <section class="container container--narrow section">
-    <div class="card">
-      <h2 style="margin-top: 0;" id="privacy">{isEn ? 'Privacy Policy' : '隱私權政策'}</h2>
-      <h3>{isEn ? 'Collection & Use' : '蒐集與使用'}</h3>
-      <p style="color: var(--ink-mid);">
-        {
-          isEn
-            ? 'We collect only the personal data needed for event registration and contact (such as name and email address), and use it solely for event notifications and community operations.'
-            : '我們僅在活動報名與聯繫時蒐集必要的個人資料（如姓名、Email），用於活動通知與社群營運。'
-        }
-      </p>
-      <h3>{isEn ? 'Protection & Compliance' : '保護與法遵'}</h3>
-      <p style="color: var(--ink-mid);">
-        {
-          isEn
-            ? "Personal data is handled in accordance with Taiwan's Personal Data Protection Act and in the spirit of the GDPR; event registration data is processed on our behalf by the KKTIX platform."
-            : '遵循個人資料保護法並參考 GDPR 精神處理個資；活動報名資料由 KKTIX 平台代為處理。'
-        }
-      </p>
-      <h3>{isEn ? 'Third-Party Services' : '第三方服務'}</h3>
-      <p style="color: var(--ink-mid);">
-        {
-          isEn
-            ? 'This is a static website hosted on GitHub Pages, with fonts served by Google Fonts — both services process your IP address when you visit. The site itself sets no tracking cookies. Links to external platforms (Facebook, Line, YouTube, KKTIX, etc.) are governed by those platforms’ own privacy policies.'
-            : '本網站為靜態網站，由 GitHub Pages 代管、字體由 Google Fonts 提供，瀏覽時你的 IP 位址會經由這些服務處理；本站本身不設任何追蹤 cookie。連往外部平台（Facebook、Line、YouTube、KKTIX 等）後，適用各該平台自己的隱私權政策。'
-        }
-      </p>
-      <h3>{isEn ? 'Your Rights' : '你的權利'}</h3>
-      <p style="color: var(--ink-mid);">
-        {
-          isEn ? (
-            <>
-              You may email <a href="mailto:dddtw2018@gmail.com" class="mono">dddtw2018@gmail.com</a>
-              at any time to access, correct, or request deletion of your personal data.
-            </>
-          ) : (
-            <>
-              你可隨時來信 <a href="mailto:dddtw2018@gmail.com" class="mono">dddtw2018@gmail.com</a>
-              查詢、更正或請求刪除你的個人資料。
-            </>
-          )
-        }
-      </p>
-    </div>
+    <h2 class="kb-label kb-label--rule gov-h" id="how-we-run">{isEn ? 'How we operate' : '運作方式'}</h2>
+
+    <h3>{isEn ? 'Volunteer-run & non-profit' : '非營利、志工經營'}</h3>
+    <p class="gov-p">
+      {
+        isEn
+          ? 'Founded in 2018, DDD Taiwan is a non-profit, volunteer-run technical community. We operate and share knowledge in a decentralised way, not for profit.'
+          : 'DDD Taiwan 自 2018 年成立，是非營利、由志工經營的技術社群。我們以去中心化的方式運作、分享知識，不以營利為目的。'
+      }
+    </p>
+
+    <h3>{isEn ? 'Organizing & decisions' : '籌辦與決策'}</h3>
+    <p class="gov-p">
+      {
+        isEn ? (
+          <>
+            The community is run by a team of volunteer <a href={`${prefix}/`}>organizers</a>;
+            direction and key decisions are made together by the team, not by any single person.
+          </>
+        ) : (
+          <>
+            社群由一群<a href={`${prefix}/`}>籌辦志工</a
+            >共同經營；活動方向與重要決策由團隊一起討論決定，而非集中於單一個人。
+          </>
+        )
+      }
+    </p>
+
+    <h3>{isEn ? 'Funding & sponsorship' : '經費與贊助'}</h3>
+    <p class="gov-p">
+      {
+        isEn ? (
+          <>
+            Meetups and the annual conference are supported by ticket revenue and corporate
+            sponsorship. For sponsorship, email{' '}
+            <a href="mailto:conference@ddd-tw.com" class="mono">conference@ddd-tw.com</a>.
+          </>
+        ) : (
+          <>
+            聚會與年度大會的營運，由活動售票收入與企業贊助支持。贊助洽詢請來信{' '}
+            <a href="mailto:conference@ddd-tw.com" class="mono">conference@ddd-tw.com</a>。
+          </>
+        )
+      }
+    </p>
+
+    <h3>{isEn ? 'Openness & open source' : '開放與開源'}</h3>
+    <p class="gov-p">
+      {
+        isEn ? (
+          <>
+            We believe knowledge should flow openly. This website and several community projects are
+            open-source on <a href="https://github.com/ddd-tw">GitHub</a>; articles republished in
+            the Knowledge base carry the original authors' permission.
+          </>
+        ) : (
+          <>
+            我們相信知識應該開放流動。官網與多個社群專案皆在{' '}
+            <a href="https://github.com/ddd-tw">GitHub</a>{' '}
+            開源；知識庫中轉載的文章，均取得原作者授權。
+          </>
+        )
+      }
+    </p>
   </section>
 
+  <!-- 隱私權政策 -->
   <section class="container container--narrow section">
-    <div class="card">
-      <h2 style="margin-top: 0;" id="coc">{isEn ? 'Code of Conduct' : '行為準則'}</h2>
-      <h3>{isEn ? 'Expected Behavior' : '期望行為'}</h3>
-      <p style="color: var(--ink-mid);">
-        {
-          isEn
-            ? 'Treat one another with respect, keep discussions friendly, and debate ideas rather than people. Participants of all backgrounds and experience levels are welcome.'
-            : '尊重彼此、友善討論、對事不對人；歡迎不同背景與經驗層級的參與者。'
-        }
-      </p>
-      <h3>{isEn ? 'Unacceptable Behavior' : '不容忍行為'}</h3>
-      <p style="color: var(--ink-mid);">
-        {
-          isEn
-            ? 'Harassment, discrimination, or personal attacks of any kind. This applies to speakers as well — talks must not attack individuals or other communities.'
-            : '任何形式的騷擾、歧視與人身攻擊；講者不得於分享中攻擊他人或其他社群。'
-        }
-      </p>
-      <h3>{isEn ? 'Enforcement & Reporting' : '違規處理與申訴'}</h3>
-      <p style="color: var(--ink-mid);">
-        {
-          isEn ? (
-            <>
-              Depending on severity, violations may result in a warning or removal from the event.
-              To report an issue, reach out to any volunteer on site or email
-              <a href="mailto:dddtw2018@gmail.com" class="mono">dddtw2018@gmail.com</a> — all reports
-              are handled confidentially.
-            </>
-          ) : (
-            <>
-              違規將視情節警告或請離；申訴可洽現場志工或來信
-              <a href="mailto:dddtw2018@gmail.com" class="mono">dddtw2018@gmail.com</a>，一律保密處理。
-            </>
-          )
-        }
-      </p>
-    </div>
+    <h2 class="kb-label kb-label--rule gov-h" id="privacy">{isEn ? 'Privacy Policy' : '隱私權政策'}</h2>
+
+    <h3>{isEn ? 'Collection & Use' : '蒐集與使用'}</h3>
+    <p class="gov-p">
+      {
+        isEn
+          ? 'We collect only the personal data needed for event registration and contact (such as name and email address), and use it solely for event notifications and community operations.'
+          : '我們僅在活動報名與聯繫時蒐集必要的個人資料（如姓名、Email），用於活動通知與社群營運。'
+      }
+    </p>
+
+    <h3>{isEn ? 'Protection & Compliance' : '保護與法遵'}</h3>
+    <p class="gov-p">
+      {
+        isEn
+          ? "Personal data is handled in accordance with Taiwan's Personal Data Protection Act and in the spirit of the GDPR; event registration data is processed on our behalf by the ticketing platform."
+          : '遵循個人資料保護法並參考 GDPR 精神處理個資；活動報名資料由售票平台代為處理。'
+      }
+    </p>
+
+    <h3>{isEn ? 'Third-Party Services' : '第三方服務'}</h3>
+    <p class="gov-p">
+      {
+        isEn
+          ? 'This is a static website hosted on GitHub Pages, with fonts served by Google Fonts — both process your IP address when you visit. The site itself sets no tracking cookies. Links to external platforms (Facebook, Line, YouTube, Accupass, etc.) are governed by those platforms’ own privacy policies.'
+          : '本網站為靜態網站，由 GitHub Pages 代管、字體由 Google Fonts 提供，瀏覽時你的 IP 位址會經由這些服務處理；本站本身不設任何追蹤 cookie。連往外部平台（Facebook、Line、YouTube、Accupass 等）後，適用各該平台自己的隱私權政策。'
+      }
+    </p>
+
+    <h3>{isEn ? 'Your Rights' : '你的權利'}</h3>
+    <p class="gov-p">
+      {
+        isEn ? (
+          <>
+            You may email <a href="mailto:dddtw2018@gmail.com" class="mono">dddtw2018@gmail.com</a>{' '}
+            at any time to access, correct, or request deletion of your personal data.
+          </>
+        ) : (
+          <>
+            你可隨時來信 <a href="mailto:dddtw2018@gmail.com" class="mono">dddtw2018@gmail.com</a>{' '}
+            查詢、更正或請求刪除你的個人資料。
+          </>
+        )
+      }
+    </p>
   </section>
 
-  {
-    SHOW_AUTOMATION && (
-      <section class="container container--narrow section">
-        <div class="card">
-          <h2 style="margin-top: 0;" id="automation">
-            {isEn ? 'Site Automation' : '網站自動化'}
-          </h2>
-          <p style="color: var(--ink-mid);">
-            {isEn
-              ? 'To reduce manual maintenance and avoid single-account bottlenecks, we are gradually automating the following workflows (in planning):'
-              : '為降低人工維護成本並解決帳號集中管理的瓶頸，以下流程正逐步導入自動化（規劃中）：'}
-          </p>
-          <ul class="row-list">
-            {automations.map((a) => (
-              <li>
-                <div class="row">
-                  <span class="row__date">{a.n}</span>
-                  <span>
-                    <strong>{a.title}</strong>
-                    <br />
-                    <span style="font-size: 13px; color: var(--ink-mid);">{a.desc}</span>
-                  </span>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-    )
-  }
+  <!-- 行為準則 -->
+  <section class="container container--narrow section">
+    <h2 class="kb-label kb-label--rule gov-h" id="coc">{isEn ? 'Code of Conduct' : '行為準則'}</h2>
+
+    <h3>{isEn ? 'Expected Behavior' : '期望行為'}</h3>
+    <p class="gov-p">
+      {
+        isEn
+          ? 'Treat one another with respect, keep discussions friendly, and debate ideas rather than people. Participants of all backgrounds and experience levels are welcome.'
+          : '尊重彼此、友善討論、對事不對人；歡迎不同背景與經驗層級的參與者。'
+      }
+    </p>
+
+    <h3>{isEn ? 'Unacceptable Behavior' : '不容忍行為'}</h3>
+    <p class="gov-p">
+      {
+        isEn
+          ? 'Harassment, discrimination, or personal attacks of any kind. This applies to speakers as well — talks must not attack individuals or other communities.'
+          : '任何形式的騷擾、歧視與人身攻擊；講者亦同，分享中不得攻擊他人或其他社群。'
+      }
+    </p>
+
+    <h3>{isEn ? 'Enforcement & Reporting' : '違規處理與申訴'}</h3>
+    <p class="gov-p">
+      {
+        isEn ? (
+          <>
+            Depending on severity, violations may result in a warning or removal from the event. To
+            report an issue, reach out to any volunteer on site or email{' '}
+            <a href="mailto:dddtw2018@gmail.com" class="mono">dddtw2018@gmail.com</a> — all reports
+            are handled confidentially.
+          </>
+        ) : (
+          <>
+            違規將視情節警告或請離；申訴可洽現場志工或來信{' '}
+            <a href="mailto:dddtw2018@gmail.com" class="mono">dddtw2018@gmail.com</a>，一律保密處理。
+          </>
+        )
+      }
+    </p>
+  </section>
 </Base>
