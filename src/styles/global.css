@@ -482,23 +482,41 @@ a.card:hover,
 }
 
 /* 分類：雙欄緊湊卡片 */
-.video-section {
+/* ---- Knowledge card system (shared by all four tabs) ---- */
+
+/* 每個 tab 頂部的一句引言 */
+.kb-intro {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: var(--ink-mid);
+  max-width: 680px;
+  margin: 0 0 8px;
+}
+
+/* 分區（Books 主題、Video 分類、GitHub 群組…） */
+.kb-section {
   margin-top: 34px;
 }
 
-.video-section__desc {
+.kb-desc {
   font-size: 13.5px;
   color: var(--ink-faint);
   margin: 0 0 16px;
 }
 
-.talk-grid {
+.kb-note {
+  font-size: 14px;
+  color: var(--ink-faint);
+  margin-top: 22px;
+}
+
+.kb-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 14px;
 }
 
-.talk-tile {
+.kb-tile {
   display: block;
   padding: 16px 18px;
   border: 1px solid var(--line-soft);
@@ -509,13 +527,37 @@ a.card:hover,
     box-shadow 180ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.talk-tile:hover {
+.kb-tile:hover {
   border-color: var(--brand-strong);
   transform: translateY(-2px);
   box-shadow: 0 8px 24px var(--card-glow);
 }
 
-.talk-tile__top {
+/* 書封變體：左圖右文 */
+.kb-tile--cover {
+  display: flex;
+  gap: 16px;
+}
+
+.kb-tile__cover {
+  flex: 0 0 52px;
+}
+
+.kb-tile__cover img,
+.kb-tile__cover span {
+  display: block;
+  width: 52px;
+  height: 74px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid var(--line-soft);
+}
+
+.kb-tile__body {
+  min-width: 0;
+}
+
+.kb-tile__top {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -523,12 +565,12 @@ a.card:hover,
   margin-bottom: 8px;
 }
 
-.talk-tile__year {
+.kb-tile__meta {
   font-size: 12.5px;
   color: var(--ink-faint);
 }
 
-.talk-tile__tag {
+.kb-tile__tag {
   white-space: nowrap;
   padding: 2px 9px;
   border-radius: 999px;
@@ -539,7 +581,7 @@ a.card:hover,
   color: var(--ink-faint);
 }
 
-.talk-tile__title {
+.kb-tile__title {
   display: block;
   font-family: 'Space Grotesk', 'Noto Sans TC', sans-serif;
   font-weight: 600;
@@ -547,7 +589,13 @@ a.card:hover,
   line-height: 1.4;
 }
 
-.talk-tile__arrow {
+.kb-tile__title--mono {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13.5px;
+  word-break: break-word;
+}
+
+.kb-tile__arrow {
   display: inline-block;
   margin-left: 5px;
   font-size: 12px;
@@ -556,11 +604,18 @@ a.card:hover,
   transition: opacity 180ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.talk-tile:hover .talk-tile__arrow {
+.kb-tile:hover .kb-tile__arrow {
   opacity: 1;
 }
 
-.talk-tile__highlight {
+.kb-tile__sub {
+  display: block;
+  margin: 3px 0 0;
+  font-size: 12.5px;
+  color: var(--ink-faint);
+}
+
+.kb-tile__desc {
   display: block;
   margin-top: 5px;
   font-size: 13px;
@@ -721,7 +776,7 @@ main {
   }
 
   .feat-grid,
-  .talk-grid {
+  .kb-grid {
     grid-template-columns: 1fr;
   }
 

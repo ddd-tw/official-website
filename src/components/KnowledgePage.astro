@@ -116,40 +116,59 @@ const posts = localizedPosts.length > 0 ? localizedPosts : allPosts;
 const repos = [
   {
     name: 'ddd-tw/ddd-tutorial',
-    note: isEn ? 'Community project' : '社群專案',
+    group: 'projects',
+    tag: isEn ? 'Project' : '社群專案',
+    desc: isEn ? 'A hands-on DDD tutorial' : 'DDD 實作教學範例',
     url: 'https://github.com/ddd-tw/ddd-tutorial',
   },
   {
     name: 'ddd-tw/ddd-events',
-    note: isEn ? 'Meetup & study group archive' : '歷屆活動資源紀錄',
+    group: 'projects',
+    tag: isEn ? 'Project' : '社群專案',
+    desc: isEn ? 'Meetup & study-group archive' : '歷屆活動資源紀錄',
     url: 'https://github.com/ddd-tw/ddd-events',
   },
   {
     name: 'ddd-tw/2025Summit',
-    note: isEn ? 'Community project' : '社群專案',
+    group: 'projects',
+    tag: isEn ? 'Project' : '社群專案',
+    desc: isEn ? '2025 Summit project' : '2025 Summit 專案',
     url: 'https://github.com/ddd-tw/2025Summit',
   },
   {
     name: 'aws-samples/designing-cloud-native-microservices-on-aws',
-    note: isEn ? 'By community members · ⭐ 320+' : '社群成員作品 · ⭐ 320+',
+    group: 'members',
+    tag: '⭐ 320+',
+    desc: isEn ? 'Cloud-native microservices design' : 'Cloud-native 微服務設計範例',
     url: 'https://github.com/aws-samples/designing-cloud-native-microservices-on-aws',
   },
   {
     name: 'humank/ddd-practitioners-ref',
-    note: isEn ? 'By community members · ⭐ 320+' : '社群成員作品 · ⭐ 320+',
+    group: 'members',
+    tag: '⭐ 320+',
+    desc: isEn ? "A DDD practitioner's reference" : 'DDD 實踐者參考',
     url: 'https://github.com/humank/ddd-practitioners-ref',
   },
   {
     name: 'ddd-crew/ddd-starter-modelling-process',
-    note: isEn ? 'Recommended' : '外部推薦',
+    group: 'external',
+    tag: isEn ? 'External' : '外部推薦',
+    desc: isEn ? 'DDD starter modelling process' : 'DDD 建模起手流程',
     url: 'https://github.com/ddd-crew/ddd-starter-modelling-process',
   },
   {
     name: 'ddd-crew/context-mapping',
-    note: isEn ? 'Recommended' : '外部推薦',
+    group: 'external',
+    tag: isEn ? 'External' : '外部推薦',
+    desc: isEn ? 'Context-mapping patterns' : 'Context Mapping 模式',
     url: 'https://github.com/ddd-crew/context-mapping',
   },
 ];
+const repoGroups = [
+  { key: 'projects', title: isEn ? 'DDD Taiwan projects' : 'DDD Taiwan 專案' },
+  { key: 'members', title: isEn ? 'By community members' : '社群成員作品' },
+  { key: 'external', title: isEn ? 'Recommended' : '外部推薦' },
+].map((g) => ({ ...g, items: repos.filter((r) => r.group === g.key) }));
 
 const fmtDate = (d: Date) => d.toISOString().slice(0, 10);
 
@@ -243,7 +262,7 @@ const breadcrumb = {
 
   <section class="container section" id="panel-books" data-kb-panel>
     <h2 style="position: absolute; left: -9999px;">Books</h2>
-    <p style="color: var(--ink-mid); font-size: 14.5px; max-width: 680px;">
+    <p class="kb-intro">
       {
         isEn
           ? 'Four themed shelves, ordered as a journey: understand the problem, explore together, model the domain, then evolve the system. Within each shelf, books run from approachable to deep.'
@@ -252,44 +271,51 @@ const breadcrumb = {
     </p>
     {
       booksByCategory.map((cat) => (
-        <div style="margin-top: 28px;">
-          <h3 style="margin: 0 0 4px;">{cat.title}</h3>
-          <p style="font-size: 13.5px; color: var(--ink-faint); margin: 0 0 14px;">{cat.desc}</p>
-          <div class="grid-2">
-            {cat.items.map((b) => (
-              <div class="card card--hover" style="display: flex; gap: 18px;">
-                {b.data.cover ? (
-                  <a href={b.data.url} style="flex: 0 0 52px;">
-                    <img
-                      src={b.data.cover}
-                      alt={`《${b.data.title}》書封`}
-                      width="52"
-                      height="74"
-                      loading="lazy"
-                      style="width: 52px; height: 74px; object-fit: cover; border-radius: 4px; border: 1px solid var(--line-soft); display: block;"
-                    />
-                  </a>
-                ) : (
-                  <div
-                    style={`flex: 0 0 52px; height: 74px; border-radius: 4px; background: ${b.data.coverColor};`}
-                  />
-                )}
-                <div>
-                  <h3 style="font-size: 16px; margin: 0;">
-                    {b.data.url ? <a href={b.data.url}>{b.data.title}</a> : b.data.title}
-                  </h3>
-                  <p style="font-size: 13px; color: var(--ink-faint); margin: 4px 0;">
-                    {b.data.author} · {b.data.year}
-                  </p>
-                  <p style="font-size: 14px; color: var(--ink-mid); margin: 0;">{b.data.summary}</p>
+        <div class="kb-section">
+          <p class="kb-label kb-label--rule">{cat.title}</p>
+          <p class="kb-desc">{cat.desc}</p>
+          <div class="kb-grid">
+            {cat.items.map((b) =>
+              b.data.url ? (
+                <a class="kb-tile kb-tile--cover" href={b.data.url}>
+                  <span class="kb-tile__cover">
+                    {b.data.cover ? (
+                      <img src={b.data.cover} alt={`《${b.data.title}》`} width="52" height="74" loading="lazy" />
+                    ) : (
+                      <span style={`background: ${b.data.coverColor};`} />
+                    )}
+                  </span>
+                  <span class="kb-tile__body">
+                    <span class="kb-tile__title">
+                      {b.data.title}
+                      <span class="kb-tile__arrow" aria-hidden="true">↗</span>
+                    </span>
+                    <span class="kb-tile__sub">{b.data.author} · {b.data.year}</span>
+                    <span class="kb-tile__desc">{b.data.summary}</span>
+                  </span>
+                </a>
+              ) : (
+                <div class="kb-tile kb-tile--cover">
+                  <span class="kb-tile__cover">
+                    {b.data.cover ? (
+                      <img src={b.data.cover} alt={`《${b.data.title}》`} width="52" height="74" loading="lazy" />
+                    ) : (
+                      <span style={`background: ${b.data.coverColor};`} />
+                    )}
+                  </span>
+                  <span class="kb-tile__body">
+                    <span class="kb-tile__title">{b.data.title}</span>
+                    <span class="kb-tile__sub">{b.data.author} · {b.data.year}</span>
+                    <span class="kb-tile__desc">{b.data.summary}</span>
+                  </span>
                 </div>
-              </div>
-            ))}
+              )
+            )}
           </div>
         </div>
       ))
     }
-    <p style="color: var(--ink-faint); font-size: 14px; margin-top: 20px;">
+    <p class="kb-note">
       {
         isEn
           ? "Read any of these? We'd love to feature your book review."
@@ -300,26 +326,34 @@ const breadcrumb = {
 
   <section class="container section" id="panel-papers" data-kb-panel>
     <h2 style="position: absolute; left: -9999px;">Papers</h2>
-    <p style="color: var(--ink-mid); font-size: 14.5px; max-width: 680px;">
+    <p class="kb-intro">
       {
         isEn
           ? 'Practical writing from community members, plus articles republished with the original authors’ permission.'
           : '社群成員的實務文章，以及取得原作者授權轉載的好文。'
       }
     </p>
-    <ul class="row-list">
-      {
-        posts.map((p) => (
-          <li>
-            <a href={`${p.data.lang === 'en' ? '/en' : ''}/posts/${p.id}/`}>
-              <span class="row__date">{fmtDate(p.data.pubDate)}</span>
-              <span>{p.data.title}</span>
+    <div class="kb-section">
+      <p class="kb-label kb-label--rule">{isEn ? 'Articles' : '文章'}</p>
+      <div class="kb-grid">
+        {
+          posts.map((p) => (
+            <a class="kb-tile" href={`${p.data.lang === 'en' ? '/en' : ''}/posts/${p.id}/`}>
+              <span class="kb-tile__top">
+                <span class="kb-tile__meta mono">{fmtDate(p.data.pubDate)}</span>
+                {p.data.tags?.[0] && <span class="kb-tile__tag">{p.data.tags[0]}</span>}
+              </span>
+              <span class="kb-tile__title">
+                {p.data.title}
+                <span class="kb-tile__arrow" aria-hidden="true">↗</span>
+              </span>
+              <span class="kb-tile__desc">{p.data.description}</span>
             </a>
-          </li>
-        ))
-      }
-    </ul>
-    <p style="color: var(--ink-faint); font-size: 14px; margin-top: 16px;">
+          ))
+        }
+      </div>
+    </div>
+    <p class="kb-note">
       {
         isEn ? (
           <>
@@ -374,22 +408,22 @@ const breadcrumb = {
       videosByCategory
         .filter((cat) => cat.items.length > 0)
         .map((cat) => (
-          <div class="video-section">
+          <div class="kb-section">
             <p class="kb-label kb-label--rule">{cat.title}</p>
-            <p class="video-section__desc">{cat.desc}</p>
-            <div class="talk-grid">
+            <p class="kb-desc">{cat.desc}</p>
+            <div class="kb-grid">
               {cat.items.map((v) => (
-                <a class="talk-tile" href={v.data.url} target="_blank" rel="noopener noreferrer">
-                  <span class="talk-tile__top">
-                    <span class="talk-tile__year mono">{v.data.year ?? ''}</span>
-                    <span class="talk-tile__tag">{channelTag(v.data.channel)}</span>
+                <a class="kb-tile" href={v.data.url} target="_blank" rel="noopener noreferrer">
+                  <span class="kb-tile__top">
+                    <span class="kb-tile__meta mono">{v.data.year ?? ''}</span>
+                    <span class="kb-tile__tag">{channelTag(v.data.channel)}</span>
                   </span>
-                  <span class="talk-tile__title">
+                  <span class="kb-tile__title">
                     {isEn ? (v.data.titleEn ?? v.data.title) : v.data.title}
-                    <span class="talk-tile__arrow" aria-hidden="true">↗</span>
+                    <span class="kb-tile__arrow" aria-hidden="true">↗</span>
                   </span>
                   {(isEn ? v.data.highlightEn : v.data.highlight) && (
-                    <span class="talk-tile__highlight">{isEn ? v.data.highlightEn : v.data.highlight}</span>
+                    <span class="kb-tile__desc">{isEn ? v.data.highlightEn : v.data.highlight}</span>
                   )}
                 </a>
               ))}
@@ -404,28 +438,43 @@ const breadcrumb = {
 
   <section class="container section" id="panel-github" data-kb-panel>
     <h2 style="position: absolute; left: -9999px;">GitHub</h2>
-    <ul class="row-list">
+    <p class="kb-intro">
       {
-        repos.map((r) => (
-          <li>
-            <a href={r.url}>
-              <span class="mono" style="font-size: 13px;">
-                {r.name}
-              </span>
-              <span style="font-size: 13px; color: var(--ink-faint);">{r.note}</span>
-            </a>
-          </li>
-        ))
+        isEn
+          ? 'Open-source projects from the community, plus reference repositories worth bookmarking.'
+          : '社群的開源專案，以及值得收藏的參考程式庫。'
       }
-    </ul>
-    <p style="color: var(--ink-faint); font-size: 14px;">
+    </p>
+    {
+      repoGroups.map((g) => (
+        <div class="kb-section">
+          <p class="kb-label kb-label--rule">{g.title}</p>
+          <div class="kb-grid">
+            {g.items.map((r) => (
+              <a class="kb-tile" href={r.url} target="_blank" rel="noopener noreferrer">
+                <span class="kb-tile__top">
+                  <span class="kb-tile__meta">GitHub</span>
+                  <span class="kb-tile__tag">{r.tag}</span>
+                </span>
+                <span class="kb-tile__title kb-tile__title--mono">
+                  {r.name}
+                  <span class="kb-tile__arrow" aria-hidden="true">↗</span>
+                </span>
+                <span class="kb-tile__desc">{r.desc}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      ))
+    }
+    <p class="kb-note">
       {
         isEn
           ? 'Built your own DDD sample code? Contributions are welcome.'
           : '歡迎貢獻你的 DDD 範例程式碼。'
       }
     </p>
-    <a class="btn btn--ghost" href="https://github.com/ddd-tw">github.com/ddd-tw</a>
+    <a class="btn btn--ghost" style="margin-top: 14px;" href="https://github.com/ddd-tw">github.com/ddd-tw</a>
   </section>
 
   <script>
