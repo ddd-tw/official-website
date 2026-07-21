@@ -6,119 +6,102 @@ const locale = (Astro.currentLocale ?? 'zh') as Locale;
 const isEn = locale === 'en';
 const prefix = isEn ? '/en' : '';
 
-const platforms = isEn
-  ? [
-      {
-        title: 'Facebook Group',
-        desc: 'The home base for day-to-day discussion and event announcements.',
-        url: 'https://www.facebook.com/groups/dddesigntw',
-        cta: 'Join the group',
-      },
-      {
-        title: 'Facebook Page',
-        desc: 'Official announcements.',
-        url: 'https://www.facebook.com/DDDCommunity.tw/',
-        cta: 'Follow the page',
-      },
-      {
-        title: 'Instagram',
-        desc: 'Event highlights and visual updates.',
-        url: 'https://www.instagram.com/ddd_twig/',
-        cta: 'Follow @ddd_twig',
-      },
-      {
-        title: 'Line Community',
-        desc: 'Real-time chat and Q&A.',
-        url: 'https://line.me/ti/g2/aiNGJvViOJIxp7tV-EgNvJ2Id5ae1jBpecKSnA?utm_source=invitation&utm_medium=link_copy&utm_campaign=default',
-        cta: 'Join the community',
-      },
-      {
-        title: 'YouTube',
-        desc: 'Recordings of meetups and conference talks.',
-        url: 'https://www.youtube.com/channel/UCydw7dbEksG3axEMjHy4BxQ',
-        cta: 'Subscribe',
-      },
-      {
-        title: 'X (Twitter)',
-        desc: 'Short updates and announcements.',
-        url: 'https://x.com/DddTaiwan',
-        cta: 'Follow @DddTaiwan',
-      },
-      {
-        title: 'Accupass',
-        desc: 'Where new events are published and tickets are booked.',
-        url: 'https://www.accupass.com/organizer/detail/2204070436062239115110',
-        cta: 'See events',
-      },
-      {
-        title: 'KKTIX',
-        desc: 'Registration archive for earlier events.',
-        url: 'https://dddtaiwan.kktix.cc/',
-        cta: 'Past events',
-      },
-      {
-        title: 'Email',
-        desc: 'General inquiries: dddtw2018@gmail.com',
-        url: 'mailto:dddtw2018@gmail.com',
-        cta: 'Email us',
-      },
-    ]
-  : [
-      {
-        title: 'Facebook 社團',
-        desc: '日常討論與活動公告的主要據點。',
-        url: 'https://www.facebook.com/groups/dddesigntw',
-        cta: '加入社團',
-      },
-      {
-        title: 'Facebook 粉專',
-        desc: '官方訊息發布。',
-        url: 'https://www.facebook.com/DDDCommunity.tw/',
-        cta: '追蹤粉專',
-      },
-      {
-        title: 'Instagram',
-        desc: '活動花絮與視覺更新。',
-        url: 'https://www.instagram.com/ddd_twig/',
-        cta: '追蹤 @ddd_twig',
-      },
-      {
-        title: 'Line 社群',
-        desc: '即時交流與問答。',
-        url: 'https://line.me/ti/g2/aiNGJvViOJIxp7tV-EgNvJ2Id5ae1jBpecKSnA?utm_source=invitation&utm_medium=link_copy&utm_campaign=default',
-        cta: '加入 Line 社群',
-      },
-      {
-        title: 'YouTube',
-        desc: 'Meetup 與年會錄影回放。',
-        url: 'https://www.youtube.com/channel/UCydw7dbEksG3axEMjHy4BxQ',
-        cta: '訂閱頻道',
-      },
-      {
-        title: 'X（Twitter）',
-        desc: '短訊息與活動快訊。',
-        url: 'https://x.com/DddTaiwan',
-        cta: '追蹤 @DddTaiwan',
-      },
-      {
-        title: 'Accupass',
-        desc: '新活動的發布與報名平台。',
-        url: 'https://www.accupass.com/organizer/detail/2204070436062239115110',
-        cta: '查看活動',
-      },
-      {
-        title: 'KKTIX',
-        desc: '早期活動的報名紀錄。',
-        url: 'https://dddtaiwan.kktix.cc/',
-        cta: '歷屆活動',
-      },
-      {
-        title: 'Email',
-        desc: '一般聯繫：dddtw2018@gmail.com',
-        url: 'mailto:dddtw2018@gmail.com',
-        cta: '來信聯繫',
-      },
-    ];
+// 官方 logo（Simple Icons，24×24 fill）；ticket / mail 為通用圖示。
+const ICON_PATHS: Record<string, string> = {
+  facebook:
+    'M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z',
+  instagram:
+    'M7.03.084c-1.277.06-2.149.264-2.911.563-.789.308-1.458.72-2.123 1.388C1.33 2.699.918 3.368.611 4.157c-.296.764-.499 1.636-.559 2.912-.052 1.28-.066 1.688-.06 4.947.007 3.259.021 3.667.083 4.947.061 1.277.264 2.149.563 2.911.308.789.72 1.457 1.388 2.123.665.665 1.335 1.075 2.126 1.38.762.295 1.635.496 2.913.552 1.278.056 1.687.069 4.947.063 3.26-.006 3.668-.021 4.947-.082 1.278-.06 2.147-.265 2.91-.563.789-.308 1.459-.72 2.123-1.388.665-.665 1.076-1.335 1.38-2.126.295-.763.496-1.636.552-2.912.056-1.28.07-1.687.063-4.947-.006-3.26-.021-3.667-.082-4.947-.06-1.276-.264-2.149-.563-2.911-.308-.789-.72-1.457-1.388-2.123C21.301 1.331 20.632.919 19.843.611c-.764-.296-1.636-.499-2.912-.559-1.278-.056-1.687-.07-4.947-.063C8.724.006 8.316.02 7.03.084zm-.14 21.693c-1.17-.05-1.805-.245-2.228-.408-.56-.216-.96-.478-1.382-.897-.42-.418-.681-.819-.9-1.378-.164-.423-.362-1.058-.417-2.228-.06-1.264-.072-1.644-.079-4.848-.006-3.204.006-3.583.061-4.848.05-1.169.246-1.805.408-2.228.216-.561.476-.96.895-1.382.418-.421.818-.681 1.378-.9.422-.165 1.057-.36 2.226-.417 1.266-.06 1.645-.072 4.848-.079 3.204-.007 3.583.006 4.85.061 1.168.05 1.804.244 2.227.408.56.216.96.475 1.382.895.421.418.681.817.9 1.378.165.422.36 1.056.417 2.226.06 1.266.074 1.645.08 4.848.006 3.203-.006 3.583-.061 4.848-.051 1.17-.245 1.805-.408 2.23-.216.56-.476.96-.896 1.38-.419.422-.818.682-1.378.9-.422.165-1.058.36-2.226.417-1.266.06-1.645.072-4.85.079-3.203.006-3.582-.006-4.848-.061zm10.94-16.19a1.44 1.44 0 1 0 2.881 0 1.44 1.44 0 0 0-2.882 0zM5.838 12a6.162 6.162 0 1 0 12.324 0 6.162 6.162 0 0 0-12.324 0zM8 12a4 4 0 1 1 8 0 4 4 0 0 1-8 0z',
+  line: 'M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314',
+  youtube:
+    'M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z',
+  x: 'M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z',
+  ticket:
+    'M20 12c0-1.1.9-2 2-2V6c0-1.1-.9-2-2-2H4c-1.1 0-1.99.9-1.99 2v4c1.1 0 1.99.9 1.99 2s-.89 2-2 2v4c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2v-4c-1.1 0-2-.9-2-2z',
+  mail: 'M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z',
+};
+// 品牌底色（instagram 走漸層，另以 class 處理）。
+const ICON_BG: Record<string, string> = {
+  facebook: '#0866FF',
+  line: '#06C755',
+  youtube: '#FF0000',
+  x: '#0f1419',
+  ticket: '#24417E',
+  mail: '#24417E',
+};
+
+const channels = [
+  {
+    icon: 'facebook',
+    url: 'https://www.facebook.com/groups/dddesigntw',
+    handle: 'facebook.com/groups/dddesigntw',
+    zh: { title: 'Facebook 社團', desc: '日常討論與活動公告的主要據點。', cta: '加入社團' },
+    en: { title: 'Facebook Group', desc: 'The home base for day-to-day discussion and announcements.', cta: 'Join the group' },
+  },
+  {
+    icon: 'facebook',
+    url: 'https://www.facebook.com/DDDCommunity.tw/',
+    handle: '@DDDCommunity.tw',
+    zh: { title: 'Facebook 粉專', desc: '官方訊息發布。', cta: '追蹤粉專' },
+    en: { title: 'Facebook Page', desc: 'Official announcements.', cta: 'Follow the page' },
+  },
+  {
+    icon: 'instagram',
+    url: 'https://www.instagram.com/ddd_twig/',
+    handle: '@ddd_twig',
+    zh: { title: 'Instagram', desc: '活動花絮與視覺更新。', cta: '追蹤' },
+    en: { title: 'Instagram', desc: 'Event highlights and visual updates.', cta: 'Follow' },
+  },
+  {
+    icon: 'line',
+    url: 'https://line.me/ti/g2/aiNGJvViOJIxp7tV-EgNvJ2Id5ae1jBpecKSnA?utm_source=invitation&utm_medium=link_copy&utm_campaign=default',
+    handle: '',
+    zh: { title: 'Line 社群', desc: '即時交流與問答。', cta: '加入 Line 社群' },
+    en: { title: 'Line Community', desc: 'Real-time chat and Q&A.', cta: 'Join the community' },
+  },
+  {
+    icon: 'youtube',
+    url: 'https://www.youtube.com/channel/UCydw7dbEksG3axEMjHy4BxQ',
+    handle: '',
+    zh: { title: 'YouTube', desc: 'Meetup 與年會錄影回放。', cta: '訂閱頻道' },
+    en: { title: 'YouTube', desc: 'Recordings of meetups and conference talks.', cta: 'Subscribe' },
+  },
+  {
+    icon: 'x',
+    url: 'https://x.com/DddTaiwan',
+    handle: '@DddTaiwan',
+    zh: { title: 'X（Twitter）', desc: '短訊息與活動快訊。', cta: '追蹤' },
+    en: { title: 'X (Twitter)', desc: 'Short updates and announcements.', cta: 'Follow' },
+  },
+  {
+    icon: 'ticket',
+    url: 'https://www.accupass.com/organizer/detail/2204070436062239115110',
+    handle: 'accupass.com',
+    zh: { title: 'Accupass', desc: '新活動的發布與報名平台。', cta: '查看活動' },
+    en: { title: 'Accupass', desc: 'Where new events are published and tickets booked.', cta: 'See events' },
+  },
+  {
+    icon: 'ticket',
+    url: 'https://dddtaiwan.kktix.cc/',
+    handle: 'dddtaiwan.kktix.cc',
+    zh: { title: 'KKTIX', desc: '早期活動的報名紀錄。', cta: '歷屆活動' },
+    en: { title: 'KKTIX', desc: 'Registration archive for earlier events.', cta: 'Past events' },
+  },
+  {
+    icon: 'mail',
+    url: 'mailto:dddtw2018@gmail.com',
+    handle: 'dddtw2018@gmail.com',
+    zh: { title: 'Email', desc: '一般聯繫與合作洽詢。', cta: '來信聯繫' },
+    en: { title: 'Email', desc: 'General inquiries and collaboration.', cta: 'Email us' },
+  },
+] as const;
+
+const platforms = channels.map((c) => ({
+  icon: c.icon,
+  url: c.url,
+  handle: c.handle,
+  ...(isEn ? c.en : c.zh),
+}));
 
 const timeline = isEn
   ? [
@@ -256,10 +239,24 @@ const breadcrumb = {
     <div class="grid-3">
       {
         platforms.map((p) => (
-          <a class="card" href={p.url}>
-            <h3 style="font-size: 18px; margin: 0 0 8px;">{p.title}</h3>
-            <p style="font-size: 14px; color: var(--ink-mid); margin: 0 0 14px;">{p.desc}</p>
-            <span style="font-size: 13px; color: var(--brand-strong);">{p.cta} →</span>
+          <a class="card ch-card" href={p.url}>
+            <div class="ch-card__head">
+              <span
+                class={`ch-logo${p.icon === 'instagram' ? ' ch-logo--ig' : ''}`}
+                style={p.icon === 'instagram' ? undefined : `background: ${ICON_BG[p.icon]};`}
+                aria-hidden="true"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d={ICON_PATHS[p.icon]} />
+                </svg>
+              </span>
+              <span class="ch-card__id">
+                <span class="ch-card__title">{p.title}</span>
+                {p.handle && <span class="ch-card__handle mono">{p.handle}</span>}
+              </span>
+            </div>
+            <p class="ch-card__desc">{p.desc}</p>
+            <span class="ch-card__cta">{p.cta} →</span>
           </a>
         ))
       }
