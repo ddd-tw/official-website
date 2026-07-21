@@ -119,12 +119,12 @@
     "coverColor": "#1B2233"
   },
   {
-    "id": "nagy-rose-discovery",
-    "title": "Discovery: Explore Behaviour Using Examples（BDD Books 1）",
-    "author": "Gáspár Nagy、Seb Rose",
-    "year": 2018,
-    "summary": "Example Mapping 的標準參考：用規則與實例把需求對話結構化，是 BDD 探索階段的實用手冊。",
+    "id": "adzic-specification-by-example",
+    "title": "Specification by Example",
+    "author": "Gojko Adzic",
+    "year": 2011,
+    "summary": "Jolt 獎經典：用關鍵實例把需求說清楚、讓文件永遠活著 — Example Mapping 等實踐的思想源頭。",
     "coverColor": "#C34A33",
-    "url": "https://leanpub.com/bddbooks-discovery"
+    "url": "https://www.manning.com/books/specification-by-example"
   }
 ]
