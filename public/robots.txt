@@ -1,0 +1,42 @@
+# DDD Taiwan — https://ddd-tw.com
+# We want both search engines and AI assistants to discover and cite this
+# community's knowledge. All crawlers, including AI/LLM crawlers, are welcome.
+
+User-agent: *
+Allow: /
+
+# Explicitly welcome AI / LLM crawlers (generative-engine discovery).
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://ddd-tw.com/sitemap-index.xml
+
+# Curated entry point for LLMs / agents:
+# https://ddd-tw.com/llms.txt

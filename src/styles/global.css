@@ -568,6 +568,52 @@ a.card:hover,
   color: var(--ink-mid);
 }
 
+.faq-item {
+  border-top: 1px solid var(--line-soft);
+  padding: 4px 0;
+}
+
+.faq-item:first-child {
+  border-top: none;
+}
+
+.faq-item summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 14px 28px 14px 4px;
+  position: relative;
+  font-family: 'Space Grotesk', 'Noto Sans TC', sans-serif;
+  font-weight: 600;
+  font-size: 15.5px;
+  color: var(--ink);
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: '+';
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: var(--ink-faint);
+}
+
+.faq-item[open] summary::after {
+  content: '–';
+}
+
+.faq-item p {
+  margin: 0 0 14px;
+  padding-right: 12px;
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: var(--ink-mid);
+}
+
 .tile {
   background: var(--tile);
   border: 1px solid var(--line-soft);

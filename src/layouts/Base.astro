@@ -5,12 +5,14 @@ import { useTranslations, type Locale } from '../i18n/ui';
 interface Props {
   title?: string;
   description?: string;
+  /** 頁面專屬結構化資料（schema.org JSON-LD），單一物件或陣列。 */
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 
 const locale = (Astro.currentLocale ?? 'zh') as Locale;
 const t = useTranslations(locale);
 
-const { title = 'DDD Taiwan', description = t('site.description') } = Astro.props;
+const { title = 'DDD Taiwan', description = t('site.description'), jsonLd } = Astro.props;
 
 const prefix = locale === 'zh' ? '' : `/${locale}`;
 const navItems = [
@@ -40,6 +42,44 @@ const labels =
   locale === 'zh'
     ? { theme: '切換主題', menu: '選單' }
     : { theme: 'Toggle theme', menu: 'Menu' };
+
+const siteUrl = Astro.site?.toString() ?? 'https://ddd-tw.com/';
+const ogLocale = locale === 'zh' ? 'zh_TW' : 'en_US';
+const ogLocaleAlt = locale === 'zh' ? 'en_US' : 'zh_TW';
+
+// 全站實體：讓搜尋引擎與 AI 把「DDD Taiwan」認成一個明確的組織實體。
+const organization = {
+  '@type': 'Organization',
+  '@id': `${siteUrl}#organization`,
+  name: 'DDD Taiwan',
+  alternateName: 'Domain-Driven Design Taiwan',
+  url: siteUrl,
+  logo: new URL('/og-image.png', Astro.site).toString(),
+  description: t('site.description'),
+  sameAs: [
+    'https://github.com/ddd-tw',
+    'https://www.youtube.com/channel/UCydw7dbEksG3axEMjHy4BxQ',
+    'https://www.facebook.com/DDDCommunity.tw/',
+    'https://www.facebook.com/groups/dddesigntw',
+    'https://www.meetup.com/domain-driven-design-taiwan-meetup-group/',
+    'https://x.com/DddTaiwan',
+    'https://www.accupass.com/organizer/detail/2204070436062239115110',
+  ],
+};
+const website = {
+  '@type': 'WebSite',
+  '@id': `${siteUrl}#website`,
+  url: siteUrl,
+  name: 'DDD Taiwan',
+  description: t('site.description'),
+  inLanguage: ['zh-TW', 'en'],
+  publisher: { '@id': `${siteUrl}#organization` },
+};
+const baseGraph = { '@context': 'https://schema.org', '@graph': [organization, website] };
+
+// 避免 JSON-LD 內容中的 "<" 破壞 </script>。
+const ld = (obj: unknown) => JSON.stringify(obj).replace(/</g, '\\u003c');
+const pageJsonLd = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
 ---
 
 <!doctype html>
@@ -54,8 +94,19 @@ const labels =
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:site_name" content="DDD Taiwan" />
+    <meta property="og:locale" content={ogLocale} />
+    <meta property="og:locale:alternate" content={ogLocaleAlt} />
     <meta property="og:image" content={new URL('/og-image.png', Astro.site)} />
+    <meta property="og:image:alt" content="DDD Taiwan" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@DddTaiwan" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="DDD Taiwan"
+      href={new URL('/rss.xml', Astro.site)}
+    />
     {
       isLocalizedPage && (
         <>
@@ -89,6 +140,8 @@ const labels =
         setInterval(apply, 5 * 60 * 1000);
       })();
     </script>
+    <script type="application/ld+json" set:html={ld(baseGraph)} />
+    {pageJsonLd.map((obj) => <script type="application/ld+json" set:html={ld(obj)} />)}
   </head>
   <body>
     <nav class="nav" id="site-nav">

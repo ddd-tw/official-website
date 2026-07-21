@@ -131,9 +131,89 @@ const timeline = isEn
       { year: '2025', title: '最活躍的一年', desc: '九場活動 — DDD Tour 跨城巡迴（台南、台中）與第五屆年會「AI 時代軟體開發方法」。' },
       { year: '2026', title: '網路上的新家', desc: '新版 ddd-tw.com 上線，每月聚會規劃中。' },
     ];
+
+// FAQ — 針對搜尋引擎與 AI agent 最常被問的問題，明確、自成一段地作答。
+const faq = isEn
+  ? [
+      {
+        q: 'What is DDD Taiwan?',
+        a: 'DDD Taiwan (Domain-Driven Design Taiwan) is a community-driven, volunteer-run non-profit founded in 2018. It promotes Domain-Driven Design and broader systems and software design in Taiwan, running meetups, an annual conference, and a book club, and sharing knowledge in a decentralised way.',
+      },
+      {
+        q: 'How can I join and take part?',
+        a: 'Joining is free. Follow the Facebook group and page, join the Line community for real-time chat, and register for upcoming events on Accupass. Recordings of past meetups and conference talks are on the DDD Taiwan YouTube channel.',
+      },
+      {
+        q: 'Does it cost anything to participate?',
+        a: 'Joining the community and its online channels is free. Most meetups are free or low-cost, while the annual conference is a ticketed event with tickets sold through Accupass or KKTIX.',
+      },
+      {
+        q: 'What events does DDD Taiwan run?',
+        a: 'Regular technical meetups, an annual conference held since 2020, and a recurring book club for reading and practicing together. New events are announced on Accupass and the Facebook channels.',
+      },
+      {
+        q: 'What language are the events in?',
+        a: 'Events are primarily in Traditional Chinese. The annual conference has regularly featured international speakers giving talks in English.',
+      },
+      {
+        q: 'How can I speak at or sponsor an event?',
+        a: 'For conference speaking or sponsorship, email conference@ddd-tw.com. For general inquiries, email dddtw2018@gmail.com.',
+      },
+    ]
+  : [
+      {
+        q: 'DDD Taiwan 是什麼？',
+        a: 'DDD Taiwan（Domain-Driven Design Taiwan，領域驅動設計台灣社群）成立於 2018 年，是非營利、志工經營的技術社群。以領域驅動設計為出發點，深入系統與軟體設計，透過 Meetup、年會與讀書會，以去中心化的方式分享知識。',
+      },
+      {
+        q: '如何加入與參與？',
+        a: '加入完全免費。可追蹤 Facebook 社團與粉專、加入 Line 社群即時交流，並於 Accupass 報名即將舉行的活動。歷屆 Meetup 與年會演講的錄影都放在 DDD Taiwan 的 YouTube 頻道。',
+      },
+      {
+        q: '參加需要費用嗎？',
+        a: '加入社群與各線上頻道皆免費。多數 Meetup 免費或低收費；年度大會為售票活動，票券於 Accupass 或 KKTIX 販售。',
+      },
+      {
+        q: 'DDD Taiwan 有哪些活動？',
+        a: '定期舉辦技術 Meetup、自 2020 年起每年舉行的年度大會，以及定期讀書會。新活動會在 Accupass 與 Facebook 頻道公告。',
+      },
+      {
+        q: '活動使用什麼語言？',
+        a: '活動以繁體中文為主。年度大會歷年皆有邀請海外講者，以英文進行演講。',
+      },
+      {
+        q: '如何成為講者或贊助？',
+        a: '年會講者或贊助洽詢請來信 conference@ddd-tw.com；一般聯繫請來信 dddtw2018@gmail.com。',
+      },
+    ];
+
+const site = Astro.site?.toString() ?? 'https://ddd-tw.com/';
+const faqLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: isEn ? 'en' : 'zh-TW',
+  mainEntity: faq.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: { '@type': 'Answer', text: item.a },
+  })),
+};
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'DDD Taiwan', item: site },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: isEn ? 'Community' : '社群',
+      item: new URL(`${prefix}/community/`, site).toString(),
+    },
+  ],
+};
 ---
 
-<Base title={isEn ? 'Community — DDD Taiwan' : '社群 — DDD Taiwan'}>
+<Base title={isEn ? 'Community — DDD Taiwan' : '社群 — DDD Taiwan'} jsonLd={[faqLd, breadcrumb]}>
   <div class="container page-head">
     <p class="eyebrow">Community</p>
     <h1>
@@ -192,6 +272,23 @@ const timeline = isEn
           ))
         }
       </ul>
+    </div>
+  </section>
+
+  <section class="container section">
+    <p class="eyebrow eyebrow--accent" style="margin: 0 0 6px;">FAQ</p>
+    <h2 style="font-size: 26px; margin: 0 0 20px;">
+      {isEn ? 'Frequently asked questions' : '常見問題'}
+    </h2>
+    <div class="card">
+      {
+        faq.map((item, i) => (
+          <details class="faq-item" open={i === 0}>
+            <summary>{item.q}</summary>
+            <p>{item.a}</p>
+          </details>
+        ))
+      }
     </div>
   </section>
 </Base>

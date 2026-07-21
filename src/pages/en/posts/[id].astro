@@ -10,9 +10,40 @@ export async function getStaticPaths() {
 const { post } = Astro.props;
 const { Content } = await render(post);
 const fmtDate = (d: Date) => d.toISOString().slice(0, 10);
+
+const site = Astro.site?.toString() ?? 'https://ddd-tw.com/';
+const postUrl = new URL(`/en/posts/${post.id}/`, site).toString();
+const articleLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: post.data.title,
+  description: post.data.description,
+  inLanguage: 'en',
+  datePublished: post.data.pubDate.toISOString().slice(0, 10),
+  author: { '@type': 'Person', name: post.data.author },
+  publisher: { '@id': `${site}#organization` },
+  image: new URL('/og-image.png', site).toString(),
+  mainEntityOfPage: postUrl,
+  url: postUrl,
+  keywords: post.data.tags,
+  ...(post.data.source ? { isBasedOn: post.data.source } : {}),
+};
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'DDD Taiwan', item: site },
+    { '@type': 'ListItem', position: 2, name: 'Knowledge', item: new URL('/en/knowledge/', site).toString() },
+    { '@type': 'ListItem', position: 3, name: post.data.title, item: postUrl },
+  ],
+};
 ---
 
-<Base title={`${post.data.title} — DDD Taiwan`} description={post.data.description}>
+<Base
+  title={`${post.data.title} — DDD Taiwan`}
+  description={post.data.description}
+  jsonLd={[articleLd, breadcrumb]}
+>
   <article class="container container--narrow page-head">
     <p class="eyebrow">
       <span class="mono">{fmtDate(post.data.pubDate)}</span> · {post.data.author}
