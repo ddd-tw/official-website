@@ -53,6 +53,17 @@
     "roleEn": "Organizer"
   },
   {
+    "id": "steven-cheng",
+    "name": "鄭棋文 Steven Cheng",
+    "nameEn": "Steven Cheng",
+    "role": "社群籌辦",
+    "roleEn": "Organizer",
+    "photo": "/contributors/steven-cheng.jpg",
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/chiwen-cheng/"
+    }
+  },
+  {
     "id": "fong-liu",
     "name": "Fong Liu",
     "nameEn": "Fong Liu",
