@@ -34,19 +34,20 @@
   {
     "id": "ddd-first-15-years",
     "title": "Domain-Driven Design: The First 15 Years（社群中譯版）",
-    "author": "DDD Europe 選輯 · DDD Taiwan 社群翻譯",
+    "author": "DDD Europe 選輯 · DDD Taiwan 十位社群志工共同翻譯",
     "year": 2020,
-    "summary": "DDD 十五週年紀念文集，由社群志工翻譯為繁體中文，免費線上閱讀。",
+    "summary": "DDD 十五週年紀念文集（Fowler、Coplien、Wirfs-Brock 等撰文），社群翻譯為繁體中文，Leanpub 免費線上閱讀。",
     "coverColor": "#C34A33",
-    "url": "https://github.com/ddd-tw/DDD-The-First-15-Years-Zh-Hant"
+    "url": "https://leanpub.com/ddd15y_cht"
   },
   {
     "id": "hofer-domain-storytelling",
-    "title": "Domain Storytelling",
+    "title": "領域故事化（Domain Storytelling）",
     "author": "Stefan Hofer、Henning Schwentner",
-    "year": 2021,
-    "summary": "以協作、視覺化的「說領域故事」方式捕捉領域知識，讓業務與開發對齊 — 社群共同創辦人 Kim Kao 擔任技術審校。",
-    "coverColor": "#24417E"
+    "year": 2024,
+    "summary": "以協作、視覺化的「說領域故事」方式捕捉領域知識，讓業務與開發對齊 — 繁中版由社群共同創辦人高翊凱（Kim Kao）與核心志工陳勉修（Michael Chen）技術審校。",
+    "coverColor": "#24417E",
+    "url": "https://www.tenlong.com.tw/products/9786263339330"
   },
   {
     "id": "zhangyi-deconstructing-ddd",
@@ -59,10 +60,20 @@
   },
   {
     "id": "golding-multi-tenant-saas",
-    "title": "Building Multi-Tenant SaaS Architectures",
+    "title": "建構多租戶 SaaS 架構（Building Multi-Tenant SaaS Architectures）",
     "author": "Tod Golding",
-    "year": 2024,
-    "summary": "多租戶 SaaS 架構的策略與實作 — 呼應社群對韌性系統設計的關注，Kim Kao 撰寫推薦序。",
-    "coverColor": "#2B52A0"
+    "year": 2025,
+    "summary": "多租戶 SaaS 架構的原則、實踐與模式 — 呼應社群對韌性系統設計的關注，繁中版由 Kim Kao 撰寫推薦序。",
+    "coverColor": "#2B52A0",
+    "url": "https://www.tenlong.com.tw/products/9786264251532"
+  },
+  {
+    "id": "hwang-sre-platform-guide",
+    "title": "SRE 實踐與開發平台指南",
+    "author": "黃冠元（Rick Hwang）",
+    "year": 2023,
+    "summary": "從團隊協作、原則、架構到趨勢，掌握 SRE 與平台工程全局的決策指南 — Kim Kao 撰寫推薦序。",
+    "coverColor": "#24417E",
+    "url": "https://www.tenlong.com.tw/products/9786263334908"
   }
 ]
