@@ -239,11 +239,13 @@ const breadcrumb = {
   </div>
 
   <section class="container section">
+    <p class="eyebrow eyebrow--accent" style="margin: 0 0 6px;">Channels</p>
+    <h2 style="font-size: 26px; margin: 0 0 20px;">{isEn ? 'Where to find us' : '社群頻道'}</h2>
     <div class="grid-3">
       {
         platforms.map((p) => (
           <a class="card" href={p.url}>
-            <h2 style="font-size: 18px; margin: 0 0 8px;">{p.title}</h2>
+            <h3 style="font-size: 18px; margin: 0 0 8px;">{p.title}</h3>
             <p style="font-size: 14px; color: var(--ink-mid); margin: 0 0 14px;">{p.desc}</p>
             <span style="font-size: 13px; color: var(--brand-strong);">{p.cta} →</span>
           </a>
