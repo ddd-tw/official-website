@@ -7,6 +7,42 @@ const locale = (Astro.currentLocale ?? 'zh') as Locale;
 const isEn = locale === 'en';
 
 const books = await getCollection('books');
+// 四組主題分類，順序即「先懂問題 → 一起探索 → 建模落地 → 讓系統長青」的閱讀旅程；
+// 組內順序沿用 books.json 的陣列順序（入門 → 深入）。
+const bookCategories = [
+  {
+    key: 'strategy',
+    title: isEn ? 'Understand the Problem — Strategy & Sense-Making' : '先懂問題 — 策略與情境',
+    desc: isEn
+      ? 'Before any solution: why are we doing this, where are we, and what kind of situation is it?'
+      : '在談任何解法之前：為什麼做、身在何處、這是什麼樣的情境？',
+  },
+  {
+    key: 'collaboration',
+    title: isEn ? 'Explore Together — Collaborative Modelling' : '一起探索 — 協作建模與需求',
+    desc: isEn
+      ? 'Put everyone in one room and turn scattered knowledge into shared language.'
+      : '把所有人放進同一個房間，讓分散的知識變成共同語言。',
+  },
+  {
+    key: 'ddd-core',
+    title: isEn ? 'Model the Domain — DDD Core' : '建模落地 — DDD 核心',
+    desc: isEn
+      ? 'From your first read to the source texts — strategic and tactical Domain-Driven Design.'
+      : '從第一本入門到原典 — 領域驅動設計的戰略與戰術。',
+  },
+  {
+    key: 'architecture',
+    title: isEn ? 'Evolve the System — Architecture & Resilience' : '讓系統長青 — 架構與韌性',
+    desc: isEn
+      ? 'Turn understanding into systems that keep evolving: viewpoints, SaaS architecture, SRE.'
+      : '把理解變成能持續演進的系統：多元視角、SaaS 架構與 SRE。',
+  },
+] as const;
+const booksByCategory = bookCategories.map((c) => ({
+  ...c,
+  items: books.filter((b) => b.data.category === c.key),
+}));
 const videos = await getCollection('videos');
 const videoCatLabel: Record<string, string> = isEn
   ? { meetup: 'Replay', conference: 'Conf', recommended: 'Pick' }
@@ -98,27 +134,40 @@ const fmtDate = (d: Date) => d.toISOString().slice(0, 10);
 
   <section class="container section">
     <h2>Books</h2>
-    <div class="grid-2">
+    <p style="color: var(--ink-mid); font-size: 14.5px; max-width: 680px;">
       {
-        books.map((b) => (
-          <div class="card card--hover" style="display: flex; gap: 18px;">
-            <div
-              style={`flex: 0 0 44px; height: 62px; border-radius: 4px; background: ${b.data.coverColor};`}
-            />
-            <div>
-              <h3 style="font-size: 16px; margin: 0;">
-                {b.data.url ? <a href={b.data.url}>{b.data.title}</a> : b.data.title}
-              </h3>
-              <p style="font-size: 13px; color: var(--ink-faint); margin: 4px 0;">
-                {b.data.author} · {b.data.year}
-              </p>
-              <p style="font-size: 14px; color: var(--ink-mid); margin: 0;">{b.data.summary}</p>
-            </div>
-          </div>
-        ))
+        isEn
+          ? 'Four themed shelves, ordered as a journey: understand the problem, explore together, model the domain, then evolve the system. Within each shelf, books run from approachable to deep.'
+          : '四個主題書架，依「先懂問題 → 一起探索 → 建模落地 → 讓系統長青」的旅程排列；每個書架內由入門到深入。'
       }
-    </div>
-    <p style="color: var(--ink-faint); font-size: 14px;">
+    </p>
+    {
+      booksByCategory.map((cat) => (
+        <div style="margin-top: 28px;">
+          <h3 style="margin: 0 0 4px;">{cat.title}</h3>
+          <p style="font-size: 13.5px; color: var(--ink-faint); margin: 0 0 14px;">{cat.desc}</p>
+          <div class="grid-2">
+            {cat.items.map((b) => (
+              <div class="card card--hover" style="display: flex; gap: 18px;">
+                <div
+                  style={`flex: 0 0 44px; height: 62px; border-radius: 4px; background: ${b.data.coverColor};`}
+                />
+                <div>
+                  <h3 style="font-size: 16px; margin: 0;">
+                    {b.data.url ? <a href={b.data.url}>{b.data.title}</a> : b.data.title}
+                  </h3>
+                  <p style="font-size: 13px; color: var(--ink-faint); margin: 4px 0;">
+                    {b.data.author} · {b.data.year}
+                  </p>
+                  <p style="font-size: 14px; color: var(--ink-mid); margin: 0;">{b.data.summary}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))
+    }
+    <p style="color: var(--ink-faint); font-size: 14px; margin-top: 20px;">
       {
         isEn
           ? "Read any of these? We'd love to feature your book review."

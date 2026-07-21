@@ -1,9 +1,77 @@
 [
   {
+    "id": "adzic-impact-mapping",
+    "title": "Impact Mapping",
+    "author": "Gojko Adzic",
+    "year": 2012,
+    "category": "strategy",
+    "summary": "以「目標 → 角色 → 影響 → 交付物」四層提問對齊產品決策，確保做的每件事都連回商業目標。",
+    "coverColor": "#1B2233"
+  },
+  {
+    "id": "wardley-maps",
+    "title": "Wardley Maps",
+    "author": "Simon Wardley",
+    "year": 2018,
+    "category": "strategy",
+    "summary": "把價值鏈與元件演化畫在同一張地圖上，讓策略討論有地形可循 — 免費線上閱讀。",
+    "coverColor": "#2B52A0",
+    "url": "https://medium.com/wardleymaps"
+  },
+  {
+    "id": "snowden-cynefin",
+    "title": "Cynefin: Weaving Sense-Making into the Fabric of Our World",
+    "author": "Dave Snowden 等",
+    "year": 2020,
+    "category": "strategy",
+    "summary": "Cynefin 框架：辨識問題處於清晰、繁雜、複雜或混沌情境，選擇對應的決策與探索方式。",
+    "coverColor": "#1B2233"
+  },
+  {
+    "id": "hofer-domain-storytelling",
+    "title": "領域故事化（Domain Storytelling）",
+    "author": "Stefan Hofer、Henning Schwentner",
+    "year": 2024,
+    "category": "collaboration",
+    "summary": "以協作、視覺化的「說領域故事」方式捕捉領域知識，讓業務與開發對齊 — 繁中版由社群共同創辦人高翊凱（Kim Kao）與核心志工陳勉修（Michael Chen）技術審校。",
+    "coverColor": "#24417E",
+    "url": "https://www.tenlong.com.tw/products/9786263339330"
+  },
+  {
+    "id": "brandolini-eventstorming",
+    "title": "Introducing EventStorming",
+    "author": "Alberto Brandolini",
+    "year": 2013,
+    "category": "collaboration",
+    "summary": "Event Storming 發明人的第一手著作：用大規模協作工作坊探索複雜業務領域 — 社群年會工作坊的核心方法。",
+    "coverColor": "#C34A33",
+    "url": "https://leanpub.com/introducing_eventstorming"
+  },
+  {
+    "id": "adzic-specification-by-example",
+    "title": "Specification by Example",
+    "author": "Gojko Adzic",
+    "year": 2011,
+    "category": "collaboration",
+    "summary": "Jolt 獎經典：用關鍵實例把需求說清楚、讓文件永遠活著 — Example Mapping 等實踐的思想源頭。",
+    "coverColor": "#C34A33",
+    "url": "https://www.manning.com/books/specification-by-example"
+  },
+  {
+    "id": "khononov-learning-ddd",
+    "title": "Learning Domain-Driven Design",
+    "author": "Vlad Khononov",
+    "year": 2021,
+    "category": "ddd-core",
+    "summary": "以現代視角重整 DDD 的入門書，戰略與戰術並重 — 建議的第一本。",
+    "coverColor": "#1B2233"
+  },
+  {
     "id": "evans-ddd",
     "title": "Domain-Driven Design: Tackling Complexity in the Heart of Software",
     "author": "Eric Evans",
     "year": 2003,
+    "category": "ddd-core",
     "summary": "DDD 的起點。Ubiquitous Language、Bounded Context 與戰略設計的原典。",
     "coverColor": "#24417E"
   },
@@ -12,57 +80,54 @@
     "title": "Implementing Domain-Driven Design",
     "author": "Vaughn Vernon",
     "year": 2013,
+    "category": "ddd-core",
     "summary": "把 DDD 落到程式碼與架構的實作指南，紅皮書。",
     "coverColor": "#C34A33"
-  },
-  {
-    "id": "khononov-learning-ddd",
-    "title": "Learning Domain-Driven Design",
-    "author": "Vlad Khononov",
-    "year": 2021,
-    "summary": "以現代視角重整 DDD 的入門書，戰略與戰術並重。",
-    "coverColor": "#1B2233"
   },
   {
     "id": "wlaschin-dmmf",
     "title": "Domain Modeling Made Functional",
     "author": "Scott Wlaschin",
     "year": 2018,
+    "category": "ddd-core",
     "summary": "用函數式思維與型別系統做領域建模。",
     "coverColor": "#2B52A0"
-  },
-  {
-    "id": "ddd-first-15-years",
-    "title": "Domain-Driven Design: The First 15 Years（社群中譯版）",
-    "author": "DDD Europe 選輯 · DDD Taiwan 十位社群志工共同翻譯",
-    "year": 2020,
-    "summary": "DDD 十五週年紀念文集（Fowler、Coplien、Wirfs-Brock 等撰文），社群翻譯為繁體中文，Leanpub 免費線上閱讀。",
-    "coverColor": "#C34A33",
-    "url": "https://leanpub.com/ddd15y_cht"
-  },
-  {
-    "id": "hofer-domain-storytelling",
-    "title": "領域故事化（Domain Storytelling）",
-    "author": "Stefan Hofer、Henning Schwentner",
-    "year": 2024,
-    "summary": "以協作、視覺化的「說領域故事」方式捕捉領域知識，讓業務與開發對齊 — 繁中版由社群共同創辦人高翊凱（Kim Kao）與核心志工陳勉修（Michael Chen）技術審校。",
-    "coverColor": "#24417E",
-    "url": "https://www.tenlong.com.tw/products/9786263339330"
   },
   {
     "id": "zhangyi-deconstructing-ddd",
     "title": "解構領域驅動設計",
     "author": "張逸",
     "year": 2021,
+    "category": "ddd-core",
     "summary": "提出領域驅動設計統一過程（DDDUP），從全域分析、架構映射到領域建模的完整方法論 — Kim Kao 撰寫推薦序。",
     "coverColor": "#1B2233",
     "url": "https://www.tenlong.com.tw/products/9787115566232"
+  },
+  {
+    "id": "ddd-first-15-years",
+    "title": "Domain-Driven Design: The First 15 Years（社群中譯版）",
+    "author": "DDD Europe 選輯 · DDD Taiwan 十位社群志工共同翻譯",
+    "year": 2020,
+    "category": "ddd-core",
+    "summary": "DDD 十五週年紀念文集（Fowler、Coplien、Wirfs-Brock 等撰文），社群翻譯為繁體中文，Leanpub 免費線上閱讀。",
+    "coverColor": "#C34A33",
+    "url": "https://leanpub.com/ddd15y_cht"
+  },
+  {
+    "id": "rozanski-woods-ssa",
+    "title": "Software Systems Architecture（2nd Edition）",
+    "author": "Nick Rozanski、Eoin Woods",
+    "year": 2011,
+    "category": "architecture",
+    "summary": "以 7 個 Viewpoints 與 8 個 Perspectives 面對多元利害關係人的架構方法論 — 持續演進架構實踐的重要基石。",
+    "coverColor": "#24417E"
   },
   {
     "id": "golding-multi-tenant-saas",
     "title": "建構多租戶 SaaS 架構（Building Multi-Tenant SaaS Architectures）",
     "author": "Tod Golding",
     "year": 2025,
+    "category": "architecture",
     "summary": "多租戶 SaaS 架構的原則、實踐與模式 — 呼應社群對韌性系統設計的關注，繁中版由 Kim Kao 撰寫推薦序。",
     "coverColor": "#2B52A0",
     "url": "https://www.tenlong.com.tw/products/9786264251532"
@@ -72,59 +137,9 @@
     "title": "SRE 實踐與開發平台指南",
     "author": "黃冠元（Rick Hwang）",
     "year": 2023,
+    "category": "architecture",
     "summary": "從團隊協作、原則、架構到趨勢，掌握 SRE 與平台工程全局的決策指南 — Kim Kao 撰寫推薦序。",
     "coverColor": "#24417E",
     "url": "https://www.tenlong.com.tw/products/9786263334908"
-  },
-  {
-    "id": "brandolini-eventstorming",
-    "title": "Introducing EventStorming",
-    "author": "Alberto Brandolini",
-    "year": 2013,
-    "summary": "Event Storming 發明人的第一手著作：用大規模協作工作坊探索複雜業務領域 — 社群年會工作坊的核心方法。",
-    "coverColor": "#C34A33",
-    "url": "https://leanpub.com/introducing_eventstorming"
-  },
-  {
-    "id": "adzic-impact-mapping",
-    "title": "Impact Mapping",
-    "author": "Gojko Adzic",
-    "year": 2012,
-    "summary": "以「目標 → 角色 → 影響 → 交付物」四層提問對齊產品決策，確保做的每件事都連回商業目標。",
-    "coverColor": "#1B2233"
-  },
-  {
-    "id": "wardley-maps",
-    "title": "Wardley Maps",
-    "author": "Simon Wardley",
-    "year": 2018,
-    "summary": "把價值鏈與元件演化畫在同一張地圖上，讓策略討論有地形可循 — 免費線上閱讀。",
-    "coverColor": "#2B52A0",
-    "url": "https://medium.com/wardleymaps"
-  },
-  {
-    "id": "rozanski-woods-ssa",
-    "title": "Software Systems Architecture（2nd Edition）",
-    "author": "Nick Rozanski、Eoin Woods",
-    "year": 2011,
-    "summary": "以 7 個 Viewpoints 與 8 個 Perspectives 面對多元利害關係人的架構方法論 — 持續演進架構實踐的重要基石。",
-    "coverColor": "#24417E"
-  },
-  {
-    "id": "snowden-cynefin",
-    "title": "Cynefin: Weaving Sense-Making into the Fabric of Our World",
-    "author": "Dave Snowden 等",
-    "year": 2020,
-    "summary": "Cynefin 框架：辨識問題處於清晰、繁雜、複雜或混沌情境，選擇對應的決策與探索方式。",
-    "coverColor": "#1B2233"
-  },
-  {
-    "id": "adzic-specification-by-example",
-    "title": "Specification by Example",
-    "author": "Gojko Adzic",
-    "year": 2011,
-    "summary": "Jolt 獎經典：用關鍵實例把需求說清楚、讓文件永遠活著 — Example Mapping 等實踐的思想源頭。",
-    "coverColor": "#C34A33",
-    "url": "https://www.manning.com/books/specification-by-example"
   }
 ]

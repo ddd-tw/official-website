@@ -49,6 +49,8 @@ const books = defineCollection({
     title: z.string(),
     author: z.string(),
     year: z.number(),
+    /** 書單分類：策略與情境 / 協作建模 / DDD 核心 / 架構與韌性。組內排序即 JSON 陣列順序（入門 → 深入）。 */
+    category: z.enum(['strategy', 'collaboration', 'ddd-core', 'architecture']),
     summary: z.string(),
     coverColor: z.string().default('#24417E'),
     /** 可免費閱讀的線上版連結（如社群翻譯） */

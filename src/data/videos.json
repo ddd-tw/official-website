@@ -17,6 +17,15 @@
     "year": 2021
   },
   {
+    "id": "reinvent-2023-boa309",
+    "title": "AWS re:Invent 2023 — Implementing Distributed Design Patterns on AWS（BOA309，Kim Kao 等）",
+    "titleEn": "AWS re:Invent 2023 — Implementing Distributed Design Patterns on AWS (BOA309, feat. Kim Kao)",
+    "category": "recommended",
+    "url": "https://www.youtube.com/watch?v=pfAlmkzyaJQ",
+    "channel": "AWS Events",
+    "year": 2023
+  },
+  {
     "id": "virtual-ddd-kim-interview",
     "title": "They Knew the Answer Before They Understood the Problem — Virtual DDD 訪談 Kim Kao",
     "titleEn": "They Knew the Answer Before They Understood the Problem — Virtual DDD interview with Kim Kao",
