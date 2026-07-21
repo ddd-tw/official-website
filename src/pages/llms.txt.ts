@@ -74,6 +74,7 @@ export async function GET(context: APIContext) {
   lines.push('- [YouTube](https://www.youtube.com/channel/UCydw7dbEksG3axEMjHy4BxQ)');
   lines.push('- [Facebook page](https://www.facebook.com/DDDCommunity.tw/)');
   lines.push('- [Facebook group](https://www.facebook.com/groups/dddesigntw)');
+  lines.push('- [Instagram](https://www.instagram.com/ddd_twig/)');
   lines.push('- [Meetup](https://www.meetup.com/domain-driven-design-taiwan-meetup-group/)');
   lines.push('- [X / Twitter](https://x.com/DddTaiwan)');
   lines.push('- [Full content for LLMs](' + base + '/llms-full.txt)');
