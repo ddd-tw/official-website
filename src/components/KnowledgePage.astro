@@ -272,7 +272,7 @@ const breadcrumb = {
     {
       booksByCategory.map((cat) => (
         <div class="kb-section">
-          <p class="kb-label kb-label--rule">{cat.title}</p>
+          <h3 class="kb-label kb-label--rule">{cat.title}</h3>
           <p class="kb-desc">{cat.desc}</p>
           <div class="kb-grid">
             {cat.items.map((b) =>
@@ -334,7 +334,7 @@ const breadcrumb = {
       }
     </p>
     <div class="kb-section">
-      <p class="kb-label kb-label--rule">{isEn ? 'Articles' : '文章'}</p>
+      <h3 class="kb-label kb-label--rule">{isEn ? 'Articles' : '文章'}</h3>
       <div class="kb-grid">
         {
           posts.map((p) => (
@@ -378,7 +378,7 @@ const breadcrumb = {
     {
       featuredVideos.length > 0 && (
         <>
-          <p class="kb-label">{isEn ? 'Featured' : '精選'}</p>
+          <h3 class="kb-label">{isEn ? 'Featured' : '精選'}</h3>
           <div class="feat-grid">
             {featuredVideos.map((v) => (
               <a class="feat-card" href={v.data.url} target="_blank" rel="noopener noreferrer">
@@ -409,7 +409,7 @@ const breadcrumb = {
         .filter((cat) => cat.items.length > 0)
         .map((cat) => (
           <div class="kb-section">
-            <p class="kb-label kb-label--rule">{cat.title}</p>
+            <h3 class="kb-label kb-label--rule">{cat.title}</h3>
             <p class="kb-desc">{cat.desc}</p>
             <div class="kb-grid">
               {cat.items.map((v) => (
@@ -448,7 +448,7 @@ const breadcrumb = {
     {
       repoGroups.map((g) => (
         <div class="kb-section">
-          <p class="kb-label kb-label--rule">{g.title}</p>
+          <h3 class="kb-label kb-label--rule">{g.title}</h3>
           <div class="kb-grid">
             {g.items.map((r) => (
               <a class="kb-tile" href={r.url} target="_blank" rel="noopener noreferrer">
