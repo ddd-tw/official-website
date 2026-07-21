@@ -16,9 +16,10 @@
     "author": "Simon Wardley",
     "year": 2018,
     "category": "strategy",
-    "summary": "把價值鏈與元件演化畫在同一張地圖上，讓策略討論有地形可循 — 免費線上閱讀。",
+    "summary": "把價值鏈與元件演化畫在同一張地圖上，讓策略討論有地形可循 — 全書 19 章免費線上閱讀，另有印刷版與電子書。",
     "coverColor": "#2B52A0",
-    "url": "https://medium.com/wardleymaps"
+    "url": "https://learnwardleymapping.com/book/",
+    "cover": "/covers/wardley-maps.jpg"
   },
   {
     "id": "snowden-cynefin",
