@@ -93,9 +93,10 @@
   },
   {
     "id": "cooper-liu",
-    "name": "Cooper Liu",
+    "name": "劉育嘉 Cooper Liu",
     "nameEn": "Cooper Liu",
     "role": "社群籌辦",
-    "roleEn": "Organizer"
+    "roleEn": "Organizer",
+    "photo": "/contributors/cooper-liu.png"
   }
 ]
