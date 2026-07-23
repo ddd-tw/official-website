@@ -24,3 +24,7 @@ docs-internal/
 # Python
 __pycache__/
 *.pyc
+
+# CDK（建置產物與含帳號/zone 識別碼的 context 快取，不進 public repo）
+cdk.out/
+infra/registration/cdk.context.json
