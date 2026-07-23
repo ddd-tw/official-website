@@ -1,0 +1,15 @@
+{
+  "name": "dddtw-registration-infra",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "synth": "cdk synth",
+    "diff": "cdk diff",
+    "deploy": "cdk deploy"
+  },
+  "devDependencies": {
+    "aws-cdk": "^2.170.0",
+    "aws-cdk-lib": "^2.170.0",
+    "constructs": "^10.4.0"
+  }
+}

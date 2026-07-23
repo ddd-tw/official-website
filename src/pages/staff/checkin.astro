@@ -1,0 +1,91 @@
+---
+// 工作人員驗票頁（Phase 3a）。手機瀏覽器開啟 → 輸入 staff key → 掃 QR。
+// 用 BarcodeDetector API（Chrome/Edge/Android 支援；iOS Safari 用手動輸入 fallback）。
+// 本頁不在導覽列，網址只給工作人員。
+import Base from '../../layouts/Base.astro';
+const API = import.meta.env.PUBLIC_REGISTRATION_API ?? 'https://register.ddd-tw.com';
+---
+
+<Base title="驗票 — DDD Taiwan Staff">
+  <div class="container page-head" style="padding-top: 72px;">
+    <p class="eyebrow">Staff</p>
+    <h1>活動驗票</h1>
+  </div>
+
+  <section class="container section" style="max-width: 560px;">
+    <div class="card">
+      <label class="reg-label" for="ck-key">Staff Key</label>
+      <input class="reg-input" id="ck-key" type="password" autocomplete="off" />
+      <label class="reg-label" for="ck-staff">你的代號（記錄驗票人）</label>
+      <input class="reg-input" id="ck-staff" maxlength="20" />
+      <button class="btn btn--solid" id="ck-start" style="margin-top: 16px; width: 100%;">開始掃描</button>
+
+      <video id="ck-video" hidden playsinline style="width: 100%; border-radius: 8px; margin-top: 16px;"></video>
+
+      <label class="reg-label" for="ck-manual" style="margin-top: 20px;">或手動輸入 QR 內容</label>
+      <div style="display: flex; gap: 8px;">
+        <input class="reg-input" id="ck-manual" style="flex: 1;" />
+        <button class="btn btn--solid" id="ck-submit">驗票</button>
+      </div>
+
+      <div id="ck-result" style="margin-top: 18px; font-size: 18px; text-align: center;"></div>
+      <p class="me-gate__hint" id="ck-log"></p>
+    </div>
+  </section>
+
+  <script define:vars={{ API }}>
+    const $ = (id) => document.getElementById(id);
+    const result = $('ck-result');
+    let scanning = false;
+    const seen = new Set(); // 防同一顆 QR 連續觸發
+
+    async function checkin(token) {
+      if (!token || seen.has(token)) return;
+      seen.add(token);
+      setTimeout(() => seen.delete(token), 5000);
+      result.textContent = '驗證中…';
+      try {
+        const res = await fetch(`${API}/api/checkin`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'X-Staff-Key': $('ck-key').value },
+          body: JSON.stringify({ qrToken: token, staff: $('ck-staff').value }),
+        });
+        const data = await res.json();
+        if (res.ok && data.already) {
+          result.innerHTML = `⚠️ <strong>${data.name}</strong> — 已入場過`;
+        } else if (res.ok) {
+          result.innerHTML = `✅ <strong>${data.name}</strong> — 入場成功`;
+          if (navigator.vibrate) navigator.vibrate(80);
+        } else {
+          result.innerHTML = { unauthorized: '❌ Staff Key 錯誤', 'invalid ticket': '❌ 無效票券' }[data.error] ?? '❌ 失敗';
+        }
+      } catch { result.textContent = '❌ 連線失敗'; }
+    }
+
+    $('ck-submit').addEventListener('click', () => checkin($('ck-manual').value.trim()));
+
+    $('ck-start').addEventListener('click', async () => {
+      if (scanning) return;
+      if (!('BarcodeDetector' in window)) {
+        $('ck-log').textContent = '此瀏覽器不支援相機掃描，請用手動輸入。';
+        return;
+      }
+      const video = $('ck-video');
+      const stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } });
+      video.srcObject = stream;
+      video.hidden = false;
+      await video.play();
+      scanning = true;
+      const detector = new BarcodeDetector({ formats: ['qr_code'] });
+      const tick = async () => {
+        if (!scanning) return;
+        try {
+          const codes = await detector.detect(video);
+          if (codes.length) checkin(codes[0].rawValue);
+        } catch {}
+        requestAnimationFrame(tick);
+      };
+      tick();
+    });
+  </script>
+</Base>

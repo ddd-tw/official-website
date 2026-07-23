@@ -1,0 +1,109 @@
+---
+// 自營報名頁（Phase 3a）：只為 frontmatter 標 `registration: onsite` 的活動生成。
+// 表單 POST 到報名 Worker（workers/registration），QR 票券由 Worker 寄出。
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+
+export async function getStaticPaths() {
+  const events = await getCollection('events', (e) => e.data.registration === 'onsite');
+  return events.map((e) => ({ params: { id: e.id }, props: { event: e } }));
+}
+
+const { event } = Astro.props;
+const { title, date, location, capacity } = event.data;
+const dateStr = date.toISOString().slice(0, 10);
+// Worker endpoint：正式環境走自訂網域；本機開發可用 wrangler dev 的 localhost
+const API = import.meta.env.PUBLIC_REGISTRATION_API ?? 'https://register.ddd-tw.com';
+---
+
+<Base title={`報名 — ${title}`}>
+  <div class="container page-head" style="padding-top: 72px;">
+    <p class="eyebrow">Register</p>
+    <h1>{title}</h1>
+    <p style="color: var(--ink-mid);">
+      🗓 {dateStr}{location && <>｜📍 {location}</>}
+      <span id="reg-quota" class="mono" style="margin-left: 10px; font-size: 13px;"></span>
+    </p>
+  </div>
+
+  <section class="container section">
+    <div class="card me-gate" style="text-align: left; max-width: 560px;">
+      <form id="reg-form">
+        <label class="reg-label" for="reg-name">姓名</label>
+        <input class="reg-input" id="reg-name" required maxlength="50" autocomplete="name" />
+        <label class="reg-label" for="reg-email">Email（活動票券與 QR code 將寄到此信箱）</label>
+        <input class="reg-input" id="reg-email" type="email" required autocomplete="email" />
+        <button type="submit" class="btn btn--solid" style="margin-top: 18px; width: 100%;">
+          送出報名
+        </button>
+      </form>
+      <div id="reg-done" hidden style="text-align: center;">
+        <h2 style="margin: 8px 0;">✅ 報名完成</h2>
+        <p style="color: var(--ink-mid);">票券已寄到你的信箱，活動當天出示 QR code 入場。</p>
+        <div id="reg-qr-fallback" hidden>
+          <p style="color: var(--ink-mid);">（測試模式：寄信服務未啟用，請截圖保存下方 QR）</p>
+          <img id="reg-qr-img" width="200" height="200" alt="入場 QR code" style="margin: 0 auto;" />
+        </div>
+        <p style="font-size: 13px; color: var(--ink-faint);">
+          報名紀錄會在活動後計入你在 <a href="/me/">我的參與旅程</a> 的成就。
+        </p>
+      </div>
+      <p id="reg-status" class="me-gate__hint"></p>
+    </div>
+  </section>
+
+  <script define:vars={{ API, eventId: event.id }}>
+    const form = document.getElementById('reg-form');
+    const status = document.getElementById('reg-status');
+
+    // 名額顯示
+    fetch(`${API}/api/events/${eventId}/stats`)
+      .then((r) => r.json())
+      .then(({ registered, capacity, open }) => {
+        const q = document.getElementById('reg-quota');
+        if (!open) { q.textContent = '報名已截止'; form.querySelector('button').disabled = true; }
+        else if (capacity) q.textContent = `${registered} / ${capacity}`;
+      })
+      .catch(() => {});
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = form.querySelector('button');
+      btn.disabled = true;
+      status.textContent = '送出中…';
+      try {
+        const res = await fetch(`${API}/api/register`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            eventId,
+            name: document.getElementById('reg-name').value.trim(),
+            email: document.getElementById('reg-email').value.trim(),
+          }),
+        });
+        const data = await res.json();
+        if (!res.ok) {
+          const msg = {
+            'already registered': '這個 email 已經報名過了。',
+            full: '名額已滿。', 'deadline passed': '報名已截止。',
+            'registration closed': '報名未開放。',
+          }[data.error] ?? '報名失敗，請稍後再試。';
+          status.textContent = msg;
+          btn.disabled = false;
+          return;
+        }
+        form.hidden = true;
+        status.textContent = '';
+        document.getElementById('reg-done').hidden = false;
+        if (data.qrToken) {
+          document.getElementById('reg-qr-fallback').hidden = false;
+          document.getElementById('reg-qr-img').src =
+            `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${data.qrToken}`;
+        }
+      } catch {
+        status.textContent = '連線失敗，請稍後再試。';
+        btn.disabled = false;
+      }
+    });
+  </script>
+</Base>
