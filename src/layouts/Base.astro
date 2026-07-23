@@ -21,13 +21,14 @@ const navItems = [
   { href: `${prefix}/knowledge/`, label: t('nav.knowledge') },
   { href: `${prefix}/community/`, label: t('nav.community') },
   { href: `${prefix}/governance/`, label: t('nav.governance') },
+  { href: `${prefix}/me/`, label: t('nav.me') },
 ];
 
 const currentPath = Astro.url.pathname.replace(/\/?$/, '/');
 
 // 語言切換：連到「目前頁面的另一語言版本」。
 // 只有這幾頁有雙語版本；其餘（如 /posts/xxx/）退回另一語言的首頁。
-const localizedPages = ['/', '/events/', '/knowledge/', '/community/', '/governance/'];
+const localizedPages = ['/', '/events/', '/knowledge/', '/community/', '/governance/', '/me/'];
 const zhPath = locale === 'zh' ? currentPath : currentPath.replace(/^\/en(\/|$)/, '/');
 const isLocalizedPage = localizedPages.includes(zhPath);
 let otherLocaleHref: string;

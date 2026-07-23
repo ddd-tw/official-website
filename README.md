@@ -20,13 +20,31 @@ npm run preview  # 預覽 build 結果
 | 內容 | 位置 | 做法 |
 |------|------|------|
 | 文章（Papers / 心得 / 公告） | `src/content/posts/*.md` | 新增 `.md` 檔，frontmatter 填 `title` / `description` / `pubDate` / `lang`；轉載文章請加 `source`（原文連結）與 `authorization`（作者授權紀錄） |
-| 活動（Meetup / 年會 / 讀書會） | `src/content/events/*.md` | 填 `title` / `titleEn` / `date` / `type` / `link`；活動後補 `videoUrl` |
+| 活動（Meetup / 年會 / 讀書會 / 工作坊 / Tour） | `src/content/events/*.md` | **複製 `_template.md`** 照註解填寫（含 `topics` 主題標籤、報名方式）；活動後補 `videoUrl`。merge 後會自動發 Discord 公告（見下方「活動自動化」） |
 | 書單 | `src/data/books.json` | 填分類（`strategy` / `collaboration` / `ddd-core` / `architecture`）、封面放 `public/covers/` |
 | 精選影片 | `src/data/videos.json` | 填 `title` / `category` / `url` |
 | 貢獻者 | `src/data/contributors.json` | 照片放 `public/contributors/`，附中英 bio 與連結 |
 
 發布流程：開 branch → 新增或修改檔案 → 開 Pull Request → 社群 Review → merge。
 所有資料欄位都有 schema 驗證（`src/content.config.ts`），欄位寫錯時 CI 會在 PR 上直接擋下來。
+
+## 活動自動化與會員成就系統
+
+- **活動公告**：新活動 md merge 到 `main` 後，`.github/workflows/announce-event.yml`
+  自動發 Discord 公告（需在 repo Secrets 設 `DISCORD_WEBHOOK_URL`；未設定時靜默跳過）。
+- **會員成就頁 `/me`**：參加者輸入 email 查詢自己的位階／時間軸／徽章。資料為 build 時
+  產生的雜湊分片 JSON（`public/api/achievements/`），不含任何明文個資。
+- **活動後成就更新**（過渡期，售票仍在外部平台時）：
+  1. 從 KKTIX / Accupass 匯出名單，放入本機 `dddtw-attendees/`（此目錄含個資，永不進版控）
+  2. 若是新活動，先在 `src/data/event-registry.json` 登記（eventId、日期、type、topics、sources）
+  3. 跑 `./scripts/update-achievements.sh`（自動彙整＋重算＋防呆檢查）
+  4. commit + push，部署後所有人成就同步更新
+- **補登／合併／刪除**：見 `/governance/#member-data`；核心團隊改
+  `src/data/manual-participations.json`（補登）或 `src/data/email-aliases.json`（合併）後重跑上述腳本。
+- 規則引擎測試：`python3 scripts/test-achievements.py`。
+- **自營報名系統（Phase 3a）**：`infra/registration/`（AWS Lambda + DynamoDB + SES，CDK）。
+  活動 md 標 `registration: onsite` 即生成報名頁；部署與開場 SOP 見該目錄 README。
+- 完整設計：`docs/member-system-design.md`。
 
 ## 雙語
 

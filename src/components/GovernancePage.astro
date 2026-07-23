@@ -170,6 +170,37 @@ const toc = isEn
         )
       }
     </p>
+
+    <h3 id="member-data">{isEn ? 'Member Achievement Records' : '會員成就紀錄（補登／合併／刪除）'}</h3>
+    <p class="gov-p">
+      {
+        isEn
+          ? 'The My Journey page matches your email against historical event registration lists. Records may be incomplete: some 2019 events had no digital list, and registrations under a different email are counted separately.'
+          : '「我的參與旅程」頁面以 email 比對歷年活動報名名單。紀錄可能不完整：2019 年部分場次沒有電子名單；用不同 email 報名的紀錄會被視為不同人。'
+      }
+    </p>
+    <p class="gov-p">
+      {
+        isEn ? (
+          <>
+            To <strong>add a missing record</strong>（with proof of attendance, e.g. a ticket or photo）,{' '}
+            <strong>merge records</strong> across multiple emails, or <strong>remove</strong> your
+            achievement data entirely, email{' '}
+            <a href="mailto:dddtw2018@gmail.com?subject=Member%20data%20request" class="mono">dddtw2018@gmail.com</a>{' '}
+            from the address in question. The core team reviews each request; changes take effect at the
+            next site build. Removal requests are honored unconditionally.
+          </>
+        ) : (
+          <>
+            如需<strong>補登</strong>遺漏的參與紀錄（請附出席佐證，如票券或活動照片）、
+            <strong>合併</strong>多個 email 的紀錄，或<strong>完全刪除</strong>你的成就資料，
+            請以該 email 來信{' '}
+            <a href="mailto:dddtw2018@gmail.com?subject=%E6%9C%83%E5%93%A1%E8%B3%87%E6%96%99%E7%94%B3%E8%AB%8B" class="mono">dddtw2018@gmail.com</a>。
+            核心團隊會逐案審核，變更於下次網站建置時生效；刪除請求無條件受理。
+          </>
+        )
+      }
+    </p>
   </section>
 
   <!-- 行為準則 -->

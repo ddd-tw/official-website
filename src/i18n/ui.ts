@@ -9,6 +9,7 @@ export const ui = {
     'nav.knowledge': '知識庫',
     'nav.community': '社群',
     'nav.governance': '治理',
+    'nav.me': '我的旅程',
     'footer.privacy': '隱私權政策',
     'footer.coc': '行為準則',
     'site.description':
@@ -20,6 +21,7 @@ export const ui = {
     'nav.knowledge': 'Knowledge',
     'nav.community': 'Community',
     'nav.governance': 'Governance',
+    'nav.me': 'My Journey',
     'footer.privacy': 'Privacy Policy',
     'footer.coc': 'Code of Conduct',
     'site.description':

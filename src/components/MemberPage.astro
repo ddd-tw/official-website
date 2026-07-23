@@ -1,0 +1,401 @@
+---
+// src/components/MemberPage.astro
+// 會員成就頁 /me — 純靜態 + 前端查詢（email → SHA-256(email+salt) → fetch 分片 JSON）。
+// 不是認證，是查詢；內容僅公開活動參與紀錄，不含聯絡資料。詳見 docs/member-system-design.md §7.2。
+import Base from '../layouts/Base.astro';
+import RankBadge from './RankBadge.astro';
+import type { Locale } from '../i18n/ui';
+
+const locale = (Astro.currentLocale ?? 'zh') as Locale;
+const isEn = locale === 'en';
+const govHref = `${isEn ? '/en' : ''}/governance/#member-data`;
+
+// 五階（門檻待 Phase 0 試跑後定案，見設計文件 §6.1）。名稱刻意用 DDD 建構塊 = 順便教學。
+// req = 晉升到「此階」除分數外的附加條件（顯示於升階提示；實際判定在 build 腳本）。
+const RANKS = [
+  { key: 'value-object', name: 'Value Object', zh: '你來過', en: "You've been here", reqZh: '', reqEn: '' },
+  { key: 'entity', name: 'Entity', zh: '有了身分', en: 'You have identity', reqZh: '', reqEn: '' },
+  { key: 'aggregate-root', name: 'Aggregate Root', zh: '一致性的守門人', en: 'Guardian of consistency',
+    reqZh: '需 8 分且含至少 1 次年會', reqEn: '8 pts incl. ≥1 conference' },
+  { key: 'bounded-context', name: 'Bounded Context', zh: '劃出邊界', en: 'You draw the boundary',
+    reqZh: '需 15 分且跨 ≥2 種活動類型', reqEn: '15 pts across ≥2 event types' },
+  { key: 'domain-expert', name: 'Domain Expert', zh: '領域專家', en: 'Domain expert',
+    reqZh: '需 25 分且參與跨度 ≥3 個年度', reqEn: '25 pts spanning ≥3 years' },
+] as const;
+---
+
+<Base title={isEn ? 'My Journey — DDD Taiwan' : '我的參與旅程 — DDD Taiwan'}>
+  <div class="container page-head" style="padding-top: 72px;">
+    <p class="eyebrow">Member</p>
+    <h1>
+      {isEn ? (<>My <span class="hl">journey</span></>) : (<>我的<span class="hl">參與旅程</span></>)}
+    </h1>
+  </div>
+
+  {/* ===== 查詢 gate ===== */}
+  <section class="container section" id="me-gate">
+    <div class="card me-gate">
+      <div class="me-gate__badge"><RankBadge rank="aggregate-root" size={76} /></div>
+      <h2 class="me-gate__title">{isEn ? 'Look up your achievements' : '查看你的成就'}</h2>
+      <p class="me-gate__desc">
+        {isEn
+          ? 'Enter the email you registered events with. We only match it against public event records — no contact details are shown or stored.'
+          : '輸入你報名活動時使用的 email，即可看到你的位階、參與時間軸與徽章。我們只用它比對公開活動紀錄，不會顯示或儲存你的聯絡資料。'}
+      </p>
+      <form class="me-gate__form" id="me-form">
+        <input type="email" id="me-email" required placeholder="you@example.com" autocomplete="email" />
+        <button type="submit" class="btn btn--solid">{isEn ? 'Look up' : '查詢'}</button>
+      </form>
+      <p class="me-gate__hint" id="me-status">
+        {isEn
+          ? (<>No records? Some 2019 events had no digital list — request a <a href={govHref}>manual add</a>.</>)
+          : (<>找不到紀錄？2019 年部分場次無電子名單 — 可申請<a href={govHref}>補登</a>。</>)}
+      </p>
+    </div>
+  </section>
+
+  {/* ===== 結果（由 client script 依 JSON 填充後顯示） ===== */}
+  <section class="container section" id="me-result" hidden>
+    {/* 區塊導航（對應設計稿右上：成就 / 成就卡 / 補登；「查詢」= 換帳號） */}
+    <nav class="me-tabs" aria-label={isEn ? 'Sections' : '頁面區塊'}>
+      <a class="me-tab" href="#me-achievements" data-me-tab>{isEn ? 'Achievements' : '成就'}</a>
+      <a class="me-tab" href="#me-card" data-me-tab>{isEn ? 'Card' : '成就卡'}</a>
+      <a class="me-tab" href={govHref}>{isEn ? 'Manual add' : '補登'}</a>
+      <a class="me-tab me-tab--ghost" href="#" id="me-switch">{isEn ? 'Switch email' : '查詢其他 email'}</a>
+    </nav>
+
+    <div class="tile me-note" id="me-achievements">
+      <span class="me-note__k mono">NOTE</span>
+      <span>
+        {isEn
+          ? (<>These are <strong>registration records</strong>, not attendance proof. Data as of <span id="me-asof">2026-07</span>.</>)
+          : (<>以下為<strong>報名紀錄</strong>，非出席證明。資料截止 <span id="me-asof">2026-07</span>。發現遺漏？可申請補登或勘誤。</>)}
+      </span>
+    </div>
+
+    <div class="card me-hero">
+      <div class="me-hero__badge" id="me-hero-badge"></div>
+      <div class="me-hero__body">
+        <p class="eyebrow eyebrow--accent" id="me-rank-pos" style="margin:0;"></p>
+        <h2 class="me-hero__rank" id="me-rank-name"></h2>
+        <p class="me-hero__stat" id="me-rank-sub"></p>
+        <div class="me-progress"><div class="me-progress__bar" id="me-progress-bar"></div></div>
+        <p class="me-hero__next" id="me-rank-next"></p>
+      </div>
+    </div>
+
+    <a class="me-cta" id="me-cta" href="/events/">
+      <div>
+        <p class="me-cta__k">{isEn ? 'Your fastest next step' : '升階最快的一步'}</p>
+        <p class="me-cta__t" id="me-cta-t"></p>
+      </div>
+    </a>
+
+    <div class="grid-2 section">
+      <div>
+        <h3 class="kb-label kb-label--rule">{isEn ? 'Topic skill tree' : '主題技能樹'}</h3>
+        <div class="me-skills" id="me-skills"></div>
+      </div>
+      <div>
+        <h3 class="kb-label kb-label--rule">{isEn ? 'Timeline' : '參與時間軸'}</h3>
+        <ul class="timeline" id="me-timeline"></ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3 class="kb-label kb-label--rule">
+        {isEn ? 'Badges' : '徽章牆'} <span class="mono" id="me-badge-count" style="color:var(--ink-faint);font-size:12px;"></span>
+      </h3>
+      <div class="me-badges" id="me-badges"></div>
+      <p class="kb-note" style="text-align:center;">
+        {isEn
+          ? (<>Achievements are private — only you can see them. <a href="#me-card" id="me-card-link">Generate a card</a>.</>)
+          : (<>成就完全私人，只有你查得到。想分享？可<a href="#me-card" id="me-card-link">產生成就卡</a>。</>)}
+      </p>
+    </div>
+
+    {/* ===== 成就卡（頁內預覽 + 下載） ===== */}
+    <div class="section" id="me-card">
+      <h3 class="kb-label kb-label--rule">{isEn ? 'Achievement card' : '成就卡'}</h3>
+      <div class="card me-card">
+        <img id="me-card-img" alt={isEn ? 'Your achievement card' : '你的成就卡'} hidden />
+        <div class="me-card__actions">
+          <button class="btn btn--solid" id="me-card-dl">{isEn ? 'Download PNG' : '下載 PNG'}</button>
+          <p class="kb-note" style="margin:10px 0 0;">
+            {isEn
+              ? 'Share it anywhere you like — the card contains no personal data, only your rank and stats.'
+              : '歡迎分享到任何地方——卡片上沒有個資，只有你的位階與統計。'}
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script define:vars={{ isEn, RANKS, govHref }}>
+    // === 設定：salt 必須與 scripts/build-achievements.py 內的 SALT 一致 ===
+    const SALT = 'dddtw-achievements-v1';
+    const API_BASE = '/api/achievements';
+
+    const TOPIC_LABELS = {
+      'ddd-core': isEn ? 'DDD Core' : 'DDD 核心',
+      collaboration: isEn ? 'Collaboration' : '協作建模',
+      architecture: isEn ? 'Architecture' : '架構與韌性',
+      strategy: isEn ? 'Strategy' : '策略與情境',
+    };
+    const tierOf = (n) => (n >= 5 ? (isEn ? 'Gold' : '金') : n >= 3 ? (isEn ? 'Silver' : '銀') : isEn ? 'Bronze' : '銅');
+    // 徽章目錄（id → 顯示）；未解鎖者以淡化呈現。
+    const BADGE_CATALOG = [
+      { id: 'first', icon: '◆', zh: '首次參加', en: 'First timer' },
+      { id: 'm5', icon: '★', zh: '5 場里程碑', en: '5 events' },
+      { id: 'm10', icon: '★', zh: '10 場里程碑', en: '10 events' },
+      { id: 'm20', icon: '★', zh: '20 場里程碑', en: '20 events' },
+      { id: 'old-guard', icon: '⚑', zh: '元老', en: 'Old guard' },
+      { id: 'founding', icon: '◆', zh: '創始見證者', en: 'Founding witness' },
+      { id: 'conf-regular', icon: '◈', zh: '年會常客', en: 'Conf regular' },
+      { id: 'globetrotter', icon: '◉', zh: '全域旅人', en: 'Globetrotter' },
+      { id: 'tourer', icon: '➤', zh: '巡迴者', en: 'Tourer' },
+      { id: 'es-gold', icon: '◆', zh: 'EventStorming 金', en: 'EventStorming Gold' },
+    ];
+
+    async function sha256Hex(str) {
+      const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+      return [...new Uint8Array(buf)].map((b) => b.toString(16).padStart(2, '0')).join('');
+    }
+
+    const gate = document.getElementById('me-gate');
+    const result = document.getElementById('me-result');
+    const status = document.getElementById('me-status');
+    let currentMe = null;
+
+    document.getElementById('me-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('me-email').value.trim().toLowerCase();
+      if (!email) return;
+      status.textContent = isEn ? 'Looking up…' : '查詢中…';
+      try {
+        const hash = await sha256Hex(email + SALT);
+        const res = await fetch(`${API_BASE}/${hash.slice(0, 2)}.json`);
+        if (!res.ok) throw new Error('not found');
+        const shard = await res.json();
+        const me = shard[hash];
+        if (!me) throw new Error('not found');
+        currentMe = me;
+        render(me);
+        gate.hidden = true;
+        result.hidden = false;
+        refreshCard(me);
+        history.replaceState(null, '', '#me');
+      } catch {
+        status.innerHTML = isEn
+          ? `No records found for that email. <a href="${govHref}">Request a manual add</a>.`
+          : `查無此 email 的紀錄。<a href="${govHref}">申請補登</a>。`;
+      }
+    });
+
+    function render(me) {
+      const rankIdx = RANKS.findIndex((r) => r.key === me.rank);
+      const rank = RANKS[rankIdx] ?? RANKS[0];
+      document.getElementById('me-hero-badge').innerHTML = badgeSvg(me.rank);
+      document.getElementById('me-rank-pos').textContent = (isEn ? 'Current rank · ' : '目前位階 · ') + `${rankIdx + 1} / 5`;
+      document.getElementById('me-rank-name').textContent = rank.name;
+      document.getElementById('me-rank-sub').innerHTML = isEn
+        ? `${isEn ? rank.en : rank.zh} — <strong>${me.score}</strong> pts across <strong>${me.totalEvents}</strong> events, <strong>${me.firstYear}–${me.lastYear}</strong>.`
+        : `${rank.zh} — 你已累積 <strong>${me.score}</strong> 加權分、參與 <strong>${me.totalEvents}</strong> 場、橫跨 <strong>${me.firstYear}–${me.lastYear}</strong>。`;
+
+      const next = RANKS[rankIdx + 1];
+      const bar = document.getElementById('me-progress-bar');
+      if (next && me.nextThreshold) {
+        const pct = Math.min(100, Math.round((me.score / me.nextThreshold) * 100));
+        bar.style.width = pct + '%';
+        const remain = Math.max(0, Math.ceil(me.nextThreshold - me.score));
+        // 附加條件（如「需 15 分且跨 ≥2 種活動類型」）— 對應設計稿括號說明
+        const req = isEn ? next.reqEn : next.reqZh;
+        document.getElementById('me-rank-next').innerHTML = isEn
+          ? `<strong style="color:var(--accent)">${remain} more pts</strong> to <strong style="color:var(--ink)">${next.name}</strong>${req ? ` <span style="color:var(--ink-faint)">(${req})</span>` : ''}`
+          : `距離 <strong style="color:var(--ink)">${next.name}</strong> 還差 <strong style="color:var(--accent)">${remain} 分</strong>${req ? `<span style="color:var(--ink-faint)">（${req}）</span>` : ''}`;
+      } else {
+        bar.style.width = '100%';
+        document.getElementById('me-rank-next').textContent = isEn ? 'Top rank reached.' : '已達最高位階。';
+      }
+
+      document.getElementById('me-cta-t').textContent = isEn
+        ? 'Join the next meetup, unlock your next milestone →'
+        : '報名下一場活動，解鎖下一枚里程碑 →';
+
+      // 技能樹
+      const skills = document.getElementById('me-skills');
+      skills.innerHTML = Object.entries(me.topics || {})
+        .sort((a, b) => b[1] - a[1])
+        .map(([k, n]) => {
+          const pct = Math.min(100, (n / 5) * 100);
+          return `<div class="me-skill">
+            <div class="me-skill__top"><span class="me-skill__name">${TOPIC_LABELS[k] ?? k}</span>
+            <span class="me-skill__tier">${tierOf(n)}</span></div>
+            <div class="me-skill__track"><div class="me-skill__fill" style="width:${pct}%"></div></div>
+            <p class="me-skill__n">${n} ${isEn ? 'events' : '場'}</p></div>`;
+        })
+        .join('');
+
+      // 時間軸
+      document.getElementById('me-timeline').innerHTML = (me.events || [])
+        .map(
+          (e) => `<li class="me-tl"><span class="me-tl__date mono">${e.date}</span>
+          <span class="me-tl__title">${e.title}</span>
+          <span class="me-tl__tag mono">${e.type}</span></li>`
+        )
+        .join('');
+
+      // 徽章牆
+      const owned = new Set(me.badges || []);
+      document.getElementById('me-badge-count').textContent = `${owned.size} / ${BADGE_CATALOG.length}`;
+      document.getElementById('me-badges').innerHTML = BADGE_CATALOG.map((b) => {
+        const has = owned.has(b.id);
+        return `<div class="me-badge" style="opacity:${has ? 1 : 0.4}">
+          <div class="me-badge__icon" style="color:${has ? 'var(--brand-strong)' : 'var(--ink-faint)'}">${b.icon}</div>
+          <div class="me-badge__name">${isEn ? b.en : b.zh}</div></div>`;
+      }).join('');
+    }
+
+    // === 成就卡：canvas 產圖（1200×630，OG 卡比例）→ 頁內預覽 + 下載 ===
+    let cardUrl = null;
+    async function refreshCard(me) {
+      try {
+        await document.fonts.ready; // canvas 畫字前確保 web fonts 已載入
+        cardUrl = await drawCard(me);
+        const imgEl = document.getElementById('me-card-img');
+        imgEl.src = cardUrl;
+        imgEl.hidden = false;
+      } catch (err) {
+        console.error('achievement card failed:', err);
+      }
+    }
+    document.getElementById('me-card-dl').addEventListener('click', () => {
+      if (!cardUrl || !currentMe) return;
+      const a = document.createElement('a');
+      a.href = cardUrl;
+      a.download = `dddtw-journey-${currentMe.rank}.png`;
+      a.click();
+    });
+    // 主題切換時重畫，讓卡片顏色跟著深淺色
+    document.querySelectorAll('[data-theme-toggle]').forEach((btn) =>
+      btn.addEventListener('click', () => currentMe && setTimeout(() => refreshCard(currentMe), 50))
+    );
+
+    // 「查詢其他 email」：回到 gate
+    document.getElementById('me-switch').addEventListener('click', (e) => {
+      e.preventDefault();
+      result.hidden = true;
+      gate.hidden = false;
+      document.getElementById('me-email').value = '';
+      document.getElementById('me-email').focus();
+      history.replaceState(null, '', ' ');
+    });
+
+    // chip 導航：目前區塊高亮
+    const tabs = [...document.querySelectorAll('[data-me-tab]')];
+    const sections = ['me-achievements', 'me-card'].map((id) => document.getElementById(id));
+    const highlight = () => {
+      let active = 0;
+      sections.forEach((s, i) => { if (s.getBoundingClientRect().top < 140) active = i; });
+      tabs.forEach((t, i) => t.classList.toggle('me-tab--active', i === active));
+    };
+    window.addEventListener('scroll', highlight, { passive: true });
+
+    async function drawCard(me) {
+      const rankIdx = RANKS.findIndex((r) => r.key === me.rank);
+      const rank = RANKS[rankIdx] ?? RANKS[0];
+      const css = getComputedStyle(document.documentElement);
+      const v = (name, fb) => (css.getPropertyValue(name) || fb).trim();
+      const C = {
+        bg: v('--panel', '#ffffff'), tile: v('--tile', '#fbf8f1'), ink: v('--ink', '#1b2233'),
+        mid: v('--ink-mid', '#5a6376'), faint: v('--ink-faint', '#8a91a3'),
+        brand: v('--brand-strong', '#24417e'), solid: v('--brand-solid', '#24417e'),
+        accent: v('--accent', '#c34a33'), line: v('--line', '#e0dacb'),
+      };
+      const W = 1200, H = 630;
+      const canvas = document.createElement('canvas');
+      canvas.width = W; canvas.height = H;
+      const ctx = canvas.getContext('2d');
+
+      // 背景 + 細框
+      ctx.fillStyle = C.bg; ctx.fillRect(0, 0, W, H);
+      ctx.strokeStyle = C.line; ctx.lineWidth = 2; ctx.strokeRect(24, 24, W - 48, H - 48);
+
+      // 位階徽記（SVG → image）。canvas 需要絕對尺寸的 SVG：
+      // Safari/Firefox 對 width="100%" 的 SVG 不觸發 onload 或畫成 0×0。
+      const svg = badgeSvg(me.rank)
+        .replace('width="100%" height="100%"', 'width="280" height="280"')
+        .replace(/var\(--accent\)/g, C.accent)
+        .replace('style="display:block;color:var(--brand-strong)"', `style="color:${C.brand}"`)
+        .replace(/currentColor/g, C.brand);
+      const img = new Image();
+      const loaded = await new Promise((resolve) => {
+        img.onload = () => resolve(true);
+        img.onerror = () => resolve(false);
+        setTimeout(() => resolve(false), 3000);
+        img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+      });
+      if (loaded) ctx.drawImage(img, 80, 175, 280, 280);
+
+      const L = 420; // 文字左緣
+      ctx.textBaseline = 'alphabetic';
+      // eyebrow
+      ctx.fillStyle = C.accent;
+      ctx.font = '600 22px "Space Grotesk", sans-serif';
+      ctx.fillText((isEn ? 'MY DDD TAIWAN JOURNEY · RANK ' : '我的 DDD TAIWAN 參與旅程 · 位階 ') + `${rankIdx + 1}/5`, L, 195);
+      // 位階名
+      ctx.fillStyle = C.ink;
+      ctx.font = '700 76px "Space Grotesk", "Noto Sans TC", sans-serif';
+      ctx.fillText(rank.name, L, 285);
+      ctx.fillStyle = C.mid;
+      ctx.font = '400 30px "Noto Sans TC", sans-serif';
+      ctx.fillText(isEn ? rank.en : rank.zh, L, 332);
+      // 統計行
+      ctx.fillStyle = C.ink;
+      ctx.font = '500 27px "Noto Sans TC", sans-serif';
+      const stat = isEn
+        ? `${me.totalEvents} events · ${me.score} pts · ${me.firstYear}–${me.lastYear} · ${(me.badges || []).length} badges`
+        : `${me.totalEvents} 場活動 · ${me.score} 加權分 · ${me.firstYear}–${me.lastYear} · ${(me.badges || []).length} 枚徽章`;
+      ctx.fillText(stat, L, 398);
+      // 進度條
+      const bw = 640, bx = L, by = 428;
+      ctx.fillStyle = C.tile; ctx.strokeStyle = C.line;
+      ctx.beginPath(); ctx.roundRect(bx, by, bw, 14, 7); ctx.fill(); ctx.stroke();
+      const pct = me.nextThreshold ? Math.min(1, me.score / me.nextThreshold) : 1;
+      const grad = ctx.createLinearGradient(bx, 0, bx + bw * pct, 0);
+      grad.addColorStop(0, C.solid); grad.addColorStop(1, C.accent);
+      ctx.fillStyle = grad;
+      ctx.beginPath(); ctx.roundRect(bx, by, Math.max(14, bw * pct), 14, 7); ctx.fill();
+      const next = RANKS[rankIdx + 1];
+      ctx.fillStyle = C.faint;
+      ctx.font = '400 22px "Noto Sans TC", sans-serif';
+      ctx.fillText(
+        next && me.nextThreshold
+          ? (isEn ? `${Math.ceil(me.nextThreshold - me.score)} pts to ${next.name}` : `距離 ${next.name} 還差 ${Math.ceil(me.nextThreshold - me.score)} 分`)
+          : (isEn ? 'Top rank reached' : '已達最高位階'),
+        L, by + 48
+      );
+      // 頁腳
+      ctx.fillStyle = C.brand;
+      ctx.font = '600 24px "Space Grotesk", sans-serif';
+      ctx.fillText('DDD TAIWAN', L, 545);
+      ctx.fillStyle = C.faint;
+      ctx.font = '400 22px "JetBrains Mono", monospace';
+      ctx.fillText('ddd-tw.com/me', L + 175, 545);
+
+      return canvas.toDataURL('image/png');
+    }
+
+    function badgeSvg(rank) {
+      const R = 'fill="none" stroke="currentColor" stroke-width="2.2"';
+      const inner = {
+        'value-object': `<circle cx="50" cy="50" r="22" ${R} opacity="0.55"/><circle cx="50" cy="50" r="4.5" fill="var(--accent)"/>`,
+        entity: `<circle cx="50" cy="50" r="22" ${R}/><circle cx="50" cy="50" r="11" ${R} opacity="0.7"/><circle cx="50" cy="50" r="3.4" fill="var(--accent)"/>`,
+        'aggregate-root': `<circle cx="38" cy="50" r="22" ${R}/><circle cx="62" cy="50" r="22" ${R}/><path d="M50 30 A22 22 0 0 1 50 70 A22 22 0 0 1 50 30 Z" fill="var(--accent)"/>`,
+        'bounded-context': `<rect x="10" y="18" width="80" height="64" rx="10" ${R} opacity="0.5"/><circle cx="38" cy="50" r="19" ${R}/><circle cx="62" cy="50" r="19" ${R}/><path d="M50 33.7 A19 19 0 0 1 50 66.3 A19 19 0 0 1 50 33.7 Z" fill="var(--accent)"/>`,
+        'domain-expert': `<path d="M22 30 Q50 10 78 30" fill="none" stroke="var(--accent)" stroke-width="2.4" stroke-linecap="round"/><circle cx="38" cy="54" r="19" ${R}/><circle cx="62" cy="54" r="19" ${R}/><path d="M50 37.7 A19 19 0 0 1 50 70.3 A19 19 0 0 1 50 37.7 Z" fill="var(--accent)"/>`,
+      };
+      return `<svg viewBox="0 0 100 100" width="100%" height="100%" style="display:block;color:var(--brand-strong)">${inner[rank] ?? inner['value-object']}</svg>`;
+    }
+  </script>
+</Base>
