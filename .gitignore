@@ -14,5 +14,13 @@ pnpm-debug.log*
 .env
 .env.production
 
+# 個資紅線：原始名單（明文 email/姓名/手機）與內部談判文件，永不進 public repo
+dddtw-attendees/
+docs-internal/
+
 # macOS
 .DS_Store
+
+# Python
+__pycache__/
+*.pyc
