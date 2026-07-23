@@ -187,49 +187,99 @@ const homeLd = {
           : 'DDD Taiwan 由一群志工共同籌辦 — 從第一場聚會到現在，愈來愈多人一起投入幫忙。'
       }
     </p>
-    <div class="org-list">
-      {
-        organizers.map((c, i) => {
-          const name = isEn ? (c.data.nameEn ?? c.data.name) : c.data.name;
-          const role = isEn ? c.data.roleEn : c.data.role;
-          const tagline = isEn ? c.data.taglineEn : c.data.tagline;
-          const bio = isEn ? c.data.bioEn : c.data.bio;
-          const links = c.data.links ?? {};
-          const hasLinks = linkLabels.some(([key]) => links[key]);
-          return (
-            <div class="card card--hover orgc">
-              <div class="orgc__avatar">
-                {c.data.photo ? (
-                  <img src={c.data.photo} alt={name} loading="lazy" width="80" height="80" />
-                ) : (
-                  <span class="orgc__monogram" style={`background: ${AVATAR_COLORS[i % AVATAR_COLORS.length]};`}>
-                    {initials(c.data.nameEn ?? c.data.name)}
-                  </span>
-                )}
-              </div>
-              <div class="orgc__body">
-                <div class="orgc__head">
-                  <h3 class="orgc__name">{name}</h3>
-                  <span class="orgc__role">{role}</span>
+    <div class="org-carousel">
+      <div class="org-stage">
+        {
+          organizers.map((c, i) => {
+            const name = isEn ? (c.data.nameEn ?? c.data.name) : c.data.name;
+            const role = isEn ? c.data.roleEn : c.data.role;
+            const tagline = isEn ? c.data.taglineEn : c.data.tagline;
+            const bio = isEn ? c.data.bioEn : c.data.bio;
+            const links = c.data.links ?? {};
+            const hasLinks = linkLabels.some(([key]) => links[key]);
+            return (
+              <div class={`org-panel${i === 0 ? ' is-active' : ''}`} data-panel={i}>
+                <div class="orgc__avatar">
+                  {c.data.photo ? (
+                    <img src={c.data.photo} alt={name} loading="lazy" width="88" height="88" />
+                  ) : (
+                    <span class="orgc__monogram" style={`background: ${AVATAR_COLORS[i % AVATAR_COLORS.length]};`}>
+                      {initials(c.data.nameEn ?? c.data.name)}
+                    </span>
+                  )}
                 </div>
-                {tagline && <p class="orgc__tagline">{tagline}</p>}
-                {bio && <p class="orgc__bio">{bio}</p>}
-                {hasLinks && (
-                  <p class="orgc__links">
-                    {linkLabels.map(([key, label]) =>
-                      links[key] ? (
-                        <a class="orgc__link font-display" href={links[key]} target="_blank" rel="noopener">
-                          {key === 'website' ? new URL(links[key]!).hostname : label}
-                        </a>
-                      ) : null
-                    )}
-                  </p>
-                )}
+                <div class="orgc__body">
+                  <div class="orgc__head">
+                    <h3 class="orgc__name">{name}</h3>
+                    <span class="orgc__role">{role}</span>
+                  </div>
+                  {tagline && <p class="orgc__tagline">{tagline}</p>}
+                  {bio && <p class="orgc__bio">{bio}</p>}
+                  {hasLinks && (
+                    <p class="orgc__links">
+                      {linkLabels.map(([key, label]) =>
+                        links[key] ? (
+                          <a class="orgc__link font-display" href={links[key]} target="_blank" rel="noopener">
+                            {key === 'website' ? new URL(links[key]!).hostname : label}
+                          </a>
+                        ) : null
+                      )}
+                    </p>
+                  )}
+                </div>
               </div>
-            </div>
-          );
-        })
-      }
+            );
+          })
+        }
+      </div>
+      <div class="org-nav">
+        <button class="org-nav__btn" type="button" data-dir="-1" aria-label={isEn ? 'Previous organizer' : '上一位'}>‹</button>
+        <div class="org-rail">
+          {
+            organizers.map((c, i) => {
+              const name = isEn ? (c.data.nameEn ?? c.data.name) : c.data.name;
+              return (
+                <button class={`org-rail__item${i === 0 ? ' is-active' : ''}`} type="button" data-goto={i} aria-label={name} title={name}>
+                  {c.data.photo ? (
+                    <img src={c.data.photo} alt="" loading="lazy" width="44" height="44" />
+                  ) : (
+                    <span class="org-rail__mono" style={`background: ${AVATAR_COLORS[i % AVATAR_COLORS.length]};`}>
+                      {initials(c.data.nameEn ?? c.data.name)}
+                    </span>
+                  )}
+                </button>
+              );
+            })
+          }
+        </div>
+        <button class="org-nav__btn" type="button" data-dir="1" aria-label={isEn ? 'Next organizer' : '下一位'}>›</button>
+      </div>
     </div>
+    <script>
+      {
+        const carousel = document.querySelector('.org-carousel');
+        if (carousel) {
+          const panels = Array.from(carousel.querySelectorAll('.org-panel'));
+          const items = Array.from(carousel.querySelectorAll('.org-rail__item'));
+          let cur = 0;
+          const show = (n) => {
+            cur = (n + panels.length) % panels.length;
+            panels.forEach((p, i) => p.classList.toggle('is-active', i === cur));
+            items.forEach((it, i) => {
+              const on = i === cur;
+              it.classList.toggle('is-active', on);
+              it.setAttribute('aria-current', on ? 'true' : 'false');
+            });
+            items[cur]?.scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'smooth' });
+          };
+          carousel.querySelectorAll('[data-goto]').forEach((b) =>
+            b.addEventListener('click', () => show(Number(b.dataset.goto)))
+          );
+          carousel.querySelectorAll('[data-dir]').forEach((b) =>
+            b.addEventListener('click', () => show(cur + Number(b.dataset.dir)))
+          );
+        }
+      }
+    </script>
   </section>
 </Base>
