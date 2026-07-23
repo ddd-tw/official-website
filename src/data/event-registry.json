@@ -1,0 +1,739 @@
+[
+  {
+    "eventId": "2019-05-4th-meetup",
+    "title": "4th Meetup — LinkedIn 微服務開發遊歷",
+    "date": "2019-05-01",
+    "type": "meetup",
+    "topics": [
+      "ddd-core",
+      "architecture"
+    ],
+    "sources": [
+      "event-dddtaiwan4thmeetup"
+    ]
+  },
+  {
+    "eventId": "2019-07-5th-meetup",
+    "title": "5th Meetup",
+    "date": "2019-07-27",
+    "type": "meetup",
+    "topics": [
+      "ddd-core"
+    ],
+    "sources": [
+      "event-dddtaiwan5thmeetup"
+    ]
+  },
+  {
+    "eventId": "2019-iddd-studygroup",
+    "title": "IDDD 讀書會（2019 系列）",
+    "date": "2019-06-01",
+    "type": "bookclub",
+    "topics": [
+      "ddd-core"
+    ],
+    "sources": [
+      "event-iddd-studygroup-3rd",
+      "event-iddd-studygroup-4th",
+      "event-iddd-studygroup-5thupd-copy-1",
+      "event-iddd-studygroup-6th",
+      "event-iddd-studygroup-7th",
+      "event-iddd-studygroup-8th",
+      "event-iddd-studygroup-9th-final"
+    ],
+    "seriesOf": 7,
+    "seriesCounts": true
+  },
+  {
+    "eventId": "2019-11-dpimp",
+    "title": "DPIMP Meetup（待核對名稱）",
+    "date": "2019-11-09",
+    "type": "meetup",
+    "topics": [
+      "ddd-core"
+    ],
+    "sources": [
+      "event-dpimp"
+    ],
+    "todo": true
+  },
+  {
+    "eventId": "2019-12-monolith-to-microservices",
+    "title": "Project Upscale — Monolith 轉型 Microservices",
+    "date": "2019-12-11",
+    "type": "meetup",
+    "topics": [
+      "architecture"
+    ],
+    "sources": [
+      "event-monolith2microservices"
+    ]
+  },
+  {
+    "eventId": "2019-12-orleans",
+    "title": "DDD 在 .NET Core 的另類實現：Orleans",
+    "date": "2019-12-27",
+    "type": "meetup",
+    "topics": [
+      "architecture",
+      "ddd-core"
+    ],
+    "sources": [
+      "event-orleans"
+    ]
+  },
+  {
+    "eventId": "2020-ddd-studygroup",
+    "title": "DDD 讀書會（2020 系列）",
+    "date": "2020-03-01",
+    "type": "bookclub",
+    "topics": [
+      "ddd-core"
+    ],
+    "sources": [
+      "event-dddtw-2020-studygroup",
+      "event-dddtw-2020-studygroup-2nd",
+      "event-dddtw-2020-studygroup-3rd",
+      "event-dddtw-2020-studygroup-4th",
+      "event-dddtw-2020-studygroup-5th",
+      "event-dddtw-2020-studygroup-6th",
+      "event-dddtw-2020-studygroup-7th-",
+      "event-dddtw-2020-studygroup-8th",
+      "event-dddtw-2020-studygroup-9th-final"
+    ],
+    "seriesOf": 9,
+    "seriesCounts": true
+  },
+  {
+    "eventId": "2020-06-online-meetup",
+    "title": "6月線上聚會 — DDD 即將起飛",
+    "date": "2020-06-27",
+    "type": "meetup",
+    "topics": [
+      "ddd-core"
+    ],
+    "sources": [
+      "event-aeec5df0"
+    ]
+  },
+  {
+    "eventId": "2020-07-salon",
+    "title": "7月沙龍",
+    "date": "2020-07-15",
+    "type": "meetup",
+    "topics": [
+      "ddd-core"
+    ],
+    "sources": [
+      "event-202007-salon"
+    ],
+    "todo": true
+  },
+  {
+    "eventId": "2020-08-legacy-code",
+    "title": "DDD × 重構戰勝 Legacy Code",
+    "date": "2020-08-26",
+    "type": "meetup",
+    "topics": [
+      "ddd-core",
+      "collaboration"
+    ],
+    "sources": [
+      "event-2020-8-meetup"
+    ]
+  },
+  {
+    "eventId": "2020-09-tour-tainan",
+    "title": "DDD Tour 台南站（2020）",
+    "date": "2020-09-12",
+    "type": "tour",
+    "topics": [
+      "ddd-core"
+    ],
+    "sources": [
+      "event-dddtw-tour-tainan"
+    ]
+  },
+  {
+    "eventId": "2020-10-workshop-taichung",
+    "title": "DDD Workshop 台中站",
+    "date": "2020-10-31",
+    "type": "workshop",
+    "topics": [
+      "collaboration"
+    ],
+    "sources": [
+      "event-2020-ddd-workshop-taichung-station"
+    ]
+  },
+  {
+    "eventId": "2020-11-conference",
+    "title": "首屆年會 DDD Taiwan Conference 2020",
+    "date": "2020-11-27",
+    "type": "conference",
+    "topics": [
+      "ddd-core",
+      "strategy"
+    ],
+    "sources": [
+      "event-dddtw-conf-2020",
+      "event-dddtw-conf-2020-tech-track-additional"
+    ],
+    "weight": 2
+  },
+  {
+    "eventId": "2021-study-group",
+    "title": "2021 練功讀書會（系列）",
+    "date": "2021-03-01",
+    "type": "bookclub",
+    "topics": [
+      "ddd-core"
+    ],
+    "sources": [
+      "event-2021-study-group",
+      "event-2021-study-group-2",
+      "event-2021-study-group-3",
+      "event-2021-study-group-4",
+      "event-2021-study-group-4-2",
+      "event-2021-study-group-5",
+      "event-2021-study-group-7"
+    ],
+    "seriesOf": 7,
+    "seriesCounts": true
+  },
+  {
+    "eventId": "2021-04-meetup",
+    "title": "2021 四月 Meetup",
+    "date": "2021-04-13",
+    "type": "meetup",
+    "topics": [
+      "ddd-core"
+    ],
+    "sources": [
+      "event-2021-04-meetup"
+    ],
+    "todo": true
+  },
+  {
+    "eventId": "2021-05-domain-storytelling",
+    "title": "初探 Domain Storytelling",
+    "date": "2021-05-22",
+    "type": "meetup",
+    "topics": [
+      "collaboration"
+    ],
+    "sources": [
+      "event-2021-05-meetup"
+    ]
+  },
+  {
+    "eventId": "2021-07-event-storming-return",
+    "title": "Event Storming 的奧義之王者再臨",
+    "date": "2021-07-24",
+    "type": "meetup",
+    "topics": [
+      "collaboration",
+      "eventstorming"
+    ],
+    "sources": [
+      "event-2021-07-meetup"
+    ]
+  },
+  {
+    "eventId": "2021-08-footprints-speakers",
+    "title": "他/她們的足跡 — 認識年會海外講者",
+    "date": "2021-08-28",
+    "type": "meetup",
+    "topics": [
+      "ddd-core"
+    ],
+    "sources": [
+      "event-2021-08-meetup"
+    ]
+  },
+  {
+    "eventId": "2021-09-cross-strait-talks",
+    "title": "DDD 紫禁之巔 — 兩岸風雲大會談",
+    "date": "2021-09-25",
+    "type": "meetup",
+    "topics": [
+      "ddd-core"
+    ],
+    "sources": [
+      "event-2021-09-meetup"
+    ]
+  },
+  {
+    "eventId": "2021-10-conference",
+    "title": "第二屆年會 — 足跡 Footprints",
+    "date": "2021-10-15",
+    "type": "conference",
+    "topics": [
+      "ddd-core",
+      "strategy"
+    ],
+    "sources": [
+      "event-dddesigntwconference2021"
+    ],
+    "weight": 2
+  },
+  {
+    "eventId": "2022-04-practice",
+    "title": "2022-04 練功場（實體）",
+    "date": "2022-04-16",
+    "type": "workshop",
+    "topics": [
+      "collaboration"
+    ],
+    "sources": [
+      "accupass-2022-04-16"
+    ],
+    "todo": true
+  },
+  {
+    "eventId": "2022-06-meetup",
+    "title": "2022-06 Meetup",
+    "date": "2022-06-11",
+    "type": "meetup",
+    "topics": [
+      "ddd-core"
+    ],
+    "sources": [
+      "accupass-2022-06-11"
+    ],
+    "todo": true
+  },
+  {
+    "eventId": "2022-07-meetup",
+    "title": "2022-07 Meetup",
+    "date": "2022-07-23",
+    "type": "meetup",
+    "topics": [
+      "ddd-core"
+    ],
+    "sources": [
+      "accupass-2022-07-23"
+    ],
+    "todo": true
+  },
+  {
+    "eventId": "2022-10-goos",
+    "title": "GOOS 導讀（上午場）",
+    "date": "2022-10-22",
+    "type": "bookclub",
+    "topics": [
+      "ddd-core",
+      "tdd"
+    ],
+    "sources": [
+      "accupass-2022-10-22"
+    ],
+    "todo": true
+  },
+  {
+    "eventId": "2022-12-meetup",
+    "title": "2022-12 Meetup",
+    "date": "2022-12-17",
+    "type": "meetup",
+    "topics": [
+      "ddd-core"
+    ],
+    "sources": [
+      "accupass-2022-12-17"
+    ],
+    "todo": true
+  },
+  {
+    "eventId": "2023-01-online",
+    "title": "2023-01 線上直播",
+    "date": "2023-01-13",
+    "type": "meetup",
+    "topics": [
+      "ddd-core"
+    ],
+    "sources": [
+      "accupass-2023-01-13"
+    ],
+    "todo": true
+  },
+  {
+    "eventId": "2023-06-meetup",
+    "title": "2023-06 Meetup",
+    "date": "2023-06-03",
+    "type": "meetup",
+    "topics": [
+      "ddd-core"
+    ],
+    "sources": [
+      "accupass-2023-06-03"
+    ],
+    "todo": true
+  },
+  {
+    "eventId": "2023-09-conference",
+    "title": "第三屆年會 — 啟發",
+    "date": "2023-09-16",
+    "type": "conference",
+    "topics": [
+      "ddd-core",
+      "strategy"
+    ],
+    "sources": [
+      "event-dddtwconf2023"
+    ],
+    "weight": 2
+  },
+  {
+    "eventId": "2023-11-pragmatic-tdd",
+    "title": "Pragmatic TDD 導讀會",
+    "date": "2023-11-06",
+    "type": "bookclub",
+    "topics": [
+      "tdd",
+      "ddd-core"
+    ],
+    "sources": [
+      "event-202311pragmatictdd"
+    ]
+  },
+  {
+    "eventId": "2024-01-cloud-native-deploy",
+    "title": "橫跨開發與維運的雲原生應用部署平台",
+    "date": "2024-01-11",
+    "type": "meetup",
+    "topics": [
+      "architecture"
+    ],
+    "sources": [
+      "event-cloud-native-deploy"
+    ]
+  },
+  {
+    "eventId": "2024-02-event-storming-team",
+    "title": "Event Storming 是個好東西",
+    "date": "2024-02-29",
+    "type": "meetup",
+    "topics": [
+      "collaboration",
+      "eventstorming"
+    ],
+    "sources": [
+      "event-202402-es-for-the-team"
+    ]
+  },
+  {
+    "eventId": "2024-04-meetup",
+    "title": "2024-04 Meetup（下班後還努力學習）",
+    "date": "2024-04-10",
+    "type": "meetup",
+    "topics": [
+      "ddd-core"
+    ],
+    "sources": [
+      "accupass-2024-04-10"
+    ],
+    "todo": true
+  },
+  {
+    "eventId": "2024-05-meetup",
+    "title": "2024-05 Meetup",
+    "date": "2024-05-21",
+    "type": "meetup",
+    "topics": [
+      "ddd-core"
+    ],
+    "sources": [
+      "accupass-2024-05-21"
+    ],
+    "todo": true
+  },
+  {
+    "eventId": "2024-06-workshop-a",
+    "title": "2024-06-22 工作坊",
+    "date": "2024-06-22",
+    "type": "workshop",
+    "topics": [
+      "collaboration"
+    ],
+    "sources": [
+      "accupass-2024-06-22"
+    ],
+    "todo": true
+  },
+  {
+    "eventId": "2024-06-meetup",
+    "title": "2024-06-26 Meetup",
+    "date": "2024-06-26",
+    "type": "meetup",
+    "topics": [
+      "ddd-core"
+    ],
+    "sources": [
+      "accupass-2024-06-26"
+    ],
+    "todo": true
+  },
+  {
+    "eventId": "2024-06-workshop-b",
+    "title": "2024-06-29 工作坊",
+    "date": "2024-06-29",
+    "type": "workshop",
+    "topics": [
+      "collaboration"
+    ],
+    "sources": [
+      "accupass-2024-06-29"
+    ],
+    "todo": true
+  },
+  {
+    "eventId": "2024-07-workshop",
+    "title": "2024-07-06 全日工作坊",
+    "date": "2024-07-06",
+    "type": "workshop",
+    "topics": [
+      "collaboration"
+    ],
+    "sources": [
+      "accupass-2024-07-06"
+    ],
+    "todo": true
+  },
+  {
+    "eventId": "2024-08-meetup-a",
+    "title": "2024-08-16 Meetup",
+    "date": "2024-08-16",
+    "type": "meetup",
+    "topics": [
+      "ddd-core"
+    ],
+    "sources": [
+      "accupass-2024-08-16"
+    ],
+    "todo": true
+  },
+  {
+    "eventId": "2024-08-meetup-b",
+    "title": "2024-08-23 Meetup",
+    "date": "2024-08-23",
+    "type": "meetup",
+    "topics": [
+      "ddd-core"
+    ],
+    "sources": [
+      "accupass-2024-08-23"
+    ],
+    "todo": true
+  },
+  {
+    "eventId": "2024-09-meetup",
+    "title": "2024-09-11 Meetup",
+    "date": "2024-09-11",
+    "type": "meetup",
+    "topics": [
+      "ddd-core"
+    ],
+    "sources": [
+      "accupass-2024-09-11"
+    ],
+    "todo": true
+  },
+  {
+    "eventId": "2024-09-conference",
+    "title": "第四屆年會 — System Design & Socio-technical",
+    "date": "2024-09-13",
+    "type": "conference",
+    "topics": [
+      "architecture",
+      "strategy",
+      "ddd-core"
+    ],
+    "sources": [
+      "accupass-2024-09-13"
+    ],
+    "weight": 2
+  },
+  {
+    "eventId": "2024-09-online-course",
+    "title": "2024-09 線上課程（含回放）",
+    "date": "2024-09-29",
+    "type": "workshop",
+    "topics": [
+      "ddd-core"
+    ],
+    "sources": [
+      "accupass-2024-09-29"
+    ],
+    "todo": true
+  },
+  {
+    "eventId": "2024-10-kafka-flink",
+    "title": "用 Kafka 與 Flink 打造即時新世代 AI 應用",
+    "date": "2024-10-15",
+    "type": "meetup",
+    "topics": [
+      "architecture",
+      "ai"
+    ],
+    "sources": [
+      "accupass-2024-10-15"
+    ]
+  },
+  {
+    "eventId": "2025-01-open-space",
+    "title": "一月 Open Space — 2025 社群的可能性",
+    "date": "2025-01-11",
+    "type": "meetup",
+    "topics": [
+      "strategy"
+    ],
+    "sources": [
+      "accupass-2025-01-11"
+    ]
+  },
+  {
+    "eventId": "2025-04-online-meetup-mcp",
+    "title": "四月線上 Meetup — 閒聊架構與 MCP",
+    "date": "2025-04-19",
+    "type": "meetup",
+    "topics": [
+      "architecture",
+      "ai"
+    ],
+    "sources": [
+      "accupass-2025-04-19"
+    ]
+  },
+  {
+    "eventId": "2025-04-replay",
+    "title": "2025-04 回放票",
+    "date": "2025-04-27",
+    "type": "workshop",
+    "topics": [
+      "ai"
+    ],
+    "sources": [
+      "accupass-2025-04-27"
+    ],
+    "todo": true
+  },
+  {
+    "eventId": "2025-05-dx-metrics-workshop",
+    "title": "DORA × DevEx 指標工作坊",
+    "date": "2025-05-18",
+    "type": "workshop",
+    "topics": [
+      "architecture",
+      "strategy"
+    ],
+    "sources": [
+      "accupass-2025-05-18"
+    ]
+  },
+  {
+    "eventId": "2025-05-n8n-workshop",
+    "title": "n8n 入門實作工作坊",
+    "date": "2025-05-24",
+    "type": "workshop",
+    "topics": [
+      "ai"
+    ],
+    "sources": [
+      "accupass-2025-05-24"
+    ],
+    "todo": true
+  },
+  {
+    "eventId": "2025-07-ai-vibe-coding-workshop",
+    "title": "AI × Vibe Coding × 協同開發實戰工作坊",
+    "date": "2025-07-19",
+    "type": "workshop",
+    "topics": [
+      "ai",
+      "collaboration"
+    ],
+    "sources": [
+      "accupass-2025-07-19"
+    ]
+  },
+  {
+    "eventId": "2025-09-ddd-tour-tainan",
+    "title": "DDD Tour 台南站 — Clean Architecture × n8n",
+    "date": "2025-09-06",
+    "type": "tour",
+    "topics": [
+      "architecture",
+      "ai"
+    ],
+    "sources": [
+      "accupass-2025-09-06"
+    ]
+  },
+  {
+    "eventId": "2025-10-ddd-tour-taichung",
+    "title": "DDDTW 台中 Tour — DaC × AIDLC × Vibe Coding",
+    "date": "2025-10-18",
+    "type": "tour",
+    "topics": [
+      "ai",
+      "collaboration"
+    ],
+    "sources": [
+      "accupass-2025-10-18"
+    ]
+  },
+  {
+    "eventId": "2025-11-conference",
+    "title": "第五屆年會 — AI 時代軟體開發方法",
+    "date": "2025-11-08",
+    "type": "conference",
+    "topics": [
+      "ai",
+      "ddd-core",
+      "strategy"
+    ],
+    "sources": [
+      "accupass-2025-11-08"
+    ],
+    "weight": 2
+  },
+  {
+    "eventId": "2026-04-meetup",
+    "title": "2026-04 Meetup",
+    "date": "2026-04-24",
+    "type": "meetup",
+    "topics": [
+      "ddd-core"
+    ],
+    "sources": [
+      "accupass-2026-04-24"
+    ],
+    "todo": true
+  },
+  {
+    "eventId": "2026-05-meetup-a",
+    "title": "2026-05-16 Meetup",
+    "date": "2026-05-16",
+    "type": "meetup",
+    "topics": [
+      "ddd-core"
+    ],
+    "sources": [
+      "accupass-2026-05-16"
+    ],
+    "todo": true
+  },
+  {
+    "eventId": "2026-05-meetup-b",
+    "title": "2026-05-27 Meetup",
+    "date": "2026-05-27",
+    "type": "meetup",
+    "topics": [
+      "ddd-core"
+    ],
+    "sources": [
+      "accupass-2026-05-27"
+    ],
+    "todo": true
+  }
+]
