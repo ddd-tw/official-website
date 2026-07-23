@@ -23,7 +23,7 @@ npm run preview  # 預覽 build 結果
 | 活動（Meetup / 年會 / 讀書會 / 工作坊 / Tour） | `src/content/events/*.md` | **複製 `_template.md`** 照註解填寫（含 `topics` 主題標籤、報名方式）；活動後補 `videoUrl`。merge 後會自動發 Discord 公告（見下方「活動自動化」） |
 | 書單 | `src/data/books.json` | 填分類（`strategy` / `collaboration` / `ddd-core` / `architecture`）、封面放 `public/covers/` |
 | 精選影片 | `src/data/videos.json` | 填 `title` / `category` / `url` |
-| 貢獻者 | `src/data/contributors.json` | 照片放 `public/contributors/`，附中英 bio 與連結 |
+| 貢獻者 / 籌辦團隊 | `src/data/contributors.json` | 照片放 `public/contributors/`，附中英 bio 與連結；填寫格式與照片規格見 [CONTRIBUTING-profile.md](./CONTRIBUTING-profile.md) |
 
 發布流程：開 branch → 新增或修改檔案 → 開 Pull Request → 社群 Review → merge。
 所有資料欄位都有 schema 驗證（`src/content.config.ts`），欄位寫錯時 CI 會在 PR 上直接擋下來。
