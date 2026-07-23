@@ -751,13 +751,33 @@ a.card:hover,
   margin-top: 24px;
 }
 
-.orgx__cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 18px;
+.orgx__viewport {
+  overflow: hidden;
+}
+
+.orgx__track {
+  --vis: 4;
+  --gap: 18px;
+  display: flex;
+  gap: var(--gap);
+  transition: transform 520ms cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+@media (max-width: 1099px) {
+  .orgx__track { --vis: 3; }
+}
+
+@media (max-width: 820px) {
+  .orgx__track { --vis: 2; }
+}
+
+@media (max-width: 560px) {
+  .orgx__track { --vis: 1; }
 }
 
 .orgx__card {
+  flex: 0 0 calc((100% - (var(--vis) - 1) * var(--gap)) / var(--vis));
   display: flex;
   flex-direction: column;
   background: var(--panel);
@@ -765,16 +785,6 @@ a.card:hover,
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 1px 3px rgba(27, 34, 51, 0.06);
-  transition: transform 160ms ease, box-shadow 160ms ease;
-}
-
-.orgx__card[hidden] {
-  display: none;
-}
-
-.orgx__card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 30px var(--card-glow);
 }
 
 .orgx__photo {

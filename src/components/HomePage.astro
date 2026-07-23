@@ -201,95 +201,121 @@ const homeLd = {
     </p>
     <div class="orgx">
       <button class="orgx__arrow orgx__arrow--prev" type="button" data-dir="-1" aria-label={isEn ? 'Previous' : '上一組'}>‹</button>
-      <div class="orgx__cards">
-        {
-          organizers.map((c, i) => {
-            const name = isEn ? (c.data.nameEn ?? c.data.name) : c.data.name;
-            const role = isEn ? c.data.roleEn : c.data.role;
-            const tagline = isEn ? c.data.taglineEn : c.data.tagline;
-            const links = c.data.links ?? {};
-            const hasLinks = linkLabels.some(([key]) => links[key]);
-            return (
-              <article class="orgx__card">
-                <div class="orgx__photo">
-                  {c.data.photo ? (
-                    <img src={c.data.photo} alt={name} loading="lazy" />
-                  ) : (
-                    <span class="orgx__mono" style={`background: ${AVATAR_COLORS[i % AVATAR_COLORS.length]};`}>
-                      {initials(c.data.nameEn ?? c.data.name)}
-                    </span>
-                  )}
-                </div>
-                <div class="orgx__info">
-                  <h3 class="orgx__name">{name}</h3>
-                  <p class="orgx__role">{tagline || role}</p>
-                  {hasLinks && (
-                    <>
-                      <span class="orgx__rule" />
-                      <div class="orgx__social">
-                        {linkLabels.map(([key, label]) =>
-                          links[key] ? (
-                            <a
-                              class="orgx__icon"
-                              href={links[key]}
-                              target="_blank"
-                              rel="noopener"
-                              aria-label={label}
-                              title={label}
-                              set:html={socialIcons[key]}
-                            />
-                          ) : null
-                        )}
-                      </div>
-                    </>
-                  )}
-                </div>
-              </article>
-            );
-          })
-        }
+      <div class="orgx__viewport">
+        <div class="orgx__track">
+          {
+            organizers.map((c, i) => {
+              const name = isEn ? (c.data.nameEn ?? c.data.name) : c.data.name;
+              const role = isEn ? c.data.roleEn : c.data.role;
+              const tagline = isEn ? c.data.taglineEn : c.data.tagline;
+              const links = c.data.links ?? {};
+              const hasLinks = linkLabels.some(([key]) => links[key]);
+              return (
+                <article class="orgx__card">
+                  <div class="orgx__photo">
+                    {c.data.photo ? (
+                      <img src={c.data.photo} alt={name} loading="lazy" />
+                    ) : (
+                      <span class="orgx__mono" style={`background: ${AVATAR_COLORS[i % AVATAR_COLORS.length]};`}>
+                        {initials(c.data.nameEn ?? c.data.name)}
+                      </span>
+                    )}
+                  </div>
+                  <div class="orgx__info">
+                    <h3 class="orgx__name">{name}</h3>
+                    <p class="orgx__role">{tagline || role}</p>
+                    {hasLinks && (
+                      <>
+                        <span class="orgx__rule" />
+                        <div class="orgx__social">
+                          {linkLabels.map(([key, label]) =>
+                            links[key] ? (
+                              <a
+                                class="orgx__icon"
+                                href={links[key]}
+                                target="_blank"
+                                rel="noopener"
+                                aria-label={label}
+                                title={label}
+                                set:html={socialIcons[key]}
+                              />
+                            ) : null
+                          )}
+                        </div>
+                      </>
+                    )}
+                  </div>
+                </article>
+              );
+            })
+          }
+        </div>
       </div>
       <button class="orgx__arrow orgx__arrow--next" type="button" data-dir="1" aria-label={isEn ? 'Next' : '下一組'}>›</button>
       <div class="orgx__dots" aria-label={isEn ? 'Carousel pages' : '輪播頁'} />
     </div>
     <script>
       {
+        const INTERVAL = 3800; // 自動輪播間隔（毫秒），一次一位
+        const CLONES = 4; // 兩端各複製幾張以達成無縫循環（≥ 最大同時可見數）
         const root = document.querySelector('.orgx');
-        if (root) {
-          const grid = root.querySelector('.orgx__cards');
-          const cards = Array.from(grid.children);
-          const dotsWrap = root.querySelector('.orgx__dots');
+        const track = root && root.querySelector('.orgx__track');
+        const dotsWrap = root && root.querySelector('.orgx__dots');
+        if (track && track.children.length > 1) {
+          const reals = Array.from(track.children);
+          const N = reals.length;
           const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-          let page = 0;
-          let dotCount = -1;
-          let timer;
-          const cols = () => getComputedStyle(grid).gridTemplateColumns.split(' ').length;
-          const pageSize = () => Math.max(1, cols());
-          const pageCount = () => Math.ceil(cards.length / pageSize());
-          const buildDots = (n) => {
-            dotsWrap.innerHTML = '';
-            for (let i = 0; i < n; i++) {
+
+          // 兩端各補 CLONES 張複製卡，讓前後都能無縫繞回
+          const headClones = reals.slice(0, CLONES).map((el) => el.cloneNode(true));
+          const tailClones = reals.slice(-CLONES).map((el) => el.cloneNode(true));
+          [...headClones, ...tailClones].forEach((el) => {
+            el.setAttribute('aria-hidden', 'true');
+            el.querySelectorAll('a').forEach((a) => (a.tabIndex = -1));
+          });
+          tailClones.forEach((el) => track.insertBefore(el, track.firstChild));
+          headClones.forEach((el) => track.appendChild(el));
+
+          let pos = CLONES; // 第一張真實卡的位置
+          const step = () => {
+            const first = track.children[0];
+            const gap = parseFloat(getComputedStyle(track).gap) || 0;
+            return first.getBoundingClientRect().width + gap;
+          };
+          const place = (animate) => {
+            track.style.transition = animate ? '' : 'none';
+            track.style.transform = `translateX(${-pos * step()}px)`;
+            if (!animate) { void track.offsetWidth; track.style.transition = ''; }
+          };
+          const logical = () => (((pos - CLONES) % N) + N) % N;
+          const paintDots = () => {
+            if (!dotsWrap) return;
+            Array.from(dotsWrap.children).forEach((d, i) => d.classList.toggle('is-active', i === logical()));
+          };
+
+          // 圓點：一位一個
+          if (dotsWrap) {
+            for (let i = 0; i < N; i++) {
               const b = document.createElement('button');
               b.type = 'button';
               b.className = 'orgx__dot';
               b.setAttribute('aria-label', `${i + 1}`);
-              b.addEventListener('click', () => { page = i; render(); restart(); });
+              b.addEventListener('click', () => { pos = CLONES + i; place(true); paintDots(); restart(); });
               dotsWrap.appendChild(b);
             }
-          };
-          const render = () => {
-            const ps = pageSize();
-            const n = pageCount();
-            if (n !== dotCount) { buildDots(n); dotCount = n; }
-            page = ((page % n) + n) % n;
-            cards.forEach((el, i) => { el.hidden = Math.floor(i / ps) !== page; });
-            Array.from(dotsWrap.children).forEach((d, i) => d.classList.toggle('is-active', i === page));
-            dotsWrap.style.display = n <= 1 ? 'none' : '';
-          };
-          const go = (d) => { page += d; render(); };
-          const start = () => { if (!reduce && pageCount() > 1) timer = setInterval(() => go(1), 5000); };
-          const stop = () => clearInterval(timer);
-          const restart = () => { stop(); start(); };
+          }
+
+          const go = (d) => { pos += d; place(true); paintDots(); };
+          track.addEventListener('transitionend', () => {
+            if (pos >= CLONES + N) { pos -= N; place(false); }
+            else if (pos < CLONES) { pos += N; place(false); }
+          });
+
+          let timer = null;
+          const stop = () => { if (timer) { clearInterval(timer); timer = null; } };
+          const start = () => { stop(); if (!reduce) timer = setInterval(() => go(1), INTERVAL); };
+          const restart = () => start();
+
           root.querySelectorAll('[data-dir]').forEach((b) =>
             b.addEventListener('click', () => { go(Number(b.dataset.dir)); restart(); })
           );
@@ -298,8 +324,10 @@ const homeLd = {
           root.addEventListener('focusin', stop);
           root.addEventListener('focusout', start);
           let t;
-          window.addEventListener('resize', () => { clearTimeout(t); t = setTimeout(render, 150); });
-          render();
+          window.addEventListener('resize', () => { clearTimeout(t); t = setTimeout(() => place(false), 150); });
+
+          place(false);
+          paintDots();
           start();
         }
       }
