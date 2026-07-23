@@ -3,6 +3,7 @@ title: AI × Vibe Coding × 協同開發實戰工作坊
 titleEn: "AI × Vibe Coding × Collaborative Development Workshop"
 date: 2025-07-19
 type: meetup
+topics: [ai, collaboration]
 link: https://www.accupass.com/organizer/detail/2204070436062239115110
 ---
 

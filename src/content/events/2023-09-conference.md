@@ -3,6 +3,7 @@ title: 第三屆年會 — 啟發
 titleEn: "3rd Annual Conference — Inspiration"
 date: 2023-09-16
 type: conference
+topics: [ddd-core, strategy]
 link: https://dddtaiwan.kktix.cc/events/dddtwconf2023
 ---
 

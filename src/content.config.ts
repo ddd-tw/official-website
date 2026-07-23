@@ -26,17 +26,29 @@ const posts = defineCollection({
  * 活動（Meetup / Conference / Book Club），含歷屆與即將舉行。
  */
 const events = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/events' }),
+  loader: glob({ pattern: ['**/*.md', '!_*.md'], base: './src/content/events' }),
   schema: z.object({
     title: z.string(),
     /** 英文版頁面顯示的活動標題（選填，未填時顯示 title） */
     titleEn: z.string().optional(),
     date: z.coerce.date(),
-    type: z.enum(['meetup', 'conference', 'bookclub']),
+    type: z.enum(['meetup', 'conference', 'bookclub', 'workshop', 'tour']),
     link: z.string().url().optional(),
     location: z.string().optional(),
     /** 活動結束後補充的錄影回放連結 */
     videoUrl: z.string().url().optional(),
+    /** 主題標籤：知識庫四分類（strategy/collaboration/ddd-core/architecture）＋技術標籤
+     *  （eventstorming/tdd/microservices/ai…）。餵成就系統技能樹與知識庫缺口分析。 */
+    topics: z.array(z.string()).default([]),
+    /** 報名方式：external = 外部平台（填 link）；onsite = 自營報名（Phase 3a，活動頁出現報名表單） */
+    registration: z.enum(['external', 'onsite']).optional(),
+    registrationDeadline: z.coerce.date().optional(),
+    /** 名額上限（自營報名時由 Worker 控管） */
+    capacity: z.number().optional(),
+    /** YouTube 直播連結（活動前排程；活動後回放請填 videoUrl） */
+    streamUrl: z.string().url().optional(),
+    /** 講者（對應 contributors 的 name；餵講者徽章） */
+    speakers: z.array(z.string()).default([]),
   }),
 });
 

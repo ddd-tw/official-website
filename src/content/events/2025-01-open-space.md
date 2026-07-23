@@ -3,6 +3,7 @@ title: 一月 Open Space — 2025 年，DDDTW 社群將迎來哪些可能性？
 titleEn: "January Open Space — What's Possible for DDDTW in 2025?"
 date: 2025-01-12
 type: meetup
+topics: [strategy]
 link: https://www.accupass.com/organizer/detail/2204070436062239115110
 ---
 

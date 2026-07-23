@@ -3,6 +3,7 @@ title: 第二屆年會 — 足跡 Footprints
 titleEn: "2nd Annual Conference — Footprints"
 date: 2021-10-15
 type: conference
+topics: [ddd-core, strategy]
 link: https://dddtaiwan.kktix.cc/events/dddesigntwconference2021
 ---
 

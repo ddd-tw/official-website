@@ -3,6 +3,7 @@ title: Project Upscale — 從 Monolith 轉型到 Microservices（與 Agile Taip
 titleEn: "Project Upscale — From Monolith to Microservices (with Agile Taipei)"
 date: 2019-12-11
 type: meetup
+topics: [architecture, microservices]
 link: https://dddtaiwan.kktix.cc/events/monolith2microservices
 location: CLBC
 ---

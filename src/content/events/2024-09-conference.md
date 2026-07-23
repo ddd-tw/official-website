@@ -3,6 +3,7 @@ title: 第四屆年會 — System Design & Socio-technical
 titleEn: "4th Annual Conference — System Design & Socio-technical"
 date: 2024-09-13
 type: conference
+topics: [architecture, strategy, ddd-core]
 link: https://conference.ddd-tw.com/2024/
 ---
 

@@ -3,6 +3,7 @@ title: 四月線上 Meetup — 閒聊架構與 MCP
 titleEn: "April Online Meetup — On Clean Architecture and MCP"
 date: 2025-04-19
 type: meetup
+topics: [architecture, ai]
 link: https://www.accupass.com/organizer/detail/2204070436062239115110
 location: 線上
 ---

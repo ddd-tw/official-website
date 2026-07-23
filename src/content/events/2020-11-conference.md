@@ -3,6 +3,7 @@ title: 首屆年會 — Domain Driven Design Taiwan Conference 2020
 titleEn: "1st Annual Conference — DDD Taiwan Conference 2020"
 date: 2020-11-27
 type: conference
+topics: [ddd-core, strategy]
 link: https://conference.ddd-tw.com/2020/zh-TW/
 videoUrl: https://youtu.be/LQcsmJyUJfQ
 ---
