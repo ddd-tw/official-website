@@ -18,6 +18,14 @@ const initials = (n: string) =>
     .join('')
     .toUpperCase();
 
+// social link 顯示標籤（website 改顯示網域）
+const linkLabels: [string, string][] = [
+  ['github', 'GitHub'],
+  ['linkedin', 'LinkedIn'],
+  ['x', 'X'],
+  ['website', 'Website'],
+];
+
 const entries = isEn
   ? [
       {
@@ -179,29 +187,48 @@ const homeLd = {
           : 'DDD Taiwan 由一群志工共同籌辦 — 從第一場聚會到現在，愈來愈多人一起投入幫忙。'
       }
     </p>
-    <div class="org-ring">
+    <div class="org-list">
       {
-        organizers.map((c, i) => (
-          <div class="org">
-            <div class="org__avatar">
-              {c.data.photo ? (
-                <img
-                  src={c.data.photo}
-                  alt={isEn ? (c.data.nameEn ?? c.data.name) : c.data.name}
-                  loading="lazy"
-                  width="72"
-                  height="72"
-                />
-              ) : (
-                <span class="org__monogram" style={`background: ${AVATAR_COLORS[i % AVATAR_COLORS.length]};`}>
-                  {initials(c.data.nameEn ?? c.data.name)}
-                </span>
-              )}
+        organizers.map((c, i) => {
+          const name = isEn ? (c.data.nameEn ?? c.data.name) : c.data.name;
+          const role = isEn ? c.data.roleEn : c.data.role;
+          const tagline = isEn ? c.data.taglineEn : c.data.tagline;
+          const bio = isEn ? c.data.bioEn : c.data.bio;
+          const links = c.data.links ?? {};
+          const hasLinks = linkLabels.some(([key]) => links[key]);
+          return (
+            <div class="card card--hover orgc">
+              <div class="orgc__avatar">
+                {c.data.photo ? (
+                  <img src={c.data.photo} alt={name} loading="lazy" width="80" height="80" />
+                ) : (
+                  <span class="orgc__monogram" style={`background: ${AVATAR_COLORS[i % AVATAR_COLORS.length]};`}>
+                    {initials(c.data.nameEn ?? c.data.name)}
+                  </span>
+                )}
+              </div>
+              <div class="orgc__body">
+                <div class="orgc__head">
+                  <h3 class="orgc__name">{name}</h3>
+                  <span class="orgc__role">{role}</span>
+                </div>
+                {tagline && <p class="orgc__tagline">{tagline}</p>}
+                {bio && <p class="orgc__bio">{bio}</p>}
+                {hasLinks && (
+                  <p class="orgc__links">
+                    {linkLabels.map(([key, label]) =>
+                      links[key] ? (
+                        <a class="orgc__link font-display" href={links[key]} target="_blank" rel="noopener">
+                          {key === 'website' ? new URL(links[key]!).hostname : label}
+                        </a>
+                      ) : null
+                    )}
+                  </p>
+                )}
+              </div>
             </div>
-            <span class="org__name">{isEn ? (c.data.nameEn ?? c.data.name) : c.data.name}</span>
-            <span class="org__role">{isEn ? c.data.roleEn : c.data.role}</span>
-          </div>
-        ))
+          );
+        })
       }
     </div>
   </section>
