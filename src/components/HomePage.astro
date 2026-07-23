@@ -187,21 +187,20 @@ const homeLd = {
           : 'DDD Taiwan 由一群志工共同籌辦 — 從第一場聚會到現在，愈來愈多人一起投入幫忙。'
       }
     </p>
-    <div class="org-carousel">
-      <div class="org-stage">
+    <div class="org-gridwrap">
+      <div class="org-grid">
         {
           organizers.map((c, i) => {
             const name = isEn ? (c.data.nameEn ?? c.data.name) : c.data.name;
             const role = isEn ? c.data.roleEn : c.data.role;
             const tagline = isEn ? c.data.taglineEn : c.data.tagline;
-            const bio = isEn ? c.data.bioEn : c.data.bio;
             const links = c.data.links ?? {};
             const hasLinks = linkLabels.some(([key]) => links[key]);
             return (
-              <div class={`org-panel${i === 0 ? ' is-active' : ''}`} data-panel={i}>
+              <article class="orgc">
                 <div class="orgc__avatar">
                   {c.data.photo ? (
-                    <img src={c.data.photo} alt={name} loading="lazy" width="88" height="88" />
+                    <img src={c.data.photo} alt={name} loading="lazy" width="52" height="52" />
                   ) : (
                     <span class="orgc__monogram" style={`background: ${AVATAR_COLORS[i % AVATAR_COLORS.length]};`}>
                       {initials(c.data.nameEn ?? c.data.name)}
@@ -214,7 +213,6 @@ const homeLd = {
                     <span class="orgc__role">{role}</span>
                   </div>
                   {tagline && <p class="orgc__tagline">{tagline}</p>}
-                  {bio && <p class="orgc__bio">{bio}</p>}
                   {hasLinks && (
                     <p class="orgc__links">
                       {linkLabels.map(([key, label]) =>
@@ -227,57 +225,45 @@ const homeLd = {
                     </p>
                   )}
                 </div>
-              </div>
+              </article>
             );
           })
         }
       </div>
-      <div class="org-nav">
-        <button class="org-nav__btn" type="button" data-dir="-1" aria-label={isEn ? 'Previous organizer' : '上一位'}>‹</button>
-        <div class="org-rail">
-          {
-            organizers.map((c, i) => {
-              const name = isEn ? (c.data.nameEn ?? c.data.name) : c.data.name;
-              return (
-                <button class={`org-rail__item${i === 0 ? ' is-active' : ''}`} type="button" data-goto={i} aria-label={name} title={name}>
-                  {c.data.photo ? (
-                    <img src={c.data.photo} alt="" loading="lazy" width="44" height="44" />
-                  ) : (
-                    <span class="org-rail__mono" style={`background: ${AVATAR_COLORS[i % AVATAR_COLORS.length]};`}>
-                      {initials(c.data.nameEn ?? c.data.name)}
-                    </span>
-                  )}
-                </button>
-              );
-            })
-          }
-        </div>
-        <button class="org-nav__btn" type="button" data-dir="1" aria-label={isEn ? 'Next organizer' : '下一位'}>›</button>
+      <div class="org-pager">
+        <button class="org-nav__btn" type="button" data-dir="-1" aria-label={isEn ? 'Previous page' : '上一頁'}>‹</button>
+        <span class="org-pager__label" data-pager-label>1 / 1</span>
+        <button class="org-nav__btn" type="button" data-dir="1" aria-label={isEn ? 'Next page' : '下一頁'}>›</button>
       </div>
     </div>
     <script>
       {
-        const carousel = document.querySelector('.org-carousel');
-        if (carousel) {
-          const panels = Array.from(carousel.querySelectorAll('.org-panel'));
-          const items = Array.from(carousel.querySelectorAll('.org-rail__item'));
-          let cur = 0;
-          const show = (n) => {
-            cur = (n + panels.length) % panels.length;
-            panels.forEach((p, i) => p.classList.toggle('is-active', i === cur));
-            items.forEach((it, i) => {
-              const on = i === cur;
-              it.classList.toggle('is-active', on);
-              it.setAttribute('aria-current', on ? 'true' : 'false');
-            });
-            items[cur]?.scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'smooth' });
+        const wrap = document.querySelector('.org-gridwrap');
+        if (wrap) {
+          const grid = wrap.querySelector('.org-grid');
+          const cards = Array.from(grid.children);
+          const label = wrap.querySelector('[data-pager-label]');
+          const pager = wrap.querySelector('.org-pager');
+          let page = 0;
+          const cols = () => getComputedStyle(grid).gridTemplateColumns.split(' ').length;
+          const pageSize = () => {
+            const c = cols();
+            return c === 1 ? 4 : c * 2; // 手機 4、平板 4、桌機 6
           };
-          carousel.querySelectorAll('[data-goto]').forEach((b) =>
-            b.addEventListener('click', () => show(Number(b.dataset.goto)))
+          const render = () => {
+            const ps = pageSize();
+            const total = Math.ceil(cards.length / ps);
+            page = ((page % total) + total) % total;
+            cards.forEach((el, i) => { el.hidden = Math.floor(i / ps) !== page; });
+            label.textContent = `${page + 1} / ${total}`;
+            pager.style.display = total <= 1 ? 'none' : '';
+          };
+          wrap.querySelectorAll('[data-dir]').forEach((b) =>
+            b.addEventListener('click', () => { page += Number(b.dataset.dir); render(); })
           );
-          carousel.querySelectorAll('[data-dir]').forEach((b) =>
-            b.addEventListener('click', () => show(cur + Number(b.dataset.dir)))
-          );
+          let t;
+          window.addEventListener('resize', () => { clearTimeout(t); t = setTimeout(render, 150); });
+          render();
         }
       }
     </script>

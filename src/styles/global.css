@@ -745,49 +745,57 @@ a.card:hover,
   max-width: 660px;
 }
 
-/* ---- Organizers carousel (home) ---- */
-.org-carousel {
-  max-width: 640px;
-  margin-top: 26px;
+/* ---- Organizers grid (home) — paged, responsive ---- */
+.org-gridwrap {
+  margin-top: 22px;
 }
 
-.org-stage {
+.org-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+@media (min-width: 560px) {
+  .org-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .org-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.orgc {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 78px;
+  padding: 14px 16px;
   background: var(--panel);
   border: 1px solid var(--line);
-  border-radius: 12px;
+  border-radius: 10px;
   box-shadow: 0 1px 3px rgba(27, 34, 51, 0.06);
-  padding: 30px 34px;
-  min-height: 172px;
-  display: flex;
-  align-items: center;
+  transition: border-color 140ms ease, transform 140ms ease;
 }
 
-.org-panel {
+.orgc[hidden] {
   display: none;
-  width: 100%;
-  align-items: flex-start;
-  gap: 22px;
-  animation: org-fade 260ms ease;
 }
 
-.org-panel.is-active {
-  display: flex;
+.orgc:hover {
+  border-color: var(--brand-strong);
+  transform: translateY(-2px);
 }
 
-@keyframes org-fade {
-  from { opacity: 0; transform: translateY(4px); }
-  to { opacity: 1; transform: none; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .org-panel { animation: none; }
-}
-
-.org-nav {
+.org-pager {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-top: 14px;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 18px;
 }
 
 .org-nav__btn {
@@ -811,65 +819,18 @@ a.card:hover,
   color: var(--ink);
 }
 
-.org-rail {
-  flex: 1 1 auto;
-  display: flex;
-  gap: 10px;
-  overflow-x: auto;
-  padding: 4px 2px;
-  scrollbar-width: none;
-}
-
-.org-rail::-webkit-scrollbar {
-  display: none;
-}
-
-.org-rail__item {
-  flex: 0 0 auto;
-  width: 44px;
-  height: 44px;
-  padding: 0;
-  border: 2px solid transparent;
-  border-radius: 50%;
-  overflow: hidden;
-  background: none;
-  cursor: pointer;
-  opacity: 0.5;
-  transition: opacity 160ms ease, border-color 160ms ease, transform 160ms ease;
-}
-
-.org-rail__item:hover {
-  opacity: 0.85;
-}
-
-.org-rail__item.is-active {
-  opacity: 1;
-  border-color: var(--accent);
-  transform: scale(1.06);
-}
-
-.org-rail__item img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.org-rail__mono {
-  display: grid;
-  place-items: center;
-  width: 100%;
-  height: 100%;
-  font-family: 'Space Grotesk', sans-serif;
-  font-weight: 600;
-  font-size: 15px;
-  color: #fbf8f1;
+.org-pager__label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12.5px;
+  color: var(--ink-faint);
+  min-width: 44px;
+  text-align: center;
 }
 
 .orgc__avatar {
   flex: 0 0 auto;
-  width: 80px;
-  height: 80px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
   overflow: hidden;
   border: 1px solid var(--line);
@@ -889,7 +850,7 @@ a.card:hover,
   height: 100%;
   font-family: 'Space Grotesk', sans-serif;
   font-weight: 600;
-  font-size: 26px;
+  font-size: 19px;
   letter-spacing: 0.02em;
   color: #fbf8f1;
 }
@@ -903,11 +864,11 @@ a.card:hover,
   display: flex;
   align-items: baseline;
   flex-wrap: wrap;
-  gap: 6px 12px;
+  gap: 4px 10px;
 }
 
 .orgc__name {
-  font-size: 18px;
+  font-size: 15.5px;
   margin: 0;
   line-height: 1.3;
 }
@@ -922,27 +883,21 @@ a.card:hover,
 }
 
 .orgc__tagline {
-  font-size: 14.5px;
-  color: var(--ink-mid);
-  margin: 8px 0 0;
-  line-height: 1.6;
-}
-
-.orgc__bio {
   font-size: 13px;
-  color: var(--ink-faint);
-  margin: 8px 0 0;
-  line-height: 1.75;
+  color: var(--ink-mid);
+  margin: 3px 0 0;
+  line-height: 1.5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .orgc__links {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
-  margin: 14px 0 0;
-  padding-top: 14px;
-  border-top: 1px solid var(--line-soft);
-  font-size: 13px;
+  gap: 12px;
+  margin: 6px 0 0;
+  font-size: 12.5px;
 }
 
 .orgc__link {
@@ -956,18 +911,15 @@ a.card:hover,
 }
 
 @media (max-width: 560px) {
-  .org-stage {
-    padding: 22px 20px;
-  }
-  .org-panel {
-    gap: 16px;
+  .orgc {
+    padding: 12px 14px;
   }
   .orgc__avatar {
-    width: 64px;
-    height: 64px;
+    width: 48px;
+    height: 48px;
   }
   .orgc__monogram {
-    font-size: 22px;
+    font-size: 17px;
   }
 }
 
