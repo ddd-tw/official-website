@@ -1,0 +1,18 @@
+{
+  "/": "/og-image.png",
+  "/community/": "/og/community.png",
+  "/en/": "/og-image-en.png",
+  "/en/community/": "/og/en-community.png",
+  "/en/events/": "/og/en-events.png",
+  "/en/governance/": "/og/en-governance.png",
+  "/en/knowledge/": "/og/en-knowledge.png",
+  "/en/me/": "/og/en-me.png",
+  "/en/posts/2026-07-method-stack-en/": "/og/en-posts-2026-07-method-stack-en.png",
+  "/en/posts/2026-07-welcome-en/": "/og/en-posts-2026-07-welcome-en.png",
+  "/events/": "/og/events.png",
+  "/governance/": "/og/governance.png",
+  "/knowledge/": "/og/knowledge.png",
+  "/me/": "/og/me.png",
+  "/posts/2026-07-method-stack/": "/og/posts-2026-07-method-stack.png",
+  "/posts/2026-07-welcome/": "/og/posts-2026-07-welcome.png"
+}

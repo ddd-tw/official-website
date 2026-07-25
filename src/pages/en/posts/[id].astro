@@ -1,6 +1,7 @@
 ---
 import Base from '../../../layouts/Base.astro';
 import { getCollection, render } from 'astro:content';
+import { ogImageFor } from '../../../utils/og';
 
 export async function getStaticPaths() {
   const posts = await getCollection('posts', ({ data }) => !data.draft && data.lang === 'en');
@@ -22,7 +23,7 @@ const articleLd = {
   datePublished: post.data.pubDate.toISOString().slice(0, 10),
   author: { '@type': 'Person', name: post.data.author },
   publisher: { '@id': `${site}#organization` },
-  image: new URL('/og-image.png', site).toString(),
+  image: new URL(ogImageFor(`/en/posts/${post.id}/`), site).toString(),
   mainEntityOfPage: postUrl,
   url: postUrl,
   keywords: post.data.tags,

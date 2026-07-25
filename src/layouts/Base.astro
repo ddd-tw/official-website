@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { useTranslations, type Locale } from '../i18n/ui';
+import { ogImageFor } from '../utils/og';
 
 interface Props {
   title?: string;
@@ -47,8 +48,8 @@ const labels =
 const siteUrl = Astro.site?.toString() ?? 'https://ddd-tw.com/';
 const ogLocale = locale === 'zh' ? 'zh_TW' : 'en_US';
 const ogLocaleAlt = locale === 'zh' ? 'en_US' : 'zh_TW';
-// 分享縮圖：1200×630，由 scripts/build-og-image.py 產生，中英文各一張。
-const ogImage = new URL(locale === 'zh' ? '/og-image.png' : '/og-image-en.png', Astro.site);
+// 分享縮圖：1200×630，每頁一張，由 scripts/build-og-image.py 產生。
+const ogImage = new URL(ogImageFor(Astro.url.pathname, locale), Astro.site);
 
 // 全站實體：讓搜尋引擎與 AI 把「DDD Taiwan」認成一個明確的組織實體。
 const organization = {
