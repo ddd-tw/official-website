@@ -305,11 +305,15 @@ const homeLd = {
             }
           }
 
-          const go = (d) => { pos += d; place(true); paintDots(); };
-          track.addEventListener('transitionend', () => {
-            if (pos >= CLONES + N) { pos -= N; place(false); }
-            else if (pos < CLONES) { pos += N; place(false); }
-          });
+          // 移動前先把 pos 折回真實卡區間（複製區內容相同，跳位看不出來）；
+          // 若等動畫結束才修正，快速連點會在修正前衝出複製區而露出空白。
+          const go = (d) => {
+            if (pos + d >= CLONES + N) { pos -= N; place(false); }
+            else if (pos + d < CLONES) { pos += N; place(false); }
+            pos += d;
+            place(true);
+            paintDots();
+          };
 
           let timer = null;
           const stop = () => { if (timer) { clearInterval(timer); timer = null; } };
