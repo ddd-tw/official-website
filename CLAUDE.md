@@ -60,4 +60,6 @@ DDD Taiwan 社群官網（ddd-tw.com）：Astro 5 靜態站，GitHub Pages 部�
 - 位階/徽章規則變更走 PR；**ratchet 原則：規則升級不追溯降級任何人**。
 - 個資紅線：公開部署物只能有 emailHash，明文 email/姓名/手機永不出現在 repo 與 build 產物。
 - 新增內容照 README「如何發布內容」；活動用 `_template.md`。
+- 分享縮圖：改標語或配色後跑 `python3 scripts/build-og-image.py` 重生
+  `public/og-image.png`（zh）與 `og-image-en.png`；**尺寸固定 1200×630**，比例一改 FB 就會裁圖。
 - commit 訊息與現有 git log 風格一致（英文祈使句，一行講清楚）。

@@ -104,7 +104,7 @@ const homeLd = {
   inLanguage: isEn ? 'en' : 'zh-TW',
   isPartOf: { '@id': `${site}#website` },
   about: { '@id': `${site}#organization` },
-  primaryImageOfPage: new URL('/og-image.png', site).toString(),
+  primaryImageOfPage: new URL(isEn ? '/og-image-en.png' : '/og-image.png', site).toString(),
   hasPart: nav.map((n) => ({
     '@type': 'SiteNavigationElement',
     name: n.name,
