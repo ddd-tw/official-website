@@ -71,7 +71,7 @@ export async function GET(context: APIContext) {
 
   lines.push('## Community & links');
   lines.push('- [GitHub](https://github.com/ddd-tw)');
-  lines.push('- [Discord](https://discord.gg/FtpKqhcAg)');
+  lines.push('- [Discord](https://discord.gg/xgNmswC4u5)');
   lines.push('- [YouTube](https://www.youtube.com/channel/UCydw7dbEksG3axEMjHy4BxQ)');
   lines.push('- [Facebook page](https://www.facebook.com/DDDCommunity.tw/)');
   lines.push('- [Facebook group](https://www.facebook.com/groups/dddesigntw)');
