@@ -12,7 +12,13 @@ pnpm-debug.log*
 
 # environment variables
 .env
+.env.local
 .env.production
+
+# Discord bot token——正式位置是 ~/.dddtw-discord-token（repo 外）。
+# 這裡擋住「順手放進專案目錄」的意外，見 CLAUDE.md「不在 repo 裡的東西」。
+*.token
+.dddtw-discord-token
 
 # 個資紅線：原始名單（明文 email/姓名/手機）與內部談判文件，永不進 public repo
 dddtw-attendees/
