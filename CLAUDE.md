@@ -22,7 +22,7 @@ DDD Taiwan 社群官網（ddd-tw.com）：Astro 5 靜態站，GitHub Pages 部�
 | 成就 build + 測試 | `scripts/build-achievements.py`, `test-achievements.py`, `update-achievements.sh`, `consolidate-attendees.py` | ✅ 測試 11/11 綠 |
 | 活動模板 + schema | `src/content/events/_template.md`, `src/content.config.ts` | ✅ 30 個舊活動已補 topics |
 | Discord 伺服器設定（身分組/頻道/AutoMod/Onboarding） | `scripts/discord-setup.py` | ✅ 已套用到正式伺服器，指令皆冪等 |
-| 活動公告自動化 | `.github/workflows/announce-event.yml` | ✅ 需設 Secret `DISCORD_WEBHOOK_URL` 才生效 |
+| 活動公告自動化 | `.github/workflows/announce-event.yml`, `scripts/announce-event.py` | ✅ Secret `DISCORD_WEBHOOK_URL` 已設，端到端驗證過 |
 | 自營報名系統（Phase 3a） | `infra/registration/`（Lambda+DynamoDB+SES，CDK）＋ `src/pages/register/[id].astro`, `src/pages/staff/checkin.astro` | ⚙️ scaffold 完成，**尚未部署到 AWS** |
 
 ## 關鍵機制（改東西前必讀）
@@ -69,7 +69,7 @@ DDD Taiwan 社群官網（ddd-tw.com）：Astro 5 靜態站，GitHub Pages 部�
   **尺寸固定 1200×630**，比例一改 FB 就會裁圖。新增文章後要重跑（沒跑只是那頁退回預設圖）；
   主要頁面的卡片文案寫在腳本的 `CORE_PAGES`。FB 有快取，上線後要去 Sharing Debugger 重抓。
 - **Discord 伺服器**（`discord.gg/xgNmswC4u5`）：結構由 `scripts/discord-setup.py` 管，
-  四個指令 `audit` / `apply` / `channels` / `safety` / `onboarding` 都有唯讀計畫模式，改設定
+  五個指令 `audit` / `apply` / `channels` / `safety` / `onboarding` 都有唯讀計畫模式，改設定
   一律改程式碼再重跑，不要只在 UI 點——UI 點過的東西下次跑腳本不會知道。踩過的坑：
   - 身分組分兩類：**權限角色**（核心團隊/版主/活動小組/講者）與**零權限的身分徽章**
     （位階 VO→DE、興趣角色）。刻意不發 `ADMINISTRATOR`：它繞過頻道 overwrite，也讓稽核
@@ -87,4 +87,11 @@ DDD Taiwan 社群官網（ddd-tw.com）：Astro 5 靜態站，GitHub Pages 部�
   - Onboarding 選項的 emoji 要用扁平的 `emoji_name`，傳 `{"name": ...}` 物件會被靜默丟掉。
   - 一次性活動**不開常設頻道**（用 `#events-chat` 的討論串），冷門議題用 `#ask-anything`
     這個 Forum 吸收，持續熱起來才升格 —— 避免 Virtual DDD 那種死頻道沉積。
+  - **活動公告**：活動 md merge 進 `main` 即由 `announce-event.yml` 發到 `#announcements`，
+    只在檔案**新增**時發（`--diff-filter=A`），所以事後補 `videoUrl`、修錯字都不會重發。
+    提及 `活動通知` 身分組而非 `@everyone`，`allowed_mentions` 白名單只放那個角色 id。
+    整支 workflow 是 best-effort（`continue-on-error`，Secret 不存在就跳過），失敗不擋上架。
+    要手動補發：Actions → Announce event → Run workflow，填活動 md 路徑。
+  - 用 Python 打 Discord API/webhook 一定要帶 `User-Agent`，否則被 Cloudflare 以
+    `error code: 1010` 擋掉（urllib 的預設 UA 在封鎖名單上）。
 - commit 訊息與現有 git log 風格一致（英文祈使句，一行講清楚）。
