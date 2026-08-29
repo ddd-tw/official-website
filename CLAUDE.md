@@ -21,6 +21,7 @@ DDD Taiwan 社群官網（ddd-tw.com）：Astro 5 靜態站，GitHub Pages 部�
 | 補登/合併 | `src/data/manual-participations.json`（已有 Kim 的創辦人補登）、`email-aliases.json`（尚未建） | ✅ build 已支援 |
 | 成就 build + 測試 | `scripts/build-achievements.py`, `test-achievements.py`, `update-achievements.sh`, `consolidate-attendees.py` | ✅ 測試 11/11 綠 |
 | 活動模板 + schema | `src/content/events/_template.md`, `src/content.config.ts` | ✅ 30 個舊活動已補 topics |
+| Discord 伺服器設定（身分組/頻道/AutoMod/Onboarding） | `scripts/discord-setup.py` | ✅ 已套用到正式伺服器，指令皆冪等 |
 | 活動公告自動化 | `.github/workflows/announce-event.yml` | ✅ 需設 Secret `DISCORD_WEBHOOK_URL` 才生效 |
 | 自營報名系統（Phase 3a） | `infra/registration/`（Lambda+DynamoDB+SES，CDK）＋ `src/pages/register/[id].astro`, `src/pages/staff/checkin.astro` | ⚙️ scaffold 完成，**尚未部署到 AWS** |
 
@@ -45,6 +46,9 @@ DDD Taiwan 社群官網（ddd-tw.com）：Astro 5 靜態站，GitHub Pages 部�
 2. **`docs-internal/oen-negotiation-brief.md`（OEN 金流談判文件，含內部底牌）**——因 repo 是 public
    而移出版控。要在新電腦使用需另行傳輸。
 3. **STAFF_KEY**（報名系統驗票金鑰）——部署時生成，不進 repo。
+4. **Discord bot token**——存在 `~/.dddtw-discord-token`（權限 600），不進 repo。
+   `scripts/discord-setup.py` 靠它操作伺服器；bot 平時不必留在伺服器裡，要改設定時
+   用 Administrator 邀請連結重新邀入、跑完踢掉即可（身分組與頻道都會保留）。
 
 ## 下一步（依優先序）
 
@@ -64,4 +68,23 @@ DDD Taiwan 社群官網（ddd-tw.com）：Astro 5 靜態站，GitHub Pages 部�
   `og-image.png`/`og-image-en.png`）與對照表 `src/data/og-images.json`，Base.astro 依路徑取用。
   **尺寸固定 1200×630**，比例一改 FB 就會裁圖。新增文章後要重跑（沒跑只是那頁退回預設圖）；
   主要頁面的卡片文案寫在腳本的 `CORE_PAGES`。FB 有快取，上線後要去 Sharing Debugger 重抓。
+- **Discord 伺服器**（`discord.gg/xgNmswC4u5`）：結構由 `scripts/discord-setup.py` 管，
+  四個指令 `audit` / `apply` / `channels` / `safety` / `onboarding` 都有唯讀計畫模式，改設定
+  一律改程式碼再重跑，不要只在 UI 點——UI 點過的東西下次跑腳本不會知道。踩過的坑：
+  - 身分組分兩類：**權限角色**（核心團隊/版主/活動小組/講者）與**零權限的身分徽章**
+    （位階 VO→DE、興趣角色）。刻意不發 `ADMINISTRATOR`：它繞過頻道 overwrite，也讓稽核
+    記錄無法歸因。位階徽章目前**手動發**——`/me` 用 `SHA-256(email+SALT)`，與 Discord ID
+    沒有連結，要自動同步得做 bot + 一次性 claim code。
+  - `@everyone` 只做**減法**（`EVERYONE_DENY`），不要整片覆寫成 baseline——那會順手關掉貼圖、
+    投票、音效板這些沒有安全意義的功能。實際只關了 `CREATE_PRIVATE_THREADS`。
+  - **AutoMod 不因為你是擁有者就放過你**（Discord 少見的例外，`ADMINISTRATOR` 也繞不過），
+    豁免是身分組制，所以主辦必須掛 `核心團隊`/`版主`/`活動小組` 之一，否則自己發公告會被
+    自己的規則擋下。
+  - 私有頻道（`@everyone` deny `VIEW_CHANNEL`）要順手把 bot 的身分組加進 overwrite，
+    否則 bot 建完就 `Missing Access` 改不動自己的產物。
+  - `public_updates_channel_id`（社群更新頻道）`PATCH /guilds` 會回 **200 但靜默忽略**，
+    只能在 UI 改；被指定的頻道無法刪除。目前沿用 Discord 原生的 `#moderator-only`。
+  - Onboarding 選項的 emoji 要用扁平的 `emoji_name`，傳 `{"name": ...}` 物件會被靜默丟掉。
+  - 一次性活動**不開常設頻道**（用 `#events-chat` 的討論串），冷門議題用 `#ask-anything`
+    這個 Forum 吸收，持續熱起來才升格 —— 避免 Virtual DDD 那種死頻道沉積。
 - commit 訊息與現有 git log 風格一致（英文祈使句，一行講清楚）。
