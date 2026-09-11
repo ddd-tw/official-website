@@ -1,0 +1,68 @@
+# 新活動 md merge 進 main 後，發一則 Discord 公告到 #announcements。
+#
+# 設計原則（docs/member-system-design.md §8.3）：貢獻者只寫 markdown，其餘全自動；
+# 宣傳是 best-effort——這支 workflow 失敗絕不影響網站上架（部署走 deploy.yml）。
+#
+# 需要 Secret：DISCORD_WEBHOOK_URL（#announcements 的 webhook）。
+# 未設定時會印警告並正常結束，所以 fork 與外部 PR 不會壞。
+name: Announce event
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/content/events/**.md'
+  # 手動補發：填活動檔路徑，例如 src/content/events/2026-09-meetup.md
+  workflow_dispatch:
+    inputs:
+      file:
+        description: 活動 md 的路徑（留空則不發）
+        required: false
+        type: string
+
+# 同一時間只跑一個，避免連續 push 造成重複公告。
+concurrency:
+  group: announce-event
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  announce:
+    runs-on: ubuntu-latest
+    # 宣傳失敗不該讓 main 的 commit 顯示紅叉。
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # 需要前一個 commit 才能算出「這次新增了哪些活動檔」。
+          fetch-depth: 2
+
+      - name: 找出新增的活動檔
+        id: changed
+        run: |
+          if [ -n "${{ inputs.file }}" ]; then
+            echo "手動指定：${{ inputs.file }}"
+            printf '%s\n' "${{ inputs.file }}" > files.txt
+          else
+            # 只取「新增」（A），不取修改——補錄影連結、修錯字不該重發公告。
+            git diff --name-only --diff-filter=A \
+              "${{ github.event.before }}" "${{ github.sha }}" \
+              -- 'src/content/events/*.md' > files.txt || true
+            # force push 或初次推送時 before 可能無效，退回與前一個 commit 比較。
+            if [ ! -s files.txt ]; then
+              git diff --name-only --diff-filter=A HEAD^ HEAD \
+                -- 'src/content/events/*.md' > files.txt || true
+            fi
+          fi
+          grep -v '_template' files.txt > files.filtered || true
+          mv files.filtered files.txt
+          echo "count=$(wc -l < files.txt | tr -d ' ')" >> "$GITHUB_OUTPUT"
+          echo "--- 待公告 ---"; cat files.txt
+
+      - name: 發送 Discord 公告
+        if: steps.changed.outputs.count != '0'
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: xargs -r python3 scripts/announce-event.py < files.txt

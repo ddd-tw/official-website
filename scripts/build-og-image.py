@@ -83,12 +83,12 @@ CORE_PAGES: dict[str, dict] = {
     "/community/": {
         "eyebrow": "COMMUNITY",
         "lines": [("社群與", "人", "")],
-        "sub": "2018 年成立的非營利志工社群 — 找到你的頻道，加入討論。",
+        "sub": "2018 年成立的非營利志工社群 — 先加入 Discord，討論真正發生的地方。",
     },
     "/en/community/": {
         "eyebrow": "COMMUNITY",
         "lines": [("Find your ", "people", "")],
-        "sub": "A non-profit, volunteer-run community since 2018 — find your channel and join in.",
+        "sub": "A non-profit, volunteer-run community since 2018 — start on Discord, where the conversation happens.",
     },
     "/governance/": {
         "eyebrow": "GOVERNANCE",
