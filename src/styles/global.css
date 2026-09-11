@@ -706,6 +706,140 @@ a.card:hover,
   color: var(--brand-strong);
 }
 
+/* ---- Discord 主打（社群頁 hero / 首頁 banner） ---- */
+.dc-hero {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 40px;
+  padding: 40px 44px;
+  border-radius: 14px;
+  background:
+    radial-gradient(120% 140% at 100% 0%, rgba(88, 101, 242, 0.28) 0%, transparent 55%),
+    var(--banner-bg);
+  color: #fbf8f1;
+  border: 1px solid rgba(88, 101, 242, 0.35);
+}
+.dc-hero__eyebrow {
+  color: #a5b0ff;
+  margin: 0 0 10px;
+}
+.dc-hero__title {
+  font-size: 30px;
+  line-height: 1.25;
+  margin: 0 0 14px;
+  color: #fbf8f1;
+}
+.dc-hero__lead {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #c7cde0;
+  margin: 0 0 24px;
+}
+.dc-hero__actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.dc-hero__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #5865f2;
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(88, 101, 242, 0.4);
+}
+.dc-hero__btn:hover {
+  background: #4752c4;
+  transform: translateY(-1px);
+}
+.dc-hero__btn svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+.dc-hero__sub {
+  font-size: 12.5px;
+  color: #a4abbd;
+}
+.dc-hero__rank {
+  display: inline-block;
+  margin-top: 18px;
+  font-size: 13px;
+  color: #a5b0ff;
+}
+.dc-hero__rank:hover {
+  color: #fbf8f1;
+}
+.dc-hero__points {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+  align-content: center;
+}
+.dc-hero__points li {
+  padding: 14px 16px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.dc-hero__ch {
+  display: block;
+  font-size: 12px;
+  color: #a5b0ff;
+  margin-bottom: 4px;
+}
+.dc-hero__pt {
+  display: block;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: #d4d9e6;
+}
+
+.dc-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding: 32px 36px;
+  border-radius: 10px;
+  background:
+    radial-gradient(120% 160% at 100% 0%, rgba(88, 101, 242, 0.3) 0%, transparent 55%),
+    var(--banner-bg);
+  border: 1px solid rgba(88, 101, 242, 0.35);
+}
+.dc-banner__body {
+  max-width: 620px;
+}
+.dc-banner__eyebrow {
+  color: #a5b0ff;
+  margin: 0;
+}
+.dc-banner__title {
+  font-size: 24px;
+  color: #fbf8f1;
+  margin: 8px 0;
+}
+.dc-banner__desc {
+  color: #b9c2d4;
+  font-size: 14.5px;
+  margin: 0;
+}
+
+@media (max-width: 860px) {
+  .dc-hero {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 28px 24px;
+  }
+  .dc-hero__title {
+    font-size: 25px;
+  }
+}
+
 /* ---- Governance / policy page ---- */
 .gov-toc {
   display: flex;
