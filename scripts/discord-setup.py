@@ -21,6 +21,8 @@ DDD Taiwan Discord 伺服器的身分組與頻道結構，設定即程式碼。
   python3 scripts/discord-setup.py safety --apply         # 實際套用
   python3 scripts/discord-setup.py onboarding     # 只讀：入門引導問題
   python3 scripts/discord-setup.py onboarding --apply     # 建立問題並啟用
+  python3 scripts/discord-setup.py welcome        # 只讀：#歡迎 導覽頻道與貼文計畫
+  python3 scripts/discord-setup.py welcome --apply        # 建立/更新 #歡迎 導覽貼文
 
 前置：bot 需被邀入伺服器。Discord 不允許 bot 授出自己沒有的權限，
 最省事的做法是邀請時給 Administrator、跑完 apply 後把 bot 踢掉
@@ -735,10 +737,148 @@ def onboarding(do_apply):
               f"{len(r.get('default_channel_ids', []))} 個預設頻道")
 
 
+# ─────────────────────────────────────────────────────────────────────────────
+# 歡迎導覽（#歡迎）
+#
+# Onboarding 是「選興趣/城市」的互動問答，沒有一段給新朋友看的文字導覽。
+# 這裡補上：一個唯讀 #歡迎 頻道 + 一則置頂 embed，說明「先做這三件事」與各頻道速查表。
+#
+# 為什麼用唯讀頻道貼文，而不是 bot 監聽 join 事件自動發：
+#   · 人人看得到、可回頭查，不像 join 訊息洗過就沒；也不吃 DM（很多人關 DM 收不到）。
+#   · 不需要 Server Members privileged intent，也不需要 bot 常駐在線監聽。
+#   · Discord 原生 Onboarding 會把 #歡迎 列為新人第一批看到的預設頻道。
+#
+# 冪等：靠 bot 自己發過的訊息辨識。已存在就「編輯」那則（內容有更新才送 PATCH），
+# 沒有才「新建」並置頂。改文案重跑即更新，不會洗出第二則。
+# ─────────────────────────────────────────────────────────────────────────────
+WELCOME_CHANNEL = "歡迎"          # 建在「資訊 · Information」類別下，唯讀
+WELCOME_CATEGORY = "資訊 · Information"
+# 用來辨識「這則是本腳本貼的導覽」——放進 embed footer，重跑時據此找回同一則。
+WELCOME_MARKER = "dddtw-welcome-guide"
+
+WELCOME_EMBED = {
+    "title": "👋 歡迎加入 DDD Taiwan！",
+    "description": (
+        "這裡是台灣的 **Domain-Driven Design（領域驅動設計）** 社群——"
+        "聊戰略與戰術設計、軟體架構、以及怎麼把複雜的商業問題拆得更清楚。\n"
+        "不管你是剛聽過 DDD、還是天天在實戰，這裡都歡迎你。\n\n"
+        "**先做這三件事 👇**\n"
+        "1️⃣ 讀一下 **#rules**，了解社群約定\n"
+        "2️⃣ 到 **#introductions** 自我介紹：你在做什麼、想在 DDD 學什麼\n"
+        "3️⃣ 在上線流程（Onboarding）挑你的**興趣與城市**，之後活動通知才找得到你"
+    ),
+    "color": 0x3E6AC0,  # 品牌藍，對齊 CREW 色
+    "fields": [
+        {
+            "name": "🧭 各頻道在做什麼",
+            "value": (
+                "📣 **#announcements** — 活動與社群公告，追這個就不漏訊息\n"
+                "💬 **#general** — 什麼都能聊，不確定發哪就發這\n"
+                "🙋 **#introductions** — 自我介紹\n"
+                "❓ **#ask-anything** — 有問題就開一篇，DDD、架構、職涯都行\n"
+                "📅 **#events-chat** — 活動前提問、當天同步、會後討論\n"
+                "📚 **#book-club** — 讀書會，一起讀一起練\n"
+                "🧩 **#domain-driven-design** — 戰略戰術設計、限界脈絡、事件風暴\n"
+                "🏛 **#architecture-and-systems** — 系統設計、演進式架構\n"
+                "🌏 **#ddd-crew** — 與國際 DDD Crew 的連結\n"
+                "💡 **#community-ideas** — 想辦什麼、想改什麼都能提\n"
+                "📎 **#resources** — 投影片、錄影、書單、好文"
+            ),
+            "inline": False,
+        },
+        {
+            "name": "💡 想更投入？",
+            "value": (
+                "· 在 **#community-ideas** 提你想辦的活動或主題\n"
+                "· 報名年會志工、當讀書會帶讀人，或在 **#ask-anything** 回答別人的問題\n"
+                "· 參加得越多，會員位階徽章會一路從 Value Object 升到 Domain Expert 🏅"
+            ),
+            "inline": False,
+        },
+    ],
+    "footer": {"text": WELCOME_MARKER},
+}
+
+
+def welcome(do_apply):
+    guild, roles, chans, me = fetch_state()
+    roles_by_name = {r["name"]: r for r in roles}
+    by_name = {c["name"]: c for c in chans}
+    cats = {c["name"]: c for c in chans if c["type"] == CATEGORY}
+    verb = "執行" if do_apply else "計畫（唯讀，加 --apply 才會動）"
+    print(f"歡迎導覽 {verb}\n")
+
+    # 1) 確認 #歡迎 頻道（唯讀，掛在資訊類別下）
+    ch = by_name.get(WELCOME_CHANNEL)
+    if ch:
+        print(f"  ✓ 頻道已存在  #{WELCOME_CHANNEL}  (id {ch['id']})")
+    else:
+        print(f"  + 建立唯讀頻道  #{WELCOME_CHANNEL}（掛在「{WELCOME_CATEGORY}」下）")
+        if do_apply:
+            body = {
+                "name": WELCOME_CHANNEL, "type": TEXT,
+                "topic": "新朋友先看這裡：社群介紹與各頻道導覽。",
+                "permission_overwrites": resolve_overwrites(READ_ONLY, roles_by_name),
+            }
+            cat = cats.get(WELCOME_CATEGORY)
+            if cat:
+                body["parent_id"] = cat["id"]
+            r = request("POST", f"/guilds/{GUILD_ID}/channels", body, soft=True)
+            if isinstance(r, dict) and r.get("__err"):
+                print(f"    ✗ 建立失敗：HTTP {r['__err']} {r['__msg']}")
+                return
+            ch = r
+            print(f"    ↳ 已建立  (id {ch['id']})")
+            time.sleep(0.4)
+
+    print("\n  導覽貼文（embed）：")
+    print(f"    標題：{WELCOME_EMBED['title']}")
+    print(f"    欄位：{len(WELCOME_EMBED['fields'])} 段（含頻道速查表）")
+
+    if not do_apply:
+        print("\n  （唯讀計畫。加 --apply 才會實際建立頻道並貼文。）")
+        return
+    if not ch:
+        return
+
+    # 2) 找回本腳本先前貼的那則（用 footer marker 辨識），冪等：有就更新、沒有才新建
+    msgs = request("GET", f"/channels/{ch['id']}/messages?limit=50", soft=True) or []
+    self_id = me.get("user", {}).get("id") or request("GET", "/users/@me")["id"]
+    mine = None
+    if isinstance(msgs, list):
+        for m in msgs:
+            if m.get("author", {}).get("id") != self_id:
+                continue
+            if any(e.get("footer", {}).get("text") == WELCOME_MARKER for e in m.get("embeds", [])):
+                mine = m
+                break
+
+    if mine:
+        request("PATCH", f"/channels/{ch['id']}/messages/{mine['id']}",
+                {"embeds": [WELCOME_EMBED]}, soft=True)
+        print(f"\n  ↻ 已更新既有導覽貼文（message {mine['id']}）")
+    else:
+        posted = request("POST", f"/channels/{ch['id']}/messages",
+                         {"embeds": [WELCOME_EMBED]}, soft=True)
+        if isinstance(posted, dict) and posted.get("__err"):
+            print(f"\n  ✗ 貼文失敗：HTTP {posted['__err']} {posted['__msg']}")
+            return
+        print(f"\n  + 已貼出導覽貼文（message {posted['id']}）")
+        # 置頂，讓它固定在頻道頂端
+        pin = request("PUT", f"/channels/{ch['id']}/pins/{posted['id']}", soft=True)
+        if isinstance(pin, dict) and pin.get("__err"):
+            print(f"    · 置頂略過：HTTP {pin['__err']} {pin['__msg']}")
+        else:
+            print("    · 已置頂")
+
+    print("\n完成。#歡迎 是唯讀頻道，新朋友一進來就能看到這則導覽。")
+    print("建議：到 伺服器設定 → 上線流程，把 #歡迎 設為新人第一批看到的預設頻道。")
+
+
 def main():
     args = sys.argv[1:]
     cmd = args[0] if args else "audit"
-    if cmd not in ("audit", "apply", "channels", "safety", "onboarding"):
+    if cmd not in ("audit", "apply", "channels", "safety", "onboarding", "welcome"):
         raise SystemExit(__doc__)
     if not TOKEN:
         raise SystemExit("✗ 請先設定 DISCORD_BOT_TOKEN（見檔頭說明）")
@@ -750,6 +890,8 @@ def main():
         safety("--apply" in args)
     elif cmd == "onboarding":
         onboarding("--apply" in args)
+    elif cmd == "welcome":
+        welcome("--apply" in args)
     else:
         apply("--fix-everyone" in args)
 
